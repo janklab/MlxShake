@@ -1,5 +1,6 @@
 function str2md = processDocumentOutput(str2md, tableMaxWidth)
-    
+% Process document output
+
 %% 2-1: Fix latex conventions for non-literal parts
 % ^ (live script) -> \textasciicircum{} (latex)
 str2md = replace(str2md, "\textasciicircum{}", "^");

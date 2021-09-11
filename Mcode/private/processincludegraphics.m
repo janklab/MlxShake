@@ -1,10 +1,11 @@
 function str = processincludegraphics(str, format, png2jpeg, filename, filepath)
-
+% Process included graphics
+%
 % Note: There are two cases in the tex
 % 1: inserted image: \includegraphics[width=\maxwidth{64.52584044154541em}]{image_0}
 % 2: generated figure: \includegraphics[width=\maxwidth{52.78474661314601em}]{figure_0.png}
 %
-% Inserted images needs to 
+% Inserted images needs to ???
 
 % markdown (GitHub): ![string]('path to a image')
 % latex では \includegraphics[width=\maxwidth{56.196688409433015em}]{filename}

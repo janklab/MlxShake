@@ -1,4 +1,5 @@
 function newstr = mergeSameEnvironments(str, environment)
+% Merge same environments
 
 % str is a vector of string
 % start index of a enviroment

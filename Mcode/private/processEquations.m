@@ -1,4 +1,6 @@
 function str2md = processEquations(str2md, format)
+% Process math equations
+%
 % For Github users: Use https://latex.codecogs.com
 % See: http://idken.net/posts/2017-02-28-math_github/ (Japanese)
 %
