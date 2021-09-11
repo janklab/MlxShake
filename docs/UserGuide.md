@@ -34,7 +34,7 @@ janklab.exportmlx.mlx2latex('README.mlx');
 
 This will generate `README.tex`. All the related images, such as included images and generated figures, are saved under the folder `README_images` next to the `.tex` file.
 
-**WARNING**: When exporting to LaTeX right after running the Live Script, it's observed that the figures will be exported as EPS files or not at all if the Live Script contains more than 20 figures. I suggest that **you close the script, reopen it, and then export to LaTeX.**
+**WARNING**: When exporting to LaTeX right after running the Live Script, it's observed that the figures will be exported as EPS files or not at all if the Live Script contains more than 20 figures. I suggest that **you close the script, reopen it, and then export to LaTeX**.
 
 ### Step 2: Convert the LaTeX to Markdown using `latex2markdown`
 
