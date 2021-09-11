@@ -16,7 +16,8 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 
 ### BUGS
 
-Nothing big outstanding AFAIK. Hooray!
+* Figure out how to handle features that require a certain version of Matlab, or use toolboxes which may not be installed.
+  * This includes how to incorporate them into our examples.
 
 ### Enhancements
 
