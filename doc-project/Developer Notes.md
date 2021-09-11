@@ -15,7 +15,7 @@
 ## TODO
 
 * Convert API to OOP and jankify
-* Replace all uses of `rand` in doco with something else, for reproducible builds.
+* Replace all uses of `rand` in doco with something else, for reproducible builds?
 * Eww: the codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves.
 * Add support for Jekyll and MkDocs integration.
 * Don't leave intermediate `.tex` and `.sty` file droppings.
