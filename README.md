@@ -64,7 +64,7 @@ Super quick example:
 janklab.exportmlx.livescript2markown('MyLiveScript.mlx')
 ```
 
-See the [User Guide](doc/UserGuide.md) for fuller instructions and feature description.
+See the [User Guide](https://exportmlx.janklab.net/UserGuide.html) for fuller instructions and feature description.
 
 ## Project Goals
 
