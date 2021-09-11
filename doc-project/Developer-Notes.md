@@ -15,6 +15,7 @@
 ## TODO
 
 * Pull in code to programmatically export mlx->tex
+  * I've got the basic down; just make it a lot better
 * Convert API to OOP and jankify
 * Stringify API
 * Move code into a package
@@ -23,3 +24,4 @@
 * Eww: the codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves.
 * Nicer, configurable progress output.
   * Should be able to suppress it entirely if you want.
+* Add support for Jekyll and MkDocs integration.
