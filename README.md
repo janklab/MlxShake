@@ -1,28 +1,49 @@
-# Converting MATLAB Live Script to Markdown
-Copyright 2020 The MathWorks, Inc.
-[![View livescript2markdown: MATLAB's live scripts to markdown.  on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://jp.mathworks.com/matlabcentral/fileexchange/73993-livescript2markdown-matlab-s-live-scripts-to-markdown)
+# ExportMlx: Export Matlab Live Scripts to Markdown
 
-# Introduction
+Export Matlab Live Scripts to Markdown and other formats.
 
-This repository provides a functions to convert your live scripts to markdown file. I hope this function makes your life easy to document your repository.
+This tool lets you generate project documentation and web site content from live scripts in your project. This is a nice way of generating rich documentation with included graphics that are up to date with your latest code. Especially nice for tutorials and examples.
 
-[English instruction](doc/README_EN.md)
+See the [User Guide](doc/UserGuide.md) for examples of what it can do; the User Guide is itself generated from a Matlab live script using ExportMlx!
 
-[日本語はこちら](doc/README_JP.md)
+## Acknowledgments
 
-I've checked the function with multiple live scripts but please note that it's not perfect. It's expected that you need some manual editing.
+ExportMlx is based on, and started out as a fork of, MathWorker Michio Inoue's [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) tool.
 
-## NOTE (2020/02/10)
+The LaTeX export code is informed by Pavel Roslovets's [Live-Script-to-Markdown-Converter toolbox](https://github.com/roslovets/Live-Script-to-Markdown-Converter).
 
-When exporting to LaTeX right after running the livescript, it's observed that the figures will be exported as eps files or not at all
-if the livescript contains more than 20 figures.
+## License Warning
 
-I suggest that **you close the script and reopen and then export to latex.**
+ExportMlx is licensed under a nonstandard variant of the BSD 2-Clause License that includes this additional clause:
 
-  
-***
-### Feedback
+```text
+* In all cases, the software is, and all modifications and derivatives of the
+  software shall be, licensed to you solely for use in conjunction with
+  MathWorks products and service offerings.
+```
 
-Hope it accelerates your MATLAB life. Any comment and suggestions are always appreciated.
+This is because livescript2markdown is licensed that way, and ExportMlx contains derivatives of its code.
 
+## Introduction
 
+ExportMlx provides tools for exporting Matlab Live Scripts to Markdown and other formats.
+
+This code has been tested with multiple live scripts but please note that it's not perfect. It's expected that you need some manual editing (for now!).
+
+## Installation
+
+Download this distro or repo and put it somewhere on your disk.
+
+Add its `Mcode/` directory to your Matlab path using `addpath()`.
+
+## Usage
+
+See the [User Guide](doc/UserGuide.md) for instructions and feature summary.
+
+## Author
+
+ExportMlx was developed by [Andrew Janke](https://apjanke.net) based on [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) by [Michio Inoue](https://github.com/minoue-xx).
+
+The project home page is the [GitHub repo page](https://github.com/janklab/ExportMlx). Bug reports and feature requests are welcome.
+
+ExportMlx is part of the [Janklab](https://janklab.net) suite of open source libraries for Matlab.
