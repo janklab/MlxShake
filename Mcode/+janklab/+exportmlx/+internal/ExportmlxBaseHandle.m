@@ -3,6 +3,9 @@ classdef ExportmlxBaseHandle < handle
   %
   % To use it, have all your classes that depend on the library being
   % initialized inherit from this or ExportmlxBase.
+  %
+  % See also:
+  % EXPORTMLXBASE
   
   properties (Constant, Hidden)
     initializer = janklab.exportmlx.internal.LibraryInitializer;
