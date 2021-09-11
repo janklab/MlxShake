@@ -1,6 +1,4 @@
 function str2md = processEquations(str2md, format)
-% Copyright 2020 The MathWorks, Inc.
-% 
 % For Github users: Use https://latex.codecogs.com
 % see. http://idken.net/posts/2017-02-28-math_github/ (Japanese)
 %

@@ -1,5 +1,4 @@
 function str2md = processDocumentOutput(str2md,tableMaxWidth)
-% Copyright 2020 The MathWorks, Inc.
     
 %% 2-1: Fix latex conventions for non-literal parts
 % ^ (live script) -> \textasciicircum{} (latex)

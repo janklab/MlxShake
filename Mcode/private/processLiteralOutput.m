@@ -1,5 +1,4 @@
 function [str, idxLiteral] = processLiteralOutput(str)
-% Copyright 2020 The MathWorks, Inc.
 
 %% MATLAB Code
 % Latex: 

@@ -1,8 +1,4 @@
 function mdfile = latex2markdown(filename,options)
-%  Copyright 2020 The MathWorks, Inc.
-
-% What is arguments?
-% see: https://jp.mathworks.com/help/matlab/matlab_prog/argument-validation-functions.html
 arguments
     filename (1,1) string
     options.outputfilename char = filename
@@ -45,17 +41,17 @@ fclose(fid);
 % Extract body from latex
 str = extractBetween(str,"\begin{document}","\end{document}");
 
-% Delete table of contents: 目次は現時点で削除（TODO）
+% Delete table of contents
 % ex: \label{H_D152BAC0}
 str = regexprep(str,"\\matlabtableofcontents{([^{}]+)}", "");
 str = regexprep(str,"\\label{[a-zA-Z_0-9]+}","");
 
-%% Devide the body into each environment
+% Divide the body into each environment
+
 % Preprocess 1:
 % Add 'newline' to the end of the following.
 % \end{lstlisting}, \end{verbatim}, \end{matlabcode}, \end{matlaboutput},\end{center}
 % \end{matlabtableoutput}, \end{matlabsymbolicoutput}  \vspace{1em}
-% 要素ごとに分割しやすいように \end の後に改行が無い場合は１つ追加
 str = replace(str,"\end{lstlisting}"+newline,"\end{lstlisting}"+newline+newline);
 str = replace(str,"\end{verbatim}"+newline,"\end{verbatim}"+newline+newline);
 str = replace(str,"\end{matlabcode}"+newline,"\end{matlabcode}"+newline+newline);
@@ -67,16 +63,13 @@ str = replace(str,"\vspace{1em}"+newline,"\vspace{1em}"+newline+newline);
 
 % Preprocess 2:
 % Replace more than three \n to \n\n.
-% 3行以上の空白は2行にしておく
 str = regexprep(str,'\n{3,}','\n\n');
 % Devide them into parts by '\n\n'
-% 空白行で要素に分割
 str = strsplit(str,'\n\n')';
 
 % Preprocess 3:
 % The following environments will be merge into one string
 % for the ease of process.
-% MATLABコードが複数行にわたるとうまく処理できないので 対応する \end が見つかるまで連結処理
 % \begin{verbatim}
 % \begin{lstlisting}
 % \begin{matlabcode}
@@ -90,7 +83,7 @@ str = mergeSameEnvironments(str,"matlaboutput");
 str = mergeSameEnvironments(str,"matlabtableoutput");
 str = mergeSameEnvironments(str,"matlabsymbolicoutput");
 
-%% Let's convert latex to markdown
+% Let's convert latex to markdown
 % 1: Process parts that require literal output.
 [str, idxLiteral] = processLiteralOutput(str);
 
@@ -98,10 +91,10 @@ str = mergeSameEnvironments(str,"matlabsymbolicoutput");
 str2md = str(~idxLiteral);
 str2md = processDocumentOutput(str2md,options.tableMaxWidth);
 
-% Equations (数式部分)
+% Equations
 str2md = processEquations(str2md, options.format);
 
-% includegraphics (画像部分)
+% includegraphics
 str2md = processincludegraphics(str2md, options.format, options.png2jpeg, name, filepath);
 
 % Apply vertical/horizontal space
@@ -112,10 +105,10 @@ str2md = regexprep(str2md,"\\vspace{1em}","  ");
 str2md = regexprep(str2md,"\\hskip1em","  ");
 str(~idxLiteral) = str2md;
 
-%% Done! Merge them together
+% Done! Merge them together
 strmarkdown = join(str,newline);
 
-%% File outputファイル出力
+% File output
 mdfile = options.outputfilename + ".md";
 fileID = fopen(mdfile,'w');
 fprintf(fileID,'%s\n',strmarkdown);

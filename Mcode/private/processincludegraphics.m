@@ -1,5 +1,4 @@
 function str = processincludegraphics(str,format,png2jpeg,filename,filepath)
-% Copyright 2020 The MathWorks, Inc.
 
 % Note: There are two cases in the tex
 % 1: inserted image: \includegraphics[width=\maxwidth{64.52584044154541em}]{image_0}
