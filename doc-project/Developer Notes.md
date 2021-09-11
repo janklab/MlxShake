@@ -19,6 +19,7 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 * Eww: The codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves.
 * Add CI support.
 * Add some tests.
+* Support for GitHub Flavored Markdown and other flavors?
 * Add support for Jekyll and MkDocs integration.
 * Don't leave intermediate `.tex` and `.sty` file droppings (configurable, droppings off by default but enableable with an option).
 * Nicer alt text/link text for inline images?
