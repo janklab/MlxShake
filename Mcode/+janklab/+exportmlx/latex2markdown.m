@@ -45,7 +45,7 @@ end
 
 LF = newline;
 
-%% Input handling and validation
+%% Argument handling and validation
 
 [inParentDir,inFileStem,extn] = fileparts(inFile);
 if inParentDir == ""
@@ -66,30 +66,23 @@ if ~isfile(latexFile)
     + "using mlx2latex.");
 end
 
-% Import latex file and have it as a string variable
-fid = fopen(latexFile, 'r', 'n', 'UTF-8');
-str = string;
-tmp = fgets(fid);
-while tmp > 0
-    str = append(str, string(tmp));
-    tmp = fgets(fid);
-end
-fclose(fid);
+%% Preprocess latex
 
-% Extract body from latex
+% Read latex
+str = janklab.exportmlx.internal.util.readtext(latexFile);
+
+% Extract main body from latex
 str = extractBetween(str, "\begin{document}", "\end{document}");
 
 % Delete table of contents
-% ex: \label{H_D152BAC0}
 str = regexprep(str, "\\matlabtableofcontents{([^{}]+)}", "");
+% e.g. \label{H_D152BAC0}
 str = regexprep(str, "\\label{[a-zA-Z_0-9]+}", "");
 
 % Divide the body into each environment
 
-% Preprocess 1:
-% Add 'LF' to the end of the following.
-% \end{lstlisting}, \end{verbatim}, \end{matlabcode}, \end{matlaboutput},\end{center}
-% \end{matlabtableoutput}, \end{matlabsymbolicoutput}  \vspace{1em}
+% Pre 1: Double newlines for selected items
+% TODO: Document why.
 placesToDoubleNewlines = [
     "\end{lstlisting}"
     "\end{verbatim}"
@@ -104,15 +97,12 @@ for thing = placesToDoubleNewlines'
     str = replace(str, thing+LF, thing+LF+LF);
 end
 
-% Preprocess 2:
-% Replace more than three \n to \n\n.
+% Pre 2: Shrink more than two \n to just two.
 str = regexprep(str, '\n{3,}', '\n\n');
-% Devide them into parts by '\n\n'
+% Divide file into parts by '\n\n'
 str = strsplit(str, '\n\n')';
 
-% Preprocess 3:
-% The following environments will be merge into one string
-% for the ease of process.
+% Pre 3: Merge duplicate environments for ease of processing.
 envsToMerge = [
     "lstlisting"
     "verbatim"
@@ -125,18 +115,19 @@ for env = envsToMerge'
     str = janklab.exportmlx.internal.mergeSameEnvironments(str, env);
 end
 
-% Let's convert latex to markdown
-% 1: Process parts that require literal output.
-[str, idxLiteral] = janklab.exportmlx.internal.processLiteralOutput(str);
+%% Markdown conversion
 
-% 2: Process that other parts
-str2md = str(~idxLiteral);
+% Literal output handling
+[str, ixLiteral] = janklab.exportmlx.internal.processLiteralOutput(str);
+
+% Other parts
+str2md = str(~ixLiteral);
 str2md = janklab.exportmlx.internal.processDocumentOutput(str2md, options.tableMaxWidth);
 
 % Equations
 str2md = janklab.exportmlx.internal.processEquations(str2md, options.markdownStyle);
 
-% includegraphics
+% Included graphics
 str2md = janklab.exportmlx.internal.processincludegraphics(str2md, options.markdownStyle, ...
     options.png2jpeg, inFileStem, inParentDir);
 
@@ -146,7 +137,7 @@ str2md = janklab.exportmlx.internal.processincludegraphics(str2md, options.markd
 % latex: \hskip1em
 str2md = regexprep(str2md, "\\vspace{1em}", "  ");
 str2md = regexprep(str2md, "\\hskip1em", "  ");
-str(~idxLiteral) = str2md;
+str(~ixLiteral) = str2md;
 
 % Done! Merge them together
 mdstr = join(str, LF);
@@ -166,9 +157,7 @@ else
     outMdFile = options.outFile;
 end
 imagesDirPath = noExtnFile + "_images";
-fid = fopen(outMdFile, 'w');
-fprintf(fid, '%s\n', mdstr);
-fclose(fid);
+janklab.exportmlx.internal.util.writetext(mdstr, outMdFile);
 
 loginfo("Converting LaTeX to Markdown is complete.");
 loginfo("  Markdown: " + outMdFile);

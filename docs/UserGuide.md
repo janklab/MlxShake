@@ -331,4 +331,3 @@ There's not a corresponding function, but centered paragraphs are treated as quo
 
 Hope this accelerates your Matlab life! Any comments and suggestions are welcome. Visit the project repo at [https://github.com/janklab/ExportMlx](https://github.com/janklab/ExportMlx).
 
-
