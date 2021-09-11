@@ -59,11 +59,12 @@ str2md = regexprep(str2md, "\\texttt{(\*{0,3})([^*{}]+)(\*{0,3})}", "$1`$2`$3");
 % latex: \href{http://xxx.com}{string}
 str2md = regexprep(str2md, "\\href{([^{}]+)}{([^{}]+)}", "[$2]($1)");
 
-%% 2-4: Titile and headings
+%% 2-4: Title and headings
 str2md = regexprep(str2md, "\\matlabtitle{([^{}]+)}", "# $1");
-str2md = regexprep(str2md, "\\matlabheading{([^{}]+)}", "# $1");
-str2md = regexprep(str2md, "\\matlabheadingtwo{([^{}]+)}", "## $1");
-str2md = regexprep(str2md, "\\matlabheadingthree{([^{}]+)}", "### $1");
+% Headings are converted to next level down to conform with Markdownlint style
+str2md = regexprep(str2md, "\\matlabheading{([^{}]+)}", "## $1");
+str2md = regexprep(str2md, "\\matlabheadingtwo{([^{}]+)}", "### $1");
+str2md = regexprep(str2md, "\\matlabheadingthree{([^{}]+)}", "#### $1");
 
 % Put \{ and \{ back.
 str2md = replace(str2md, "BackslashCurlyBlacketOpen", "\{");
@@ -236,3 +237,4 @@ function str2 = cutStringLength(str1, N)
        str2 = string(tmp(1:N)) + "...";
     end
 end
+

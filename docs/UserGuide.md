@@ -1,5 +1,5 @@
 # ExportMlx User Guide
-# Introduction
+## Introduction
 
 ExportMlx provides tools for converting Matlab Live Scripts to Markdown files. This is useful in generating rich documentation for Matlab programs.
 
@@ -7,13 +7,13 @@ The main function is `livescript2markdown`. There are also `mlx2latex` and `late
 
 This User Guide itself is generated from a Live Script using ExportMlx!
 
-# Installation and Setup
+## Installation and Setup
 
 Download the project's distribution or clone the repo and put it somewhere on your disk.
 
 Add its `Mcode` directory to your Matlab path using Matlab's `addpath()` function.
 
-# Usage: Simple
+## Usage: Simple
 
 All the code lives in the `janklab.exportmlx` package.
 
@@ -23,8 +23,8 @@ Call `livescript2markdown(mlxFile)` on your `.mlx` Live Script file to export it
 janklab.exportmlx.livescript2markdown('README.mlx');
 ```
 
-# Usage: Advanced
-## Step 1: Export your Live Script to LaTeX using `livescript2latex`
+## Usage: Advanced
+### Step 1: Export your Live Script to LaTeX using `livescript2latex`
 
 ```matlab:Code(Display)
 janklab.exportmlx.mlx2latex('README.mlx');
@@ -34,7 +34,7 @@ This will generate `README.tex`. All the related images, such as included images
 
 **WARNING**: When exporting to LaTeX right after running the Live Script, it's observed that the figures will be exported as EPS files or not at all if the Live Script contains more than 20 figures. I suggest that **you close the script, reopen it, and then export to LaTeX.**
 
-## Step 2: Convert the LaTeX to Markdown using `latex2markdown`
+### Step 2: Convert the LaTeX to Markdown using `latex2markdown`
 
 ```matlab:Code(Display)
 janklab.exportmlx.latex2markdown('README');
@@ -60,7 +60,7 @@ janklab.exportmlx.latex2markdown('README', {'markdownStyle', 'qiita', 'outFile',
 
 Note: Qiita is a tech blog platform in Japanese. Qiita uses Markdown for its posts.
 
-# Differences Between Qiita and GitHub Formats
+## Differences Between Qiita and GitHub Formats
 
 One is the equations and the other is how to insert the image files. 
 
@@ -70,8 +70,8 @@ Rendering equations with CODECOGS is done by sticking CODECOGS query URLs in ima
 
 For images, you can just push the image folders and then the README reads them, but you need to drag \& drop your images inside the Qiita Editor.
 
-# Supported Syntax in Live Scripts
-## MATLAB Code
+## Supported Syntax in Live Scripts
+### MATLAB Code
 
 MATLAB code and its output and figures will be shown as follows:
 
@@ -96,7 +96,7 @@ plot(x,y);
 ](UserGuide_images/figure_0.png
 )
 
-## Table display
+### Table display
 
 The display of `table` arrays will be formated like so:
 
@@ -124,7 +124,7 @@ table(rand(3,4))
 
 (Any suggestions to handle merged cells in Markdown are appreciated!)
 
-## Code Examples
+### Code Examples
 
 "MATLAB" Code Examples (as opposed to actual executable Matlab code) are rendered as follows:
 
@@ -143,7 +143,7 @@ print('Hello, world!')
 my_dict = {'foo': 42, 'bar': [1, 2, 3]}
 ```
 
-## Inline Images
+### Inline Images
 
 Here's a display of an inline image (an image pasted into the Live Script, as opposed to figure display output).
 
@@ -151,7 +151,7 @@ Here's a display of an inline image (an image pasted into the Live Script, as op
 ](UserGuide_images/image_0.png
 )
 
-## Equations
+### Equations
 
 Any equations in Live Scripts will be exported as LaTeX. For GitHub, CODECOGS helps display them by rendering them as images at document viewing time.
 
@@ -165,7 +165,7 @@ Single line equations look like this:
 
 <img src="https://latex.codecogs.com/gif.latex?\sin&space;x=-\int&space;\cos&space;xdx"/>
 
-## Lists
+### Lists
 
 Here's a unordered list:
 
@@ -179,7 +179,7 @@ Here's an ordered list:
    1.  Item two 
    1.  Item three 
 
-## Font Styles
+### Font Styles
 
 Here are the complete list of font styles available in Live Editor:
 
@@ -203,13 +203,13 @@ And some conbinations of styles:
 
 Note that underlines do not show up in the Markdown! (I think this is because Markdown doesn't have markup for underlines?)
 
-## Quotations
+### Quotations
 
 There's not a corresponding function, but centered paragraphs are treated as quotations.
 
 > There's not a corresponding function, but this centered paragraph is treated as quotation.
 
-# Feedback and Support
+## Feedback and Support
 
 Hope this accelerates your Matlab life! Any comments and suggestions are welcome. Visit the project repo at [https://github.com/janklab/ExportMlx](https://github.com/janklab/ExportMlx).
 
