@@ -32,7 +32,7 @@ function out = runtests
   end
   mkdir(testOutDir);
   
-  suite = TestSuite.fromPackage('exportmlx.test', 'IncludingSubpackages', true);
+  suite = TestSuite.fromPackage('janklab.exportmlx.test', 'IncludingSubpackages', true);
   
   runner = TestRunner.withTextOutput;
   mkdir([testOutDir '/cobertura']);
