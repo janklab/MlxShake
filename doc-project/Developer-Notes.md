@@ -16,6 +16,7 @@
 
 * Pull in code to programmatically export mlx->tex
 * Convert API to OOP and jankify
+* Stringify API
 * Move code into a package
 * Replace all uses of `rand` in doco with something else, for reproducible builds.
 * Try to get output Markdownlint-clean
