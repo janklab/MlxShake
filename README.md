@@ -2,7 +2,7 @@
 
 Export Matlab Live Scripts to Markdown and other formats.
 
-[![Travis Build Status](https://travis-ci.com/janklab/ExportMlx.svg?branch=main)](https://travis-ci.com/github/janklab/ExportMlx)  [![CircleCI Build Status](https://circleci.com/gh/janklab/MatlabProjectTemplate.svg?style=shield)](https://circleci.com/gh/janklab/MatlabProjectTemplate)
+[![Travis Build Status](https://travis-ci.com/janklab/ExportMlx.svg?branch=main)](https://travis-ci.com/github/janklab/ExportMlx)  [![CircleCI Build Status](https://circleci.com/gh/janklab/MatlabProjectTemplate.svg?style=shield)](https://circleci.com/gh/janklab/MatlabProjectTemplate) [![Azure Build Status](https://dev.azure.com/janklab/MatlabProjectTemplate/_apis/build/status/janklab.MatlabProjectTemplate?branchName=main)](https://dev.azure.com/janklab/MatlabProjectTemplate/_build/latest?definitionId=1&branchName=main)
 
 ## Summary
 
