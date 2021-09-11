@@ -4,7 +4,7 @@ layout: default
 
 Export Matlab Live Scripts to Markdown and other formats!
 
-See [the main README](https://github.com/janklab/ExportMlx) for more info. This web site is still under construction.
+See the [main ExportMlx README](https://github.com/janklab/ExportMlx/README.md) for more info. This web site is still under construction.
 
 ## Pages
 
