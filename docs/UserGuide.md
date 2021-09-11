@@ -154,7 +154,7 @@ plot(x,y);
 ```
 
 
-![/Users/janke/local/repos/ExportMlx/docs/UserGuide_images/figure_0.png
+![figure_0.png
 ](UserGuide_images/figure_0.png
 )
 
@@ -230,7 +230,7 @@ Here's a display of an inline image (an image pasted into the Live Script, as op
 
 
 
-![/Users/janke/local/repos/ExportMlx/docs/UserGuide_images/image_0.png
+![image_0.png
 ](UserGuide_images/image_0.png
 )
 

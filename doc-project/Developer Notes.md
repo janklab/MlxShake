@@ -2,8 +2,6 @@
 
 ## BUGS
 
-* Markdown image link text uses absolute file names. Maybe there's something better?
-* And the absolute path gets baked into the image link.
 * Inline image links get broken in to multiple lines:
 
 ```markdown
@@ -21,6 +19,7 @@
 * Add support for Jekyll and MkDocs integration.
 * Don't leave intermediate `.tex` and `.sty` file droppings.
 * Maybe add a "credits" note to generated files. This should be disableable. Should probably only be in the comments/internal markup, not reader-visible.
+* Nicer alt text/link text for inline images?
 
 ## See Also
 

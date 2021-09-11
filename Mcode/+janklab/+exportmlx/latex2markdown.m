@@ -1,4 +1,4 @@
-function mdFile = latex2markdown(inFile, options)
+function outMdFile = latex2markdown(inFile, options)
 % Convert Live Script LaTeX to Markdown.
 %
 % mdfile = janklab.exportmlx.latex2markdown(inFile, options)
@@ -46,17 +46,17 @@ end
 LF = newline;
 
 % Latex filename
-[parentDir,name,extn] = fileparts(inFile);
+[inParentDir,inFileStem,extn] = fileparts(inFile);
 
-if parentDir == ""
-    parentDir = pwd;
+if inParentDir == ""
+    inParentDir = pwd;
 end
 
 if extn == ""
     noExtnFile = inFile;
-    latexFile = fullfile(parentDir, name + ".tex");
+    latexFile = fullfile(inParentDir, inFileStem + ".tex");
 else
-    noExtnFile = fullfile(parentDir, name);
+    noExtnFile = fullfile(inParentDir, inFileStem);
     latexFile = inFile;
 end
 
@@ -140,7 +140,7 @@ str2md = janklab.exportmlx.internal.processEquations(str2md, options.markdownSty
 
 % includegraphics
 str2md = janklab.exportmlx.internal.processincludegraphics(str2md, options.markdownStyle, ...
-    options.png2jpeg, name, parentDir);
+    options.png2jpeg, inFileStem, inParentDir);
 
 % Apply vertical/horizontal space
 % markdown: two spaces for linebreak
@@ -151,19 +151,27 @@ str2md = regexprep(str2md, "\\hskip1em", "  ");
 str(~idxLiteral) = str2md;
 
 % Done! Merge them together
-strmarkdown = join(str, LF);
+mdstr = join(str, LF);
 
-% File output
+%% Markdown post-processing and fixup
+
+% Fix absolute paths in image links
+absImgInDir = inParentDir + "/" + inFileStem + "_images";
+% relImgOutDir = inFileStem + "_images";
+mdstr = strrep(mdstr, absImgInDir + "/", "");
+
+%% File output
+
 if ismissing(options.outFile)
-    mdFile = noExtnFile + ".md";
+    outMdFile = noExtnFile + ".md";
 else
-    mdFile = options.outFile;
+    outMdFile = options.outFile;
 end
 imagesDirPath = noExtnFile + "_images";
-fileID = fopen(mdFile, 'w');
-fprintf(fileID, '%s\n', strmarkdown);
-fclose(fileID);
+fid = fopen(outMdFile, 'w');
+fprintf(fid, '%s\n', mdstr);
+fclose(fid);
 
 loginfo("Converting LaTeX to Markdown is complete.");
-loginfo("  Markdown: " + mdFile);
+loginfo("  Markdown: " + outMdFile);
 loginfo("  Images dir: " + imagesDirPath);
