@@ -1,7 +1,7 @@
-function mdfile = latex2markdown(filename,options)
+function mdFile = latex2markdown(inFile, options)
 % Convert Live Script LaTeX to Markdown.
 %
-% mdfile = latex2markdown(filename, options)
+% mdfile = janklab.exportmlx.latex2markdown(inFile, options)
 %
 % Converts a LaTeX-format exported Live Script file to Markdown. Will also
 % produce accompanying image files in a subdirectory next to the output .md
@@ -11,55 +11,58 @@ function mdfile = latex2markdown(filename,options)
 % that are produced by Matlab's "Export to LaTeX" function for Matlab Live
 % Scripts.
 %
-% Filename (string) is the path to the LaTeX .tex file to convert.
+% InFile (string) is the path to the LaTeX .tex file to convert.
 % The '.tex' suffix is optional.
 %
-% Options:
+% Options is a janklab.exportmlx.ExportOptions or a cell vector of
+% name/value pairs. Available options are:
 %
-% outputfilename - Specifies a custom file name. Defaults to the input file
-% name with '.tex' replaced by '.md'.
+%   outFile - Specifies a custom file name. Defaults to the input file
+%   name with '.tex' replaced by '.md'.
 %
-% format - Specifies the style of Markdown to use. 'github'* or 'qiita'.
+%   markdownStyle - Specifies the style of Markdown to use. 'github'* or 'qiita'.
 %
-% png2jpeg (logical) - If true, converts PNG images to JPEGs. This saves space at the
-% expense of reduced image quality.
+%   png2jpeg (logical) - If true, converts PNG images to JPEGs. This saves space at the
+%   expense of reduced image quality.
 %
-% tableMaxWidth (double, 20*) - Maximum table width. (TODO: What units is
-% this in: columns, inches, ???)
+%   tableMaxWidth (double, 20*) - Maximum table width. (TODO: What units is
+%   this in: columns, inches, ???)
 %
 % Returns the path to the generated .md file.
+%
+% See also:
+% EXPORTOPTIONS
 
 arguments
-    filename (1,1) string
-    options.outputfilename char = filename
-    options.format char {mustBeMember(options.format,{'qiita', 'github'})} = 'github'
-    options.png2jpeg logical = false
-    options.tableMaxWidth (1,1) double = 20
+    inFile (1,1) string
+    options (1,1) janklab.exportmlx.ExportOptions = janklab.exportmlx.ExportOptions
 end
 
 % Latex filename
-[filepath,name,ext] = fileparts(filename);
+[parentDir,name,extn] = fileparts(inFile);
 
-if filepath == ""
-    filepath = pwd;
+if parentDir == ""
+    parentDir = pwd;
 end
 
-if ext == "" % if without extention, add .tex
-    latexfile = fullfile(filepath, name + ".tex");
-else %
-    latexfile = filename;
+if extn == ""
+    noExtnFile = inFile;
+    latexFile = fullfile(parentDir, name + ".tex");
+else
+    noExtnFile = fullfile(parentDir, name);
+    latexFile = inFile;
 end
 
 % check if latexfile exists
-assert(exist(latexfile, 'file') > 0, ...
-    latexfile + " does not exist. " ...
+assert(exist(latexFile, 'file') > 0, ...
+    latexFile + " does not exist. " ...
     + "If you haven't generate latex file from a live script please do so.");
 
 % Import latex file and have it as a string variable
 % If the mlx contains double byte charactors, it needs to use fgets.
 % Otherwise the following does the work.
 % str = string(fileread(latexfile));
-fid = fopen(latexfile, 'r', 'n', 'UTF-8');
+fid = fopen(latexFile, 'r', 'n', 'UTF-8');
 str = string;
 tmp = fgets(fid);
 while tmp > 0
@@ -122,10 +125,11 @@ str2md = str(~idxLiteral);
 str2md = processDocumentOutput(str2md, options.tableMaxWidth);
 
 % Equations
-str2md = processEquations(str2md, options.format);
+str2md = processEquations(str2md, options.markdownStyle);
 
 % includegraphics
-str2md = processincludegraphics(str2md, options.format, options.png2jpeg, name, filepath);
+str2md = processincludegraphics(str2md, options.markdownStyle, ...
+    options.png2jpeg, name, parentDir);
 
 % Apply vertical/horizontal space
 % markdown: two spaces for linebreak
@@ -139,11 +143,16 @@ str(~idxLiteral) = str2md;
 strmarkdown = join(str, newline);
 
 % File output
-mdfile = options.outputfilename + ".md";
-fileID = fopen(mdfile, 'w');
+if ismissing(options.outFile)
+    mdFile = noExtnFile + ".md";
+else
+    mdFile = options.outFile;
+end
+imagesDirPath = noExtnFile + "_images";
+fileID = fopen(mdFile, 'w');
 fprintf(fileID, '%s\n', strmarkdown);
 fclose(fileID);
 
-disp("Coverting LaTeX to Markdown is complete.");
-disp("  Markdown: " +mdfile);
-disp("  Images dir: " + name + "_images");
+disp("Converting LaTeX to Markdown is complete.");
+disp("  Markdown: " + mdFile);
+disp("  Images dir: " + imagesDirPath);

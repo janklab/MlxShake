@@ -1,10 +1,12 @@
 function exportmlx_gendoco
 % For internal use by ExportMlx developers at authoring time.
 %
-% This generates the doc/*.md files from the doc/*.mlx input files.
+% This generates the docs/*.md files from the docs/*.mlx input files.
+
+%#ok<*NBRAK>
 
 repoDir = string(fileparts(fileparts(mfilename('fullpath'))));
-docDir = string(fullfile(repoDir, 'doc'));
+docDir = string(fullfile(repoDir, 'docs'));
 
 docFiles = [
     "UserGuide"
@@ -20,7 +22,7 @@ for fileStem = docFiles(:)'
     
     % Clean up image links
     % (This is a bug in the export that should be fixed.)
-    bogus = 'UserGuide_images//Users/janke/local/repos/ExportMlx/doc/';
+    bogus = 'UserGuide_images//Users/janke/local/repos/ExportMlx/docs/';
     cmd = "perl -pi -e 's|" + bogus +"||g' " + mdFile;
     system(cmd);
 end

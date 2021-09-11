@@ -76,9 +76,14 @@ The `latex2markdown` function supports the following options:
 
 
 
-   -  `'format'`: Style of Markdown to generate. May be `'github'` (default) or `'qiita'`  
-   -  `'outputfilename'`: The name of the Markdown file to be generated. If unspecified, will be the same as the Live Script, but with an `.md` file extension. 
-   -  `'png2jpeg'`: Convert PNG images to JPEG images to save space at the expense of image quality. May be `false` (default) or `true`. 
+   -  `markdownStyle`: Style of Markdown to generate. May be `'github'` (default) or `'qiita'`  
+   -  `outFile`: The name of the Markdown file to be generated. If unspecified, will be the same as the Live Script, but with an `.md` file extension. 
+   -  `png2jpeg`: Convert PNG images to JPEG images to save space at the expense of image quality. May be `false` (default) or `true`. 
+
+
+
+The arguments are passed as a `janklab.exportmlx.ExportOptions` object, so you need to stick them in a `{...}`.
+
 
 
 
@@ -92,7 +97,7 @@ Example: A Markdown file suitable for Qiita, named `QiitaDraft.md`, will be gene
 
 
 ```matlab:Code(Display)
-janklab.exportmlx.latex2markdown('README', 'format', 'qiita', 'outputfilename', 'QiitaDraft');
+janklab.exportmlx.latex2markdown('README', {'markdownStyle', 'qiita', 'outFile', 'QiitaDraft'});
 ```
 
 
@@ -149,7 +154,7 @@ plot(x,y);
 ```
 
 
-![/Users/janke/local/repos/ExportMlx/doc/UserGuide_images/figure_0.png
+![/Users/janke/local/repos/ExportMlx/docs/UserGuide_images/figure_0.png
 ](UserGuide_images/figure_0.png
 )
 
@@ -225,7 +230,7 @@ Here's a display of an inline image (an image pasted into the Live Script, as op
 
 
 
-![/Users/janke/local/repos/ExportMlx/doc/UserGuide_images/image_0.png
+![/Users/janke/local/repos/ExportMlx/docs/UserGuide_images/image_0.png
 ](UserGuide_images/image_0.png
 )
 

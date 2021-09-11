@@ -112,10 +112,16 @@ The \texttt{latex2markdown} function supports the following options:
 
 \begin{itemize}
 \setlength{\itemsep}{-1ex}
-   \item{\begin{flushleft} \texttt{'format'}: Style of Markdown to generate. May be \texttt{'github'} (default) or \texttt{'qiita'}  \end{flushleft}}
-   \item{\begin{flushleft} \texttt{'outputfilename'}: The name of the Markdown file to be generated. If unspecified, will be the same as the Live Script, but with an \texttt{.md} file extension. \end{flushleft}}
-   \item{\begin{flushleft} \texttt{'png2jpeg'}: Convert PNG images to JPEG images to save space at the expense of image quality. May be \texttt{false} (default) or \texttt{true}. \end{flushleft}}
+   \item{\begin{flushleft} \texttt{markdownStyle}: Style of Markdown to generate. May be \texttt{'github'} (default) or \texttt{'qiita'}  \end{flushleft}}
+   \item{\begin{flushleft} \texttt{outFile}: The name of the Markdown file to be generated. If unspecified, will be the same as the Live Script, but with an \texttt{.md} file extension. \end{flushleft}}
+   \item{\begin{flushleft} \texttt{png2jpeg}: Convert PNG images to JPEG images to save space at the expense of image quality. May be \texttt{false} (default) or \texttt{true}. \end{flushleft}}
 \end{itemize}
+
+\begin{par}
+\begin{flushleft}
+The arguments are passed as a \texttt{janklab.exportmlx.ExportOptions} object, so you need to stick them in a \texttt{\{...\}}.
+\end{flushleft}
+\end{par}
 
 \begin{par}
 \begin{flushleft}
@@ -130,7 +136,7 @@ Example: A Markdown file suitable for Qiita, named \texttt{QiitaDraft.md}, will 
 \end{par}
 
 \begin{verbatim}
-janklab.exportmlx.latex2markdown('README', 'format', 'qiita', 'outputfilename', 'QiitaDraft');
+janklab.exportmlx.latex2markdown('README', {'markdownStyle', 'qiita', 'outFile', 'QiitaDraft'});
 \end{verbatim}
 \begin{par}
 \begin{flushleft}
