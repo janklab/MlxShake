@@ -6,7 +6,7 @@ Contributions are appreciated! Right now I mostly need [feature requests, bug re
 
 All code contributions to ExportMlx, including example Live Script files, must be dual-licensed under the BSD 3-Clause License and the special MathWorks-specific variant of the BSD 2-Clause License that ExportMlx is currently licensed under. This is so that ExportMlx can be easily relicensed to the BSD 3-Clause License in the future if its underlying `livescript2markdown` code is similarly relicensed. (Which would be nice, IMHO.)
 
-Image and prose contributiones should be licensed under a Creative Commons license
+Image and prose contributiones should be licensed under a Creative Commons license without the "NC" clause. (Because I want this library to be usable in commercial and business contexts.) And we probably shouldn't use "ND" either, because we might need to munge images, at least formatwise, to fit in with our examples correctly.
 
 ## Coding Guidelines
 
