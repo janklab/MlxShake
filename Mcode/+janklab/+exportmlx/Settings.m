@@ -2,7 +2,10 @@ classdef Settings < janklab.exportmlx.internal.ExportmlxBaseHandle
 % Global settings for the exportmlx package
 %
 % Don't use this class directly. If you want to get or set the settings,
-% work with the instance of this in the janklab.exportmlx.globals.settings field
+% work with the instance of this in the janklab.exportmlx.globals.settings
+% field.
+%
+% There are currently no settings defined for this package.
 
   properties
   end
