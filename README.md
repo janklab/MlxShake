@@ -18,7 +18,7 @@ DO NOT USE THIS SOFTWARE IN PRODUCTION SYSTEMS!
 
 ## Acknowledgments
 
-ExportMlx is based on, and started out as a fork of, MathWorker Michio Inoue's [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) tool.
+ExportMlx is based on, and started out as a fork of, MathWorker Michio Inoue's [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) tool. ExportMlx can largely be viewed as a productization of livescript2markdown.
 
 The Live Script to LaTeX export code is informed by Pavel Roslovets's [Live-Script-to-Markdown-Converter toolbox](https://github.com/roslovets/Live-Script-to-Markdown-Converter).
 
