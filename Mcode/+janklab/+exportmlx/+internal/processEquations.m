@@ -10,10 +10,12 @@ function str = processEquations(str, format)
 % equation
 % ```
 
+LF = newline;
+
 switch format
     case 'qiita'
         str = regexprep(str, "[^`]?\$\$([^$]+)\$\$[^`]?", ...
-            newline + "```math" + newline + "$1" + newline + "```");
+            LF + "```math" + LF + "$1" + LF + "```");
     case 'github'
         tt = regexp(str, "[^`]?\$\$([^$]+)\$\$[^`]?", 'tokens');
         idx = cellfun(@iscell, tt);
@@ -22,7 +24,7 @@ switch format
         % vector... so.
         parts = horzcat(tt{idx});
         for ii=1:length(parts)
-            eqncode = replace(parts{ii}, string(newline), " ");
+            eqncode = replace(parts{ii}, string(LF), " ");
             eqncode = replace(eqncode, " ", "&space;");
             partsMD = "<img src=""https://latex.codecogs.com/gif.latex?" ...
                 + eqncode + """/>";

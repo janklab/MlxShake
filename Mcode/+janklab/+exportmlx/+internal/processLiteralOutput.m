@@ -11,6 +11,7 @@ function [str, idxLiteral] = processLiteralOutput(str)
 % ```matlab:MATLAB Code
 % （code）
 %```
+
 %% Literal Outputs
 % Latex: 
 % \begin{matlaboutput}(output)\end{matlaboutput}
@@ -29,12 +30,13 @@ idx_matlaboutput = startsWith(str, "\begin{matlaboutput}");
 
 idxLiteral = idx_lstlisting | idx_verbatim | idx_matlabcode | idx_matlaboutput;
 
-str(idx_lstlisting) = newline + "```matlab:Code(Display)" + extractBetween(str(idx_lstlisting), ...
-    "\begin{lstlisting}", "\end{lstlisting}") + "```" + newline;
-str(idx_verbatim) = newline + "```matlab:Code(Display)" + extractBetween(str(idx_verbatim), ...
-    "\begin{verbatim}", "\end{verbatim}") + "```" + newline;
-str(idx_matlabcode) = newline + "```matlab:Code" + extractBetween(str(idx_matlabcode), ...
-    "\begin{matlabcode}", "\end{matlabcode}") + "```" + newline;
-str(idx_matlaboutput) = newline + "```text:Output" + extractBetween(str(idx_matlaboutput), ...
-    "\begin{matlaboutput}", "\end{matlaboutput}") + "```" + newline;
+LF = newline;
+str(idx_lstlisting) = LF + "```matlab:Code(Display)" + extractBetween(str(idx_lstlisting), ...
+    "\begin{lstlisting}", "\end{lstlisting}") + "```" + LF;
+str(idx_verbatim) = LF + "```matlab:Code(Display)" + extractBetween(str(idx_verbatim), ...
+    "\begin{verbatim}", "\end{verbatim}") + "```" + LF;
+str(idx_matlabcode) = LF + "```matlab:Code" + extractBetween(str(idx_matlabcode), ...
+    "\begin{matlabcode}", "\end{matlabcode}") + "```" + LF;
+str(idx_matlaboutput) = LF + "```text:Output" + extractBetween(str(idx_matlaboutput), ...
+    "\begin{matlaboutput}", "\end{matlaboutput}") + "```" + LF;
 

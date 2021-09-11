@@ -1,6 +1,8 @@
 function str = processDocumentOutput(str, tableMaxWidth)
 % Process document output
 
+LF = newline;
+
 %% 2-1: Fix latex conventions for non-literal parts
 replacements = [
     % ^ (live script) -> \textasciicircum{} (latex)
@@ -60,8 +62,8 @@ str = regexprep(str, "\\texttt{(\*{0,3})([^*{}]+)(\*{0,3})}", "$1`$2`$3");
 str = regexprep(str, "\\href{([^{}]+)}{([^{}]+)}", "[$2]($1)");
 
 %% 2-4: Title and headings
-% Add an extra newline to make sure there's a blank line between immediately
-% subsequent headings. Excess newlines will get cleaned up later.
+% Add an extra LF to make sure there's a blank line between immediately
+% subsequent headings. Excess LFs will get cleaned up later.
 str = regexprep(str, "\\matlabtitle{([^{}]+)}", "# $1\n");
 % Headings are converted to next level down to conform with Markdownlint style
 str = regexprep(str, "\\matlabheading{([^{}]+)}", "## $1\n");
@@ -83,7 +85,7 @@ str = replace(str, "BackslashCurlyBlacketClose", "\}");
 % Note: \includegraphics is an exception
 idxNonGraphics = ~contains(str, "\includegraphics");
 str(idxNonGraphics) = replace(str(idxNonGraphics),...
-    "\begin{par}" + newline + "\begin{center}" + newline, "> ");
+    "\begin{par}" + LF + "\begin{center}" + LF, "> ");
 
 %% 2-6: Delete unnecessary commands
 % Commands to specify the text position
@@ -110,7 +112,7 @@ end
 %         \item{\begin{flushleft} リスト２ \end{flushleft}}
 %         \item{\begin{flushleft} リスト３ \end{flushleft}}
 %      \end{itemize}
-str = erase(str, "\setlength{\itemsep}{-1ex}" + newline);
+str = erase(str, "\setlength{\itemsep}{-1ex}" + LF);
 itemizeIdx = contains(str, ["\begin{itemize}", "\end{itemize}"]);
 itemsParts = str(itemizeIdx);
 partsMarkdown = regexprep(itemsParts, " *\\item{([^{}]+)}", "*$1");
@@ -126,7 +128,7 @@ str(itemizeIdx) = partsMarkdown;
 %         \item{\begin{flushleft} リスト２ \end{flushleft}}
 %         \item{\begin{flushleft} リスト３ \end{flushleft}}
 %      \end{enumerate}
-str = erase(str, "\setlength{\itemsep}{-1ex}" + newline);
+str = erase(str, "\setlength{\itemsep}{-1ex}" + LF);
 itemizeIdx = contains(str, ["\begin{enumerate}", "\end{enumerate}"]);
 itemsParts = str(itemizeIdx);
 partsMarkdown = regexprep(itemsParts, " *\\item{([^{}]+)}", "1.$1");% Any numder works
@@ -155,9 +157,9 @@ str(itemizeIdx) = partsMarkdown;
 
 symoutIdx = contains(str, ["\begin{matlabsymbolicoutput}" , "\end{matlabsymbolicoutput}"]);
 symoutParts = str(symoutIdx);
-tmp = erase(symoutParts, "\begin{matlabsymbolicoutput}" + newline);
+tmp = erase(symoutParts, "\begin{matlabsymbolicoutput}" + LF);
 tmp = replace(tmp, "$\displaystyle", "$$");
-partsMarkdown = replace(tmp, "$" + newline + "\end{matlabsymbolicoutput}", "$$");
+partsMarkdown = replace(tmp, "$" + LF + "\end{matlabsymbolicoutput}", "$$");
 str(symoutIdx) = partsMarkdown;
 % NOTE: This part will be processed by processEquations.m
 
@@ -177,7 +179,7 @@ str(symoutIdx) = partsMarkdown;
 % \end{tabular}
 % }
 % \end{matlabtableoutput}
-idxTblOutput = startsWith(str, "\begin{matlabtableoutput}" + newline);
+idxTblOutput = startsWith(str, "\begin{matlabtableoutput}" + LF);
 tableLatex = extractBetween(str(idxTblOutput), ...
     "\begin{tabular}", "\end{tabular}");
 
@@ -217,11 +219,11 @@ for ii=1:sum(idxTblOutput)
         
         % Adding escape to text that affects markdown table (\n and |)
         tmp = cellfun(@(str1) replace(str1, "|", "\|"), tmp, 'UniformOutput', false);
-        tmp = cellfun(@(str1) replace(str1, newline, "<br>"), tmp, 'UniformOutput', false);
-        body = body + "|" + join([tmp{:}], "|") + "|" + newline;
+        tmp = cellfun(@(str1) replace(str1, LF, "<br>"), tmp, 'UniformOutput', false);
+        body = body + "|" + join([tmp{:}], "|") + "|" + LF;
     end
     
-    tableMD(ii) = strjoin([header, format, body],newline);
+    tableMD(ii) = strjoin([header, format, body],LF);
 end
 str(idxTblOutput) = tableMD;
 
