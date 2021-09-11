@@ -62,7 +62,7 @@ janklab.exportmlx.latex2markdown('README', {'markdownStyle', 'qiita', 'outFile',
 
 Note: Qiita is a tech blog platform in Japanese. Qiita uses Markdown for its posts.
 
-## Differences Between Qiita and GitHub Formats
+## Differences Between GitHub and Qiita Markdown Formats
 
 One is the equations and the other is how to insert the image files.
 
