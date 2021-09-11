@@ -4,7 +4,7 @@ Export Matlab Live Scripts to Markdown and other formats.
 
 This tool lets you generate project documentation and web site content from live scripts in your project. This is a nice way of generating rich documentation with included graphics that are up to date with your latest code. Especially nice for tutorials and examples.
 
-See the [User Guide](doc/UserGuide.md) for examples of what it can do; the User Guide is itself generated from a Matlab live script using ExportMlx!
+See the [User Guide](doc/UserGuide.md) for examples of what it can do. The User Guide is itself generated from a Matlab live script using ExportMlx!
 
 ## PRERELEASE ALPHA SOFTWARE
 
