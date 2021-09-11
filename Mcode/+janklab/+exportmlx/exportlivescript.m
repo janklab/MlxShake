@@ -1,7 +1,7 @@
-function mdFile = livescript2markdown(mlxFile, options)
+function mdFile = exportlivescript(mlxFile, options)
 % Export a Live Script (.mlx) file to Markdown (.md plus images)
 %
-% mdfile = janklab.exportmlx.livescript2markdown(mlxFile)
+% mdfile = janklab.exportmlx.exportlivescript(mlxFile)
 %
 % Exports a Matlab Live Script .mlx file to Markdown by exporting it to
 % LaTeX (.tex) and then converting that to Markdown. Retains the
