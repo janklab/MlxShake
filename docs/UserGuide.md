@@ -95,9 +95,7 @@ y = 1x100
 plot(x,y);
 ```
 
-![figure_0.png
-](UserGuide_images/figure_0.png
-)
+![figure_0.png](UserGuide_images/figure_0.png)
 
 ### Table display
 
@@ -150,9 +148,7 @@ my_dict = {'foo': 42, 'bar': [1, 2, 3]}
 
 Here's a display of an inline image (an image pasted into the Live Script, as opposed to figure display output).
 
-![image_0.png
-](UserGuide_images/image_0.png
-)
+![image_0.png](UserGuide_images/image_0.png)
 
 ### Equations
 

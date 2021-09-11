@@ -14,14 +14,6 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 
 ## BUGS
 
-* Inline image links get broken in to multiple lines:
-
-```markdown
-![/Users/janke/local/repos/ExportMlx/doc/UserGuide_images/figure_0.png
-](UserGuide_images/figure_0.png
-)
-```
-
 * Multi-column table variables get bad `Var1}` column headers.
 
 ## TODO
