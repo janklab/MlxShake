@@ -40,6 +40,7 @@ Untracked files:
 ### Enhancements
 
 * The codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves. Eww.
+* Set up the Azure DevOps pipeline. As of 2021-09-11, it's not seeing the ExportMlx repo, although I can see many other janklab repos.
 * Nicer alt text/link text for inline images?
 * Add some tests.
 * Support for GitHub Flavored Markdown and other flavors?
