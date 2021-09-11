@@ -32,7 +32,10 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 
 ### Wishlist
 
-* AsciiDoc support.
+* Additional output formats.
+  * AsciiDoc support.
+  * RestructuredText support.
+  * This probably requires reworking the entire processing pipeline to convert the LaTeX to an abstract data structure, and then have converters for that data structure to each output format target, instead of just doing a bunch of regexpreps on the input latex.
 * Animated plot support. ([#1](https://github.com/janklab/ExportMlx/issues/1))
 
 ## See Also
