@@ -14,8 +14,6 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 
 ## BUGS
 
-* Multi-column table variables get bad `Var1}` column headers.
-
 ## TODO
 
 * Convert API to OOP and jankify
@@ -25,6 +23,7 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 * Don't leave intermediate `.tex` and `.sty` file droppings.
 * Maybe add a "credits" note to generated files. This should be disableable. Should probably only be in the comments/internal markup, not reader-visible.
 * Nicer alt text/link text for inline images?
+* Handle table arrays with multicolumn variables (which need column-spanning headers).
 
 ## See Also
 

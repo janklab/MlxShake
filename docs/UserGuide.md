@@ -117,7 +117,7 @@ BUG: If the table contains multicolumn variables, the format is not perfect. Col
 table(rand(3,4))
 ```
 
-| |Var1}| | | |
+| |Var1| | | |
 |:--:|:--:|:--:|:--:|:--:|
 |1|0.3500|0.6160|0.8308|0.9172|
 |2|0.1966|0.4733|0.5853|0.2858|

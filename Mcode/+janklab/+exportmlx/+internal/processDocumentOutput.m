@@ -197,14 +197,21 @@ for i = 1:sum(tfTblOutput)
     format = replace(format, "r", "--:");
     
     % MultiColumn is not standard in markdown.
-    % It only happens as a variable name in MATLAB
-    % so adding special case for processing headerLatex
+    % This happens when a Matlab table variable has multiple columns or is a
+    % nested table.
     multicol = regexp(headerLatex, "\\multicolumn{(\d)+}", 'tokens');
+    % This regex is buggy: the non-greedy *? inside the {...} fails to handle
+    % nested {}s.
     tmp = regexp(headerLatex, "\\mlcell{(.|\s)*?} (?:&|\\\\)", 'tokens');
     if isempty(multicol)
         header = "|" + join([tmp{:}], "|") + "|";
     else
         nRepeat = double(multicol{:});
+        % HACK: Just remove braces from column names to work around buggy regex
+        % above.
+        for iTmp = 1:numel(tmp)
+            tmp{iTmp} = strrep(tmp{iTmp}, "}", "");
+        end
         header = "|" + join([tmp{:}], "|") + join(repmat("|", 1, nRepeat));
     end
     
