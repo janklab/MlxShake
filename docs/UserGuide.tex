@@ -177,12 +177,12 @@ For images, you can just push the image folders and then the README reads them, 
 
 \begin{par}
 \begin{flushleft}
-Let's reset the random generator seed to a constant here, so this script produces the same output every time it's run:
+Let's use a localized random generator stream, so this script produces the same output every time it's run, but doesn't interfer with your Matlab session's global \texttt{random} state:
 \end{flushleft}
 \end{par}
 
 \begin{matlabcode}
-rng(420)
+myRand = RandStream('dsfmt19937', 'Seed', 420);
 \end{matlabcode}
 
 \label{H_08F222FE}
@@ -230,15 +230,15 @@ The display of \texttt{table} arrays will be formated like so:
 \end{par}
 
 \begin{matlabcode}
-array2table(rand(3,4))
+array2table(rand(myRand, 3, 4))
 \end{matlabcode}
 \begin{matlabtableoutput}
 {
 \begin{tabular} {|c|c|c|c|c|}\hline
 \mlcell{ } & \mlcell{Var1} & \mlcell{Var2} & \mlcell{Var3} & \mlcell{Var4} \\ \hline
-\mlcell{1} & \mlcell{0.3156} & \mlcell{0.1089} & \mlcell{0.3525} & \mlcell{0.5987} \\ \hline
-\mlcell{2} & \mlcell{0.4530} & \mlcell{0.8682} & \mlcell{0.0675} & \mlcell{0.0922} \\ \hline
-\mlcell{3} & \mlcell{0.2670} & \mlcell{0.6297} & \mlcell{0.6264} & \mlcell{0.0569} \\ 
+\mlcell{1} & \mlcell{0.1113} & \mlcell{0.4581} & \mlcell{0.3936} & \mlcell{0.4607} \\ \hline
+\mlcell{2} & \mlcell{0.4475} & \mlcell{0.9551} & \mlcell{0.9174} & \mlcell{0.7811} \\ \hline
+\mlcell{3} & \mlcell{0.7308} & \mlcell{0.2488} & \mlcell{0.1130} & \mlcell{0.2779} \\ 
 \hline
 \end{tabular}
 }
@@ -251,15 +251,15 @@ BUG: If the table contains multicolumn variables, the format is not perfect. Col
 \end{par}
 
 \begin{matlabcode}
-table(rand(3,4))
+table(rand(myRand, 3, 4))
 \end{matlabcode}
 \begin{matlabtableoutput}
 {
 \begin{tabular} {|c|c|c|c|c|}\hline
 \mlcell{ } & \multicolumn{4}{|c|}{\mlcell{Var1}} \\ \hline
-\mlcell{1} & \mlcell{0.2371} & \mlcell{0.0426} & \mlcell{0.7676} & \mlcell{0.2259} \\ \hline
-\mlcell{2} & \mlcell{0.2354} & \mlcell{0.3547} & \mlcell{0.8635} & \mlcell{0.7604} \\ \hline
-\mlcell{3} & \mlcell{0.7744} & \mlcell{0.4692} & \mlcell{0.7776} & \mlcell{0.4414} \\ 
+\mlcell{1} & \mlcell{0.0163} & \mlcell{0.3589} & \mlcell{0.4683} & \mlcell{0.0667} \\ \hline
+\mlcell{2} & \mlcell{0.2430} & \mlcell{0.2769} & \mlcell{0.7698} & \mlcell{0.7961} \\ \hline
+\mlcell{3} & \mlcell{0.9317} & \mlcell{0.5769} & \mlcell{0.5706} & \mlcell{0.8375} \\ 
 \hline
 \end{tabular}
 }

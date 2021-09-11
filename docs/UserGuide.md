@@ -76,10 +76,10 @@ For images, you can just push the image folders and then the README reads them, 
 
 ### A Fiddly Bit First
 
-Let's reset the random generator seed to a constant here, so this script produces the same output every time it's run:
+Let's use a localized random generator stream, so this script produces the same output every time it's run, but doesn't interfer with your Matlab session's global `random` state:
 
 ```matlab:Code
-rng(420)
+myRand = RandStream('dsfmt19937', 'Seed', 420);
 ```
 
 ### MATLAB Code
@@ -114,26 +114,26 @@ plot(x,y);
 The display of `table` arrays will be formated like so:
 
 ```matlab:Code
-array2table(rand(3,4))
+array2table(rand(myRand, 3, 4))
 ```
 
 | |Var1|Var2|Var3|Var4|
 |:--:|:--:|:--:|:--:|:--:|
-|1|0.3156|0.1089|0.3525|0.5987|
-|2|0.4530|0.8682|0.0675|0.0922|
-|3|0.2670|0.6297|0.6264|0.0569|
+|1|0.1113|0.4581|0.3936|0.4607|
+|2|0.4475|0.9551|0.9174|0.7811|
+|3|0.7308|0.2488|0.1130|0.2779|
 
 BUG: If the table contains multicolumn variables, the format is not perfect. Column headings will not be placed correctly.
 
 ```matlab:Code
-table(rand(3,4))
+table(rand(myRand, 3, 4))
 ```
 
 | |Var1| | | |
 |:--:|:--:|:--:|:--:|:--:|
-|1|0.2371|0.0426|0.7676|0.2259|
-|2|0.2354|0.3547|0.8635|0.7604|
-|3|0.7744|0.4692|0.7776|0.4414|
+|1|0.0163|0.3589|0.4683|0.0667|
+|2|0.2430|0.2769|0.7698|0.7961|
+|3|0.9317|0.5769|0.5706|0.8375|
 
 (Any suggestions to handle merged cells in Markdown are appreciated!)
 
