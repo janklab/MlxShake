@@ -13,6 +13,6 @@ if fid < 1
   error('Failed opening file %s: %s', file, msg);
 end
 RAII.fh = onCleanup(@() fclose(fid));
-c = fread(fid, Inf, 'uint8=>char');
+c = fread(fid, Inf, 'uint8=>char');  % BUG: This breaks multibyte UTF-8 chars
 out = string(c');
 end
