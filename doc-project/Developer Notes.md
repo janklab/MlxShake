@@ -17,7 +17,6 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 ## TODO
 
 * Eww: The codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves.
-* Replace all uses of `rand` in doco with something else, for reproducible builds?
 * Add support for Jekyll and MkDocs integration.
 * Don't leave intermediate `.tex` and `.sty` file droppings.
 * Nicer alt text/link text for inline images?

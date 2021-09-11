@@ -173,6 +173,18 @@ For images, you can just push the image folders and then the README reads them, 
 
 \matlabheading{Supported Syntax in Live Scripts}
 
+\matlabheadingtwo{A Fiddly Bit First}
+
+\begin{par}
+\begin{flushleft}
+Let's reset the random generator seed to a constant here, so this script produces the same output every time it's run:
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+rng(420)
+\end{matlabcode}
+
 \label{H_08F222FE}
 \matlabheadingtwo{MATLAB Code}
 
@@ -215,9 +227,9 @@ array2table(rand(3,4))
 {
 \begin{tabular} {|c|c|c|c|c|}\hline
 \mlcell{ } & \mlcell{Var1} & \mlcell{Var2} & \mlcell{Var3} & \mlcell{Var4} \\ \hline
-\mlcell{1} & \mlcell{0.8147} & \mlcell{0.9134} & \mlcell{0.2785} & \mlcell{0.9649} \\ \hline
-\mlcell{2} & \mlcell{0.9058} & \mlcell{0.6324} & \mlcell{0.5469} & \mlcell{0.1576} \\ \hline
-\mlcell{3} & \mlcell{0.1270} & \mlcell{0.0975} & \mlcell{0.9575} & \mlcell{0.9706} \\ 
+\mlcell{1} & \mlcell{0.3156} & \mlcell{0.1089} & \mlcell{0.3525} & \mlcell{0.5987} \\ \hline
+\mlcell{2} & \mlcell{0.4530} & \mlcell{0.8682} & \mlcell{0.0675} & \mlcell{0.0922} \\ \hline
+\mlcell{3} & \mlcell{0.2670} & \mlcell{0.6297} & \mlcell{0.6264} & \mlcell{0.0569} \\ 
 \hline
 \end{tabular}
 }
@@ -236,9 +248,9 @@ table(rand(3,4))
 {
 \begin{tabular} {|c|c|c|c|c|}\hline
 \mlcell{ } & \multicolumn{4}{|c|}{\mlcell{Var1}} \\ \hline
-\mlcell{1} & \mlcell{0.9572} & \mlcell{0.1419} & \mlcell{0.7922} & \mlcell{0.0357} \\ \hline
-\mlcell{2} & \mlcell{0.4854} & \mlcell{0.4218} & \mlcell{0.9595} & \mlcell{0.8491} \\ \hline
-\mlcell{3} & \mlcell{0.8003} & \mlcell{0.9157} & \mlcell{0.6557} & \mlcell{0.9340} \\ 
+\mlcell{1} & \mlcell{0.2371} & \mlcell{0.0426} & \mlcell{0.7676} & \mlcell{0.2259} \\ \hline
+\mlcell{2} & \mlcell{0.2354} & \mlcell{0.3547} & \mlcell{0.8635} & \mlcell{0.7604} \\ \hline
+\mlcell{3} & \mlcell{0.7744} & \mlcell{0.4692} & \mlcell{0.7776} & \mlcell{0.4414} \\ 
 \hline
 \end{tabular}
 }

@@ -74,6 +74,14 @@ For images, you can just push the image folders and then the README reads them, 
 
 ## Supported Syntax in Live Scripts
 
+### A Fiddly Bit First
+
+Let's reset the random generator seed to a constant here, so this script produces the same output every time it's run:
+
+```matlab:Code
+rng(420)
+```
+
 ### MATLAB Code
 
 MATLAB code and its output and figures will be shown as follows:
@@ -107,9 +115,9 @@ array2table(rand(3,4))
 
 | |Var1|Var2|Var3|Var4|
 |:--:|:--:|:--:|:--:|:--:|
-|1|0.8147|0.9134|0.2785|0.9649|
-|2|0.9058|0.6324|0.5469|0.1576|
-|3|0.1270|0.0975|0.9575|0.9706|
+|1|0.3156|0.1089|0.3525|0.5987|
+|2|0.4530|0.8682|0.0675|0.0922|
+|3|0.2670|0.6297|0.6264|0.0569|
 
 BUG: If the table contains multicolumn variables, the format is not perfect. Column headings will not be placed correctly.
 
@@ -119,9 +127,9 @@ table(rand(3,4))
 
 | |Var1| | | |
 |:--:|:--:|:--:|:--:|:--:|
-|1|0.9572|0.1419|0.7922|0.0357|
-|2|0.4854|0.4218|0.9595|0.8491|
-|3|0.8003|0.9157|0.6557|0.9340|
+|1|0.2371|0.0426|0.7676|0.2259|
+|2|0.2354|0.3547|0.8635|0.7604|
+|3|0.7744|0.4692|0.7776|0.4414|
 
 (Any suggestions to handle merged cells in Markdown are appreciated!)
 
