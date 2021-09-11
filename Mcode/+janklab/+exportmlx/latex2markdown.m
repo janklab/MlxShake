@@ -109,26 +109,26 @@ str = strsplit(str, '\n\n')';
 % \begin{matlaboutput}
 % \begin{matlabtableoutput}
 % \begin{matlabsymbolicoutput}
-str = mergeSameEnvironments(str, "lstlisting");
-str = mergeSameEnvironments(str, "verbatim");
-str = mergeSameEnvironments(str, "matlabcode");
-str = mergeSameEnvironments(str, "matlaboutput");
-str = mergeSameEnvironments(str, "matlabtableoutput");
-str = mergeSameEnvironments(str, "matlabsymbolicoutput");
+str = janklab.exportmlx.internal.mergeSameEnvironments(str, "lstlisting");
+str = janklab.exportmlx.internal.mergeSameEnvironments(str, "verbatim");
+str = janklab.exportmlx.internal.mergeSameEnvironments(str, "matlabcode");
+str = janklab.exportmlx.internal.mergeSameEnvironments(str, "matlaboutput");
+str = janklab.exportmlx.internal.mergeSameEnvironments(str, "matlabtableoutput");
+str = janklab.exportmlx.internal.mergeSameEnvironments(str, "matlabsymbolicoutput");
 
 % Let's convert latex to markdown
 % 1: Process parts that require literal output.
-[str, idxLiteral] = processLiteralOutput(str);
+[str, idxLiteral] = janklab.exportmlx.internal.processLiteralOutput(str);
 
 % 2: Process that other parts
 str2md = str(~idxLiteral);
-str2md = processDocumentOutput(str2md, options.tableMaxWidth);
+str2md = janklab.exportmlx.internal.processDocumentOutput(str2md, options.tableMaxWidth);
 
 % Equations
-str2md = processEquations(str2md, options.markdownStyle);
+str2md = janklab.exportmlx.internal.processEquations(str2md, options.markdownStyle);
 
 % includegraphics
-str2md = processincludegraphics(str2md, options.markdownStyle, ...
+str2md = janklab.exportmlx.internal.processincludegraphics(str2md, options.markdownStyle, ...
     options.png2jpeg, name, parentDir);
 
 % Apply vertical/horizontal space
