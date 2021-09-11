@@ -11,3 +11,4 @@ Version 0.1.0 (in progress)
 * Clean up formatting of generated Markdown.
 * Add CI support.
 * Optionally delete intermediate generated files (the `.tex` and `.sty` etc. files).
+* Make logging/progress output configurable.
