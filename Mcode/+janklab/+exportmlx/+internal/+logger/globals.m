@@ -15,7 +15,7 @@ classdef globals
       persistent val
       if isempty(val)
         versionFile = fullfile(logger.globals.distroot, 'VERSION');
-        val = strtrim(exportmlx.internal.util.readtext(versionFile));
+        val = strtrim(janklab.exportmlx.internal.util.readtext(versionFile));
       end
       out = val;
     end

@@ -28,13 +28,13 @@ classdef Dispstr
     
     function disp(x)
       if iscell(x)
-        exportmlx.logger.internal.Dispstr.dispCell(x);
+        janklab.exportmlx.internal.logger.internal.Dispstr.dispCell(x);
       elseif isnumeric(x)
         builtin('disp', x);
       elseif isstruct(x)
-        exportmlx.logger.internal.Dispstr.dispStruct(x);
+        janklab.exportmlx.internal.logger.internal.Dispstr.dispStruct(x);
       elseif istable(x)
-        exportmlx.logger.internal.Dispstr.prettyprintTabular(x);
+        janklab.exportmlx.internal.logger.internal.Dispstr.prettyprintTabular(x);
       else
         builtin('disp', x);
       end
@@ -45,7 +45,7 @@ classdef Dispstr
       if ~isempty(label)
         fprintf('%s =\n', label);
       end
-      exportmlx.logger.internal.Dispstr.disp(x);
+      janklab.exportmlx.internal.logger.internal.Dispstr.disp(x);
     end
     
     function dispCell(c)
@@ -68,7 +68,7 @@ classdef Dispstr
       end
       dstrs = strcat("{", dstrs, "}");
       
-      fprintf('%s\n', exportmlx.logger.internal.Dispstr.prettyprintArray(dstrs));
+      fprintf('%s\n', janklab.exportmlx.internal.logger.internal.Dispstr.prettyprintArray(dstrs));
     end
     
     function dispStruct(x)
@@ -134,7 +134,7 @@ classdef Dispstr
         otherwise
           a = vecs{1}(:);
           rest = vecs(2:end);
-          rest_combs = exportmlx.logger.internal.Dispstr.mycombvec(rest);
+          rest_combs = janklab.exportmlx.internal.logger.internal.Dispstr.mycombvec(rest);
           n_combs = numel(a) * size(rest_combs, 1);
           out = repmat(a(1), [n_combs 1+size(rest_combs, 2)]);
           for i = 1:numel(a)
@@ -158,7 +158,7 @@ classdef Dispstr
       % strs (string) is an array of display strings of any size.
       
       if ismatrix(strs)
-        out = exportmlx.logger.internal.Dispstr.prettyprintMatrix(strs);
+        out = janklab.exportmlx.internal.logger.internal.Dispstr.prettyprintMatrix(strs);
       else
         sz = size(strs);
         high_sz = sz(3:end);
@@ -166,15 +166,15 @@ classdef Dispstr
         for i = 1:numel(high_sz)
           high_ixs{i} = (1:high_sz(i))';
         end
-        page_ixs = exportmlx.logger.internal.Dispstr.mycombvec(high_ixs);
+        page_ixs = janklab.exportmlx.internal.logger.internal.Dispstr.mycombvec(high_ixs);
         chunks = {};
         for i_page = 1:size(page_ixs, 1)
           page_ix = page_ixs(i_page,:);
           chunks{end+1} = sprintf('(:,:,%s) = ', ...
-            strjoin(exportmlx.logger.internal.Dispstr.num2cellstr(page_ix), ',')); %#ok<*AGROW>
+            strjoin(janklab.exportmlx.internal.logger.internal.Dispstr.num2cellstr(page_ix), ',')); %#ok<*AGROW>
           page_ix_cell = num2cell(page_ix);
           page_strs = strs(:,:,page_ix_cell{:});
-          chunks{end+1} = exportmlx.logger.internal.Dispstr.prettyprintMatrix(page_strs);
+          chunks{end+1} = janklab.exportmlx.internal.logger.internal.Dispstr.prettyprintMatrix(page_strs);
         end
         out = strjoin(chunks, '\n');
       end
@@ -196,7 +196,7 @@ classdef Dispstr
       end
       lens = cellfun('prodofsize', strs);
       widths = max(lens, 1);
-      formats = exportmlx.logger.internal.Dispstr.sprintfv('%%%ds', widths);
+      formats = janklab.exportmlx.internal.logger.internal.Dispstr.sprintfv('%%%ds', widths);
       format = strjoin(formats, '   ');
       lines = cell(size(strs,1), 1);
       for i = 1:size(strs, 1)
@@ -250,7 +250,7 @@ classdef Dispstr
         end
         out = strjoin(lines, newline);
       else
-        out = exportmlx.logger.internal.Dispstr.dispc(s);
+        out = janklab.exportmlx.internal.logger.internal.Dispstr.dispc(s);
       end
       
     end
@@ -263,7 +263,8 @@ classdef Dispstr
       varNames = t.Properties.VariableNames;
       nVars = numel(varNames);
       if nVars == 0
-        out = sprintf('%s table with zero variables', exportmlx.logger.internal.Dispstr.size2str(size(t)));
+        out = sprintf('%s table with zero variables', ...
+            janklab.exportmlx.internal.logger.internal.Dispstr.size2str(size(t)));
         return;
       end
       varVals = cell(1, nVars);
@@ -272,7 +273,7 @@ classdef Dispstr
         varVals{i} = t{:,i};
       end
       
-      out = exportmlx.logger.internal.Dispstr.prettyprintTabular_generic(varNames, varVals, true);      
+      out = janklab.exportmlx.internal.logger.internal.Dispstr.prettyprintTabular_generic(varNames, varVals, true);      
       if nargout == 0
         fprintf('%s\n', out);
       end

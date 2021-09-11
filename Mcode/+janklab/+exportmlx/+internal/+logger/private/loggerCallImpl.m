@@ -39,7 +39,7 @@ else
     end
 end
 
-loggerObj = exportmlx.logger.Logger.getLogger(callerId);
+loggerObj = janklab.exportmlx.internal.logger.Logger.getLogger(callerId);
 
 switch form
     case 'm'

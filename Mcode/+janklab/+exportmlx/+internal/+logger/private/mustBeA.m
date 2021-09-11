@@ -31,7 +31,7 @@ assert(ischar(type), 'exportmlx:InvalidInput',...
 % Special pseudotype cases
 switch type
     case 'cellstr'
-        if iscellstr(value)
+        if iscellstr(value) %#ok<ISCLSTR>
             return
         else
             if iscell(value)

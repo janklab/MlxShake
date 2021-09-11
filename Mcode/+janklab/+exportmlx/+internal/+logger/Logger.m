@@ -3,7 +3,7 @@ classdef Logger
   %
   % The Logger class provides method calls for performing logging, and the ability
   % to look up loggers by name. This is the main entry point through which all
-  % exportmlx.logger logging happens.
+  % janklab.exportmlx.logger logging happens.
   %
   % Usually you don't need to interact with this class directly, but can just call
   % one of the error(), warn(), info(), debug(), or trace() functions in the logger
@@ -18,18 +18,18 @@ classdef Logger
   % trace() - takes a sprintf()-style signature, with a format string as
   % the first argument, and substitution values as the remaining
   % arguments.
-  %    exportmlx.logger.info(format, varargin)
+  %    janklab.exportmlx.internal.logger.info(format, varargin)
   % You can also insert an MException object at the beginning of the
   % argument list to have its message and stack trace included in the log
   % message.
-  %    exportmlx.logger.warn(exception, format, varargin)
+  %    janklab.exportmlx.internal.logger.warn(exception, format, varargin)
   %
   % See also:
-  % exportmlx.logger.error
-  % exportmlx.logger.warn
-  % exportmlx.logger.info
-  % exportmlx.logger.debug
-  % exportmlx.logger.trace
+  % janklab.exportmlx.internal.logger.error
+  % janklab.exportmlx.internal.logger.warn
+  % janklab.exportmlx.internal.logger.info
+  % janklab.exportmlx.internal.logger.debug
+  % janklab.exportmlx.internal.logger.trace
   %
   % Examples:
   %
@@ -59,7 +59,7 @@ classdef Logger
     function out = getLogger(identifier)
       % Gets the named Logger
       jLogger = org.slf4j.LoggerFactory.getLogger(identifier);
-      out = exportmlx.logger.Logger(jLogger);
+      out = janklab.exportmlx.internal.logger.Logger(jLogger);
     end
   end
   
