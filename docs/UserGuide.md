@@ -88,7 +88,7 @@ MATLAB code and its output will be shown as follows:
 
 ```matlab:Code
 % Matlab code
-x = linspace(0,2*pi,100);
+x = linspace(0, 2*pi, 100);
 y = sin(x)
 ```
 
@@ -104,7 +104,7 @@ MATLAB figure plots look like this:
 
 ```matlab:Code
 % Figures
-plot(x,y);
+plot(x, y);
 ```
 
 ![figure_0.png](UserGuide_images/figure_0.png)
@@ -143,9 +143,9 @@ table(rand(myRand, 3, 4))
 
 ```matlab:Code(Display)
 % Matlab Code Example display
-x = linspace(0,1,100);
+x = linspace(0, 1, 100);
 y = sin(x);
-plot(x,y);
+plot(x, y);
 ```
 
 "Plain" Code Examples look like this:
