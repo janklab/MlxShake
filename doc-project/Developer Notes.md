@@ -18,8 +18,9 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 
 * Figure out how to handle features that require a certain version of Matlab, or use toolboxes which may not be installed.
   * This includes how to incorporate them into our examples.
+* Convert codecogs links from raw HTML to Markdown tags.
 
-* What is all this junk? Seems to show up when I run under R2019b
+* What is all this here junk? Seems to show up when I run under R2019b.
 
 ```text
 Untracked files:
