@@ -32,7 +32,7 @@ ExportMlx is licensed under a nonstandard MathWorks-specific variant of the BSD 
   MathWorks products and service offerings.
 ```
 
-This is because livescript2markdown is licensed that way, and ExportMlx contains derivatives of its code.
+This is because the [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) project is licensed that way, and ExportMlx contains derivatives of its code.
 
 ## Requirements
 
@@ -54,9 +54,9 @@ Add its `Mcode/` directory to your Matlab path using `addpath()`.
 
 Quick summary:
 
-* `livescript2markdown` â Export a Live Script `.mlx` file to Markdown. (This is what you probably want.)
-* `mlx2latex` â Do just the `.mlx` to `.tex` export step.
-* `lslatex2markdown` â Do just the `.tex` to `.md` conversion step.
+* `livescript2markdown` - Export a Live Script `.mlx` file to Markdown. (This is what you probably want.)
+* `mlx2latex` - Do just the `.mlx` to `.tex` export step.
+* `lslatex2markdown` - Do just the `.tex` to `.md` conversion step.
 
 Super quick example:
 
