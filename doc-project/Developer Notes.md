@@ -25,6 +25,7 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 * Add CI support.
 * Add some tests.
 * Support for GitHub Flavored Markdown and other flavors?
+  * Actually, the flavor we support now _is_ GFM; that's needed for tables. Need to officially adopt that, and then maybe add other flavors.
 * Add support for Jekyll and MkDocs integration.
 * Don't leave intermediate `.tex` and `.sty` file droppings (configurable, droppings off by default but enableable with an option).
 * Nicer alt text/link text for inline images?
