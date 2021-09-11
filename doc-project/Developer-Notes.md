@@ -14,6 +14,8 @@
 
 ## TODO
 
+* Pull in code to programmatically export mlx->tex
+* Convert API to OOP and jankify
 * Replace all uses of `rand` in doco with something else, for reproducible builds.
 * Try to get output Markdownlint-clean
 * Eww: the codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves.
