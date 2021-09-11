@@ -12,6 +12,10 @@ and start hacking!
 
 Rerun `exportmlx_gendoco` after all your changes to make sure things are still working, and to keep the User Guide up to date with current library behavior.
 
+## Special Notes
+
+Do not edit `README.md` or `docs/index.md` directly! These files are generated from shared sources in the `doc-src/` directory. Edit the files there instead.
+
 ## TODO
 
 ### BUGS

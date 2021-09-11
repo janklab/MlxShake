@@ -1,12 +1,3 @@
----
-layout: default
----
-
-[ExportMlx](https://github.com/janklab/ExportMlx) is a tool to export Matlab Live Scripts (`.mlx` files) to Markdown and other formats.
-
-## Pages
-
-* [User Guide](UserGuide.html)
 
 ## Summary
 
@@ -58,9 +49,9 @@ Add its `Mcode/` directory to your Matlab path using `addpath()`.
 
 Quick summary:
 
-* `livescript2markdown` â Export a Live Script `.mlx` file to Markdown. (This is what you probably want.)
-* `mlx2latex` â Do just the `.mlx` to `.tex` export step.
-* `lslatex2markdown` â Do just the `.tex` to `.md` conversion step.
+* `livescript2markdown` – Export a Live Script `.mlx` file to Markdown. (This is what you probably want.)
+* `mlx2latex` – Do just the `.mlx` to `.tex` export step.
+* `lslatex2markdown` – Do just the `.tex` to `.md` conversion step.
 
 Super quick example:
 

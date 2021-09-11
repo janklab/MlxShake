@@ -30,4 +30,32 @@ for mlxFileBase = exampleMlxs
     janklab.exportmlx.livescript2markdown(mlxFile);
 end
 
-fprintf('Exported all ExportMlx doco.\n')
+% Our web pages
+
+docSrc = fullfile(rootDir, 'doc-src');
+catfiles([fullfile(docSrc, 'index-head.md'), fullfile(docSrc, 'README-index-common.md')], ...
+    'docs/index.md');
+catfiles([fullfile(docSrc, 'README-head.md'), fullfile(docSrc, 'README-index-common.md')], ...
+    'README.md');
+
+% Done
+
+fprintf('Generated all ExportMlx doco.\n')
+
+end
+
+function catfiles(infiles, outfile)
+% Concatenate file contents and write to another file.
+arguments
+    infiles string
+    outfile (1,1) string
+end
+
+contents = repmat(string(missing), size(infiles));
+for i = 1:numel(infiles)
+    contents(i) = janklab.exportmlx.internal.util.readtext(infiles(i));
+end
+combined = strjoin(contents, "");
+janklab.exportmlx.internal.util.writetext(combined, outfile);
+
+end
