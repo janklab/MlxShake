@@ -14,7 +14,7 @@ The Live Script to LaTeX export code is informed by Pavel Roslovets's [Live-Scri
 
 ## License Warning
 
-ExportMlx is licensed under a nonstandard variant of the BSD 2-Clause License that includes this additional clause:
+ExportMlx is licensed under a nonstandard MathWorks-specific variant of the BSD 2-Clause License that includes this additional clause:
 
 ```text
 * In all cases, the software is, and all modifications and derivatives of the
@@ -51,3 +51,9 @@ ExportMlx was developed by [Andrew Janke](https://apjanke.net) based on [livescr
 The project home page is the [GitHub repo page](https://github.com/janklab/ExportMlx). Bug reports and feature requests are welcome.
 
 ExportMlx is part of the [Janklab](https://janklab.net) suite of open source libraries for Matlab.
+
+## Contributing
+
+Contributions are appreciated! Right now I mostly need feature requests, bug reports, and especially example Live Script files that ExportMlx can be tested against.
+
+All contributions to ExportMlx must be dual-licensed under the BSD 3-Clause License and the special MathWorks-specific variant of the BSD 2-Clause License that ExportMlx is currently licensed under. This is so that ExportMlx can be easily relicensed to BSD 3-Clause in the future if its underlying `livescript2markdown` code is similarly relicensed. (Which would be nice, IMHO.)
