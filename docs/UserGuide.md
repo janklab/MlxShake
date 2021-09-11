@@ -82,9 +82,9 @@ Let's use a localized random generator stream, so this script produces the same 
 myRand = RandStream('dsfmt19937', 'Seed', 420);
 ```
 
-### MATLAB Code
+### Matlab Code
 
-MATLAB code and its output will be shown as follows:
+Matlab code and its output will be shown as follows:
 
 ```matlab:Code
 % Matlab code
@@ -100,7 +100,7 @@ y = 1x100
 
 ### Figure Plots
 
-MATLAB figure plots look like this:
+Matlab figure plots look like this:
 
 ```matlab:Code
 % Figures
@@ -139,7 +139,9 @@ table(rand(myRand, 3, 4))
 
 ### Code Examples
 
-"MATLAB" Code Examples (as opposed to actual executable Matlab code) are rendered as follows:
+Live Script "Code Examples" are the non-executable formatted code blocks that display code but do not evaluate it when the script is run.
+
+"MATLAB" Code Examples are rendered as follows:
 
 ```matlab:Code(Display)
 % Matlab Code Example display
