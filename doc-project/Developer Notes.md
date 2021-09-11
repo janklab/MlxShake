@@ -1,5 +1,17 @@
 # ExportMlx Developer Notes
 
+## Workflow
+
+To hack on the code:
+
+```matlab
+addpath Mcode; addpath dev-kit
+```
+
+and start hacking!
+
+Rerun `exportmlx_gendoco` after all your changes to make sure things are still working, and to keep the User Guide up to date with current library behavior.
+
 ## BUGS
 
 * Inline image links get broken in to multiple lines:
