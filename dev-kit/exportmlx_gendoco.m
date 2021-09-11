@@ -15,7 +15,7 @@ docFiles = [
     ];
 for fileStem = docFiles(:)'
     mlxFile = fullfile(docDir, fileStem + ".mlx");
-    fprintf('Exporting ExportMlx doc file: %s\n', fileStem + ".mlx");
+    fprintf('Exporting: ExportMlx doc file: %s\n', fileStem + ".mlx");
     janklab.exportmlx.livescript2markdown(mlxFile);
 end
 
@@ -26,8 +26,8 @@ d = dir(examplesDir + "/*.mlx");
 exampleMlxs = string({d.name});
 for mlxFileBase = exampleMlxs
     mlxFile = fullfile(examplesDir, mlxFileBase);
-    fprintf('Exporting ExportMlx example file: %s\n', mlxFileBase);
+    fprintf('Exporting: ExportMlx example file: %s\n', mlxFileBase);
     janklab.exportmlx.livescript2markdown(mlxFile);
 end
 
-fprintf('Exported ExportMlx doco.\n')
+fprintf('Exported all ExportMlx doco.\n')
