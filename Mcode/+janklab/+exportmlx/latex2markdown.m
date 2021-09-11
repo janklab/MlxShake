@@ -128,7 +128,7 @@ str2md = janklab.exportmlx.internal.processDocumentOutput(str2md, options.tableM
 str2md = janklab.exportmlx.internal.processEquations(str2md, options.markdownStyle);
 
 % Included graphics
-str2md = janklab.exportmlx.internal.processincludegraphics(str2md, options.markdownStyle, ...
+str2md = janklab.exportmlx.internal.processIncludedGraphics(str2md, options.markdownStyle, ...
     options.png2jpeg, inFileStem, inParentDir);
 
 % Apply vertical/horizontal space

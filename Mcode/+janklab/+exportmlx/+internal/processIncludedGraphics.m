@@ -1,4 +1,4 @@
-function str = processincludegraphics(str, format, png2jpeg, filename, filepath)
+function str = processIncludedGraphics(str, format, png2jpeg, filename, filepath)
 % Process included graphics
 %
 % Note: There are two cases in the tex
