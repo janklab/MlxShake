@@ -38,6 +38,11 @@ arguments
     options (1,1) janklab.exportmlx.ExportOptions = janklab.exportmlx.ExportOptions
 end
 
+persistent initializerHack
+if isempty(initializerHack)
+    initializerHack = janklab.exportmlx.internal.ExportmlxBase;
+end
+
 LF = newline;
 
 % Latex filename
@@ -159,6 +164,6 @@ fileID = fopen(mdFile, 'w');
 fprintf(fileID, '%s\n', strmarkdown);
 fclose(fileID);
 
-disp("Converting LaTeX to Markdown is complete.");
-disp("  Markdown: " + mdFile);
-disp("  Images dir: " + imagesDirPath);
+loginfo("Converting LaTeX to Markdown is complete.");
+loginfo("  Markdown: " + mdFile);
+loginfo("  Images dir: " + imagesDirPath);

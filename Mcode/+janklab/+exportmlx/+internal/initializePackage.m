@@ -49,6 +49,9 @@ if isfolder(libMatlab)
     end
 end
 
+% Initialize library's internal logging
+
+janklab.exportmlx.internal.logger.Log4jConfigurator.configureBasicConsoleLogging('minimal');
 
 % Put any custom library initialization code here
 

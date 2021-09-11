@@ -45,7 +45,7 @@ classdef Log4jConfigurator
     % implicit library initializer may depend on this class!
     
     methods (Static)
-        function configureBasicConsoleLogging
+        function configureBasicConsoleLogging(style)
             % Configures log4j to do basic logging to the console
             %
             % This sets up a basic log4j configuration, with log output going to the
@@ -54,7 +54,9 @@ classdef Log4jConfigurator
             % This method can safely be called multiple times. If there's already an
             % appender on the root logger (indicating logging has already been
             % configured), it silently does nothing.
-            
+            arguments
+                style (1,1) string = 'techie'
+            end
             rootLogger = org.apache.log4j.Logger.getRootLogger();
             rootAppenders = rootLogger.getAllAppenders();
             isConfiguredAlready = rootAppenders.hasMoreElements;
@@ -65,7 +67,16 @@ classdef Log4jConfigurator
                 rootAppender = rootLogger.getAllAppenders().nextElement();
                 % Use \n instead of %n because the Matlab console wants Unix-style line
                 % endings, even on Windows.
-                pattern = ['%d{HH:mm:ss.SSS} %-5p %c{1} %x - %m' newline];
+                switch style
+                    case "minimal"
+                        pattern = ['%m' newline];
+                    case "medium"
+                        pattern = ['%d{HH:mm:ss.SSS} - %m' newline];
+                    case "techie"
+                        pattern = ['%d{HH:mm:ss.SSS} %-5p %c{1} %x - %m' newline];
+                    otherwise
+                        error('Invalid style: "%s"', style);
+                end
                 myLayout = org.apache.log4j.PatternLayout(pattern);
                 rootAppender.setLayout(myLayout);
             end

@@ -24,6 +24,11 @@ arguments
     outFile (1,1) string = missing
 end
 
+persistent initializerHack
+if isempty(initializerHack)
+    initializerHack = janklab.exportmlx.internal.ExportmlxBase;
+end
+
 [parentDir, fileStem, mlxExt] = fileparts(inMlxFile); %#ok<ASGLU>
 
 if ismissing(outFile)
@@ -41,11 +46,11 @@ else
 end
 outStemPath = fullfile(outDir, outStem);
 
-fprintf('Exporting: %s to %s.*\n', inMlxFile, outStemPath);
+loginfo('Exporting: %s to %s.*', inMlxFile, outStemPath);
 
 outTexFile = fullfile(outDir, outStem + outFileExtn);
 
 matlab.internal.liveeditor.openAndConvert(char(inMlxFile), char(outTexFile));
-fprintf('Exported: %s -> %s\n', inMlxFile, outTexFile);
+loginfo('Exported: %s -> %s', inMlxFile, outTexFile);
   
 end
