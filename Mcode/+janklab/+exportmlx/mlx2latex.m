@@ -1,4 +1,4 @@
-function mlx2latex(inMlxFile, outFile)
+function out = mlx2latex(inMlxFile, outFile)
 % Export a Live Script (.mlx) file to LaTeX (.tex).
 %
 % janklab.exportmlx.mlx2latex(mlxFile)
@@ -18,6 +18,8 @@ function mlx2latex(inMlxFile, outFile)
 %
 % Exports to a .tex file next to the original input file, with the '.mlx'
 % file extension replaced by '.tex'.
+%
+% The undocumented return value is for ExportMlx's internal use.
 
 arguments
     inMlxFile (1,1) string
@@ -47,10 +49,18 @@ end
 outStemPath = fullfile(outDir, outStem);
 
 loginfo('Exporting: %s to %s.*', inMlxFile, outStemPath);
-
-outTexFile = fullfile(outDir, outStem + outFileExtn);
+outFileBase = outStem + outFileExtn;
+outTexFile = fullfile(outDir, outFileBase);
 
 matlab.internal.liveeditor.openAndConvert(char(inMlxFile), char(outTexFile));
 loginfo('Exported: %s -> %s', inMlxFile, outTexFile);
-  
+
+out.dir = outDir;
+out.stemPath = outStemPath;
+out.files = [outTexFile, fullfile(outDir, "matlab.sty")];
+
+if nargout == 0
+    clear out
+end
+
 end

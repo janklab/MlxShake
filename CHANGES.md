@@ -10,3 +10,4 @@ Version 0.1.0 (in progress)
 * Fix broken inline image links.
 * Clean up formatting of generated Markdown.
 * Add CI support.
+* Optionally delete intermediate generated files (the `.tex` and `.sty` etc. files).

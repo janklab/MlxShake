@@ -25,6 +25,17 @@ classdef ExportOptions
         % figure out how the file was built, and I'd like some more users! But I
         % won't mind if you turn it off.
         addMention (1,1) logical = true
+        % Whether to use a temporary directory for the intermediate files (UNIMPLEMENTED).
+        % This is used for the .tex, .sty, and other files produced during the
+        % processing sequence before arriving at the final .md file.
+        useTempDir (1,1) logical = false
+        % Whether to retain the intermediate files generated during the export.
+        % Defaults to false. If true, the .tex, .sty, and other intermediate
+        % files ar retained. If false, they are deleted once the final .md is
+        % produced. Be careful! These intermediate files may overwrite
+        % manually-managed files in the same directory as your .mlx and .md
+        % files.
+        keepIntermediateFiles (1,1) logical = false
     end
     
     methods

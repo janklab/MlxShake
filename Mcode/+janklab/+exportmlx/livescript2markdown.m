@@ -30,7 +30,13 @@ if noExtnFile == mlxFile
     mlxFile = noExtnFile + '.mlx';
 end
 
-janklab.exportmlx.mlx2latex(mlxFile);
+latexRslt = janklab.exportmlx.mlx2latex(mlxFile);
 mdFile = janklab.exportmlx.lslatex2markdown(noExtnFile, options);
+
+if ~options.keepIntermediateFiles
+    for i = 1:numel(latexRslt.files)
+        delete(latexRslt.files(i));
+    end
+end
 
 end

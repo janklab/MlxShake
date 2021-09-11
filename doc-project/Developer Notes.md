@@ -19,9 +19,21 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 * Figure out how to handle features that require a certain version of Matlab, or use toolboxes which may not be installed.
   * This includes how to incorporate them into our examples.
 
+* What is all this junk? Seems to show up when I run under R2019b
+
+```text
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        docs/UserGuide.aux
+        docs/UserGuide.fdb_latexmk
+        docs/UserGuide.fls
+        docs/UserGuide.out
+        docs/UserGuide.pdf
+        docs/UserGuide.synctex.gz
+```
+
 ### Enhancements
 
-* Don't leave intermediate `.tex` and `.sty` file droppings (configurable, droppings off by default but enableable with an option).
 * The codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves. Eww.
 * Nicer alt text/link text for inline images?
 * Add some tests.
