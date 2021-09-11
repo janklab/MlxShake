@@ -3,7 +3,14 @@ function exportmlx_launchtests
 
 rootdir = fileparts(fileparts(mfilename('fullpath')));
 addpath(fullfile(rootdir, 'Mcode'))
+addpath(fullfile(rootdir, 'dev-kit'))
 
-results = exportmlx.test.runtests %#ok<NOPRT,NASGU>
+% We currently do not have real tests. Just regenerate the doco and examples
+% as a smoke test.
+
+exportmlx_gendoco;
+
+fprintf('Doco generation succeeded. Looks like nothing is seriously broken.\n')
+fprintf('Tests finished.\n')
 
 end
