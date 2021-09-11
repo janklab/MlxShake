@@ -6,6 +6,12 @@ This tool lets you generate project documentation and web site content from live
 
 See the [User Guide](doc/UserGuide.md) for examples of what it can do; the User Guide is itself generated from a Matlab live script using ExportMlx!
 
+## PRERELEASE ALPHA SOFTWARE
+
+This is pre-release, alpha (not even beta!) quality software! It is an experimental work in progress. Everything about it, especially its public API, is subject to change at any time. And it is probably buggy.
+
+DO NOT USE THIS SOFTWARE IN PRODUCTION SYSTEMS!
+
 ## Acknowledgments
 
 ExportMlx is based on, and started out as a fork of, MathWorker Michio Inoue's [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) tool.
