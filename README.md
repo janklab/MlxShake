@@ -56,6 +56,15 @@ Quick summary:
 
 See the [User Guide](doc/UserGuide.md) for fuller instructions and feature description.
 
+## Project Goals
+
+The goals of ExportMlx, specifically as an enhanced fork of [livescript2markdown](https://github.com/minoue-xx/livescript2markdown), are:
+
+* Automate the full process from `.mlx` to `.md`.
+* Become suitable for use in automated document generation processes.
+  * Get the exported Markdown good enough that no manual touch-up is needed in normal cases.
+* Make the code as modern as possible (as of R2019b).
+
 ## Author
 
 ExportMlx was developed by [Andrew Janke](https://apjanke.net) based on [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) by [Michio Inoue](https://github.com/minoue-xx).
