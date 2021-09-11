@@ -16,7 +16,6 @@ function mdFile = livescript2markdown(mlxFile)
 % See also:
 % LIVESCRIPT2LATEX
 % LATEX2MARKDOWN
-%
 
 arguments
     mlxFile (1,1) string
@@ -28,6 +27,6 @@ if noExtnFile == mlxFile
 end
 
 livescript2latex(mlxFile);
-mdFile = string(latex2markdown(char(noExtnFile)));
+mdFile = latex2markdown(noExtnFile);
 
 end

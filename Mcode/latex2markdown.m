@@ -1,4 +1,34 @@
 function mdfile = latex2markdown(filename,options)
+% Convert Live Script LaTeX to Markdown.
+%
+% mdfile = latex2markdown(filename, options)
+%
+% Converts a LaTeX-format exported Live Script file to Markdown. Will also
+% produce accompanying image files in a subdirectory next to the output .md
+% file.
+%
+% This does not work on LaTeX in general! Only the specific LaTeX files
+% that are produced by Matlab's "Export to LaTeX" function for Matlab Live
+% Scripts.
+%
+% Filename (string) is the path to the LaTeX .tex file to convert.
+% The '.tex' suffix is optional.
+%
+% Options:
+%
+% outputfilename - Specifies a custom file name. Defaults to the input file
+% name with '.tex' replaced by '.md'.
+%
+% format - Specifies the style of Markdown to use. 'github'* or 'qiita'.
+%
+% png2jpeg (logical) - If true, converts PNG images to JPEGs. This saves space at the
+% expense of reduced image quality.
+%
+% tableMaxWidth (double, 20*) - Maximum table width. (TODO: What units is
+% this in: columns, inches, ???)
+%
+% Returns the path to the generated .md file.
+
 arguments
     filename (1,1) string
     options.outputfilename char = filename

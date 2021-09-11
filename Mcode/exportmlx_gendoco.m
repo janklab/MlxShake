@@ -1,4 +1,7 @@
 function exportmlx_gendoco
+% For internal use by ExportMlx developers at authoring time.
+%
+% This generates the doc/*.md files from the doc/*.mlx input files.
 
 repoDir = string(fileparts(fileparts(mfilename('fullpath'))));
 docDir = string(fullfile(repoDir, 'doc'));
@@ -13,7 +16,7 @@ for fileStem = docFiles(:)'
     % texFile = fullfile(docDir, fileStem + ".tex");
     % mdFile = fullfile(docDir, fileStem + ".md");
     noExtnFile = fullfile(docDir, fileStem);
-    mdFile = latex2markdown(char(noExtnFile));
+    mdFile = latex2markdown(noExtnFile);
     
     % Clean up image links
     % (This is a bug in the export that should be fixed.)

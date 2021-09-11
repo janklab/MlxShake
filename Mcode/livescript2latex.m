@@ -1,5 +1,12 @@
 function livescript2latex(mlxFile)
-% Export a live script (.mlx) file to LaTeX (.tex)
+% Export a live script (.mlx) file to LaTeX (.tex).
+%
+% livescript2latex(mlxFile)
+%
+% MlxFile (string) is the path to the .mlx Live Script file to export.
+%
+% Exports to a .tex file next to the original input file, with the '.mlx'
+% file extension replaced by '.tex'.
 
 arguments
     mlxFile (1,1) string
