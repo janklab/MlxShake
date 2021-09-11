@@ -20,7 +20,7 @@
 * Eww: the codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves.
 * Add support for Jekyll and MkDocs integration.
 * Don't leave intermediate `.tex` and `.sty` file droppings.
-* Maybe add a "credits" note to generated files. This should be disableable.
+* Maybe add a "credits" note to generated files. This should be disableable. Should probably only be in the comments/internal markup, not reader-visible.
 
 ## See Also
 
