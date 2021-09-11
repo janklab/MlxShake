@@ -2,20 +2,25 @@ function str2md = processDocumentOutput(str2md, tableMaxWidth)
 % Process document output
 
 %% 2-1: Fix latex conventions for non-literal parts
-% ^ (live script) -> \textasciicircum{} (latex)
-str2md = replace(str2md, "\textasciicircum{}", "^");
-% _ (live script) -> \_ (latex) example: test_case -> test\_ case
-str2md = replace(str2md, "\_", "_");
-% / backslash (live script) -> \textbackslash{} (latex)
-str2md = replace(str2md, "\textbackslash{}", "\");
-% > (live script) -> \textgreater{} (latex)
-str2md = replace(str2md, "\textgreater{}", ">");
-% < (live script) -> \textless{} (latex)
-str2md = replace(str2md, "\textless{}", "<");
-% $ (live script) -> \$ (latex)
-str2md = replace(str2md, "\$", "$");
-% % (live script) -> \% (latex)
-str2md = replace(str2md, "\%", "%");
+replacements = [
+    % ^ (live script) -> \textasciicircum{} (latex)
+    "\textasciicircum{}", "^"
+    % _ (live script) -> \_ (latex) example: test_case -> test\_ case
+    "\_", "_"
+    % / backslash (live script) -> \textbackslash{} (latex)
+    "\textbackslash{}", "\"
+    % > (live script) -> \textgreater{} (latex)
+    "\textgreater{}", ">"
+    % < (live script) -> \textless{} (latex)
+    "\textless{}", "<"
+    % $ (live script) -> \$ (latex)
+    "\$", "$"
+    % % (live script) -> \% (latex)
+    "\%", "%"
+];
+for i = 1:size(replacements, 1)
+    str2md = replace(str2md, replacements(i,1), replacements(i,2));
+end
 
 % These will be left as they are till the end of this function
 % since these affect the markdown format 
@@ -27,7 +32,7 @@ str2md = replace(str2md, "\%", "%");
 str2md = replace(str2md, "\{", "BackslashCurlyBlacketOpen");
 str2md = replace(str2md, "\}", "BackslashCurlyBlacketClose");
 
-%% 2-2: Text decoration (文字装飾部分)
+%% 2-2: Text decoration
 % \textbf{bold}
 % \textit{italic}
 % \underline{underline}
@@ -79,14 +84,19 @@ str2md(idxNonGraphics) = replace(str2md(idxNonGraphics),...
 
 %% 2-6: Delete unnecessary commands
 % Commands to specify the text position
-str2md = erase(str2md, "\begin{par}");
-str2md = erase(str2md, "\end{par}");
-str2md = erase(str2md, "\begin{flushleft}");
-str2md = erase(str2md, "\end{flushleft}");
-str2md = erase(str2md, "\begin{flushright}");
-str2md = erase(str2md, "\end{flushright}");
-str2md = erase(str2md, "\begin{center}");
-str2md = erase(str2md, "\end{center}");
+things = [
+    "\begin{par}"
+    "\end{par}"
+    "\begin{flushleft}"
+    "\end{flushleft}"
+    "\begin{flushright}"
+    "\end{flushright}"
+    "\begin{center}"
+    "\end{center}"
+    ];
+for thing = things'
+    str2md = erase(str2md, thing);
+end
 
 %% 2-7: Unordered list
 % markdown: add - to each item

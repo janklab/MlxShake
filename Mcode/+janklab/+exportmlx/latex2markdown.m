@@ -87,14 +87,19 @@ str = regexprep(str, "\\label{[a-zA-Z_0-9]+}", "");
 % Add 'LF' to the end of the following.
 % \end{lstlisting}, \end{verbatim}, \end{matlabcode}, \end{matlaboutput},\end{center}
 % \end{matlabtableoutput}, \end{matlabsymbolicoutput}  \vspace{1em}
-str = replace(str, "\end{lstlisting}"+LF, "\end{lstlisting}"+LF+LF);
-str = replace(str, "\end{verbatim}"+LF, "\end{verbatim}"+LF+LF);
-str = replace(str, "\end{matlabcode}"+LF, "\end{matlabcode}"+LF+LF);
-str = replace(str, "\end{matlaboutput}"+LF, "\end{matlaboutput}"+LF+LF);
-str = replace(str, "\end{matlabtableoutput}"+LF, "\end{matlabtableoutput}"+LF+LF);
-str = replace(str, "\end{matlabsymbolicoutput}"+LF, "\end{matlabsymbolicoutput}"+LF+LF);
-str = replace(str, "\end{center}"+LF, "\end{center}"+LF+LF);
-str = replace(str, "\vspace{1em}"+LF, "\vspace{1em}"+LF+LF);
+placesToDoubleNewlines = [
+    "\end{lstlisting}"
+    "\end{verbatim}"
+    "\end{matlabcode}"
+    "\end{matlaboutput}"
+    "\end{matlabtableoutput}"
+    "\end{matlabsymbolicoutput}"
+    "\end{center}"
+    "\vspace{1em}"
+    ];
+for thing = placesToDoubleNewlines'
+    str = replace(str, thing+LF, thing+LF+LF);
+end
 
 % Preprocess 2:
 % Replace more than three \n to \n\n.
@@ -105,18 +110,17 @@ str = strsplit(str, '\n\n')';
 % Preprocess 3:
 % The following environments will be merge into one string
 % for the ease of process.
-% \begin{verbatim}
-% \begin{lstlisting}
-% \begin{matlabcode}
-% \begin{matlaboutput}
-% \begin{matlabtableoutput}
-% \begin{matlabsymbolicoutput}
-str = janklab.exportmlx.internal.mergeSameEnvironments(str, "lstlisting");
-str = janklab.exportmlx.internal.mergeSameEnvironments(str, "verbatim");
-str = janklab.exportmlx.internal.mergeSameEnvironments(str, "matlabcode");
-str = janklab.exportmlx.internal.mergeSameEnvironments(str, "matlaboutput");
-str = janklab.exportmlx.internal.mergeSameEnvironments(str, "matlabtableoutput");
-str = janklab.exportmlx.internal.mergeSameEnvironments(str, "matlabsymbolicoutput");
+envsToMerge = [
+    "lstlisting"
+    "verbatim"
+    "matlabcode"
+    "matlaboutput"
+    "matlabtableoutput"
+    "matlabsymbolicoutput"
+    ];
+for env = envsToMerge'
+    str = janklab.exportmlx.internal.mergeSameEnvironments(str, env);
+end
 
 % Let's convert latex to markdown
 % 1: Process parts that require literal output.

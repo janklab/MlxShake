@@ -5,8 +5,7 @@ function str2md = processEquations(str2md, format)
 % See: http://idken.net/posts/2017-02-28-math_github/ (Japanese)
 %
 % For Qiita users: (Qiita platform renders equations via mathML)
-% Leave inline equation as it is (文中の数式は latex で $equation$ なのでそのまま)
-% and $$equation$$ will be changed to
+% Leave inline equation as it is and $$equation$$ will be changed to
 % ```math
 % equation
 % ```
@@ -17,7 +16,7 @@ switch format
             newline + "```math" + newline + "$1" + newline + "```");
     case 'github'
         tt = regexp(str2md, "[^`]?\$\$([^$]+)\$\$[^`]?", 'tokens');
-        idx = cellfun(@iscell, tt); 
+        idx = cellfun(@iscell, tt);
         % if tt contains 0x0 string, horzcat(tt{:}) generates string vector
         % whereas if tt with cell only, horzcat(tt{:}) generates cell
         % vector... so.
