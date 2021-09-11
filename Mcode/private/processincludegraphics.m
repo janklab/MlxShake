@@ -1,4 +1,4 @@
-function str = processincludegraphics(str,format,png2jpeg,filename,filepath)
+function str = processincludegraphics(str, format, png2jpeg, filename, filepath)
 
 % Note: There are two cases in the tex
 % 1: inserted image: \includegraphics[width=\maxwidth{64.52584044154541em}]{image_0}
@@ -8,7 +8,7 @@ function str = processincludegraphics(str,format,png2jpeg,filename,filepath)
 
 % markdown (GitHub): ![string]('path to a image')
 % latex では \includegraphics[width=\maxwidth{56.196688409433015em}]{filename}
-imageIdx = contains(str,"\includegraphics");
+imageIdx = contains(str, "\includegraphics");
 imageParts = str(imageIdx);
 
 % When exported latex from live script, figures and inserted images
@@ -19,17 +19,17 @@ imagedir = strrep(imagedir, '\', '/');
 
 % for each images
 for ii=1:length(imageParts)
-    fileid = regexp(imageParts(ii),"\\includegraphics\[[^\]]+\]{([^{}]+)}", "tokens");
+    fileid = regexp(imageParts(ii), "\\includegraphics\[[^\]]+\]{([^{}]+)}", "tokens");
     [~,fileid_wo_ext,~] = fileparts(fileid{:});
-    imagefilename = ls(fullfile(filepath,imagedir,fileid_wo_ext + ".*")); % get the actual filename with extention
+    imagefilename = ls(fullfile(filepath, imagedir, fileid_wo_ext + ".*")); % get the actual filename with extention
     
     % Compress PNG images as JPEG
     if png2jpeg
         [~,imagefilename_wo_ext,ext] = fileparts(imagefilename);
         if strcmp(ext,'.png')
-            I = imread(fullfile(imagedir,imagefilename));
-            imagefilename = [imagefilename_wo_ext,'_png.jpg'];
-            imwrite(I,fullfile(imagedir,imagefilename),'Quality',85);
+            I = imread(fullfile(imagedir, imagefilename));
+            imagefilename = [imagefilename_wo_ext '_png.jpg'];
+            imwrite(I, fullfile(imagedir, imagefilename), 'Quality', 85);
         end
     end
     
@@ -41,15 +41,15 @@ for ii=1:length(imageParts)
             imageParts(ii) = regexprep(imageParts(ii),"\\includegraphics\[[^\]]+\]{"+fileid{:}+"}",...
                 "<--" + newline ...
                 + "**Please drag & drop an image file here**" + newline ...
-                + "Filename: **"+imagedir+imagefilename + "**" + newline ...
+                + "Filename: **" + imagedir + imagefilename + "**" + newline ...
                 + "If you want to set the image size use the following command" + newline ...
                 + "<img src="" alt=""attach:cat"" title=""attach:cat"" width=500px>" + newline ...
                 + "-->");
             
         case 'github'
             %  ![string]('path to a image')
-            imageParts(ii) = regexprep(imageParts(ii),"\\includegraphics\[[^\]]+\]{"+fileid{:}+"}",...
-                "!["+imagefilename+"]("+imagedir+imagefilename+")");
+            imageParts(ii) = regexprep(imageParts(ii), "\\includegraphics\[[^\]]+\]{"+fileid{:}+"}",...
+                "![" + imagefilename + "](" + imagedir + imagefilename + ")");
     end
 end
 
