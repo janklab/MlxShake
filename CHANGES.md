@@ -8,3 +8,4 @@ Version 0.1.0 (in progress)
 * Jankify the code.
 * Add programmatic mlx-to-tex export.
 * Fix broken inline image links.
+* Clean up formatting of generated Markdown.
