@@ -60,11 +60,13 @@ str2md = regexprep(str2md, "\\texttt{(\*{0,3})([^*{}]+)(\*{0,3})}", "$1`$2`$3");
 str2md = regexprep(str2md, "\\href{([^{}]+)}{([^{}]+)}", "[$2]($1)");
 
 %% 2-4: Title and headings
-str2md = regexprep(str2md, "\\matlabtitle{([^{}]+)}", "# $1");
+% Add an extra newline to make sure there's a blank line between immediately
+% subsequent headings. Excess newlines will get cleaned up later.
+str2md = regexprep(str2md, "\\matlabtitle{([^{}]+)}", "# $1\n");
 % Headings are converted to next level down to conform with Markdownlint style
-str2md = regexprep(str2md, "\\matlabheading{([^{}]+)}", "## $1");
-str2md = regexprep(str2md, "\\matlabheadingtwo{([^{}]+)}", "### $1");
-str2md = regexprep(str2md, "\\matlabheadingthree{([^{}]+)}", "#### $1");
+str2md = regexprep(str2md, "\\matlabheading{([^{}]+)}", "## $1\n");
+str2md = regexprep(str2md, "\\matlabheadingtwo{([^{}]+)}", "### $1\n");
+str2md = regexprep(str2md, "\\matlabheadingthree{([^{}]+)}", "#### $1\n");
 
 % Put \{ and \{ back.
 str2md = replace(str2md, "BackslashCurlyBlacketOpen", "\{");

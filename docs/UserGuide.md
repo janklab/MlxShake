@@ -1,4 +1,5 @@
 # ExportMlx User Guide
+
 ## Introduction
 
 ExportMlx provides tools for converting Matlab Live Scripts to Markdown files. This is useful in generating rich documentation for Matlab programs.
@@ -24,6 +25,7 @@ janklab.exportmlx.livescript2markdown('README.mlx');
 ```
 
 ## Usage: Advanced
+
 ### Step 1: Export your Live Script to LaTeX using `livescript2latex`
 
 ```matlab:Code(Display)
@@ -71,6 +73,7 @@ Rendering equations with CODECOGS is done by sticking CODECOGS query URLs in ima
 For images, you can just push the image folders and then the README reads them, but you need to drag \& drop your images inside the Qiita Editor.
 
 ## Supported Syntax in Live Scripts
+
 ### MATLAB Code
 
 MATLAB code and its output and figures will be shown as follows:
