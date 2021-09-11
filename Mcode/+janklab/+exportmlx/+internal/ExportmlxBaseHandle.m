@@ -5,7 +5,7 @@ classdef ExportmlxBaseHandle < handle
   % initialized inherit from this or ExportmlxBase.
   
   properties (Constant, Hidden)
-    initializer = exportmlx.internal.LibraryInitializer;
+    initializer = janklab.exportmlx.internal.LibraryInitializer;
   end
   
 end

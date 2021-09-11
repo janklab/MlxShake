@@ -3,7 +3,7 @@ classdef LibraryInitializer
   methods
     
     function this = LibraryInitializer()
-      exportmlx.internal.initializePackage;
+      janklab.exportmlx.internal.initializePackage;
     end
     
   end

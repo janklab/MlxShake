@@ -1,8 +1,8 @@
-classdef Settings < exportmlx.internal.ExportmlxBaseHandle
+classdef Settings < janklab.exportmlx.internal.ExportmlxBaseHandle
 % Global settings for the exportmlx package
 %
 % Don't use this class directly. If you want to get or set the settings,
-% work with the instance of this in the exportmlx.globals.settings field
+% work with the instance of this in the janklab.exportmlx.globals.settings field
 
   properties
   end
@@ -16,7 +16,7 @@ classdef Settings < exportmlx.internal.ExportmlxBaseHandle
       % so on.
       %
       % This needs to avoid referencing exportmlx.globals, to avoid a circular dependency.
-      out = exportmlx.Settings;
+      out = janklab.exportmlx.Settings;
     end
 
   end

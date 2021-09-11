@@ -3,20 +3,20 @@ classdef globals
   %
   % Note that if you want to change the settings, you can't do this:
   %
-  %    exportmlx.globals.settings.someSetting = 42;
+  %    janklab.exportmlx.globals.settings.someSetting = 42;
   %
   % That will break due to how Matlab Constant properties work. Instead, you need
   % to first grab the Settings object and store it in a variable, and then work
   % on that:
   %
-  %    s = exportmlx.globals.settings;
+  %    s = janklab.exportmlx.globals.settings;
   %    s.someSetting = 42;
   
   properties (Constant)
     % Path to the root directory of this ExportMlx distribution
-    distroot = string(fileparts(fileparts(fileparts(mfilename('fullpath')))));
+    distroot = string(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
     % Global settings for exportmlx.
-    settings = exportmlx.Settings.discover
+    settings = janklab.exportmlx.Settings.discover
   end
   
   methods (Static)
@@ -28,14 +28,14 @@ classdef globals
       persistent val
       if isempty(val)
         versionFile = fullfile(exportmlx.globals.distroot, 'VERSION');
-        val = strtrim(exportmlx.internal.util.readtext(versionFile));
+        val = strtrim(janklab.exportmlx.internal.util.readtext(versionFile));
       end
       out = val;
     end
     
     function initialize
       % Initialize this library/package
-      exportmlx.internal.initializePackage;
+      janklab.exportmlx.internal.initializePackage;
     end
     
   end

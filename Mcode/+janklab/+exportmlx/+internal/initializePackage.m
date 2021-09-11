@@ -7,13 +7,13 @@ function initializePackage
 % settings state can handle a `clear classes` gracefully.
 
 % Do not re-initialize if already initialized
-if exportmlx.internal.utils.getpackageappdata('initialized')
+if janklab.exportmlx.internal.utils.getpackageappdata('initialized')
   return
 end
 
 % Don't depend on globals, to avoid circular dependency
-%distroot = exportmlx.globals.distroot;
-distroot = string(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
+%distroot = janklab.exportmlx.globals.distroot;
+distroot = string(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))));
 
 % Java dependencies
 libJava = fullfile(distroot, 'lib', 'java');
@@ -28,23 +28,25 @@ end
 
 % Matlab library dependencies
 libMatlab = fullfile(distroot, 'lib', 'matlab');
-mLibs = readdir(libMatlab);
-for mlib = mLibs
-  mlibdir = fullfile(libMatlab, mlib);
-  % There's no standard layout for a Matlab project, so we use heuristics to guess
-  % where they keep their source files
-  candidateSubdirs = ["Mcode" "mcode" "src" "srcfiles"];
-  for sub = candidateSubdirs
-    if isfolder(fullfile(mlibdir, sub))
-      addpath(fullfile(mlibdir, sub))
+if isfolder(libMatlab)
+    mLibs = readdir(libMatlab);
+    for mlib = mLibs
+      mlibdir = fullfile(libMatlab, mlib);
+      % There's no standard layout for a Matlab project, so we use heuristics to guess
+      % where they keep their source files
+      candidateSubdirs = ["Mcode" "mcode" "src" "srcfiles"];
+      for sub = candidateSubdirs
+        if isfolder(fullfile(mlibdir, sub))
+          addpath(fullfile(mlibdir, sub))
+        end
+      end
+      d = dir(fullfile(mlibdir, '*.m'));
+      if ~isempty(d)
+        addpath(mlibdir);
+      end
+      % TODO: Maybe we should just look at all top-level dirs that aren't `+` package dirs,
+      % and add them all if they contain any M-files?
     end
-  end
-  d = dir(fullfile(mlibdir, '*.m'));
-  if ~isempty(d)
-    addpath(mlibdir);
-  end
-  % TODO: Maybe we should just look at all top-level dirs that aren't `+` package dirs,
-  % and add them all if they contain any M-files?
 end
 
 
@@ -52,7 +54,7 @@ end
 
 % Mark library as initialized
 
-exportmlx.internal.utils.setpackageappdata('initialized', true);
+janklab.exportmlx.internal.utils.setpackageappdata('initialized', true);
 
 end
 
