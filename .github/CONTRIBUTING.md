@@ -26,6 +26,12 @@ Image and prose contributiones should be licensed under a Creative Commons licen
 * Spaces around operators.
 * Use Matlab auto-formatting (Ctrl-A, Ctrl-I) everywhere.
 
+### Naming Conventions
+
+* `ix` prefix for numeric indexes.
+* `tf` prefix for logical indexes.
+* TitleCase class names, camelCase function and variable names.
+
 ### Workflow
 
 * Write decent commit messages.
