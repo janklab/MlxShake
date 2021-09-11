@@ -5,7 +5,7 @@ function exportmlx_gendoco
 
 %#ok<*NBRAK>
 
-repoDir = string(fileparts(fileparts(mfilename('fullpath'))));
+repoDir = janklab.exportmlx.globals.distroot;
 docDir = string(fullfile(repoDir, 'docs'));
 
 docFiles = [
