@@ -14,7 +14,7 @@ docFiles = [
 for fileStem = docFiles(:)'
     mlxFile = fullfile(docDir, fileStem + ".mlx");
     fprintf('Exporting: %s\n', mlxFile);
-    janklab.exportmlx.livescript2latex(mlxFile);
+    janklab.exportmlx.mlx2latex(mlxFile);
     % texFile = fullfile(docDir, fileStem + ".tex");
     % mdFile = fullfile(docDir, fileStem + ".md");
     noExtnFile = fullfile(docDir, fileStem);

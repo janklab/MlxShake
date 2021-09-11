@@ -1,7 +1,7 @@
-function livescript2latex(mlxFile)
+function mlx2latex(mlxFile)
 % Export a live script (.mlx) file to LaTeX (.tex).
 %
-% janklab.exportmlx.livescript2latex(mlxFile)
+% janklab.exportmlx.mlx2latex(mlxFile)
 %
 % MlxFile (string) is the path to the .mlx Live Script file to export.
 %

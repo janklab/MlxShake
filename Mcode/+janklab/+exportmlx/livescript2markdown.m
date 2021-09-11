@@ -30,7 +30,7 @@ if noExtnFile == mlxFile
     mlxFile = noExtnFile + '.mlx';
 end
 
-livescript2latex(mlxFile);
-mdFile = latex2markdown(noExtnFile, options);
+janklab.exportmlx.mlx2latex(mlxFile);
+mdFile = janklab.exportmlx.latex2markdown(noExtnFile, options);
 
 end

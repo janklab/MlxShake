@@ -7,7 +7,7 @@ ExportMlx provides tools for converting Matlab Live Scripts to Markdown files. T
 
 
 
-The main function is `livescript2markdown`. There are also `livescript2latex` and `latex2markdown` functions for the individual steps of the process which give you finer-grained control over export options.
+The main function is `livescript2markdown`. There are also `mlx2latex` and `latex2markdown` functions for the individual steps of the process which give you finer-grained control over export options.
 
 
 
@@ -46,7 +46,7 @@ janklab.exportmlx.livescript2markdown('README.mlx');
 ## Step 1: Export your Live Script to LaTeX using `livescript2latex`
 
 ```matlab:Code(Display)
-janklab.exportmlx.livescript2latex('README.mlx');
+janklab.exportmlx.mlx2latex('README.mlx');
 ```
 
 
