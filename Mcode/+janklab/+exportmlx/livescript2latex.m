@@ -12,14 +12,14 @@ arguments
     mlxFile (1,1) string
 end
 
-[pDir, fileStem, mlxExt] = fileparts(mlxFile); %#ok<ASGLU>
-fileStemPath = fullfile(pDir, fileStem);
+[parentDir, fileStem, mlxExt] = fileparts(mlxFile); %#ok<ASGLU>
+fileStemPath = fullfile(parentDir, fileStem);
 fprintf('Exporting: %s to %s.*\n', mlxFile, fileStemPath);
 
 % Export to LaTeX
 % TODO: Support export to alternate directories
 
-texFile = pDir + '/' + fileStem + '.tex';
+texFile = parentDir + '/' + fileStem + '.tex';
 matlab.internal.liveeditor.openAndConvert(char(mlxFile), char(texFile));
 fprintf('Exported: %s -> %s\n', mlxFile, texFile);
   
