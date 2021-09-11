@@ -81,7 +81,7 @@ The goals of ExportMlx, specifically as an enhanced fork of [livescript2markdown
 
 ExportMlx was developed by [Andrew Janke](https://apjanke.net) based on [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) by [Michio Inoue](https://github.com/minoue-xx).
 
-The project home page is the [GitHub repo page](https://github.com/janklab/ExportMlx). Bug reports and feature requests are welcome.
+The project home page is the [GitHub repo page](https://github.com/janklab/ExportMlx). Bug reports and feature requests are welcome. The online documentation is on the [ExportMlx web site](https://exportmlx.janklab.net), but that is very much a work in progress.
 
 ExportMlx is part of the [Janklab](https://janklab.net) suite of open source libraries for Matlab.
 
