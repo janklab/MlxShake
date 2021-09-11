@@ -10,7 +10,7 @@ See the [User Guide](doc/UserGuide.md) for examples of what it can do; the User 
 
 ExportMlx is based on, and started out as a fork of, MathWorker Michio Inoue's [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) tool.
 
-The LaTeX export code is informed by Pavel Roslovets's [Live-Script-to-Markdown-Converter toolbox](https://github.com/roslovets/Live-Script-to-Markdown-Converter).
+The Live Script to LaTeX export code is informed by Pavel Roslovets's [Live-Script-to-Markdown-Converter toolbox](https://github.com/roslovets/Live-Script-to-Markdown-Converter).
 
 ## License Warning
 
@@ -23,6 +23,10 @@ ExportMlx is licensed under a nonstandard variant of the BSD 2-Clause License th
 ```
 
 This is because livescript2markdown is licensed that way, and ExportMlx contains derivatives of its code.
+
+## Requirements
+
+Matlab version, I dunno, R2019b or later?
 
 ## Introduction
 
