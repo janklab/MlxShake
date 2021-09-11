@@ -2,7 +2,7 @@
 
 ## Introduction
 
-ExportMlx provides tools for converting Matlab Live Scripts to Markdown files. This is useful in generating rich documentation for Matlab programs.
+[ExportMlx](https://github.com/janklab/ExportMlx) provides tools for converting Matlab Live Scripts to Markdown files. This is useful in generating rich documentation for Matlab programs.
 
 The main function is `livescript2markdown`. There are also `mlx2latex` and `latex2markdown` functions for the individual steps of the process which give you finer-grained control over export options.
 
