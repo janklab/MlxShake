@@ -26,7 +26,7 @@ janklab.exportmlx.livescript2markdown('README.mlx');
 
 ## Usage: Advanced
 
-### Step 1: Export your Live Script to LaTeX using `livescript2latex`
+### Step 1: Export your Live Script to LaTeX using `mlx2latex`
 
 ```matlab:Code(Display)
 janklab.exportmlx.mlx2latex('README.mlx');
