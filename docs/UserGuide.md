@@ -199,7 +199,7 @@ Here are the complete list of font styles available in Live Editor:
 * **Bold**
 * *Italic*
 * Underline
-* `Monospace`.
+* `Monospace`
 
 And some conbinations of styles:
 
