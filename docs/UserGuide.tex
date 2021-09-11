@@ -8,6 +8,7 @@
 \usepackage{lmodern}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{listings}
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -71,16 +72,16 @@ Call \texttt{livescript2markdown(mlxFile)} on your \texttt{.mlx} Live Script fil
 \end{flushleft}
 \end{par}
 
-\begin{verbatim}
+\begin{lstlisting}
 janklab.exportmlx.livescript2markdown('README.mlx');
-\end{verbatim}
+\end{lstlisting}
 \matlabheading{Usage: Advanced}
 
 \matlabheadingtwo{Step 1: Export your Live Script to LaTeX using \texttt{mlx2latex}}
 
-\begin{verbatim}
+\begin{lstlisting}
 janklab.exportmlx.mlx2latex('README.mlx');
-\end{verbatim}
+\end{lstlisting}
 \begin{par}
 \begin{flushleft}
 This will generate \texttt{README.tex}. All the related images, such as included images and generated figures, are saved under the folder \texttt{README\_images} next to the \texttt{.tex} file.
@@ -93,11 +94,11 @@ This will generate \texttt{README.tex}. All the related images, such as included
 \end{flushleft}
 \end{par}
 
-\matlabheadingtwo{Step 2: Convert the LaTeX to Markdown using \texttt{latex2markdown}}
+\matlabheadingtwo{Step 2: Convert the LaTeX to Markdown using \texttt{lslatex2markdown}}
 
-\begin{verbatim}
-janklab.exportmlx.latex2markdown('README');
-\end{verbatim}
+\begin{lstlisting}
+janklab.exportmlx.lslatex2markdown('README');
+\end{lstlisting}
 \begin{par}
 \begin{flushleft}
 This will generate \texttt{README.md}, a Markdown file suitable for GitHub.
@@ -135,9 +136,9 @@ Example: A Markdown file suitable for Qiita, named \texttt{QiitaDraft.md}, will 
 \end{flushleft}
 \end{par}
 
-\begin{verbatim}
-janklab.exportmlx.latex2markdown('README', {'markdownStyle', 'qiita', 'outFile', 'QiitaDraft'});
-\end{verbatim}
+\begin{lstlisting}
+janklab.exportmlx.lslatex2markdown('README', {'markdownStyle', 'qiita', 'outFile', 'QiitaDraft'});
+\end{lstlisting}
 \begin{par}
 \begin{flushleft}
 Note: Qiita is a tech blog platform in Japanese. Qiita uses Markdown for its posts.
@@ -279,23 +280,23 @@ table(rand(myRand, 3, 4))
 \end{flushleft}
 \end{par}
 
-\begin{verbatim}
+\begin{lstlisting}
 % Matlab Code Example display
 x = linspace(0, 1, 100);
 y = sin(x);
 plot(x, y);
-\end{verbatim}
+\end{lstlisting}
 \begin{par}
 \begin{flushleft}
 "Plain" Code Examples look like this:
 \end{flushleft}
 \end{par}
 
-\begin{verbatim}
+\begin{lstlisting}
 # Python code
 print('Hello, world!')
 my_dict = {'foo': 42, 'bar': [1, 2, 3]}
-\end{verbatim}
+\end{lstlisting}
 \matlabheadingtwo{Inline Images}
 
 \begin{par}
@@ -306,7 +307,7 @@ Here's a display of an inline image (an image pasted into the Live Script, as op
 
 \begin{par}
 \begin{flushleft}
-\includegraphics[width=\maxwidth{-0.10035122930255896em}]{image_0}
+\includegraphics[width=\maxwidth{48.1685900652283em}]{image_0}
 \end{flushleft}
 \end{par}
 
@@ -427,13 +428,13 @@ Note that underlines do not show up in the Markdown! (I think this is because Ma
 
 \begin{par}
 \begin{flushleft}
-There's not a corresponding function, but centered paragraphs are treated as quotations.
+There isn't a Live Script "quotation" feature, but ExportMlx converts centered paragraphs to Markdown quotations.
 \end{flushleft}
 \end{par}
 
 \begin{par}
 \begin{center}
-There's not a corresponding function, but this centered paragraph is treated as quotation.
+This centered paragraph in the Live Script is rendered as a quotation in Markdown.
 \end{center}
 \end{par}
 

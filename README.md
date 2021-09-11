@@ -56,7 +56,7 @@ Quick summary:
 
 * `livescript2markdown` – Export a Live Script `.mlx` file to Markdown. (This is what you probably want.)
 * `mlx2latex` – Do just the `.mlx` to `.tex` export step.
-* `latex2markdown` – Do just the `.tex` to `.md` conversion step.
+* `lslatex2markdown` – Do just the `.tex` to `.md` conversion step.
 
 Super quick example:
 

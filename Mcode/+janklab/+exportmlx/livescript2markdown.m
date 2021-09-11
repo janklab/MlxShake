@@ -31,6 +31,6 @@ if noExtnFile == mlxFile
 end
 
 janklab.exportmlx.mlx2latex(mlxFile);
-mdFile = janklab.exportmlx.latex2markdown(noExtnFile, options);
+mdFile = janklab.exportmlx.lslatex2markdown(noExtnFile, options);
 
 end

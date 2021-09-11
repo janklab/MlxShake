@@ -1,7 +1,7 @@
-function outMdFile = latex2markdown(inFile, options)
+function outMdFile = lslatex2markdown(inFile, options)
 % Convert Live Script LaTeX to Markdown.
 %
-% mdfile = janklab.exportmlx.latex2markdown(inFile, options)
+% mdfile = janklab.exportmlx.lslatex2markdown(inFile, options)
 %
 % Converts a LaTeX-format exported Live Script file to Markdown. Will also
 % produce accompanying image files in a subdirectory next to the output .md
@@ -10,6 +10,9 @@ function outMdFile = latex2markdown(inFile, options)
 % This does not work on LaTeX in general! Only the specific LaTeX files
 % that are produced by Matlab's "Export to LaTeX" function for Matlab Live
 % Scripts.
+%
+% The "lslatex" name indicates that this only works on Live Script-produced
+% LaTeX, not LaTeX in general.
 %
 % InFile (string) is the path to the LaTeX .tex file to convert.
 % The '.tex' suffix is optional.

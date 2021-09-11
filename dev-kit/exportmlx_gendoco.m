@@ -18,7 +18,7 @@ for fileStem = docFiles(:)'
     fprintf('Exporting ExportMlx doc file: %s\n', fileStem + ".mlx");
     janklab.exportmlx.mlx2latex(mlxFile);
     noExtnFile = fullfile(docDir, fileStem);
-    janklab.exportmlx.latex2markdown(noExtnFile);
+    janklab.exportmlx.lslatex2markdown(noExtnFile);
 end
 
 % And all the examples
@@ -32,7 +32,7 @@ for mlxFileBase = exampleMlxs
     fprintf('Exporting ExportMlx example file: %s\n', mlxFileBase);
     janklab.exportmlx.mlx2latex(mlxFile);
     noExtnFile = fullfile(examplesDir, fileStem);
-    janklab.exportmlx.latex2markdown(noExtnFile);    
+    janklab.exportmlx.lslatex2markdown(noExtnFile);    
 end
 
 fprintf('Exported ExportMlx doco.\n')
