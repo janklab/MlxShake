@@ -41,6 +41,7 @@ Untracked files:
   * Actually, the flavor we support now _is_ GFM; that's needed for tables. Need to officially adopt that, and then maybe add other flavors.
 * Add support for Jekyll and MkDocs integration.
 * Handle table arrays with multicolumn variables (which need column-spanning headers).
+* Configure markdownlint to be more lenient with the files in `docs/`.
 
 ### Wishlist
 
