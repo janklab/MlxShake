@@ -12,9 +12,13 @@ and start hacking!
 
 Rerun `exportmlx_gendoco` after all your changes to make sure things are still working, and to keep the User Guide up to date with current library behavior.
 
-## BUGS
-
 ## TODO
+
+### BUGS
+
+Nothing big outstanding AFAIK. Hooray!
+
+### Enhancements
 
 * Eww: The codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves.
 * Add CI support.
@@ -25,9 +29,10 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 * Nicer alt text/link text for inline images?
 * Handle table arrays with multicolumn variables (which need column-spanning headers).
 
-### TODO: Wishlist
+### Wishlist
 
 * AsciiDoc support.
+* Animated plot support. ([#1](https://github.com/janklab/ExportMlx/issues/1))
 
 ## See Also
 

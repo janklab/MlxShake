@@ -5,8 +5,10 @@ function exportmlx_gendoco
 
 %#ok<*NBRAK>
 
-repoDir = janklab.exportmlx.globals.distroot;
-docDir = string(fullfile(repoDir, 'docs'));
+rootDir = janklab.exportmlx.globals.distroot;
+docDir = string(fullfile(rootDir, 'docs'));
+
+% Export the main doco
 
 docFiles = [
     "UserGuide"
@@ -19,4 +21,18 @@ for fileStem = docFiles(:)'
     janklab.exportmlx.latex2markdown(noExtnFile);
 end
 
-fprintf('Exported doco.\n')
+% And all the examples
+
+examplesDir = fullfile(rootDir, 'examples');
+d = dir(examplesDir + "/*.mlx");
+exampleMlxs = string({d.name});
+for mlxFileBase = exampleMlxs
+    [~, fileStem, ~] = fileparts(mlxFileBase);
+    mlxFile = fullfile(examplesDir, mlxFileBase);
+    fprintf('Exporting ExportMlx example file: %s\n', mlxFileBase);
+    janklab.exportmlx.mlx2latex(mlxFile);
+    noExtnFile = fullfile(examplesDir, fileStem);
+    janklab.exportmlx.latex2markdown(noExtnFile);    
+end
+
+fprintf('Exported ExportMlx doco.\n')
