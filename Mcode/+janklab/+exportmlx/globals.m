@@ -27,7 +27,7 @@ classdef globals
       % Returns a string.
       persistent val
       if isempty(val)
-        versionFile = fullfile(exportmlx.globals.distroot, 'VERSION');
+        versionFile = fullfile(janklab.exportmlx.globals.distroot, 'VERSION');
         val = strtrim(janklab.exportmlx.internal.util.readtext(versionFile));
       end
       out = val;
