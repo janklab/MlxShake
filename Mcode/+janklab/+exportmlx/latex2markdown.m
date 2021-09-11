@@ -149,6 +149,12 @@ absImgInDir = inParentDir + "/" + inFileStem + "_images";
 % relImgOutDir = inFileStem + "_images";
 mdstr = strrep(mdstr, absImgInDir + "/", "");
 
+% Condense excess newlines
+% BUG: This is a little too aggressive, because it will also apply to code
+% blocks and pre text. But that's a rare enough use case that we'll let that
+% slide for now.
+mdstr = regexprep(mdstr, "\n\n\n+", "\n\n");
+
 %% File output
 
 if ismissing(options.outFile)
