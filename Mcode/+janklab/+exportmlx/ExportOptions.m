@@ -10,9 +10,21 @@ classdef ExportOptions
     properties
         % The output file name for the final Markdown export.
         outFile (1,1) string = missing
-        % The style (subformat) of Markdown to use.
-        markdownStyle (1,1) string ...
-            {mustBeMember(markdownStyle, ["github", "qiita"])} = 'github'
+        % The publishing-platform-specific style of Markdown to use.
+        %
+        % This does not control what Markdown flavor is being used. Instead,
+        % this is about how things are arranged or placed in the Markdown so
+        % that the output is suitable for particular publishing targets (web
+        % hosts), like GitHub Pages or Qiita.
+        %
+        % Valid values:
+        %   'gh-pages' - For GitHub Pages. (default)
+        %   'qiita' - For Qiita.
+        %
+        % If you don't know which one to use, stick with 'gh-pages'; it's pretty
+        % vanilla.
+        markdownPublishTarget (1,1) string ...
+            {mustBeMember(markdownPublishTarget, ["gh-pages", "qiita"])} = 'gh-pages'
         % Whether to convert PNG images to JPEGs.
         % This saves space at the expense of image quality. Off by default.
         png2jpeg (1,1) logical = false

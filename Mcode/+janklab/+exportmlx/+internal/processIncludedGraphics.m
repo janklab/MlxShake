@@ -1,4 +1,4 @@
-function str = processIncludedGraphics(str, format, png2jpeg, filename, filepath)
+function str = processIncludedGraphics(str, publishTarget, png2jpeg, filename, filepath)
 % Process included graphics
 %
 % Note: There are two cases in the tex
@@ -8,7 +8,7 @@ function str = processIncludedGraphics(str, format, png2jpeg, filename, filepath
 % Inserted images needs to ???
 arguments
     str string
-    format (1,1) string
+    publishTarget (1,1) string
     png2jpeg (1,1) logical
     filename (1,1) string
     filepath (1,1) string
@@ -45,8 +45,8 @@ for i = 1:length(imageParts)
         end
     end
     
-    switch format
-        case 'github'
+    switch publishTarget
+        case 'gh-pages'
             %  ![string]('path to a image')
             md = regexprep(imageParts(i), "\\includegraphics\[[^\]]+\]{"+filenames{:}+"}",...
                 "![" + imageFilename + "](" + imageDir + imageFilename + ")");

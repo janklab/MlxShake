@@ -23,7 +23,8 @@ function outMdFile = lslatex2markdown(inFile, options)
 %   outFile - Specifies a custom file name. Defaults to the input file
 %   name with '.tex' replaced by '.md'.
 %
-%   markdownStyle - Specifies the style of Markdown to use. 'github'* or 'qiita'.
+%   markdownPublishTarget - Specifies the style of Markdown to use. May be
+%   'gh-pages'* or 'qiita'.
 %
 %   png2jpeg (logical) - If true, converts PNG images to JPEGs. This saves space at the
 %   expense of reduced image quality.
@@ -138,10 +139,10 @@ str2md = str(~ixLiteral);
 str2md = janklab.exportmlx.internal.processDocumentOutput(str2md, options.tableMaxWidth);
 
 % Equations
-str2md = janklab.exportmlx.internal.processEquations(str2md, options.markdownStyle);
+str2md = janklab.exportmlx.internal.processEquations(str2md, options.markdownPublishTarget);
 
 % Included graphics
-str2md = janklab.exportmlx.internal.processIncludedGraphics(str2md, options.markdownStyle, ...
+str2md = janklab.exportmlx.internal.processIncludedGraphics(str2md, options.markdownPublishTarget, ...
     options.png2jpeg, inFileStem, inParentDir);
 
 % Apply vertical/horizontal space

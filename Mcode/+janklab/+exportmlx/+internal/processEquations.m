@@ -1,4 +1,4 @@
-function str = processEquations(str, format)
+function str = processEquations(str, publishTarget)
 % Process math equations
 %
 % For Github users: Use https://latex.codecogs.com
@@ -11,13 +11,13 @@ function str = processEquations(str, format)
 % ```
 arguments
     str string
-    format (1,1) string {mustBeMember(format, ["github", "qiita"])} = 'github'
+    publishTarget (1,1) string {mustBeMember(publishTarget, ["gh-pages", "qiita"])} = 'gh-pages'
 end
 
 LF = newline;
 
-switch format
-    case 'github'
+switch publishTarget
+    case 'gh-pages'
         tt = regexp(str, "[^`]?\$\$([^$]+)\$\$[^`]?", 'tokens');
         idx = cellfun(@iscell, tt);
         % if tt contains 0x0 string, horzcat(tt{:}) generates string vector
