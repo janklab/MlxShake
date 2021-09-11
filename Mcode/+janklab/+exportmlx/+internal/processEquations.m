@@ -1,4 +1,4 @@
-function str2md = processEquations(str2md, format)
+function str = processEquations(str, format)
 % Process math equations
 %
 % For Github users: Use https://latex.codecogs.com
@@ -12,10 +12,10 @@ function str2md = processEquations(str2md, format)
 
 switch format
     case 'qiita'
-        str2md = regexprep(str2md, "[^`]?\$\$([^$]+)\$\$[^`]?", ...
+        str = regexprep(str, "[^`]?\$\$([^$]+)\$\$[^`]?", ...
             newline + "```math" + newline + "$1" + newline + "```");
     case 'github'
-        tt = regexp(str2md, "[^`]?\$\$([^$]+)\$\$[^`]?", 'tokens');
+        tt = regexp(str, "[^`]?\$\$([^$]+)\$\$[^`]?", 'tokens');
         idx = cellfun(@iscell, tt);
         % if tt contains 0x0 string, horzcat(tt{:}) generates string vector
         % whereas if tt with cell only, horzcat(tt{:}) generates cell
@@ -26,16 +26,16 @@ switch format
             eqncode = replace(eqncode, " ", "&space;");
             partsMD = "<img src=""https://latex.codecogs.com/gif.latex?" ...
                 + eqncode + """/>";
-            str2md = replace(str2md, "$$" + parts(ii) + "$$", partsMD);
+            str = replace(str, "$$" + parts(ii) + "$$", partsMD);
         end
         
         % Inline
-        tt = regexp(str2md, "[^`$]\$([^$]+)\$[^`$]", 'tokens');
+        tt = regexp(str, "[^`$]\$([^$]+)\$[^`$]", 'tokens');
         parts = horzcat(tt{:});
         for ii=1:length(parts)
             eqncode = replace(parts(ii), " ", "&space;");
             partsMD = "<img src=""https://latex.codecogs.com/gif.latex?\inline&space;" ...
                 + eqncode + """/>";
-            str2md = replace(str2md, "$" + parts(ii) + "$", partsMD);
+            str = replace(str, "$" + parts(ii) + "$", partsMD);
         end
 end

@@ -1,4 +1,4 @@
-function str2md = processDocumentOutput(str2md, tableMaxWidth)
+function str = processDocumentOutput(str, tableMaxWidth)
 % Process document output
 
 %% 2-1: Fix latex conventions for non-literal parts
@@ -19,7 +19,7 @@ replacements = [
     "\%", "%"
 ];
 for i = 1:size(replacements, 1)
-    str2md = replace(str2md, replacements(i,1), replacements(i,2));
+    str = replace(str, replacements(i,1), replacements(i,2));
 end
 
 % These will be left as they are till the end of this function
@@ -29,8 +29,8 @@ end
 
 % To deal with \{ and \} inside other commands, it's easier to
 % make regular expression if we change these to letters. (will change it back later)
-str2md = replace(str2md, "\{", "BackslashCurlyBlacketOpen");
-str2md = replace(str2md, "\}", "BackslashCurlyBlacketClose");
+str = replace(str, "\{", "BackslashCurlyBlacketOpen");
+str = replace(str, "\}", "BackslashCurlyBlacketClose");
 
 %% 2-2: Text decoration
 % \textbf{bold}
@@ -40,10 +40,10 @@ str2md = replace(str2md, "\}", "BackslashCurlyBlacketClose");
 % and all the possible conbinations of these four.
 
 % Need to keep this execution sequence
-str2md = regexprep(str2md, "\\textbf{([^{}]+)}", "**$1**");
-str2md = regexprep(str2md, "\\textit{([^{}]+)}", "*$1*");
-str2md = regexprep(str2md, "\\underline{([^{}]+)}", "$1"); % Ignore underline
-str2md = regexprep(str2md, "\\texttt{(\*{0,3})([^*{}]+)(\*{0,3})}", "$1`$2`$3");
+str = regexprep(str, "\\textbf{([^{}]+)}", "**$1**");
+str = regexprep(str, "\\textit{([^{}]+)}", "*$1*");
+str = regexprep(str, "\\underline{([^{}]+)}", "$1"); % Ignore underline
+str = regexprep(str, "\\texttt{(\*{0,3})([^*{}]+)(\*{0,3})}", "$1`$2`$3");
 
 % Note on the processing \texttt
 % Example: 
@@ -57,20 +57,20 @@ str2md = regexprep(str2md, "\\texttt{(\*{0,3})([^*{}]+)(\*{0,3})}", "$1`$2`$3");
 %% 2-3: Hyperlinks
 % Markdown: [string](http://xxx.com)
 % latex: \href{http://xxx.com}{string}
-str2md = regexprep(str2md, "\\href{([^{}]+)}{([^{}]+)}", "[$2]($1)");
+str = regexprep(str, "\\href{([^{}]+)}{([^{}]+)}", "[$2]($1)");
 
 %% 2-4: Title and headings
 % Add an extra newline to make sure there's a blank line between immediately
 % subsequent headings. Excess newlines will get cleaned up later.
-str2md = regexprep(str2md, "\\matlabtitle{([^{}]+)}", "# $1\n");
+str = regexprep(str, "\\matlabtitle{([^{}]+)}", "# $1\n");
 % Headings are converted to next level down to conform with Markdownlint style
-str2md = regexprep(str2md, "\\matlabheading{([^{}]+)}", "## $1\n");
-str2md = regexprep(str2md, "\\matlabheadingtwo{([^{}]+)}", "### $1\n");
-str2md = regexprep(str2md, "\\matlabheadingthree{([^{}]+)}", "#### $1\n");
+str = regexprep(str, "\\matlabheading{([^{}]+)}", "## $1\n");
+str = regexprep(str, "\\matlabheadingtwo{([^{}]+)}", "### $1\n");
+str = regexprep(str, "\\matlabheadingthree{([^{}]+)}", "#### $1\n");
 
 % Put \{ and \{ back.
-str2md = replace(str2md, "BackslashCurlyBlacketOpen", "\{");
-str2md = replace(str2md, "BackslashCurlyBlacketClose", "\}");
+str = replace(str, "BackslashCurlyBlacketOpen", "\{");
+str = replace(str, "BackslashCurlyBlacketClose", "\}");
 
 %% 2-5: Quotation
 % Markdown: >
@@ -81,8 +81,8 @@ str2md = replace(str2md, "BackslashCurlyBlacketClose", "\}");
 % \end{center}
 % \end{par}
 % Note: \includegraphics is an exception
-idxNonGraphics = ~contains(str2md, "\includegraphics");
-str2md(idxNonGraphics) = replace(str2md(idxNonGraphics),...
+idxNonGraphics = ~contains(str, "\includegraphics");
+str(idxNonGraphics) = replace(str(idxNonGraphics),...
     "\begin{par}" + newline + "\begin{center}" + newline, "> ");
 
 %% 2-6: Delete unnecessary commands
@@ -98,7 +98,7 @@ things = [
     "\end{center}"
     ];
 for thing = things'
-    str2md = erase(str2md, thing);
+    str = erase(str, thing);
 end
 
 %% 2-7: Unordered list
@@ -110,12 +110,12 @@ end
 %         \item{\begin{flushleft} リスト２ \end{flushleft}}
 %         \item{\begin{flushleft} リスト３ \end{flushleft}}
 %      \end{itemize}
-str2md = erase(str2md, "\setlength{\itemsep}{-1ex}" + newline);
-itemizeIdx = contains(str2md, ["\begin{itemize}", "\end{itemize}"]);
-itemsParts = str2md(itemizeIdx);
+str = erase(str, "\setlength{\itemsep}{-1ex}" + newline);
+itemizeIdx = contains(str, ["\begin{itemize}", "\end{itemize}"]);
+itemsParts = str(itemizeIdx);
 partsMarkdown = regexprep(itemsParts, " *\\item{([^{}]+)}", "*$1");
 partsMarkdown = erase(partsMarkdown, ["\begin{itemize}", "\end{itemize}"]);
-str2md(itemizeIdx) = partsMarkdown;
+str(itemizeIdx) = partsMarkdown;
 
 %% 2-8: Ordered list
 % markdown: 1. itemname
@@ -126,12 +126,12 @@ str2md(itemizeIdx) = partsMarkdown;
 %         \item{\begin{flushleft} リスト２ \end{flushleft}}
 %         \item{\begin{flushleft} リスト３ \end{flushleft}}
 %      \end{enumerate}
-str2md = erase(str2md, "\setlength{\itemsep}{-1ex}" + newline);
-itemizeIdx = contains(str2md, ["\begin{enumerate}", "\end{enumerate}"]);
-itemsParts = str2md(itemizeIdx);
+str = erase(str, "\setlength{\itemsep}{-1ex}" + newline);
+itemizeIdx = contains(str, ["\begin{enumerate}", "\end{enumerate}"]);
+itemsParts = str(itemizeIdx);
 partsMarkdown = regexprep(itemsParts, " *\\item{([^{}]+)}", "1.$1");% Any numder works
 partsMarkdown = erase(partsMarkdown, ["\begin{enumerate}", "\end{enumerate}"]);
-str2md(itemizeIdx) = partsMarkdown;
+str(itemizeIdx) = partsMarkdown;
 
 %% 2-9: Symbolic output
 % markdown: inline equation
@@ -153,12 +153,12 @@ str2md(itemizeIdx) = partsMarkdown;
 % \end{array}\right)$
 % \end{matlabsymbolicoutput}
 
-symoutIdx = contains(str2md, ["\begin{matlabsymbolicoutput}" , "\end{matlabsymbolicoutput}"]);
-symoutParts = str2md(symoutIdx);
+symoutIdx = contains(str, ["\begin{matlabsymbolicoutput}" , "\end{matlabsymbolicoutput}"]);
+symoutParts = str(symoutIdx);
 tmp = erase(symoutParts, "\begin{matlabsymbolicoutput}" + newline);
 tmp = replace(tmp, "$\displaystyle", "$$");
 partsMarkdown = replace(tmp, "$" + newline + "\end{matlabsymbolicoutput}", "$$");
-str2md(symoutIdx) = partsMarkdown;
+str(symoutIdx) = partsMarkdown;
 % NOTE: This part will be processed by processEquations.m
 
 %% 2-10: table output
@@ -177,8 +177,8 @@ str2md(symoutIdx) = partsMarkdown;
 % \end{tabular}
 % }
 % \end{matlabtableoutput}
-idxTblOutput = startsWith(str2md, "\begin{matlabtableoutput}" + newline);
-tableLatex = extractBetween(str2md(idxTblOutput), ...
+idxTblOutput = startsWith(str, "\begin{matlabtableoutput}" + newline);
+tableLatex = extractBetween(str(idxTblOutput), ...
     "\begin{tabular}", "\end{tabular}");
 
 tableMD = strings(sum(idxTblOutput), 1);
@@ -223,11 +223,11 @@ for ii=1:sum(idxTblOutput)
     
     tableMD(ii) = strjoin([header, format, body],newline);
 end
-str2md(idxTblOutput) = tableMD;
+str(idxTblOutput) = tableMD;
 
 %% finish up
-str2md = replace(str2md, "\{", "{");
-str2md = replace(str2md, "\}", "}");
+str = replace(str, "\{", "{");
+str = replace(str, "\}", "}");
 
 end
 
