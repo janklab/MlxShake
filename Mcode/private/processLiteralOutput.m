@@ -30,11 +30,11 @@ idx_matlaboutput = startsWith(str, "\begin{matlaboutput}");
 idxLiteral = idx_lstlisting | idx_verbatim | idx_matlabcode | idx_matlaboutput;
 
 str(idx_lstlisting) = newline + "```matlab:Code(Display)" + extractBetween(str(idx_lstlisting), ...
-    "\begin{lstlisting}","\end{lstlisting}") + "```" + newline;
+    "\begin{lstlisting}", "\end{lstlisting}") + "```" + newline;
 str(idx_verbatim) = newline + "```matlab:Code(Display)" + extractBetween(str(idx_verbatim), ...
-    "\begin{verbatim}","\end{verbatim}") + "```" + newline;
+    "\begin{verbatim}", "\end{verbatim}") + "```" + newline;
 str(idx_matlabcode) = newline + "```matlab:Code" + extractBetween(str(idx_matlabcode), ...
-    "\begin{matlabcode}","\end{matlabcode}") + "```" + newline;
+    "\begin{matlabcode}", "\end{matlabcode}") + "```" + newline;
 str(idx_matlaboutput) = newline + "```text:Output" + extractBetween(str(idx_matlaboutput), ...
-    "\begin{matlaboutput}","\end{matlaboutput}") + "```" + newline;
+    "\begin{matlaboutput}", "\end{matlaboutput}") + "```" + newline;
 
