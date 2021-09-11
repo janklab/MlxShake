@@ -65,12 +65,19 @@ else
     noExtnFile = fullfile(inParentDir, inFileStem);
     latexFile = inFile;
 end
+if ismissing(options.outFile)
+    outMdFile = noExtnFile + ".md";
+else
+    outMdFile = options.outFile;
+end
 
 if ~isfile(latexFile)
     error("Input LaTeX file '" + latexFile + " does not exist. " ...
     + "If you haven't generate latex file from a live script please do so, " ...
     + "using mlx2latex.");
 end
+
+loginfo('Exporting: %s -> %s', latexFile, outMdFile);
 
 %% Preprocess latex
 
@@ -174,14 +181,7 @@ mdstr = regexprep(mdstr, "\n\n+$", "\n");
 
 %% File output
 
-if ismissing(options.outFile)
-    outMdFile = noExtnFile + ".md";
-else
-    outMdFile = options.outFile;
-end
-imagesDirPath = noExtnFile + "_images";
+% imagesDirPath = noExtnFile + "_images";
 janklab.exportmlx.internal.util.writetext(mdstr, outMdFile);
 
-loginfo("Converting LaTeX to Markdown is complete.");
-loginfo("  Markdown: " + outMdFile);
-loginfo("  Images dir: " + imagesDirPath);
+loginfo("Exported:  %s -> %s", latexFile, outMdFile);

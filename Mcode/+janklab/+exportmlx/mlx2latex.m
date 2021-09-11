@@ -48,12 +48,11 @@ else
 end
 outStemPath = fullfile(outDir, outStem);
 
-loginfo('Exporting: %s to %s.*', inMlxFile, outStemPath);
 outFileBase = outStem + outFileExtn;
 outTexFile = fullfile(outDir, outFileBase);
-
+loginfo('Exporting: %s -> %s', inMlxFile, outTexFile);
 matlab.internal.liveeditor.openAndConvert(char(inMlxFile), char(outTexFile));
-loginfo('Exported: %s -> %s', inMlxFile, outTexFile);
+loginfo('Exported:  %s -> %s', inMlxFile, outTexFile);
 
 out.dir = outDir;
 out.stemPath = outStemPath;
