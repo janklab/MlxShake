@@ -10,6 +10,8 @@
 )
 ```
 
+* Multi-column table variables get bad `Var1}` column headers.
+
 ## TODO
 
 * Convert API to OOP and jankify
