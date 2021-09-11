@@ -20,6 +20,11 @@ classdef ExportOptions
         % Default is 20.
         % (TODO: What units is this in: columns, inches, ???)
         tableMaxWidth (1,1) double = 20
+        % Whether to add a comment referencing ExportMlx in the Markdown output.
+        % This doesn't show up in user-visible presentation, but it helps people
+        % figure out how the file was built, and I'd like some more users! But I
+        % won't mind if you turn it off.
+        addMention (1,1) logical = true
     end
     
     methods

@@ -28,6 +28,9 @@ function outMdFile = latex2markdown(inFile, options)
 %   tableMaxWidth (double, 20*) - Maximum table width. (TODO: What units is
 %   this in: columns, inches, ???)
 %
+%   addMention (logical,true*) ? Use this to turn off the comment that
+%   references ExportMlx in the generated Markdown.
+%
 % Returns the path to the generated .md file.
 %
 % See also:
@@ -148,6 +151,13 @@ mdstr = join(str, LF);
 absImgInDir = inParentDir + "/" + inFileStem + "_images";
 % relImgOutDir = inFileStem + "_images";
 mdstr = strrep(mdstr, absImgInDir + "/", "");
+
+% Add a mention of ExportMlx
+if options.addMention
+    mdstr = mdstr + LF + LF ...
+        + sprintf("<!-- This Markdown was generated from Matlab Live Script with Janklab ExportMlx (https://exportmlx.janklab.net) -->") ...
+        + LF;
+end
 
 % Condense excess newlines
 % BUG: This is a little too aggressive, because it will also apply to code

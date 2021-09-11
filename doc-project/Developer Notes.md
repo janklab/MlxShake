@@ -23,7 +23,6 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 * Don't leave intermediate `.tex` and `.sty` file droppings (configurable, droppings off by default but enableable with an option).
 * Nicer alt text/link text for inline images?
 * Handle table arrays with multicolumn variables (which need column-spanning headers).
-* Maybe add a "credits" note to generated files. This should be disableable. Should probably only be in the comments/internal markup, not reader-visible.
 
 ## See Also
 

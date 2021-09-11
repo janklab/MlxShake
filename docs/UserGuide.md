@@ -225,3 +225,5 @@ There's not a corresponding function, but centered paragraphs are treated as quo
 ## Feedback and Support
 
 Hope this accelerates your Matlab life! Any comments and suggestions are welcome. Visit the project repo at [https://github.com/janklab/ExportMlx](https://github.com/janklab/ExportMlx).
+
+<!-- This Markdown was generated from Matlab Live Script with Janklab ExportMlx (https://exportmlx.janklab.net) -->
