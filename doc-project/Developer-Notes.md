@@ -25,3 +25,7 @@
   * Should be able to suppress it entirely if you want.
 * Add support for Jekyll and MkDocs integration.
 * Don't leave intermediate `.tex` and `.sty` file droppings.
+
+## See Also
+
+* The [`Release Checklist.md`](Release Checklist.md) file.

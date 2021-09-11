@@ -79,6 +79,8 @@ The project home page is the [GitHub repo page](https://github.com/janklab/Expor
 
 ExportMlx is part of the [Janklab](https://janklab.net) suite of open source libraries for Matlab.
 
+ExportMlx's repo structure is based on Janklab's [MatlabProjectTemplate](https://github.com/apjanke/MatlabProjectTemplate).
+
 Code was written while listening to [live Phish shows](https://www.livephish.com/).
 
 ## Contributing
