@@ -16,7 +16,7 @@ See the [User Guide](https://exportmlx.janklab.net/UserGuide.html) for examples 
 
 ## PRERELEASE ALPHA SOFTWARE
 
-This is pre-release, alpha (not even beta!) quality software! It is an experimental work in progress. Everything about it, especially its public API, is subject to change at any time. And it is probably buggy.
+This is pre-release, alpha quality (not even beta yet!) software! It is an experimental work in progress. Everything about it, especially its public API, is subject to change at any time. And it is probably buggy.
 
 DO NOT USE THIS SOFTWARE IN PRODUCTION SYSTEMS!
 
