@@ -155,6 +155,10 @@ mdstr = strrep(mdstr, absImgInDir + "/", "");
 % slide for now.
 mdstr = regexprep(mdstr, "\n\n\n+", "\n\n");
 
+% Fix trailing whitespace
+mdstr = regexprep(mdstr, " +\n", "\n");
+mdstr = regexprep(mdstr, "\n\n+$", "\n");
+
 %% File output
 
 if ismissing(options.outFile)

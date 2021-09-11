@@ -44,9 +44,9 @@ This will generate `README.md`, a Markdown file suitable for GitHub.
 
 The `latex2markdown` function supports the following options:
 
-* `markdownStyle`: Style of Markdown to generate. May be `'github'` (default) or `'qiita'`  
-* `outFile`: The name of the Markdown file to be generated. If unspecified, will be the same as the Live Script, but with an `.md` file extension. 
-* `png2jpeg`: Convert PNG images to JPEG images to save space at the expense of image quality. May be `false` (default) or `true`. 
+* `markdownStyle`: Style of Markdown to generate. May be `'github'` (default) or `'qiita'`
+* `outFile`: The name of the Markdown file to be generated. If unspecified, will be the same as the Live Script, but with an `.md` file extension.
+* `png2jpeg`: Convert PNG images to JPEG images to save space at the expense of image quality. May be `false` (default) or `true`.
 
 The arguments are passed as a `janklab.exportmlx.ExportOptions` object, so you need to stick them in a `{...}`.
 
@@ -62,9 +62,9 @@ Note: Qiita is a tech blog platform in Japanese. Qiita uses Markdown for its pos
 
 ## Differences Between Qiita and GitHub Formats
 
-One is the equations and the other is how to insert the image files. 
+One is the equations and the other is how to insert the image files.
 
-Qiita allows you to use LaTeX to represent equations (like GitLab?) whereas GitHub does not. For GitHub, ExportMlx uses CODECOGS ([https://latex.codecogs.com](https://latex.codecogs.com)) to render the equations as images. 
+Qiita allows you to use LaTeX to represent equations (like GitLab?) whereas GitHub does not. For GitHub, ExportMlx uses CODECOGS ([https://latex.codecogs.com](https://latex.codecogs.com)) to render the equations as images.
 
 Rendering equations with CODECOGS is done by sticking CODECOGS query URLs in image references in the Markdown. The image files are fetched from codecogs at document viewing time; they are not stored locally. This may not be suitable for all use cases.
 
@@ -82,7 +82,7 @@ y = sin(x)
 ```
 
 ```text:Output
-y = 1x100    
+y = 1x100
          0    0.0634    0.1266    0.1893    0.2511    0.3120    0.3717    0.4298    0.4862    0.5406    0.5929    0.6428    0.6901    0.7346    0.7761    0.8146    0.8497    0.8815    0.9096    0.9341    0.9549    0.9718    0.9848    0.9938    0.9989    0.9999    0.9969    0.9898    0.9788    0.9638    0.9450    0.9224    0.8960    0.8660    0.8326    0.7958    0.7557    0.7127    0.6668    0.6182    0.5671    0.5137    0.4582    0.4009    0.3420    0.2817    0.2203    0.1580    0.0951    0.0317
 
 ```
@@ -155,7 +155,7 @@ Here's a display of an inline image (an image pasted into the Live Script, as op
 
 Any equations in Live Scripts will be exported as LaTeX. For GitHub, CODECOGS helps display them by rendering them as images at document viewing time.
 
-Here's an inline equation: <img src="https://latex.codecogs.com/gif.latex?\inline&space;\sin^2&space;x+\cos^2&space;x=1"/>. 
+Here's an inline equation: <img src="https://latex.codecogs.com/gif.latex?\inline&space;\sin^2&space;x+\cos^2&space;x=1"/>.
 
 If you have multiple lines of equations:
 
@@ -169,37 +169,37 @@ Single line equations look like this:
 
 Here's a unordered list:
 
-* Item foo 
-* Item bar 
-* Item baz 
+* Item foo
+* Item bar
+* Item baz
 
 Here's an ordered list:
 
-1. Item one 
-1. Item two 
-1. Item three 
+1. Item one
+1. Item two
+1. Item three
 
 ### Font Styles
 
 Here are the complete list of font styles available in Live Editor:
 
-* **Bold** 
-* *Italic* 
-* Underline 
-* `Monospace`. 
+* **Bold**
+* *Italic*
+* Underline
+* `Monospace`.
 
 And some conbinations of styles:
 
-* ***BoldItalic*** 
-* **BoldUnderline** 
-* **`BoldMonospace`** 
-* *ItalicUnderline* 
-* *`ItalicMonospace`* 
-* `UnderlineMonospace` 
-* ***BoldItalicUnderline*** 
-* ***`BoldItalicMonospace`*** 
-* **`BoldUnderlineMonospace`** 
-* *`ItalicUnderlineMonospace`* 
+* ***BoldItalic***
+* **BoldUnderline**
+* **`BoldMonospace`**
+* *ItalicUnderline*
+* *`ItalicMonospace`*
+* `UnderlineMonospace`
+* ***BoldItalicUnderline***
+* ***`BoldItalicMonospace`***
+* **`BoldUnderlineMonospace`**
+* *`ItalicUnderlineMonospace`*
 
 Note that underlines do not show up in the Markdown! (I think this is because Markdown doesn't have markup for underlines?)
 
@@ -212,4 +212,3 @@ There's not a corresponding function, but centered paragraphs are treated as quo
 ## Feedback and Support
 
 Hope this accelerates your Matlab life! Any comments and suggestions are welcome. Visit the project repo at [https://github.com/janklab/ExportMlx](https://github.com/janklab/ExportMlx).
-
