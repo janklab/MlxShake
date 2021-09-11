@@ -84,7 +84,7 @@ rng(420)
 
 ### MATLAB Code
 
-MATLAB code and its output and figures will be shown as follows:
+MATLAB code and its output will be shown as follows:
 
 ```matlab:Code
 % Matlab code
@@ -98,6 +98,10 @@ y = 1x100
 
 ```
 
+### Figure Plots
+
+MATLAB figure plots look like this:
+
 ```matlab:Code
 % Figures
 plot(x,y);
@@ -105,7 +109,7 @@ plot(x,y);
 
 ![figure_0.png](UserGuide_images/figure_0.png)
 
-### Table display
+### Table Display
 
 The display of `table` arrays will be formated like so:
 
@@ -160,7 +164,7 @@ Here's a display of an inline image (an image pasted into the Live Script, as op
 
 ["Panda cat"](https://www.flickr.com/photos/84606435@N00/358199239) by [fox_kiyo](https://www.flickr.com/photos/84606435@N00) is licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/?ref=ccsearch&atype=rich).
 
-### Equations
+### Mathematical Equations
 
 Any equations in Live Scripts will be exported as LaTeX. For GitHub, CODECOGS helps display them by rendering them as images at document viewing time.
 
