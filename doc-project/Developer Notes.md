@@ -25,6 +25,10 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 * Nicer alt text/link text for inline images?
 * Handle table arrays with multicolumn variables (which need column-spanning headers).
 
+### TODO: Wishlist
+
+* AsciiDoc support.
+
 ## See Also
 
 * The [`Release Checklist.md`](Release Checklist.md) file.
