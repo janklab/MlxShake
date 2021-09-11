@@ -111,7 +111,7 @@ end
 str2md = erase(str2md, "\setlength{\itemsep}{-1ex}" + newline);
 itemizeIdx = contains(str2md, ["\begin{itemize}", "\end{itemize}"]);
 itemsParts = str2md(itemizeIdx);
-partsMarkdown = regexprep(itemsParts, "\\item{([^{}]+)}", "- $1");
+partsMarkdown = regexprep(itemsParts, " *\\item{([^{}]+)}", "*$1");
 partsMarkdown = erase(partsMarkdown, ["\begin{itemize}", "\end{itemize}"]);
 str2md(itemizeIdx) = partsMarkdown;
 
@@ -127,7 +127,7 @@ str2md(itemizeIdx) = partsMarkdown;
 str2md = erase(str2md, "\setlength{\itemsep}{-1ex}" + newline);
 itemizeIdx = contains(str2md, ["\begin{enumerate}", "\end{enumerate}"]);
 itemsParts = str2md(itemizeIdx);
-partsMarkdown = regexprep(itemsParts, "\\item{([^{}]+)}", "1. $1");% Any numder works
+partsMarkdown = regexprep(itemsParts, " *\\item{([^{}]+)}", "1.$1");% Any numder works
 partsMarkdown = erase(partsMarkdown, ["\begin{enumerate}", "\end{enumerate}"]);
 str2md(itemizeIdx) = partsMarkdown;
 

@@ -44,9 +44,9 @@ This will generate `README.md`, a Markdown file suitable for GitHub.
 
 The `latex2markdown` function supports the following options:
 
-   -  `markdownStyle`: Style of Markdown to generate. May be `'github'` (default) or `'qiita'`  
-   -  `outFile`: The name of the Markdown file to be generated. If unspecified, will be the same as the Live Script, but with an `.md` file extension. 
-   -  `png2jpeg`: Convert PNG images to JPEG images to save space at the expense of image quality. May be `false` (default) or `true`. 
+* `markdownStyle`: Style of Markdown to generate. May be `'github'` (default) or `'qiita'`  
+* `outFile`: The name of the Markdown file to be generated. If unspecified, will be the same as the Live Script, but with an `.md` file extension. 
+* `png2jpeg`: Convert PNG images to JPEG images to save space at the expense of image quality. May be `false` (default) or `true`. 
 
 The arguments are passed as a `janklab.exportmlx.ExportOptions` object, so you need to stick them in a `{...}`.
 
@@ -169,37 +169,37 @@ Single line equations look like this:
 
 Here's a unordered list:
 
-   -  Item foo 
-   -  Item bar 
-   -  Item baz 
+* Item foo 
+* Item bar 
+* Item baz 
 
 Here's an ordered list:
 
-   1.  Item one 
-   1.  Item two 
-   1.  Item three 
+1. Item one 
+1. Item two 
+1. Item three 
 
 ### Font Styles
 
 Here are the complete list of font styles available in Live Editor:
 
-   -  **Bold** 
-   -  *Italic* 
-   -  Underline 
-   -  `Monospace`. 
+* **Bold** 
+* *Italic* 
+* Underline 
+* `Monospace`. 
 
 And some conbinations of styles:
 
-   -  ***BoldItalic*** 
-   -  **BoldUnderline** 
-   -  **`BoldMonospace`** 
-   -  *ItalicUnderline* 
-   -  *`ItalicMonospace`* 
-   -  `UnderlineMonospace` 
-   -  ***BoldItalicUnderline*** 
-   -  ***`BoldItalicMonospace`*** 
-   -  **`BoldUnderlineMonospace`** 
-   -  *`ItalicUnderlineMonospace`* 
+* ***BoldItalic*** 
+* **BoldUnderline** 
+* **`BoldMonospace`** 
+* *ItalicUnderline* 
+* *`ItalicMonospace`* 
+* `UnderlineMonospace` 
+* ***BoldItalicUnderline*** 
+* ***`BoldItalicMonospace`*** 
+* **`BoldUnderlineMonospace`** 
+* *`ItalicUnderlineMonospace`* 
 
 Note that underlines do not show up in the Markdown! (I think this is because Markdown doesn't have markup for underlines?)
 
