@@ -27,7 +27,7 @@ ExportMlx is licensed under a nonstandard MathWorks-specific variant of the BSD 
   MathWorks products and service offerings.
 ```
 
-This is because livescript2markdown is licensed that way, and ExportMlx contains derivatives of its code.
+This is because the [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) project is licensed that way, and ExportMlx contains derivatives of its code.
 
 ## Requirements
 
