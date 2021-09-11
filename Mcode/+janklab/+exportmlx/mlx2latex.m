@@ -1,26 +1,51 @@
-function mlx2latex(mlxFile)
-% Export a live script (.mlx) file to LaTeX (.tex).
+function mlx2latex(inMlxFile, outFile)
+% Export a Live Script (.mlx) file to LaTeX (.tex).
 %
 % janklab.exportmlx.mlx2latex(mlxFile)
+% janklab.exportmlx.mlx2latex(mlxFile, outFile)
 %
-% MlxFile (string) is the path to the .mlx Live Script file to export.
+% Exports a Matlab Live Script to LaTeX. This produces a .tex file and an
+% accompanying <foo>_images directory next to it.
+%
+% InMlxFile (string) is the path to the input .mlx Live Script file to export.
+% Files on the Matlab path will not be located; you must provide the full path
+% to the input file.
+%
+% OutFile (string, optional) is the path to the output .tex file to export. The
+% '.tex' extension may be omitted and defaults to '.tex'. You can also use a
+% different file extension, and that will be respected, but that might mess things
+% up.
 %
 % Exports to a .tex file next to the original input file, with the '.mlx'
 % file extension replaced by '.tex'.
 
 arguments
-    mlxFile (1,1) string
+    inMlxFile (1,1) string
+    outFile (1,1) string = missing
 end
 
-[parentDir, fileStem, mlxExt] = fileparts(mlxFile); %#ok<ASGLU>
-fileStemPath = fullfile(parentDir, fileStem);
-fprintf('Exporting: %s to %s.*\n', mlxFile, fileStemPath);
+[parentDir, fileStem, mlxExt] = fileparts(inMlxFile); %#ok<ASGLU>
 
-% Export to LaTeX
-% TODO: Support export to alternate directories
+if ismissing(outFile)
+    outDir = parentDir;
+    outStem = fileStem;
+    outFileExtn = ".tex";
+else
+    [outDir,outStem,outFileExtn] = fileparts(outFile);
+    if isempty(outDir)
+        outDir = ".";
+    end
+    if isempty(outFileExten)
+        outFileExtn = ".tex";
+    end
+end
+outStemPath = fullfile(outDir, outStem);
 
-texFile = parentDir + '/' + fileStem + '.tex';
-matlab.internal.liveeditor.openAndConvert(char(mlxFile), char(texFile));
-fprintf('Exported: %s -> %s\n', mlxFile, texFile);
+fprintf('Exporting: %s to %s.*\n', inMlxFile, outStemPath);
+
+outTexFile = fullfile(outDir, outStem + outFileExtn);
+
+matlab.internal.liveeditor.openAndConvert(char(inMlxFile), char(outTexFile));
+fprintf('Exported: %s -> %s\n', inMlxFile, outTexFile);
   
 end

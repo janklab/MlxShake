@@ -14,8 +14,6 @@
 
 ## TODO
 
-* Pull in code to programmatically export mlx->tex
-  * I've got the basic down; just make it a lot better
 * Convert API to OOP and jankify
 * Stringify API
 * Replace all uses of `rand` in doco with something else, for reproducible builds.
@@ -25,6 +23,7 @@
   * Should be able to suppress it entirely if you want.
 * Add support for Jekyll and MkDocs integration.
 * Don't leave intermediate `.tex` and `.sty` file droppings.
+* Maybe add a "credits" note to generated files. This should be disableable.
 
 ## See Also
 
