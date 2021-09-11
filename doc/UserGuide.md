@@ -2,7 +2,7 @@
 # Introduction
 
 
-ExportMlx provides tools for converting Matlab live scripts to Markdown files. This is useful in generating rich documentation for Matlab programs.
+ExportMlx provides tools for converting Matlab Live Scripts to Markdown files. This is useful in generating rich documentation for Matlab programs.
 
 
 
@@ -51,7 +51,7 @@ This will generate `README.tex`. All the related images, such as included images
 
 
 
-**WARNING**: When exporting to LaTeX right after running the live script, it's observed that the figures will be exported as EPS files or not at all if the live script contains more than 20 figures. I suggest that **you close the script, reopen it, and then export to LaTeX.**
+**WARNING**: When exporting to LaTeX right after running the Live Script, it's observed that the figures will be exported as EPS files or not at all if the Live Script contains more than 20 figures. I suggest that **you close the script, reopen it, and then export to LaTeX.**
 
 
 ## Step 2: Convert the LaTeX to Markdown using `latex2markdown`
@@ -72,7 +72,7 @@ The `latex2markdown` function supports the following options:
 
 
    -  `'format'`: Style of Markdown to generate. May be `'github'` (default) or `'qiita'`  
-   -  `'outputfilename'`: The name of the Markdown file to be generated. If unspecified, will be the same as the live script, but with an `.md` file extension. 
+   -  `'outputfilename'`: The name of the Markdown file to be generated. If unspecified, will be the same as the Live Script, but with an `.md` file extension. 
    -  `'png2jpeg'`: Convert PNG images to JPEG images to save space at the expense of image quality. May be `false` (default) or `true`. 
 
 
@@ -215,7 +215,7 @@ my_dict = {'foo': 42, 'bar': [1, 2, 3]}
 ## Inline Images
 
 
-Here's a display of an inline image (an image pasted into the live script, as opposed to figure display output).
+Here's a display of an inline image (an image pasted into the Live Script, as opposed to figure display output).
 
 
 
@@ -228,7 +228,7 @@ Here's a display of an inline image (an image pasted into the live script, as op
 ## Equations
 
 
-Any equations in live scripts will be exported as LaTeX. For GitHub, CODECOGS helps display them by rendering them as images at document viewing time.
+Any equations in Live Scripts will be exported as LaTeX. For GitHub, CODECOGS helps display them by rendering them as images at document viewing time.
 
 
 
