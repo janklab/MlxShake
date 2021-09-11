@@ -45,9 +45,9 @@ end
 
 LF = newline;
 
-% Latex filename
-[inParentDir,inFileStem,extn] = fileparts(inFile);
+%% Input handling and validation
 
+[inParentDir,inFileStem,extn] = fileparts(inFile);
 if inParentDir == ""
     inParentDir = pwd;
 end
@@ -60,15 +60,13 @@ else
     latexFile = inFile;
 end
 
-% check if latexfile exists
-assert(exist(latexFile, 'file') > 0, ...
-    latexFile + " does not exist. " ...
-    + "If you haven't generate latex file from a live script please do so.");
+if ~isfile(latexFile)
+    error("Input LaTeX file '" + latexFile + " does not exist. " ...
+    + "If you haven't generate latex file from a live script please do so, " ...
+    + "using mlx2latex.");
+end
 
 % Import latex file and have it as a string variable
-% If the mlx contains double byte charactors, it needs to use fgets.
-% Otherwise the following does the work.
-% str = string(fileread(latexfile));
 fid = fopen(latexFile, 'r', 'n', 'UTF-8');
 str = string;
 tmp = fgets(fid);
