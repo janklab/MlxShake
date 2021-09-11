@@ -38,6 +38,8 @@ arguments
     options (1,1) janklab.exportmlx.ExportOptions = janklab.exportmlx.ExportOptions
 end
 
+LF = newline;
+
 % Latex filename
 [parentDir,name,extn] = fileparts(inFile);
 
@@ -82,17 +84,17 @@ str = regexprep(str, "\\label{[a-zA-Z_0-9]+}", "");
 % Divide the body into each environment
 
 % Preprocess 1:
-% Add 'newline' to the end of the following.
+% Add 'LF' to the end of the following.
 % \end{lstlisting}, \end{verbatim}, \end{matlabcode}, \end{matlaboutput},\end{center}
 % \end{matlabtableoutput}, \end{matlabsymbolicoutput}  \vspace{1em}
-str = replace(str, "\end{lstlisting}"+newline, "\end{lstlisting}"+newline+newline);
-str = replace(str, "\end{verbatim}"+newline, "\end{verbatim}"+newline+newline);
-str = replace(str, "\end{matlabcode}"+newline, "\end{matlabcode}"+newline+newline);
-str = replace(str, "\end{matlaboutput}"+newline, "\end{matlaboutput}"+newline+newline);
-str = replace(str, "\end{matlabtableoutput}"+newline, "\end{matlabtableoutput}"+newline+newline);
-str = replace(str, "\end{matlabsymbolicoutput}"+newline, "\end{matlabsymbolicoutput}"+newline+newline);
-str = replace(str, "\end{center}"+newline, "\end{center}"+newline+newline);
-str = replace(str, "\vspace{1em}"+newline, "\vspace{1em}"+newline+newline);
+str = replace(str, "\end{lstlisting}"+LF, "\end{lstlisting}"+LF+LF);
+str = replace(str, "\end{verbatim}"+LF, "\end{verbatim}"+LF+LF);
+str = replace(str, "\end{matlabcode}"+LF, "\end{matlabcode}"+LF+LF);
+str = replace(str, "\end{matlaboutput}"+LF, "\end{matlaboutput}"+LF+LF);
+str = replace(str, "\end{matlabtableoutput}"+LF, "\end{matlabtableoutput}"+LF+LF);
+str = replace(str, "\end{matlabsymbolicoutput}"+LF, "\end{matlabsymbolicoutput}"+LF+LF);
+str = replace(str, "\end{center}"+LF, "\end{center}"+LF+LF);
+str = replace(str, "\vspace{1em}"+LF, "\vspace{1em}"+LF+LF);
 
 % Preprocess 2:
 % Replace more than three \n to \n\n.
@@ -140,7 +142,7 @@ str2md = regexprep(str2md, "\\hskip1em", "  ");
 str(~idxLiteral) = str2md;
 
 % Done! Merge them together
-strmarkdown = join(str, newline);
+strmarkdown = join(str, LF);
 
 % File output
 if ismissing(options.outFile)
