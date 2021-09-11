@@ -18,10 +18,10 @@
   * I've got the basic down; just make it a lot better
 * Convert API to OOP and jankify
 * Stringify API
-* Move code into a package
 * Replace all uses of `rand` in doco with something else, for reproducible builds.
 * Try to get output Markdownlint-clean
 * Eww: the codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves.
 * Nicer, configurable progress output.
   * Should be able to suppress it entirely if you want.
 * Add support for Jekyll and MkDocs integration.
+* Don't leave intermediate `.tex` and `.sty` file droppings.

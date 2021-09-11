@@ -54,6 +54,12 @@ Quick summary:
 * `livescript2latex` – Do just the `.mlx` to `.tex` export step.
 * `latex2markdown` – Do just the `.tex` to `.md` conversion step.
 
+Super quick example:
+
+```matlab
+janklab.exportmlx.livescript2markown('MyLiveScript.mlx')
+```
+
 See the [User Guide](doc/UserGuide.md) for fuller instructions and feature description.
 
 ## Project Goals

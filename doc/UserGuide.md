@@ -29,19 +29,24 @@ Add its `Mcode` directory to your Matlab path using Matlab's `addpath()` functio
 # Usage: Simple
 
 
+All the code lives in the `janklab.exportmlx` package.
+
+
+
+
 Call `livescript2markdown(mlxFile)` on your `.mlx` Live Script file to export it to Markdown.
 
 
 
 ```matlab:Code(Display)
-livescript2markdown('README.mlx');
+janklab.exportmlx.livescript2markdown('README.mlx');
 ```
 
 # Usage: Advanced
 ## Step 1: Export your Live Script to LaTeX using `livescript2latex`
 
 ```matlab:Code(Display)
-livescript2latex('README.mlx');
+janklab.exportmlx.livescript2latex('README.mlx');
 ```
 
 
@@ -57,7 +62,7 @@ This will generate `README.tex`. All the related images, such as included images
 ## Step 2: Convert the LaTeX to Markdown using `latex2markdown`
 
 ```matlab:Code(Display)
-latex2markdown('README');
+janklab.exportmlx.latex2markdown('README');
 ```
 
 
@@ -87,7 +92,7 @@ Example: A Markdown file suitable for Qiita, named `QiitaDraft.md`, will be gene
 
 
 ```matlab:Code(Display)
-latex2markdown('README', 'format', 'qiita', 'outputfilename', 'QiitaDraft');
+janklab.exportmlx.latex2markdown('README', 'format', 'qiita', 'outputfilename', 'QiitaDraft');
 ```
 
 

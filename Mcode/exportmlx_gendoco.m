@@ -12,11 +12,11 @@ docFiles = [
 for fileStem = docFiles(:)'
     mlxFile = fullfile(docDir, fileStem + ".mlx");
     fprintf('Exporting: %s\n', mlxFile);
-    livescript2latex(mlxFile);
+    janklab.exportmlx.livescript2latex(mlxFile);
     % texFile = fullfile(docDir, fileStem + ".tex");
     % mdFile = fullfile(docDir, fileStem + ".md");
     noExtnFile = fullfile(docDir, fileStem);
-    mdFile = latex2markdown(noExtnFile);
+    mdFile = janklab.exportmlx.latex2markdown(noExtnFile);
     
     % Clean up image links
     % (This is a bug in the export that should be fixed.)
