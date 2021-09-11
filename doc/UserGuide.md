@@ -2,17 +2,12 @@
 # Introduction
 
 
-HELLO WORLD!
-
-
-
-
 This project provides a function `latex2markdown` that supports converting Matlab live scripts to Markdown files. This is useful in generating rich documentation for Matlab programs.
 
 
 
 
-This README is itself generated from a live script using ExportMlx!
+This User Guide itself is generated from a Live Script using ExportMlx!
 
 
 # Installation and Setup
