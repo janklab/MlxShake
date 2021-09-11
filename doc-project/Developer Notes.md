@@ -21,13 +21,13 @@ Rerun `exportmlx_gendoco` after all your changes to make sure things are still w
 
 ### Enhancements
 
-* Eww: The codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves.
+* Don't leave intermediate `.tex` and `.sty` file droppings (configurable, droppings off by default but enableable with an option).
+* The codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves. Eww.
+* Nicer alt text/link text for inline images?
 * Add some tests.
 * Support for GitHub Flavored Markdown and other flavors?
   * Actually, the flavor we support now _is_ GFM; that's needed for tables. Need to officially adopt that, and then maybe add other flavors.
 * Add support for Jekyll and MkDocs integration.
-* Don't leave intermediate `.tex` and `.sty` file droppings (configurable, droppings off by default but enableable with an option).
-* Nicer alt text/link text for inline images?
 * Handle table arrays with multicolumn variables (which need column-spanning headers).
 
 ### Wishlist
