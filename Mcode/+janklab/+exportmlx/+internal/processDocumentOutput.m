@@ -83,8 +83,8 @@ str = replace(str, "BackslashCurlyBlacketClose", "\}");
 % \end{center}
 % \end{par}
 % Note: \includegraphics is an exception
-idxNonGraphics = ~contains(str, "\includegraphics");
-str(idxNonGraphics) = replace(str(idxNonGraphics),...
+tfNonGraphics = ~contains(str, "\includegraphics");
+str(tfNonGraphics) = replace(str(tfNonGraphics),...
     "\begin{par}" + LF + "\begin{center}" + LF, "> ");
 
 %% 2-6: Delete unnecessary commands
@@ -113,11 +113,11 @@ end
 %         \item{\begin{flushleft} リスト３ \end{flushleft}}
 %      \end{itemize}
 str = erase(str, "\setlength{\itemsep}{-1ex}" + LF);
-itemizeIdx = contains(str, ["\begin{itemize}", "\end{itemize}"]);
-itemsParts = str(itemizeIdx);
+tfItemize = contains(str, ["\begin{itemize}", "\end{itemize}"]);
+itemsParts = str(tfItemize);
 partsMarkdown = regexprep(itemsParts, " *\\item{([^{}]+)}", "*$1");
 partsMarkdown = erase(partsMarkdown, ["\begin{itemize}", "\end{itemize}"]);
-str(itemizeIdx) = partsMarkdown;
+str(tfItemize) = partsMarkdown;
 
 %% 2-8: Ordered list
 % markdown: 1. itemname
@@ -129,11 +129,11 @@ str(itemizeIdx) = partsMarkdown;
 %         \item{\begin{flushleft} リスト３ \end{flushleft}}
 %      \end{enumerate}
 str = erase(str, "\setlength{\itemsep}{-1ex}" + LF);
-itemizeIdx = contains(str, ["\begin{enumerate}", "\end{enumerate}"]);
-itemsParts = str(itemizeIdx);
+tfItemize = contains(str, ["\begin{enumerate}", "\end{enumerate}"]);
+itemsParts = str(tfItemize);
 partsMarkdown = regexprep(itemsParts, " *\\item{([^{}]+)}", "1.$1");% Any numder works
 partsMarkdown = erase(partsMarkdown, ["\begin{enumerate}", "\end{enumerate}"]);
-str(itemizeIdx) = partsMarkdown;
+str(tfItemize) = partsMarkdown;
 
 %% 2-9: Symbolic output
 % markdown: inline equation
@@ -155,12 +155,12 @@ str(itemizeIdx) = partsMarkdown;
 % \end{array}\right)$
 % \end{matlabsymbolicoutput}
 
-symoutIdx = contains(str, ["\begin{matlabsymbolicoutput}" , "\end{matlabsymbolicoutput}"]);
-symoutParts = str(symoutIdx);
+tfSymout = contains(str, ["\begin{matlabsymbolicoutput}" , "\end{matlabsymbolicoutput}"]);
+symoutParts = str(tfSymout);
 tmp = erase(symoutParts, "\begin{matlabsymbolicoutput}" + LF);
 tmp = replace(tmp, "$\displaystyle", "$$");
 partsMarkdown = replace(tmp, "$" + LF + "\end{matlabsymbolicoutput}", "$$");
-str(symoutIdx) = partsMarkdown;
+str(tfSymout) = partsMarkdown;
 % NOTE: This part will be processed by processEquations.m
 
 %% 2-10: table output
@@ -179,13 +179,13 @@ str(symoutIdx) = partsMarkdown;
 % \end{tabular}
 % }
 % \end{matlabtableoutput}
-idxTblOutput = startsWith(str, "\begin{matlabtableoutput}" + LF);
-tableLatex = extractBetween(str(idxTblOutput), ...
+tfTblOutput = startsWith(str, "\begin{matlabtableoutput}" + LF);
+tableLatex = extractBetween(str(tfTblOutput), ...
     "\begin{tabular}", "\end{tabular}");
 
-tableMD = strings(sum(idxTblOutput), 1);
-for ii=1:sum(idxTblOutput)
-    tablecontents = split(tableLatex(ii), "\hline");
+tableMD = strings(sum(tfTblOutput), 1);
+for i = 1:sum(tfTblOutput)
+    tablecontents = split(tableLatex(i), "\hline");
     formatLatex = tablecontents(1); % {|l|c|r|}
     headerLatex = tablecontents(2); % \mlcell{TD} & \mlcell{TD} & \mlcell{TD} \\ \hline
     bodyLatex = tablecontents(3:end); % and the rest.
@@ -209,23 +209,21 @@ for ii=1:sum(idxTblOutput)
     end
     
     body = string;
-    for jj=1:length(bodyLatex)
-        tmp = regexp(bodyLatex(jj), "\\mlcell{(.|\s)*?} (?:&|\\\\)", 'tokens');
+    for j = 1:numel(bodyLatex)
+        tmp = regexp(bodyLatex(j), "\\mlcell{(.|\s)*?} (?:&|\\\\)", 'tokens');
         if isempty(tmp)
             break
         end
-        tmp = cellfun(@(str1) cutStringLength(str1, tableMaxWidth), tmp, ...
-            'UniformOutput', false);
-        
+        tmp = cellfunnu(@(str1) cutStringLength(str1, tableMaxWidth), tmp);
         % Adding escape to text that affects markdown table (\n and |)
-        tmp = cellfun(@(str1) replace(str1, "|", "\|"), tmp, 'UniformOutput', false);
-        tmp = cellfun(@(str1) replace(str1, LF, "<br>"), tmp, 'UniformOutput', false);
+        tmp = cellfunnu(@(str1) replace(str1, "|", "\|"), tmp);
+        tmp = cellfunnu(@(str1) replace(str1, LF, "<br>"), tmp);
         body = body + "|" + join([tmp{:}], "|") + "|" + LF;
     end
     
-    tableMD(ii) = strjoin([header, format, body],LF);
+    tableMD(i) = strjoin([header format body], LF);
 end
-str(idxTblOutput) = tableMD;
+str(tfTblOutput) = tableMD;
 
 %% finish up
 str = replace(str, "\{", "{");
@@ -242,3 +240,6 @@ function str2 = cutStringLength(str1, N)
     end
 end
 
+function out = cellfunnu(varargin)
+out = cellfun(varargin{:}, 'UniformOutput', false);
+end

@@ -9,13 +9,14 @@ function str = processEquations(str, format)
 % ```math
 % equation
 % ```
+arguments
+    str string
+    format (1,1) string {mustBeMember(format, ["github", "qiita"])} = 'github'
+end
 
 LF = newline;
 
 switch format
-    case 'qiita'
-        str = regexprep(str, "[^`]?\$\$([^$]+)\$\$[^`]?", ...
-            LF + "```math" + LF + "$1" + LF + "```");
     case 'github'
         tt = regexp(str, "[^`]?\$\$([^$]+)\$\$[^`]?", 'tokens');
         idx = cellfun(@iscell, tt);
@@ -23,21 +24,25 @@ switch format
         % whereas if tt with cell only, horzcat(tt{:}) generates cell
         % vector... so.
         parts = horzcat(tt{idx});
-        for ii=1:length(parts)
-            eqncode = replace(parts{ii}, string(LF), " ");
+        for i = 1:numel(parts)
+            eqncode = replace(parts{i}, string(LF), " ");
             eqncode = replace(eqncode, " ", "&space;");
-            partsMD = "<img src=""https://latex.codecogs.com/gif.latex?" ...
+            partsMd = "<img src=""https://latex.codecogs.com/gif.latex?" ...
                 + eqncode + """/>";
-            str = replace(str, "$$" + parts(ii) + "$$", partsMD);
+            str = replace(str, "$$" + parts(i) + "$$", partsMd);
         end
         
         % Inline
         tt = regexp(str, "[^`$]\$([^$]+)\$[^`$]", 'tokens');
         parts = horzcat(tt{:});
-        for ii=1:length(parts)
-            eqncode = replace(parts(ii), " ", "&space;");
-            partsMD = "<img src=""https://latex.codecogs.com/gif.latex?\inline&space;" ...
+        for i = 1:numel(parts)
+            eqncode = replace(parts(i), " ", "&space;");
+            partsMd = "<img src=""https://latex.codecogs.com/gif.latex?\inline&space;" ...
                 + eqncode + """/>";
-            str = replace(str, "$" + parts(ii) + "$", partsMD);
+            str = replace(str, "$" + parts(i) + "$", partsMd);
         end
+        
+    case 'qiita'
+        str = regexprep(str, "[^`]?\$\$([^$]+)\$\$[^`]?", ...
+            LF + "```math" + LF + "$1" + LF + "```");
 end

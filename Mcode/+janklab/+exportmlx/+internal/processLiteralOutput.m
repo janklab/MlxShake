@@ -1,4 +1,4 @@
-function [str, idxLiteral] = processLiteralOutput(str)
+function [str, tfLiteral] = processLiteralOutput(str)
 % Process literal output
 
 %% MATLAB Code
@@ -23,20 +23,20 @@ function [str, idxLiteral] = processLiteralOutput(str)
 % Note: Other outputs (matlabsymbolicoutout, matlabtableoutput)
 % will be processed in processDocumentOutput.m
 
-idx_lstlisting = startsWith(str, "\begin{lstlisting}");
-idx_verbatim = startsWith(str, "\begin{verbatim}");
-idx_matlabcode = startsWith(str, "\begin{matlabcode}");
-idx_matlaboutput = startsWith(str, "\begin{matlaboutput}");
+tfLstlisting = startsWith(str, "\begin{lstlisting}");
+tfVerbatim = startsWith(str, "\begin{verbatim}");
+tfMatlabCode = startsWith(str, "\begin{matlabcode}");
+tfMatlabOutput = startsWith(str, "\begin{matlaboutput}");
 
-idxLiteral = idx_lstlisting | idx_verbatim | idx_matlabcode | idx_matlaboutput;
+tfLiteral = tfLstlisting | tfVerbatim | tfMatlabCode | tfMatlabOutput;
 
 LF = newline;
-str(idx_lstlisting) = LF + "```matlab:Code(Display)" + extractBetween(str(idx_lstlisting), ...
+str(tfLstlisting) = LF + "```matlab:Code(Display)" + extractBetween(str(tfLstlisting), ...
     "\begin{lstlisting}", "\end{lstlisting}") + "```" + LF;
-str(idx_verbatim) = LF + "```matlab:Code(Display)" + extractBetween(str(idx_verbatim), ...
+str(tfVerbatim) = LF + "```matlab:Code(Display)" + extractBetween(str(tfVerbatim), ...
     "\begin{verbatim}", "\end{verbatim}") + "```" + LF;
-str(idx_matlabcode) = LF + "```matlab:Code" + extractBetween(str(idx_matlabcode), ...
+str(tfMatlabCode) = LF + "```matlab:Code" + extractBetween(str(tfMatlabCode), ...
     "\begin{matlabcode}", "\end{matlabcode}") + "```" + LF;
-str(idx_matlaboutput) = LF + "```text:Output" + extractBetween(str(idx_matlaboutput), ...
+str(tfMatlabOutput) = LF + "```text:Output" + extractBetween(str(tfMatlabOutput), ...
     "\begin{matlaboutput}", "\end{matlaboutput}") + "```" + LF;
 

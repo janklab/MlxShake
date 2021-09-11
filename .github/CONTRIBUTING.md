@@ -28,6 +28,7 @@ Image and prose contributiones should be licensed under a Creative Commons licen
 
 ### Naming Conventions
 
+* Go ahead and use `i` and `j` as loop index variables.
 * `ix` prefix for numeric indexes.
 * `tf` prefix for logical indexes.
 * TitleCase class names, camelCase function and variable names.
