@@ -4,7 +4,7 @@ layout: default
 
 [ExportMlx](https://github.com/janklab/ExportMlx) is a tool to export Matlab Live Scripts (`.mlx` files) to Markdown and other formats.
 
-See the [main ExportMlx README](https://github.com/janklab/ExportMlx/README.md) for more info. This web site is still under construction.
+See the main ExportMlx [README on GitHub](https://github.com/janklab/ExportMlx/blob/master/README.md) for more info. This web site is still under construction.
 
 ## Pages
 
