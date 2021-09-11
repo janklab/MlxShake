@@ -42,7 +42,13 @@ Add its `Mcode/` directory to your Matlab path using `addpath()`.
 
 ## Usage
 
-See the [User Guide](doc/UserGuide.md) for instructions and feature summary.
+Quick summary:
+
+* `livescript2markdown` – Export a Live Script `.mlx` file to Markdown. (This is what you probably want.)
+* `livescript2latex` – Do just the `.mlx` to `.tex` export step.
+* `latex2markdown` – Do just the `.tex` to `.md` conversion step.
+
+See the [User Guide](doc/UserGuide.md) for fuller instructions and feature description.
 
 ## Author
 
