@@ -58,6 +58,7 @@ hs_err_pid*
 /test-results/
 /coverage/
 /coverage-results/
+*.swp
 
 # Editor, OS, and file browser droppings
 *.DS_Store
