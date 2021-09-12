@@ -1,4 +1,4 @@
-classdef utils
+classdef misc
   % Miscellaneous utilities
   %
   % The ones in this class are ones you typically wouldn't want to import.

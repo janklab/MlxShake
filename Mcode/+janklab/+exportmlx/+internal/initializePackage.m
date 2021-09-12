@@ -7,7 +7,7 @@ function initializePackage
 % settings state can handle a `clear classes` gracefully.
 
 % Do not re-initialize if already initialized
-if janklab.exportmlx.internal.utils.getpackageappdata('initialized')
+if janklab.exportmlx.internal.misc.getpackageappdata('initialized')
     return
 end
 
@@ -19,6 +19,6 @@ janklab.exportmlx.internal.logger.Log4jConfigurator.configureBasicConsoleLogging
 
 % Mark library as initialized
 
-janklab.exportmlx.internal.utils.setpackageappdata('initialized', true);
+janklab.exportmlx.internal.misc.setpackageappdata('initialized', true);
 
 end
