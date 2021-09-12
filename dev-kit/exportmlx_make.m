@@ -86,7 +86,7 @@ function make_archives
 program = "ExportMlx";
 distName = program + "-" + janklab.exportmlx.globals.version;
 verDistDir = fullfile("dist", distName);
-distfiles = ["build/Mcode" "doc" "lib" "examples" "README.md" "LICENSE" ...
+distfiles = ["build/Mcode" "doc" "examples" "README.md" "LICENSE" ...
     "VERSION" "CHANGES.md"];
 rmrf([verDistDir, distName+".tar.gz", distName+".zip"])
 if ~isfolder('dist')
