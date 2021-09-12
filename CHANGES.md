@@ -1,7 +1,7 @@
 ExportMlx Changelog
 ================================
 
-Version 0.1.0 (in progress)
+Version 0.1.0 (2021-09-11)
 ------------------------------
 
 * Initial fork of project from Michio Inoue's [livescript2markdown](https://github.com/minoue-xx/livescript2markdown).
