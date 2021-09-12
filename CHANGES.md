@@ -4,6 +4,10 @@ ExportMlx Changelog
 Version 0.2.0 (in progress)
 ------------------------------
 
+Enhancements:
+
+* Add support for additional output formats, including PDF, HTML, and Microsoft Word.
+
 Bug fixes:
 
 * Fix CI tests

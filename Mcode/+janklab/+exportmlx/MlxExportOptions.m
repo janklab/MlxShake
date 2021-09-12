@@ -13,6 +13,27 @@ classdef MlxExportOptions
     % EXPORTLIVESCRIPT
     
     properties
+        % Output file format.
+        %
+        % Controls what format to export the Live Script to.
+        %
+        % Defaults to "auto".
+        %
+        % Valid values:
+        %
+        %   "auto" - Automatically select the format based on the file extension
+        %       of the output file (using the outFile option). Defaults to 
+        %       Markdown if no explicit output file is given, or the output 
+        %       file has no extension.
+        %   "markdown"
+        %   "html"
+        %   "pdf"
+        %   "latex"
+        %   "msword"  - Microsoft Word
+        %  
+        format (1,1) string {mustBeMember(format, ["auto", "markdown", "html",...
+            "pdf", "latex", "msword"])} = "auto"
+        
         % The output file path for the final exported file.
         %
         % This is the full path to the destination file. If you supply a plain
@@ -27,6 +48,7 @@ classdef MlxExportOptions
         % If missing, the output file is chosen automatically based on the input
         % .mlx file name.
         outFile (1,1) string = missing
+        
         % The publishing-platform-specific style of Markdown to use.
         %
         % This does not control what Markdown flavor is being used. Instead,
@@ -42,9 +64,11 @@ classdef MlxExportOptions
         % vanilla.
         markdownPublishTarget (1,1) string ...
             {mustBeMember(markdownPublishTarget, ["gh-pages", "qiita"])} = 'gh-pages'
+        
         % Whether to convert PNG images to JPEGs.
         % This saves space at the expense of image quality. Off by default.
         png2jpeg (1,1) logical = false
+        
         % Maximum length of strings in table cells, in characters.
         %
         % Default is 20. Strings longer than this are simply truncated to this
@@ -52,11 +76,13 @@ classdef MlxExportOptions
         %
         % THIS BEHAVIOR IS SUBJECT TO CHANGE IN THE NEAR FUTURE.
         tableMaxCellContentLength (1,1) double = 20
+        
         % Whether to add a comment referencing ExportMlx in the Markdown output.
         % This doesn't show up in user-visible presentation, but it helps people
         % figure out how the file was built, and I'd like some more users! But I
         % won't mind if you turn it off.
         addMention (1,1) logical = true
+        
         % Controls what working directory to use for temporary intermediate files.
         %
         % May be a logical or a string containing a path. Valid values:
@@ -72,12 +98,19 @@ classdef MlxExportOptions
         % files produced during theprocessing sequence before arriving at the
         % final *.md or other output files.
         tempDir = true
+        
         % Whether to retain the intermediate files generated during the export.
+        %
         % Defaults to false. If true, the .tex, .sty, and other intermediate
         % files are retained. If false, they are deleted once the final .md is
         % produced. Be careful! These intermediate files may overwrite
         % manually-managed files in the same directory as your .mlx and .md
         % files.
+        %
+        % This is mostly useful for debugging ExportMlx itself. The existence
+        % and type of intermediate files produced is an internal implementation
+        % detail of ExportMlx, and may change at any time. Do not rely on
+        % intermediate files for any of your real output.
         keepIntermediateFiles (1,1) logical = false
     end
     
