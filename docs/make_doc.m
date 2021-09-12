@@ -8,13 +8,19 @@ function make_doc(varargin)
 % This will only work on Linux or Mac, not Windows.
 %
 % Requires Ruby and Bundler to be installed, and available on your $PATH.
+%
+% Environment variables:
+%   EXPORTMLX_MAKEDOC_NO_BUNDLER - set to 1 to bypass 'bundle install'.
+%     This is a hack to get things working when your bundler is broken. If
+%     you do this, you must have all the necessary gems installed in your
+%     main system or user Ruby gems installation. Good luck.
 
 action = "install";
 args = string(varargin);
 if ismember("--preview", args)
-  action = "preview";
+    action = "preview";
 elseif ismember("--build-only", args)
-  action = "build";
+    action = "build";
 end
 
 %#ok<*STRNU>
@@ -23,35 +29,45 @@ import janklab.exportmlx.internal.util.*
 
 RAII.cd = withcd(fileparts(mfilename('fullpath')));
 
-[status, output] = system('ruby --version'); %#ok<ASGLU>
-if status ~= 0
-  if ispc
-    installMsg = "Please install it from https://rubyinstaller.org/.";
-  elseif ismac
-    installMsg = "Please install it using Homebrew: `brew install ruby bundler`";
-  else
-    installMsg = "Please install it using your OS's package manager.";
-  end
-  error("It doesn't look like you have Ruby installed.\n%s\n%s", ...
-    "Ruby is required for building these docs.", installMsg);
-end
+requireRubyAvailable;
 
-system2('bundle install >/dev/null');
+skipBundler = string(getenv('EXPORTMLX_MAKEDOC_NO_BUNDLER')) == '1';
+
+    function jekyll(varargin)
+        cmd = "jekyll " + strjoin(varargin, "");
+        if ~skipBundler
+            cmd = "bundle exec " + cmd;
+        end
+        system2(cmd);
+    end
+
+if ~skipBundler
+    system2('bundle install >/dev/null');
+end
 
 if action == "preview"
-  % Use plain system() and quash because we expect this to error out when user Ctrl-C's it
-  try
-    system('bundle exec jekyll serve');
-  catch err %#ok<NASGU>
-    % quash
-    % Darn, that doesn't work... looks like Ctrl-C causes an un-catchable error?
-  end
+    jekyll('serve');
 else
-  system2('bundle exec jekyll build');
-  if action == "install"
-    rmdir2('../doc', 's');
-    copyfile2('_site/*.*', '../doc');
-  end
+    jekyll('build');
+    if action == "install"
+        rmdir2('../doc', 's');
+        copyfile2('_site/*.*', '../doc');
+    end
 end
 
+end
+
+function requireRubyAvailable
+[status, output] = system('ruby --version'); %#ok<ASGLU>
+if status ~= 0
+    if ispc
+        installMsg = "Please install it from https://rubyinstaller.org/.";
+    elseif ismac
+        installMsg = "Please install it using Homebrew: `brew install ruby bundler`";
+    else
+        installMsg = "Please install it using your OS's package manager.";
+    end
+    error("It doesn't look like you have Ruby installed.\n%s\n%s", ...
+        "Ruby is required for building these docs.", installMsg);
+end
 end
