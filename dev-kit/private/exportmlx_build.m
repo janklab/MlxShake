@@ -1,8 +1,9 @@
 function exportmlx_build
 % Build the project in preparation for distribution
 %
-% You do _not_ need to call this to get the project running from Mcode/. This is just
-% for special code transformation steps needed for the distributed project, like p-coding.
+% You do _not_ need to call this to get the project running from Mcode/.
+% This is just for special code transformation steps needed for the
+% distributed project, like p-coding.
 
 reporoot = janklab.exportmlx.globals.distroot;
 origDir = pwd;
@@ -14,6 +15,7 @@ fprintf('Building ExportMlx...\n')
 cfgFile = fullfile(reporoot, '.mlproject.json');
 config = jsondecode(janklab.exportmlx.internal.util.readtext(cfgFile));
 
+% Copy Mcode/ into build/Mcode
 buildMcodeDir = fullfile('build', 'Mcode');
 if isfolder(buildMcodeDir)
   rmdir(buildMcodeDir, 's');

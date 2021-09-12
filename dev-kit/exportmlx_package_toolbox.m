@@ -9,7 +9,7 @@ tbxInfo = exportmlx_toolbox_info;
 tbxName = tbxInfo.name;
 
 if ~isfolder('dist')
-  mkdir('dist');
+  mkdir2('dist');
 end
 
 % Munge the project file
@@ -25,7 +25,7 @@ prjTxt = strrep(prjTxt, '${PROJECT_VERSION}', baseTbxVer);
 spew(prjFile, prjTxt);
 
 % I can't control the output file name from the project file, so we have to move
-% it ourselves
+% it ourselves.
 builtFile = [tbxName '.mltbx'];
 targetFile = sprintf('dist/%s-%s.mltbx', tbxName, tbxVer);
 if isfile(targetFile)

@@ -1,7 +1,14 @@
-function exportmlx_gendoco
+function exportmlx_gendocs
 % For internal use by ExportMlx developers at authoring time.
 %
-% This generates the docs/*.md files from the docs/*.mlx input files.
+% Generates all the "intermediate" Markdown doc files that are dynamically
+% generated.
+%
+% This generates the docs/*.md files from the docs/*.mlx input files. Also
+% regenerates README.md and docs/index.md from doc-src. Any other dynamic
+% generation of the Markdown-stage files (stuff that gets checked in to the
+% repo, but is not part of the final static (local) stuff in doc/) should
+% be built by this function.
 
 %#ok<*NBRAK>
 
@@ -40,7 +47,7 @@ catfiles([fullfile(docSrc, 'README-head.md'), fullfile(docSrc, 'README-index-com
 
 % Done
 
-fprintf('Generated all ExportMlx doco.\n')
+fprintf('Generated all ExportMlx docs.\n')
 
 end
 
