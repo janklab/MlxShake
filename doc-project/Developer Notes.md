@@ -39,8 +39,6 @@ Untracked files:
 
 ### Enhancements
 
-* Build a release with local doc files.
-  * Currently blocked by me being unable to get Jekyll or Bundler working.
 * `exportlivescript` command (like, an external command, not a Matlab command).
 * The codecogs usage just puts query URLs in for images, instead of saving local copies of the image files themselves. Eww.
 * Set up the Azure DevOps pipeline. As of 2021-09-11, it's not seeing the ExportMlx repo, although I can see many other janklab repos.
