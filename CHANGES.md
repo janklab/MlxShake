@@ -4,7 +4,12 @@ ExportMlx Changelog
 Version 0.2.0 (in progress)
 ------------------------------
 
-Nothing yet!
+Bug fixes:
+
+* Fix CI tests
+* Improve organization of `make` targets
+* Clean up some leftover MatlabProjectTemplate cruft to make the code tree friendlier
+* Fix `make clean` and `rmrf` to properly handle directories
 
 Version 0.1.1 (2021-09-11)
 ------------------------------
