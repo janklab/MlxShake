@@ -19,7 +19,7 @@ end
 
 %#ok<*STRNU>
 
-import exportmlx.internal.util.*
+import janklab.exportmlx.internal.util.*
 
 RAII.cd = withcd(fileparts(mfilename('fullpath')));
 
