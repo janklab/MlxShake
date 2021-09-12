@@ -67,7 +67,7 @@ The goals of ExportMlx, specifically as an enhanced fork of [livescript2markdown
 
 * Automate the full process from `.mlx` to `.md`.
 * Become suitable for use in automated document generation processes.
-  * Get the exported Markdown good enough that no manual touch-up is needed in normal cases.
+  * Make the Markdown good enough that no manual touch-up is usually needed.
 * Make the code as modern as possible (as of R2019b).
 * Produce nicely-formatted output files.
 * Support additional output formats.
