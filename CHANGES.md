@@ -1,7 +1,7 @@
 ExportMlx Changelog
 ================================
 
-Version 0.2.0 (in progress)
+Version 0.2.0 (2021-09-12)
 ------------------------------
 
 Enhancements:
