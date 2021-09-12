@@ -107,6 +107,7 @@ end
 
 function build_docs
 % Build the generated parts of the doc sources
+pull_in_homebrew_ruby;
 RAII.cd = withcd(reporoot);
 docsDir = fullfile(reporoot, 'docs');
 % Copy over examples

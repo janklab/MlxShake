@@ -1,8 +1,14 @@
 function pull_in_homebrew_ruby
-% Gets Homebrew's Ruby on to your $PATH in this Matlab session
+% Gets Homebrew's Ruby on to your $PATH in this Matlab session.
 %
-% This searches for Homebrew and modifies your $PATH to get it and its ruby and
-% bundler on it.
+% This searches for Homebrew and modifies your $PATH environment variable
+% to get Ruby and its ruby, bundler, and other commands on it. This is
+% needed on Mac because when you launch Matlab from the /Applications icon,
+% it starts up with a minimal $PATH and does not run your shell startup
+% files.
+%
+% If it doesn't find a Homebrewed Ruby installation, it just does nothing
+% and returns silently.
 %
 % Call this from your `startup.m` if you're a Mac Homebrew user. You'll probably
 % need to do this if you're using the Jekyll or GitHub Pages documentation
@@ -19,29 +25,39 @@ function pull_in_homebrew_ruby
 %#ok<*NBRAK>
 
 if ispc
-  fprintf("pull_in_homebrew_ruby: Homebrew doesn't exist on Windows. Not pulling it in.\n");
+  % fprintf("pull_in_homebrew_ruby: Homebrew doesn't exist on Windows. Not pulling it in.\n");
   return
 end
 
 installCandidates = [
   "/usr/local"
   ];
-found = [];
+brewPrefix = [];
 for cand = installCandidates'
   if isfolder(cand+"/Cellar") && isfolder(cand+"/bin")
-    found = cand;
+    brewPrefix = cand;
     break
   end
 end
 
-if isempty(found)
+if isempty(brewPrefix)
   % No Homebrew installation detected
   return
 end
 
 p = strsplit(getenv('PATH'), ':');
-rubyVer = '3.0.0'; % HACK. TODO: Detect dynamically.
-needBinDirs = [cand+"/bin", cand+"/opt/ruby/bin", cand+"/lib/ruby/gems/"+rubyVer+"/bin"];
+needBinDirs = [brewPrefix+"/bin", brewPrefix+"/opt/ruby/bin"];
+rubyGemsVer = []; %#ok<NASGU>
+for minorVer = 5:-1:0
+    for patchVer = 10:-1:0
+        maybeRubyVer = sprintf("3.%d.%d", minorVer, patchVer);
+        if isfolder(brewPrefix+"/lib/ruby/gems/"+maybeRubyVer+"/bin")
+            rubyGemsVer = maybeRubyVer;
+            needBinDirs(end+1) = brewPrefix+"/lib/ruby/gems/"+rubyGemsVer+"/bin"; %#ok<AGROW>
+            break
+        end
+    end
+end
 for binDir = needBinDirs
   if ~ismember(binDir, p)
     setenv('PATH', binDir+":"+getenv('PATH'));
