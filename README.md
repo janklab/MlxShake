@@ -46,7 +46,7 @@ This code has been tested with multiple live scripts but please note that it's n
 
 ## Installation
 
-Download this distro or repo and put it somewhere on your disk.
+Download the [latest release](https://github.com/janklab/ExportMlx/releases/tag/v0.1.1) or clone the [repo](https://github.com/janklab/ExportMlx) and put it somewhere on your disk.
 
 Add its `Mcode/` directory to your Matlab path using `addpath()`.
 
