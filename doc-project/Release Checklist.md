@@ -1,6 +1,8 @@
 # ExportMlx Release Checklist
 
-## Using the script
+## Doing a release with the automated script
+
+WARNING: THIS IS NOT FULLY WORKING YET! DO NOT USE EXCEPT TO TEST IT!
 
 The `dev-kit/make_release` script can take care of most of the release work for you. To use it:
 
