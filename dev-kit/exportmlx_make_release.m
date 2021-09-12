@@ -58,7 +58,7 @@ echo("Regenerating doco...");
 exportmlx_make doc
 
 echo("Building dist...")
-% TODO: Implement "make dist"
+exportmlx_make dist
 echo("Building toolbox...")
 exportmlx_package_toolbox
 
@@ -80,7 +80,7 @@ end
 end
 
 function markVersion(version)
-writetext(sprintf('%s\n'), version), 'VERSION');
+writetext(sprintf('%s\n', version), 'VERSION');
 end
 
 function echo(fmt, varargin)
