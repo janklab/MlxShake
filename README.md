@@ -10,6 +10,8 @@ This tool lets you generate project documentation and web site content from live
 
 See the [Tutorial](https://exportmlx.janklab.net/Tutorial.html) for examples of what it can do. The Tutorial is itself generated from a Matlab live script using ExportMlx!
 
+The full documentation is available on [the ExportMlx web site](https://exportmlx.janklab.net).
+
 ## PRERELEASE ALPHA SOFTWARE
 
 This is pre-release, alpha quality (not even beta yet!) software! It is an experimental work in progress. Everything about it, especially its public API, is subject to change at any time. And it is probably buggy.

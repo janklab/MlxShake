@@ -7,12 +7,15 @@ Janklab's [ExportMlx](https://github.com/janklab/ExportMlx) is a tool to export 
 ## Pages
 
 * [Tutorial](Tutorial.html)
+* [About](About.html)
 
 ## Summary
 
 This tool lets you generate project documentation and web site content from live scripts in your project. This is a nice way of generating rich documentation with included graphics that are up to date with your latest code. Especially nice for tutorials and examples.
 
 See the [Tutorial](https://exportmlx.janklab.net/Tutorial.html) for examples of what it can do. The Tutorial is itself generated from a Matlab live script using ExportMlx!
+
+The full documentation is available on [the ExportMlx web site](https://exportmlx.janklab.net).
 
 ## PRERELEASE ALPHA SOFTWARE
 

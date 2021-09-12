@@ -7,3 +7,4 @@ Janklab's [ExportMlx](https://github.com/janklab/ExportMlx) is a tool to export 
 ## Pages
 
 * [Tutorial](Tutorial.html)
+* [About](About.html)
