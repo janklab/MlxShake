@@ -45,10 +45,13 @@ classdef MlxExportOptions
         % Whether to convert PNG images to JPEGs.
         % This saves space at the expense of image quality. Off by default.
         png2jpeg (1,1) logical = false
-        % Maximum table width.
-        % Default is 20.
-        % (TODO: What units is this in: columns, inches, ???)
-        tableMaxWidth (1,1) double = 20
+        % Maximum length of strings in table cells, in characters.
+        %
+        % Default is 20. Strings longer than this are simply truncated to this
+        % length and appended with "...".
+        %
+        % THIS BEHAVIOR IS SUBJECT TO CHANGE IN THE NEAR FUTURE.
+        tableMaxCellContentLength (1,1) double = 20
         % Whether to add a comment referencing ExportMlx in the Markdown output.
         % This doesn't show up in user-visible presentation, but it helps people
         % figure out how the file was built, and I'd like some more users! But I

@@ -1,4 +1,4 @@
-function str = processDocumentOutput(str, tableMaxWidth)
+function str = processDocumentOutput(str, tableMaxCellContentLength)
 % Process document output
 
 LF = newline;
@@ -6,26 +6,27 @@ LF = newline;
 %% 2-1: Fix latex conventions for non-literal parts
 replacements = [
     % ^ (live script) -> \textasciicircum{} (latex)
-    "\textasciicircum{}", "^"
+    "\textasciicircum{}"    "^"
     % _ (live script) -> \_ (latex) example: test_case -> test\_ case
     "\_", "_"
     % / backslash (live script) -> \textbackslash{} (latex)
-    "\textbackslash{}", "\"
+    "\textbackslash{}"      "\"
     % > (live script) -> \textgreater{} (latex)
-    "\textgreater{}", ">"
+    "\textgreater{}"        ">"
     % < (live script) -> \textless{} (latex)
-    "\textless{}", "<"
+    "\textless{}"           "<"
     % $ (live script) -> \$ (latex)
-    "\$", "$"
+    "\$"                    "$"
     % % (live script) -> \% (latex)
-    "\%", "%"
+    "\%"                    "%"
 ];
 for i = 1:size(replacements, 1)
     str = replace(str, replacements(i,1), replacements(i,2));
 end
 
 % These will be left as they are till the end of this function
-% since these affect the markdown format 
+% since these affect the markdown format .
+%
 % { (live script) -> \} (latex) (leave it till end)
 % } (live script) -> \{ (latex) (leave it till end)
 
@@ -221,7 +222,7 @@ for i = 1:sum(tfTblOutput)
         if isempty(tmp)
             break
         end
-        tmp = cellfunnu(@(str1) cutStringLength(str1, tableMaxWidth), tmp);
+        tmp = cellfunnu(@(str1) cutStringLength(str1, tableMaxCellContentLength), tmp);
         % Adding escape to text that affects markdown table (\n and |)
         tmp = cellfunnu(@(str1) replace(str1, "|", "\|"), tmp);
         tmp = cellfunnu(@(str1) replace(str1, LF, "<br>"), tmp);
@@ -239,7 +240,6 @@ str = replace(str, "\}", "}");
 end
 
 function str2 = cutStringLength(str1, N)
-    
     str2 = str1;
     if strlength(str1) > N
        tmp = char(str1);

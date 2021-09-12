@@ -17,28 +17,13 @@ function outMdFile = lslatex2markdown(inFile, opts)
 % InFile (string) is the path to the LaTeX .tex file to convert.
 % The '.tex' suffix is optional.
 %
-% Opts is a janklab.exportmlx.ExportOptions object. Available options are:
-%
-%   outFile (string) - Specifies a custom output file. Defaults to the input file
-%   name with '.tex' replaced by '.md'. If provided, this is the full path to
-%   the output file; it is not relative to the input dir or any other dir.
-%
-%   markdownPublishTarget - Specifies the style of Markdown to use. May be
-%   'gh-pages'* or 'qiita'.
-%
-%   png2jpeg (logical) - If true, converts PNG images to JPEGs. This saves space at the
-%   expense of reduced image quality.
-%
-%   tableMaxWidth (double, 20*) - Maximum table width. (TODO: What units is
-%   this in: columns, inches, ???)
-%
-%   addMention (logical,true*) ? Use this to turn off the comment that
-%   references ExportMlx in the generated Markdown.
+% Opts is a janklab.exportmlx.ExportOptions object. See its documentation for
+% available options and their behavior.
 %
 % Returns the path to the generated .md file.
 %
 % See also:
-% EXPORTOPTIONS
+% MLXEXPORTOPTIONS
 
 arguments
     inFile (1,1) string
@@ -143,7 +128,7 @@ end
 
 % Other parts
 str2md = str(~ixLiteral);
-str2md = janklab.exportmlx.internal.processDocumentOutput(str2md, opts.tableMaxWidth);
+str2md = janklab.exportmlx.internal.processDocumentOutput(str2md, opts.tableMaxCellContentLength);
 
 % Equations
 str2md = janklab.exportmlx.internal.processEquations(str2md, opts.markdownPublishTarget);
