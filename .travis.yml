@@ -2,10 +2,8 @@ language: matlab
 matlab:
   - R2021a
 script:
-  - matlab -batch "addpath dev-kit; exportmlx_launchtests"
   - make test
   - make dist
-  - make toolbox
   - make clean
 # Remove this if you don't use codecov.io
 after_script: bash <(curl -s https://codecov.io/bash)
