@@ -48,9 +48,11 @@ end
 if action == "preview"
     jekyll('serve');
 else
-    jekyll('build');
+    jekyll('build &>/dev/null');
     if action == "install"
-        rmdir2('../doc', 's');
+        if isfolder('../doc')
+            rmdir2('../doc', 's');
+        end
         copyfile2('_site/*.*', '../doc');
     end
 end
