@@ -32,8 +32,6 @@ Do not edit `README.md` or `docs/index.md` directly! These files are generated f
 * Nicer alt text/link text for inline images?
 * Add some tests.
   * The current "tests" are a destructive rebuild of the source tree's own generated docs. Not good.
-* Move the *.mlx files from docs/ to docs-src/ and export across dirs.
-  * Should the retained *.tex files go in docs-src/ or docs/? Should they be visible in the GH Pages site? Should they end up in doc/?
 * Support for GitHub Flavored Markdown and other flavors?
   * Actually, the flavor we support now _is_ GFM; that's needed for tables. Need to officially adopt that, and then maybe add other flavors.
 * Add support for Jekyll and MkDocs integration.
