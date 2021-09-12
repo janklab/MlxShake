@@ -29,7 +29,6 @@ Do not edit `README.md` or `docs/index.md` directly! These files are generated f
 * Set up the Azure DevOps pipeline. As of 2021-09-11, it's not seeing the ExportMlx repo, although I can see many other janklab repos.
 * Nicer alt text/link text for inline images?
 * Add some tests.
-  * The current "tests" are a destructive rebuild of the source tree's own generated docs. Not good.
 * Support for GitHub Flavored Markdown and other flavors of Markdown?
   * Actually, the flavor we support now _is_ GFM; that's needed for tables. Need to officially adopt that, and then maybe add other flavors.
   * Or at least some Markdown options: whether tables are GFM tables or raw HTML tables, etc.
