@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Symbolic Math Example | ExportMlx Documentation</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Symbolic Math Example" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Export Matlab Live Scripts to Markdown" />
+<meta property="og:description" content="Export Matlab Live Scripts to Markdown" />
+<link rel="canonical" href="/examples/broken/symbolicMathExample.html" />
+<meta property="og:url" content="/examples/broken/symbolicMathExample.html" />
+<meta property="og:site_name" content="ExportMlx Documentation" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Symbolic Math Example" />
+<script type="application/ld+json">
+{"description":"Export Matlab Live Scripts to Markdown","headline":"Symbolic Math Example","url":"/examples/broken/symbolicMathExample.html","dateModified":"2021-09-11T20:07:00-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d4c108392921baf2082c96659e81becd933cb76d">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Symbolic Math Example</h1>
+      <h2 class="project-tagline">Export Matlab Live Scripts to Markdown</h2>
+      
+        <a href="https://github.com/janklab/ExportMlx" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="symbolic-math-example">Symbolic Math Example</h1>
+
+<p>Copyright 2020 The MathWorks, Inc.</p>
+
+<pre><code class="language-matlab:Code">syms theta
+f = sin(theta)
+</code></pre>
+
+<p>f =</p>
+
+<p><img src="https://latex.codecogs.com/gif.latex?&space;\sin&space;\left(\theta&space;\right)" /></p>
+
+<pre><code class="language-matlab:Code">df = diff(f,theta)
+</code></pre>
+
+<p>df =</p>
+
+<p><img src="https://latex.codecogs.com/gif.latex?&space;\cos&space;\left(\theta&space;\right)" /></p>
+
+<pre><code class="language-matlab:Code">fplot(f)
+hold on
+fplot(df)
+hold off
+</code></pre>
+
+<p><img src="/examples/broken/symbolicMathExample_images/figure_0.png" alt="figure_0.png" /></p>
+
+<pre><code class="language-matlab:Code">a = [cos(theta), -sin(theta),0,0
+    sin(theta),cos(theta),0,0
+    0,0,1,0
+    0,0,0,1]
+</code></pre>
+
+<p>a =</p>
+
+<p><img src="https://latex.codecogs.com/gif.latex?&space;\left(\begin{array}{cccc}&space;\cos&space;\left(\theta&space;\right)&space;&amp;&space;-\sin&space;\left(\theta&space;\right)&space;&amp;&space;0&space;&amp;&space;0\\&space;\sin&space;\left(\theta&space;\right)&space;&amp;&space;\cos&space;\left(\theta&space;\right)&space;&amp;&space;0&space;&amp;&space;0\\&space;0&space;&amp;&space;0&space;&amp;&space;1&space;&amp;&space;0\\&space;0&space;&amp;&space;0&space;&amp;&space;0&space;&amp;&space;1&space;\end{array}\right)" /></p>
+
+<pre><code class="language-matlab:Code">b = [1,0,0,0
+    0,0,-1,0
+    0,1,0,0
+    0,0,0,1]
+</code></pre>
+
+<pre><code class="language-text:Output">b = 4x4    
+     1     0     0     0
+     0     0    -1     0
+     0     1     0     0
+     0     0     0     1
+
+</code></pre>
+
+<pre><code class="language-matlab:Code">a*b
+</code></pre>
+
+<p>ans =</p>
+
+<p><img src="https://latex.codecogs.com/gif.latex?&space;\left(\begin{array}{cccc}&space;\cos&space;\left(\theta&space;\right)&space;&amp;&space;0&space;&amp;&space;\sin&space;\left(\theta&space;\right)&space;&amp;&space;0\\&space;\sin&space;\left(\theta&space;\right)&space;&amp;&space;0&space;&amp;&space;-\cos&space;\left(\theta&space;\right)&space;&amp;&space;0\\&space;0&space;&amp;&space;1&space;&amp;&space;0&space;&amp;&space;0\\&space;0&space;&amp;&space;0&space;&amp;&space;0&space;&amp;&space;1&space;\end{array}\right)" /></p>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/janklab/ExportMlx">ExportMlx</a> is maintained by <a href="https://github.com/janklab">janklab</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
