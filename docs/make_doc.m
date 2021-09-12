@@ -58,12 +58,8 @@ else
         end
         copyfile2('_site/*', '../doc');
         % Remove files we specifically don't want
-        for bad = ["CNAME"] %#ok<NBRAK>
-            badFile = fullfile('../doc', bad);
-            if isfile(badFile)
-                delete();
-            end
-        end        
+        badFiles = fullfile("../doc", ["CNAME"]); %#ok<NBRAK>
+        rmrf(badFiles);
     end
 end
 
