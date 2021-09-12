@@ -61,11 +61,6 @@ elseif target == "build"
   exportmlx_build
 elseif target == "buildmex"
   exportmlx_build_all_mex
-elseif target == "simplify"
-  make_simplify
-elseif target == "util-shim"
-  pkg = varargin{1};
-  make_util_shim(pkg);
 else
   error("Unknown target: %s", target);
 end
@@ -98,8 +93,6 @@ if ~isfolder('dist')
   mkdir2('dist')
 end
 mkdir2(verDistDir)
-% This doesn't work - it copies the *contents* of the dir, not the dir itself
-%copyfile2(distfiles, verDistDir)
 for distFile = distfiles
     system2(sprintf("cp -R '%s' '%s'", distFile, verDistDir));
 end
@@ -112,10 +105,6 @@ function make_clean
 rmrf(strsplit("dist/* build docs/site docs/_site M-doc test-output", " "));
 end
 
-function make_simplify
-rmrf(strsplit(".circleci .travis.yml azure-pipelines.yml src lib/java/MyCoolProject-java", " "));
-end
-
 function build_docs
 % Build the generated parts of docs/ from doc-src/ and other places
 exportmlx_gendocs;
@@ -126,19 +115,4 @@ function build_doc
 RAII.cd = withcd(fullfile(reporoot, 'docs'));
 make_doc;
 delete('../doc/make_doc*');
-end
-
-function make_util_shim(pkg)
-shimsDir = fullfile(reporoot, 'dev-kit', 'util-shims');
-relpkgpath = strjoin(strcat("+", strsplit(pkg, ".")), "/");
-pkgdir = fullfile(fullfile(reporoot, 'Mcode'), relpkgpath);
-if ~isfolder(pkgdir)
-  error('Package folder does not exist: %s', pkgdir);
-end
-privateDir = fullfile(pkgdir, 'private');
-if ~isfolder(privateDir)
-  mkdir(privateDir);
-end
-copyfile2(fullfile(shimsDir, '*.m'), privateDir);
-fprintf('Util-shimmed package: %s', pkg);
 end
