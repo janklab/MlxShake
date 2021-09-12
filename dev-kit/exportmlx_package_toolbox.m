@@ -16,7 +16,7 @@ end
 % Toolboxes don't support "-<pre>" or "+" suffixes in versions
 tbxVer = tbxInfo.version;
 baseTbxVer = strrep(regexprep(tbxVer, '-.*', ''), '+', '');
-fprintf('Packaging %s %s (as %s)\n', tbxName, tbxVer, baseTbxVer);
+fprintf('Packaging %s %s Toolbox (as %s)\n', tbxName, tbxVer, baseTbxVer);
 
 prjInFile = sprintf('%s.prj.in', tbxName);
 prjFile = sprintf('%s.prj', tbxName);
@@ -36,7 +36,7 @@ matlab.addons.toolbox.packageToolbox(prjFile);
 movefile(builtFile, targetFile);
 delete(prjFile);
 
-fprintf('%s %s packaged to %s (as %s)\n', tbxName, tbxVer, targetFile, baseTbxVer);
+fprintf('%s %s Toolbox packaged to %s (as %s)\n', tbxName, tbxVer, targetFile, baseTbxVer);
 
 end
 

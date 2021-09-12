@@ -7,7 +7,8 @@ function exportmlx_make(target, varargin)
 %
 % Operations:
 %   exportmlx_make test         - run the tests
-%   exportmlx_make dist         - build the distribution files
+%   exportmlx_make dist         - build the dist files (archives and toolbox)
+%   exportmlx_make archive      - build the dist archive files (zips)
 %   exportmlx_make toolbox      - build the Matlab Toolbox .mltbx installer file
 %   exportmlx_make clean        - delete all the derived artifacts
 %   exportmlx_make doc          - build the project doco
@@ -43,10 +44,14 @@ elseif target == "clean"
   make_clean
 elseif target == "test"
   exportmlx_launchtests
-elseif target == "dist"
+elseif target == "archive"
   exportmlx_make build
   exportmlx_make m-doc
-  make_dist
+  make_archives
+elseif target == "dist"
+  exportmlx_make archive
+  exportmlx_make toolbox
+  fprintf('Made dist.\n')
 elseif target == "simplify"
   make_simplify
 elseif target == "util-shim"
@@ -73,7 +78,7 @@ RAII.cd = withcd('docs');
 make_doc --preview
 end
 
-function make_dist
+function make_archives
 program = "ExportMlx";
 distName = program + "-" + janklab.exportmlx.globals.version;
 verDistDir = fullfile("dist", distName);
