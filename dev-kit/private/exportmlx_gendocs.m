@@ -13,20 +13,24 @@ function exportmlx_gendocs
 %#ok<*NBRAK>
 
 rootDir = janklab.exportmlx.globals.distroot;
-docDir = string(fullfile(rootDir, 'docs'));
+docsDir = fullfile(rootDir, 'docs');
+docsSrcDir = fullfile(rootDir, 'doc-src');
 
-% Export the main doco
+% Export the main doco from doc-src/ to docs/
 
-docFiles = [
-    "UserGuide"
-    ];
-for fileStem = docFiles(:)'
-    mlxFile = fullfile(docDir, fileStem + ".mlx");
+d = dir(docsSrcDir + "/*.mlx");
+docMlxs = string({d.name});
+for docMlx = docMlxs(:)'
+    [~,fileStem,~] = fileparts(docMlx);
+    mlxFile = fullfile(docsSrcDir, docMlx);
+    mdFile = fullfile(docsDir, fileStem + ".md");
     fprintf('Exporting: ExportMlx doc file: %s\n', fileStem + ".mlx");
-    janklab.exportmlx.exportlivescript(mlxFile);
+    janklab.exportmlx.exportlivescript(mlxFile, {'outFile', mdFile});
 end
 
-% And all the examples
+% And all the examples, in-place in the examples dir
+% (These will get picked up later by `make doc`. Maybe we want to merge them in
+% to docs/, though, so they're available on the GH Pages site?)
 
 examplesDir = fullfile(rootDir, 'examples');
 d = dir(examplesDir + "/*.mlx");
