@@ -45,7 +45,7 @@ toolbox: m-doc
 	./dev-kit/run_matlab "exportmlx_make toolbox"
 
 .PHONY: zips
-dist:
+zips:
 	./dev-kit/run_matlab "exportmlx_make zips"
 
 .PHONY: dist
