@@ -112,6 +112,15 @@ classdef MlxExportOptions
         % detail of ExportMlx, and may change at any time. Do not rely on
         % intermediate files for any of your real output.
         keepIntermediateFiles (1,1) logical = false
+        
+        % Whether to make local copies of math equation images.
+        %
+        % This controls how the codecogs rendering of math equations is handled.
+        % If true, then at export time, each equation is rendered as an image
+        % and that is saved to a file. If false, then the math equations are
+        % left as codecogs image links that render the image using an online web
+        % service at document viewing time.
+        grabEquationImages (1,1) logical = true
     end
     
     methods

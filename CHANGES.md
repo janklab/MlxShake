@@ -7,6 +7,7 @@ Version 0.2.1 (in progress)
 Bug fixes:
 
 * Convert codecogs embeds from raw HTML img tags to Markdown tags.
+* Store rendered equation images locally, instead of querying web service at doc viewing time.
 
 Version 0.2.0 (2021-09-12)
 ------------------------------

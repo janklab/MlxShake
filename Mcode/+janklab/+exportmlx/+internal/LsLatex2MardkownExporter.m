@@ -61,7 +61,8 @@ classdef LsLatex2MardkownExporter < janklab.exportmlx.internal.ExportmlxBase
                 texFile = inFile;
             end
             % styFile = fullfile(inDir, 'matlab.sty');
-            inImagesDir = fullfile(inDir, inFileStem + "_images");
+            inImagesRelDir = inFileStem + "_images";
+            inImagesDir = fullfile(inDir, inImagesRelDir);
             
             if ismissing(opts.outFile)
                 outDir = inDir;
@@ -74,6 +75,11 @@ classdef LsLatex2MardkownExporter < janklab.exportmlx.internal.ExportmlxBase
                 end
             end
             [~,outFileStem,~] = fileparts(outMdFile);
+            outImagesRelDir = outFileStem + "_images";
+            outImagesDir = fullfile(outDir, outImagesRelDir);
+            if ~isfolder(outImagesDir)
+                mkdir(outImagesDir);
+            end
             
             if ~isfile(texFile)
                 error("Input LaTeX file '" + texFile + " does not exist. " ...
@@ -142,7 +148,10 @@ classdef LsLatex2MardkownExporter < janklab.exportmlx.internal.ExportmlxBase
             str2md = processDocumentOutput(str2md, opts.tableMaxCellContentLength);
             
             % Equations
-            str2md = processEquations(str2md, opts.markdownPublishTarget);
+            
+            % Yes, in*Dir is right: We're building intermediate files here, and
+            % they get copied over to the destination at the end.
+            str2md = processEquations(str2md, opts, inImagesRelDir, inImagesDir);
             
             % Included graphics
             str2md = processIncludedGraphics(str2md, opts.markdownPublishTarget, ...
@@ -443,7 +452,7 @@ str = replace(str, "\}", "}");
 
 end
 
-function str = processEquations(str, publishTarget)
+function str = processEquations(str, opts, outImagesRelDir, outImagesDir)
 % Process math equations
 %
 % For Github users: Use https://latex.codecogs.com
@@ -456,12 +465,15 @@ function str = processEquations(str, publishTarget)
 % ```
 arguments
     str string
-    publishTarget (1,1) string {mustBeMember(publishTarget, ["gh-pages", "qiita"])} = 'gh-pages'
+    opts (1,1) janklab.exportmlx.MlxExportOptions
+    outImagesRelDir (1,1) string
+    outImagesDir (1,1) string
 end
 
 LF = newline;
 
-switch publishTarget
+eqnum = 1;
+switch opts.markdownPublishTarget
     case 'gh-pages'
         dummyAltText = 'Some math equation';
         tt = regexp(str, "[^`]?\$\$([^$]+)\$\$[^`]?", 'tokens');
@@ -473,8 +485,11 @@ switch publishTarget
         for i = 1:numel(parts)
             eqncode = replace(parts{i}, string(LF), " ");
             eqncode = replace(eqncode, " ", "&space;");
-            codecogUrl = "https://latex.codecogs.com/gif.latex?"+ eqncode;
-            mdImgTag = sprintf("![%s](%s)", dummyAltText, codecogUrl);
+            if opts.grabEquationImages
+                [mdImgTag, eqnum] = saveCodecogsRender(eqncode, outImagesRelDir, outImagesDir, eqnum);
+            else
+                mdImgTag = sprintf("![%s](%s)", dummyAltText, codecogsGifUrl(eqncode));
+            end
             str = replace(str, "$$" + parts(i) + "$$", mdImgTag);
         end
         
@@ -483,8 +498,12 @@ switch publishTarget
         parts = horzcat(tt{:});
         for i = 1:numel(parts)
             eqncode = replace(parts(i), " ", "&space;");
-            codecogUrl = "https://latex.codecogs.com/gif.latex?\inline&space;" + eqncode;
-            mdImgTag = sprintf("![%s](%s)", dummyAltText, codecogUrl);
+            if opts.grabEquationImages
+                [mdImgTag, eqnum] = saveCodecogsRender(eqncode, outImagesRelDir, outImagesDir, eqnum);
+            else
+                codecogsUrl = codecogsGifUrl("\inline&space;" + eqncode);
+                mdImgTag = sprintf("![%s](%s)", dummyAltText,codecogsUrl);
+            end
             str = replace(str, "$" + parts(i) + "$", mdImgTag);
         end
         
@@ -493,6 +512,30 @@ switch publishTarget
             LF + "```math" + LF + "$1" + LF + "```");
 end
 
+end
+
+function [out, eqnum] = saveCodecogsRender(equationCode, imagesRelDir, imagesDir, eqnum)
+fileBase = sprintf("eqn_codecogs_%d.gif", eqnum);
+eqnum = eqnum + 1;
+relFile = fullfile(imagesRelDir, fileBase);
+file = fullfile(imagesDir, fileBase);
+grabCodecogsEquationImage(equationCode, file);
+out = sprintf("![%s](%s)", "Some math equation", relFile);
+end
+
+function out = codecogsGifUrl(equationCode)
+baseUrl = "https://latex.codecogs.com/gif.latex";
+out = baseUrl + "?" + equationCode;
+end
+
+function grabCodecogsEquationImage(equationCode, file)
+arguments
+    equationCode (1,1) string
+    file (1,1) string
+end
+codecogsGifUrl = "https://latex.codecogs.com/gif.latex";
+codecogsUrl = codecogsGifUrl + "?" + equationCode;
+websave(file, codecogsUrl);
 end
 
 function str = processIncludedGraphics(str, publishTarget, png2jpeg, filename, filepath)
