@@ -24,19 +24,6 @@ Do not edit `README.md` or `docs/index.md` directly! These files are generated f
   * This includes how to incorporate them into our examples.
 * Convert codecogs links from raw HTML to Markdown tags.
 
-* What is all this here junk? Seems to show up when I run under R2019b.
-
-```text
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        docs/UserGuide.aux
-        docs/UserGuide.fdb_latexmk
-        docs/UserGuide.fls
-        docs/UserGuide.out
-        docs/UserGuide.pdf
-        docs/UserGuide.synctex.gz
-```
-
 ### Enhancements
 
 * `exportlivescript` command (like, an external command, not a Matlab command).
