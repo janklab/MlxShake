@@ -463,6 +463,7 @@ LF = newline;
 
 switch publishTarget
     case 'gh-pages'
+        dummyAltText = 'Some math equation';
         tt = regexp(str, "[^`]?\$\$([^$]+)\$\$[^`]?", 'tokens');
         idx = cellfun(@iscell, tt);
         % if tt contains 0x0 string, horzcat(tt{:}) generates string vector
@@ -472,9 +473,9 @@ switch publishTarget
         for i = 1:numel(parts)
             eqncode = replace(parts{i}, string(LF), " ");
             eqncode = replace(eqncode, " ", "&space;");
-            partsMd = "<img src=""https://latex.codecogs.com/gif.latex?" ...
-                + eqncode + """/>";
-            str = replace(str, "$$" + parts(i) + "$$", partsMd);
+            codecogUrl = "https://latex.codecogs.com/gif.latex?"+ eqncode;
+            mdImgTag = sprintf("![%s](%s)", dummyAltText, codecogUrl);
+            str = replace(str, "$$" + parts(i) + "$$", mdImgTag);
         end
         
         % Inline
@@ -482,9 +483,9 @@ switch publishTarget
         parts = horzcat(tt{:});
         for i = 1:numel(parts)
             eqncode = replace(parts(i), " ", "&space;");
-            partsMd = "<img src=""https://latex.codecogs.com/gif.latex?\inline&space;" ...
-                + eqncode + """/>";
-            str = replace(str, "$" + parts(i) + "$", partsMd);
+            codecogUrl = "https://latex.codecogs.com/gif.latex?\inline&space;" + eqncode;
+            mdImgTag = sprintf("![%s](%s)", dummyAltText, codecogUrl);
+            str = replace(str, "$" + parts(i) + "$", mdImgTag);
         end
         
     case 'qiita'

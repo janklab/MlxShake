@@ -22,7 +22,6 @@ Do not edit `README.md` or `docs/index.md` directly! These files are generated f
 
 * Figure out how to handle features that require a certain version of Matlab, or use toolboxes which may not be installed.
   * This includes how to incorporate them into our examples.
-* Convert codecogs links from raw HTML to Markdown tags.
 
 ### Enhancements
 
