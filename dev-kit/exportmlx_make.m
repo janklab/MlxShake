@@ -102,7 +102,7 @@ zip(distName+".zip", distName)
 end
 
 function make_clean
-rmrf(strsplit("dist/* build docs/site docs/_site M-doc test-output", " "));
+rmrf(strsplit("dist/* build docs/site docs/_site test-output", " "));
 end
 
 function build_docs
