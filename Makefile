@@ -17,7 +17,6 @@
 #   make toolbox - Build the project distribution Matlab Toolbox .mltbx file
 #   make zips    - Build the project distribution zip files
 #
-#   make java    - Build your custom Java code in src/ and install it into lib/
 #   make doc-src - Build derived Markdown files in docs/
 #   make clean   - Remove derived files
 
@@ -50,14 +49,6 @@ toolbox: m-doc
 .PHONY: dist
 dist:
 	./dev-kit/run_matlab "exportmlx_make dist"
-
-# TODO: Port this to M-code. This is hard because the .jar cannot be copied in to place
-# in lib while Matlab is running, because it locks loaded .jar files (at least on Windows).
-.PHONY: java
-java:
-	cd src/java/ExportMlx-java; mvn package
-	mkdir -p lib/java/ExportMlx-java
-	cp src/java/ExportMlx-java/target/*.jar lib/java/ExportMlx-java
 
 .PHONY: clean
 clean:
