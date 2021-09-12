@@ -19,7 +19,7 @@
   * Math markup for MkDocs.
 * Better handle table arrays with multicolumn variables (which need column-spanning headers).
   * This probably means rendering them as raw HTML tables instead of GFM tables. Will need some new options to control this behavior.
-* Configure markdownlint to be more lenient with the files in `docs/`.
+* Configure markdownlint to be more lenient with the files in `docs/`. ([#8](https://github.com/janklab/ExportMlx/issues/8))
 
 ## Wishlist
 
