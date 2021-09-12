@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>ExportMlx Documentation | Export Matlab Live Scripts to Markdown</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="ExportMlx Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Export Matlab Live Scripts to Markdown" />
+<meta property="og:description" content="Export Matlab Live Scripts to Markdown" />
+<link rel="canonical" href="/" />
+<meta property="og:url" content="/" />
+<meta property="og:site_name" content="ExportMlx Documentation" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ExportMlx Documentation" />
+<script type="application/ld+json">
+{"description":"Export Matlab Live Scripts to Markdown","headline":"ExportMlx Documentation","url":"/","dateModified":"2021-09-11T18:03:35-04:00","@type":"WebSite","name":"ExportMlx Documentation","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a45a6e5c7767b065ceee3792ba9a9e6e31855da1">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">ExportMlx Documentation</h1>
+      <h2 class="project-tagline">Export Matlab Live Scripts to Markdown</h2>
+      
+        <a href="https://github.com/janklab/ExportMlx" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <p>Janklab’s <a href="https://github.com/janklab/ExportMlx">ExportMlx</a> is a tool to export Matlab Live Scripts (<code class="language-plaintext highlighter-rouge">.mlx</code> files) to Markdown and other formats.</p>
+
+<h2 id="pages">Pages</h2>
+
+<ul>
+  <li><a href="UserGuide.html">User Guide</a></li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<p>This tool lets you generate project documentation and web site content from live scripts in your project. This is a nice way of generating rich documentation with included graphics that are up to date with your latest code. Especially nice for tutorials and examples.</p>
+
+<p>See the <a href="https://exportmlx.janklab.net/UserGuide.html">User Guide</a> for examples of what it can do. The User Guide is itself generated from a Matlab live script using ExportMlx!</p>
+
+<h2 id="prerelease-alpha-software">PRERELEASE ALPHA SOFTWARE</h2>
+
+<p>This is pre-release, alpha quality (not even beta yet!) software! It is an experimental work in progress. Everything about it, especially its public API, is subject to change at any time. And it is probably buggy.</p>
+
+<p>DO NOT USE THIS SOFTWARE IN PRODUCTION SYSTEMS!</p>
+
+<h2 id="acknowledgments">Acknowledgments</h2>
+
+<p>ExportMlx is based on, and started out as a fork of, MathWorker Michio Inoue’s <a href="https://github.com/minoue-xx/livescript2markdown">livescript2markdown</a> tool. ExportMlx can largely be viewed as a productization of livescript2markdown.</p>
+
+<p>The Live Script to LaTeX export code is informed by Pavel Roslovets’s <a href="https://github.com/roslovets/Live-Script-to-Markdown-Converter">Live-Script-to-Markdown-Converter toolbox</a>.</p>
+
+<h2 id="license-warning">License Warning</h2>
+
+<p>ExportMlx is licensed under a nonstandard MathWorks-specific variant of the BSD 2-Clause License that includes this additional clause:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* In all cases, the software is, and all modifications and derivatives of the
+  software shall be, licensed to you solely for use in conjunction with
+  MathWorks products and service offerings.
+</code></pre></div></div>
+
+<p>This is because the <a href="https://github.com/minoue-xx/livescript2markdown">livescript2markdown</a> project is licensed that way, and ExportMlx contains derivatives of its code.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<p>Matlab version, I dunno, R2019b or later?</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>ExportMlx provides tools for exporting Matlab Live Scripts to Markdown and other formats.</p>
+
+<p>This code has been tested with multiple live scripts but please note that it’s not perfect. It’s expected that you need some manual editing (for now!).</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Download this distro or repo and put it somewhere on your disk.</p>
+
+<p>Add its <code class="language-plaintext highlighter-rouge">Mcode/</code> directory to your Matlab path using <code class="language-plaintext highlighter-rouge">addpath()</code>.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>Quick summary:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">exportlivescript</code> – Export a Live Script <code class="language-plaintext highlighter-rouge">.mlx</code> file to Markdown. (This is what you probably want.)</li>
+  <li><code class="language-plaintext highlighter-rouge">mlx2latex</code> – Do just the <code class="language-plaintext highlighter-rouge">.mlx</code> to <code class="language-plaintext highlighter-rouge">.tex</code> export step.</li>
+  <li><code class="language-plaintext highlighter-rouge">lslatex2markdown</code> – Do just the <code class="language-plaintext highlighter-rouge">.tex</code> to <code class="language-plaintext highlighter-rouge">.md</code> conversion step.</li>
+</ul>
+
+<p>Super quick example:</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">janklab</span><span class="o">.</span><span class="n">exportmlx</span><span class="o">.</span><span class="n">exportlivescript</span><span class="p">(</span><span class="s1">'MyLiveScript.mlx'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>See the <a href="https://exportmlx.janklab.net/UserGuide.html">User Guide</a> for fuller instructions and feature description.</p>
+
+<h2 id="project-goals">Project Goals</h2>
+
+<p>The goals of ExportMlx, specifically as an enhanced fork of <a href="https://github.com/minoue-xx/livescript2markdown">livescript2markdown</a>, are:</p>
+
+<ul>
+  <li>Automate the full process from <code class="language-plaintext highlighter-rouge">.mlx</code> to <code class="language-plaintext highlighter-rouge">.md</code>.</li>
+  <li>Become suitable for use in automated document generation processes.
+    <ul>
+      <li>Get the exported Markdown good enough that no manual touch-up is needed in normal cases.</li>
+    </ul>
+  </li>
+  <li>Make the code as modern as possible (as of R2019b).</li>
+  <li>Produce nicely-formatted output files.</li>
+  <li>Support additional output formats.</li>
+</ul>
+
+<h2 id="author">Author</h2>
+
+<p>ExportMlx was developed by <a href="https://apjanke.net">Andrew Janke</a> based on <a href="https://github.com/minoue-xx/livescript2markdown">livescript2markdown</a> by <a href="https://github.com/minoue-xx">Michio Inoue</a>.</p>
+
+<p>The project home page is the <a href="https://github.com/janklab/ExportMlx">GitHub repo page</a>. Bug reports and feature requests are welcome. The online documentation is on the <a href="https://exportmlx.janklab.net">ExportMlx web site</a>, but that is very much a work in progress.</p>
+
+<p>ExportMlx is part of the <a href="https://janklab.net">Janklab</a> suite of open source libraries for Matlab.</p>
+
+<p>ExportMlx’s repo structure is based on Janklab’s <a href="https://github.com/apjanke/MatlabProjectTemplate">MatlabProjectTemplate</a>.</p>
+
+<p>Code was written while listening to <a href="https://www.livephish.com/">live Phish shows</a>.</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Contributions are appreciated! Right now I mostly need feature requests, bug reports, and especially example Live Script files that ExportMlx can be tested against.</p>
+
+<p>All contributions to ExportMlx must be dual-licensed under the BSD 3-Clause License and the special MathWorks-specific variant of the BSD 2-Clause License that ExportMlx is currently licensed under. This is so that ExportMlx can be easily relicensed to BSD 3-Clause in the future if its underlying <code class="language-plaintext highlighter-rouge">livescript2markdown</code> code is similarly relicensed. (Which would be nice, IMHO.)</p>
+
+<p>See the <a href="https://github.com/janklab/ExportMlx/blob/master/.github/CONTRIBUTING.md">CONTRIBUTING</a> file for more info, including coding guidelines.</p>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/janklab/ExportMlx">ExportMlx</a> is maintained by <a href="https://github.com/janklab">janklab</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>

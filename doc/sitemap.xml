@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>/</loc>
+<lastmod>2021-09-11T18:03:35-04:00</lastmod>
+</url>
+<url>
+<loc>/UserGuide.html</loc>
+<lastmod>2021-09-11T18:03:35-04:00</lastmod>
+</url>
+<url>
+<loc>/examples/AnimatedPlots.html</loc>
+<lastmod>2021-09-11T20:07:00-04:00</lastmod>
+</url>
+<url>
+<loc>/examples/broken/symbolicMathExample.html</loc>
+<lastmod>2021-09-11T20:07:00-04:00</lastmod>
+</url>
+<url>
+<loc>/examples/qiita/barChartRaceExample_part1.html</loc>
+<lastmod>2021-09-11T10:11:29-04:00</lastmod>
+</url>
+</urlset>

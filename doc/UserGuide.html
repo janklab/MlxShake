@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>ExportMlx User Guide | ExportMlx Documentation</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="ExportMlx User Guide" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Export Matlab Live Scripts to Markdown" />
+<meta property="og:description" content="Export Matlab Live Scripts to Markdown" />
+<link rel="canonical" href="/UserGuide.html" />
+<meta property="og:url" content="/UserGuide.html" />
+<meta property="og:site_name" content="ExportMlx Documentation" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ExportMlx User Guide" />
+<script type="application/ld+json">
+{"description":"Export Matlab Live Scripts to Markdown","headline":"ExportMlx User Guide","url":"/UserGuide.html","dateModified":"2021-09-11T18:03:35-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a45a6e5c7767b065ceee3792ba9a9e6e31855da1">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">ExportMlx User Guide</h1>
+      <h2 class="project-tagline">Export Matlab Live Scripts to Markdown</h2>
+      
+        <a href="https://github.com/janklab/ExportMlx" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="exportmlx-user-guide">ExportMlx User Guide</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p><a href="https://github.com/janklab/ExportMlx">ExportMlx</a> provides tools for converting Matlab Live Scripts to Markdown files. This is useful in generating rich documentation for Matlab programs.</p>
+
+<p>The main function is <code class="language-plaintext highlighter-rouge">exportlivescript</code>. There are also <code class="language-plaintext highlighter-rouge">mlx2latex</code> and <code class="language-plaintext highlighter-rouge">lslatex2markdown</code> functions for the individual steps of the process which give you finer-grained control over export options.</p>
+
+<p>This User Guide itself is generated from a Live Script using ExportMlx!</p>
+
+<h2 id="installation-and-setup">Installation and Setup</h2>
+
+<p>Download the project’s distribution or clone the repo and put it somewhere on your disk.</p>
+
+<p>Add its <code class="language-plaintext highlighter-rouge">Mcode</code> directory to your Matlab path using Matlab’s <code class="language-plaintext highlighter-rouge">addpath()</code> function.</p>
+
+<h2 id="usage-simple">Usage: Simple</h2>
+
+<p>All the code lives in the <code class="language-plaintext highlighter-rouge">janklab.exportmlx</code> package.</p>
+
+<p>Call <code class="language-plaintext highlighter-rouge">exportlivescript(mlxFile)</code> on your <code class="language-plaintext highlighter-rouge">.mlx</code> Live Script file to export it to Markdown.</p>
+
+<pre><code class="language-matlab:Code(Display)">janklab.exportmlx.exportlivescript('README.mlx');
+</code></pre>
+
+<h2 id="usage-advanced">Usage: Advanced</h2>
+
+<h3 id="step-1-export-your-live-script-to-latex-using-mlx2latex">Step 1: Export your Live Script to LaTeX using <code class="language-plaintext highlighter-rouge">mlx2latex</code></h3>
+
+<pre><code class="language-matlab:Code(Display)">janklab.exportmlx.mlx2latex('README.mlx');
+</code></pre>
+
+<p>This will generate <code class="language-plaintext highlighter-rouge">README.tex</code>. All the related images, such as included images and generated figures, are saved under the folder <code class="language-plaintext highlighter-rouge">README_images</code> next to the <code class="language-plaintext highlighter-rouge">.tex</code> file.</p>
+
+<p><strong>WARNING</strong>: When exporting to LaTeX right after running the Live Script, it’s observed that the figures will be exported as EPS files or not at all if the Live Script contains more than 20 figures. I suggest that <strong>you close the script, reopen it, and then export to LaTeX</strong>.</p>
+
+<h3 id="step-2-convert-the-latex-to-markdown-using-lslatex2markdown">Step 2: Convert the LaTeX to Markdown using <code class="language-plaintext highlighter-rouge">lslatex2markdown</code></h3>
+
+<pre><code class="language-matlab:Code(Display)">janklab.exportmlx.lslatex2markdown('README');
+</code></pre>
+
+<p>This will generate <code class="language-plaintext highlighter-rouge">README.md</code>, a Markdown file suitable for GitHub.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">latex2markdown</code> function supports the following options:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">markdownPublishTarget</code>: Style of Markdown to generate, for targeting specific publishing platforms. May be <code class="language-plaintext highlighter-rouge">'gh-pages'</code> (default) or <code class="language-plaintext highlighter-rouge">'qiita'</code></li>
+  <li><code class="language-plaintext highlighter-rouge">outFile</code>: The name of the Markdown file to be generated. If unspecified, will be the same as the Live Script, but with an <code class="language-plaintext highlighter-rouge">.md</code> file extension.</li>
+  <li><code class="language-plaintext highlighter-rouge">png2jpeg</code>: Convert PNG images to JPEG images to save space at the expense of image quality. May be <code class="language-plaintext highlighter-rouge">false</code> (default) or <code class="language-plaintext highlighter-rouge">true</code>.</li>
+</ul>
+
+<p>The arguments are passed as a <code class="language-plaintext highlighter-rouge">janklab.exportmlx.ExportOptions</code> object, so you need to stick them in a <code class="language-plaintext highlighter-rouge">{...}</code>.</p>
+
+<p>See the helptext and source code for <code class="language-plaintext highlighter-rouge">latex2markdown</code> for more details.</p>
+
+<p>Example: A Markdown file suitable for Qiita, named <code class="language-plaintext highlighter-rouge">QiitaDraft.md</code>, will be generated by the following command:</p>
+
+<pre><code class="language-matlab:Code(Display)">janklab.exportmlx.lslatex2markdown('README', {'markdownPublishTarget', 'qiita', 'outFile', 'QiitaDraft'});
+</code></pre>
+
+<p>Note: Qiita is a tech blog platform in Japanese. Qiita uses Markdown for its posts.</p>
+
+<h2 id="differences-between-github-and-qiita-markdown-formats">Differences Between GitHub and Qiita Markdown Formats</h2>
+
+<p>One is the equations and the other is how to insert the image files.</p>
+
+<p>Qiita allows you to use LaTeX to represent equations (like GitLab?) whereas GitHub does not. For GitHub, ExportMlx uses CODECOGS (<a href="https://latex.codecogs.com">https://latex.codecogs.com</a>) to render the equations as images.</p>
+
+<p>Rendering equations with CODECOGS is done by sticking CODECOGS query URLs in image references in the Markdown. The image files are fetched from codecogs at document viewing time; they are not stored locally. This may not be suitable for all use cases.</p>
+
+<p>For images, you can just push the image folders and then the README reads them, but you need to drag \&amp; drop your images inside the Qiita Editor.</p>
+
+<h2 id="supported-syntax-in-live-scripts">Supported Syntax in Live Scripts</h2>
+
+<h3 id="a-fiddly-bit-first">A Fiddly Bit First</h3>
+
+<p>Let’s use a localized random generator stream, so this script produces the same output every time it’s run, but doesn’t interfer with your Matlab session’s global <code class="language-plaintext highlighter-rouge">random</code> state:</p>
+
+<pre><code class="language-matlab:Code">myRand = RandStream('dsfmt19937', 'Seed', 420);
+</code></pre>
+
+<h3 id="matlab-code">Matlab Code</h3>
+
+<p>Matlab code and its output will be shown as follows:</p>
+
+<pre><code class="language-matlab:Code">% Matlab code
+x = linspace(0, 2*pi, 100);
+y = sin(x)
+</code></pre>
+
+<pre><code class="language-text:Output">y = 1x100
+         0    0.0634    0.1266    0.1893    0.2511    0.3120    0.3717    0.4298    0.4862    0.5406    0.5929    0.6428    0.6901    0.7346    0.7761    0.8146    0.8497    0.8815    0.9096    0.9341    0.9549    0.9718    0.9848    0.9938    0.9989    0.9999    0.9969    0.9898    0.9788    0.9638    0.9450    0.9224    0.8960    0.8660    0.8326    0.7958    0.7557    0.7127    0.6668    0.6182    0.5671    0.5137    0.4582    0.4009    0.3420    0.2817    0.2203    0.1580    0.0951    0.0317
+
+</code></pre>
+
+<h3 id="figure-plots">Figure Plots</h3>
+
+<p>Matlab figure plots look like this:</p>
+
+<pre><code class="language-matlab:Code">% Figures
+plot(x, y);
+</code></pre>
+
+<p><img src="/UserGuide_images/figure_0.png" alt="figure_0.png" /></p>
+
+<h3 id="table-display">Table Display</h3>
+
+<p>The display of <code class="language-plaintext highlighter-rouge">table</code> arrays will be formated like so:</p>
+
+<pre><code class="language-matlab:Code">array2table(rand(myRand, 3, 4))
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Var1</th>
+      <th style="text-align: center">Var2</th>
+      <th style="text-align: center">Var3</th>
+      <th style="text-align: center">Var4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0.1113</td>
+      <td style="text-align: center">0.4581</td>
+      <td style="text-align: center">0.3936</td>
+      <td style="text-align: center">0.4607</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0.4475</td>
+      <td style="text-align: center">0.9551</td>
+      <td style="text-align: center">0.9174</td>
+      <td style="text-align: center">0.7811</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">0.7308</td>
+      <td style="text-align: center">0.2488</td>
+      <td style="text-align: center">0.1130</td>
+      <td style="text-align: center">0.2779</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>BUG: If the table contains multicolumn variables, the format is not perfect. Column headings will not be placed correctly.</p>
+
+<pre><code class="language-matlab:Code">table(rand(myRand, 3, 4))
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Var1</th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0.0163</td>
+      <td style="text-align: center">0.3589</td>
+      <td style="text-align: center">0.4683</td>
+      <td style="text-align: center">0.0667</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0.2430</td>
+      <td style="text-align: center">0.2769</td>
+      <td style="text-align: center">0.7698</td>
+      <td style="text-align: center">0.7961</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">0.9317</td>
+      <td style="text-align: center">0.5769</td>
+      <td style="text-align: center">0.5706</td>
+      <td style="text-align: center">0.8375</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>(Any suggestions to handle merged cells in Markdown are appreciated!)</p>
+
+<h3 id="code-examples">Code Examples</h3>
+
+<p>Live Script “Code Examples” are the non-executable formatted code blocks that display code but do not evaluate it when the script is run.</p>
+
+<p>“MATLAB” Code Examples are rendered as follows:</p>
+
+<pre><code class="language-matlab:Code(Display)">% Matlab Code Example display
+x = linspace(0, 1, 100);
+y = sin(x);
+plot(x, y);
+</code></pre>
+
+<p>“Plain” Code Examples look like this:</p>
+
+<pre><code class="language-matlab:Code(Display)"># Python code
+print('Hello, world!')
+my_dict = {'foo': 42, 'bar': [1, 2, 3]}
+</code></pre>
+
+<h3 id="inline-images">Inline Images</h3>
+
+<p>Here’s a display of an inline image (an image pasted into the Live Script, as opposed to figure display output).</p>
+
+<p><img src="/UserGuide_images/image_0.png" alt="image_0.png" /></p>
+
+<p><a href="https://www.flickr.com/photos/84606435@N00/358199239">“Panda cat”</a> by <a href="https://www.flickr.com/photos/84606435@N00">fox_kiyo</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=ccsearch&amp;atype=rich">CC BY-SA 2.0</a>.</p>
+
+<h3 id="mathematical-equations">Mathematical Equations</h3>
+
+<p>Any equations in Live Scripts will be exported as LaTeX. For GitHub, CODECOGS helps display them by rendering them as images at document viewing time.</p>
+
+<p>Here’s an inline equation: <img src="https://latex.codecogs.com/gif.latex?\inline&space;\sin^2&space;x+\cos^2&space;x=1" />.</p>
+
+<p>If you have multiple lines of equations:</p>
+
+<p><img src="https://latex.codecogs.com/gif.latex?\begin{array}{l}&space;\sin&space;x=-\int&space;\cos&space;xdx\\&space;\cos&space;x=\int&space;\sin&space;xdx&space;\end{array}" /></p>
+
+<p>Single line equations look like this:</p>
+
+<p><img src="https://latex.codecogs.com/gif.latex?\sin&space;x=-\int&space;\cos&space;xdx" /></p>
+
+<h3 id="lists">Lists</h3>
+
+<p>Here’s a unordered list:</p>
+
+<ul>
+  <li>Item foo</li>
+  <li>Item bar</li>
+  <li>Item baz</li>
+</ul>
+
+<p>Here’s an ordered list:</p>
+
+<ol>
+  <li>Item one</li>
+  <li>Item two</li>
+  <li>Item three</li>
+</ol>
+
+<h3 id="font-styles">Font Styles</h3>
+
+<p>Here are the complete list of font styles available in Live Editor:</p>
+
+<ul>
+  <li><strong>Bold</strong></li>
+  <li><em>Italic</em></li>
+  <li>Underline</li>
+  <li><code class="language-plaintext highlighter-rouge">Monospace</code></li>
+</ul>
+
+<p>And some conbinations of styles:</p>
+
+<ul>
+  <li><strong><em>BoldItalic</em></strong></li>
+  <li><strong>BoldUnderline</strong></li>
+  <li><strong><code class="language-plaintext highlighter-rouge">BoldMonospace</code></strong></li>
+  <li><em>ItalicUnderline</em></li>
+  <li><em><code class="language-plaintext highlighter-rouge">ItalicMonospace</code></em></li>
+  <li><code class="language-plaintext highlighter-rouge">UnderlineMonospace</code></li>
+  <li><strong><em>BoldItalicUnderline</em></strong></li>
+  <li><strong><em><code class="language-plaintext highlighter-rouge">BoldItalicMonospace</code></em></strong></li>
+  <li><strong><code class="language-plaintext highlighter-rouge">BoldUnderlineMonospace</code></strong></li>
+  <li><em><code class="language-plaintext highlighter-rouge">ItalicUnderlineMonospace</code></em></li>
+</ul>
+
+<p>Note that underlines do not show up in the Markdown! (I think this is because Markdown doesn’t have markup for underlines?)</p>
+
+<h3 id="quotations">Quotations</h3>
+
+<p>There isn’t a Live Script “quotation” feature, but ExportMlx converts centered paragraphs to Markdown quotations.</p>
+
+<blockquote>
+  <p>This centered paragraph in the Live Script is rendered as a quotation in Markdown.</p>
+</blockquote>
+
+<h2 id="feedback-and-support">Feedback and Support</h2>
+
+<p>Hope this accelerates your Matlab life! Any comments and suggestions are welcome. Visit the project repo at <a href="https://github.com/janklab/ExportMlx">https://github.com/janklab/ExportMlx</a>.</p>
+
+<!-- This Markdown was generated from Matlab Live Script with Janklab ExportMlx (https://exportmlx.janklab.net) -->
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/janklab/ExportMlx">ExportMlx</a> is maintained by <a href="https://github.com/janklab">janklab</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
