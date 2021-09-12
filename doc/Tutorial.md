@@ -170,15 +170,15 @@ Here's a display of an inline image (an image pasted into the Live Script, as op
 
 Any equations in Live Scripts will be exported as LaTeX. For GitHub, CODECOGS helps display them by rendering them as images at document viewing time.
 
-Here's an inline equation: ![Some math equation](https://latex.codecogs.com/gif.latex?\inline&space;\sin^2&space;x+\cos^2&space;x=1).
+Here's an inline equation: ![Some math equation](Tutorial_images/eqn_codecogs_3.gif).
 
 If you have multiple lines of equations:
 
-![Some math equation](https://latex.codecogs.com/gif.latex?\begin{array}{l}&space;\sin&space;x=-\int&space;\cos&space;xdx\\&space;\cos&space;x=\int&space;\sin&space;xdx&space;\end{array})
+![Some math equation](Tutorial_images/eqn_codecogs_1.gif)
 
 Single line equations look like this:
 
-![Some math equation](https://latex.codecogs.com/gif.latex?\sin&space;x=-\int&space;\cos&space;xdx)
+![Some math equation](Tutorial_images/eqn_codecogs_2.gif)
 
 ### Lists
 
