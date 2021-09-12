@@ -1,7 +1,7 @@
-function outMdFile = lslatex2markdown(inFile, options)
+function outMdFile = lslatex2markdown(inFile, opts)
 % Convert Live Script LaTeX to Markdown.
 %
-% mdfile = janklab.exportmlx.lslatex2markdown(inFile, options)
+% mdfile = janklab.exportmlx.lslatex2markdown(inFile, opts)
 %
 % Converts a LaTeX-format exported Live Script file to Markdown. Will also
 % produce accompanying image files in a subdirectory next to the output .md
@@ -17,11 +17,11 @@ function outMdFile = lslatex2markdown(inFile, options)
 % InFile (string) is the path to the LaTeX .tex file to convert.
 % The '.tex' suffix is optional.
 %
-% Options is a janklab.exportmlx.ExportOptions or a cell vector of
-% name/value pairs. Available options are:
+% Opts is a janklab.exportmlx.ExportOptions object. Available options are:
 %
-%   outFile - Specifies a custom file name. Defaults to the input file
-%   name with '.tex' replaced by '.md'.
+%   outFile (string) - Specifies a custom output file. Defaults to the input file
+%   name with '.tex' replaced by '.md'. If provided, this is the full path to
+%   the output file; it is not relative to the input dir or any other dir.
 %
 %   markdownPublishTarget - Specifies the style of Markdown to use. May be
 %   'gh-pages'* or 'qiita'.
@@ -42,7 +42,7 @@ function outMdFile = lslatex2markdown(inFile, options)
 
 arguments
     inFile (1,1) string
-    options (1,1) janklab.exportmlx.ExportOptions = janklab.exportmlx.ExportOptions
+    opts (1,1) janklab.exportmlx.ExportOptions = janklab.exportmlx.ExportOptions
 end
 
 persistent initializerHack
@@ -54,36 +54,43 @@ LF = newline;
 
 %% Argument handling and validation
 
-[inParentDir,inFileStem,extn] = fileparts(inFile);
-if inParentDir == ""
-    inParentDir = pwd;
+[inDir,inFileStem,inFileExtn] = fileparts(inFile);
+if inDir == ""
+    inDir = pwd;
 end
 
-if extn == ""
-    noExtnFile = inFile;
-    latexFile = fullfile(inParentDir, inFileStem + ".tex");
+if inFileExtn == ""
+    texFile = fullfile(inDir, inFileStem + ".tex");
 else
-    noExtnFile = fullfile(inParentDir, inFileStem);
-    latexFile = inFile;
+    texFile = inFile;
 end
-if ismissing(options.outFile)
-    outMdFile = noExtnFile + ".md";
-else
-    outMdFile = options.outFile;
-end
+% styFile = fullfile(inDir, 'matlab.sty');
+inImagesDir = fullfile(inDir, inFileStem + "_images");
 
-if ~isfile(latexFile)
-    error("Input LaTeX file '" + latexFile + " does not exist. " ...
+if ismissing(opts.outFile)
+    outDir = inDir;
+    outMdFile = fullfile(outDir, inFileStem + ".md");
+else
+    outMdFile = opts.outFile;
+    [outDir,~,~] = fileparts(outMdFile);
+    if outDir == ""
+        outDir = pwd;
+    end
+end
+[~,outFileStem,~] = fileparts(outMdFile);
+
+if ~isfile(texFile)
+    error("Input LaTeX file '" + texFile + " does not exist. " ...
     + "If you haven't generate latex file from a live script please do so, " ...
     + "using mlx2latex.");
 end
 
-loginfo('Exporting: %s -> %s', latexFile, outMdFile);
+loginfo('Exporting: %s -> %s', texFile, outMdFile);
 
 %% Preprocess latex
 
 % Read latex
-str = janklab.exportmlx.internal.util.readtext(latexFile);
+str = janklab.exportmlx.internal.util.readtext(texFile);
 
 % Extract main body from latex
 str = extractBetween(str, "\begin{document}", "\end{document}");
@@ -136,14 +143,14 @@ end
 
 % Other parts
 str2md = str(~ixLiteral);
-str2md = janklab.exportmlx.internal.processDocumentOutput(str2md, options.tableMaxWidth);
+str2md = janklab.exportmlx.internal.processDocumentOutput(str2md, opts.tableMaxWidth);
 
 % Equations
-str2md = janklab.exportmlx.internal.processEquations(str2md, options.markdownPublishTarget);
+str2md = janklab.exportmlx.internal.processEquations(str2md, opts.markdownPublishTarget);
 
 % Included graphics
-str2md = janklab.exportmlx.internal.processIncludedGraphics(str2md, options.markdownPublishTarget, ...
-    options.png2jpeg, inFileStem, inParentDir);
+str2md = janklab.exportmlx.internal.processIncludedGraphics(str2md, opts.markdownPublishTarget, ...
+    opts.png2jpeg, inFileStem, inDir);
 
 % Apply vertical/horizontal space
 % markdown: two spaces for linebreak
@@ -159,12 +166,12 @@ mdstr = join(str, LF);
 %% Markdown post-processing and fixup
 
 % Fix absolute paths in image links
-absImgInDir = inParentDir + "/" + inFileStem + "_images";
+absImgInDir = inDir + "/" + inFileStem + "_images";
 % relImgOutDir = inFileStem + "_images";
 mdstr = strrep(mdstr, absImgInDir + "/", "");
 
 % Add a mention of ExportMlx
-if options.addMention
+if opts.addMention
     mdstr = mdstr + LF + LF ...
         + sprintf("<!-- This Markdown was generated from Matlab Live Script with Janklab ExportMlx (https://exportmlx.janklab.net) -->") ...
         + LF;
@@ -182,7 +189,13 @@ mdstr = regexprep(mdstr, "\n\n+$", "\n");
 
 %% File output
 
-% imagesDirPath = noExtnFile + "_images";
+if outDir ~= inDir
+    % TODO: Utility function to wrap up this dir-copy logic
+    outImagesDir = fullfile(outDir, outFileStem + "_images");
+    rmrf(outImagesDir);
+    mkdir2(outImagesDir);
+    copyfile(inImagesDir, outImagesDir);
+end
 janklab.exportmlx.internal.util.writetext(mdstr, outMdFile);
 
-loginfo("Exported:  %s -> %s", latexFile, outMdFile);
+loginfo("Exported:  %s -> %s", texFile, outMdFile);

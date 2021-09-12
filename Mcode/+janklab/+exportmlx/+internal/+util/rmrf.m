@@ -6,23 +6,40 @@ arguments
   files string
 end
 
+import janklab.exportmlx.internal.util.*
+
 %#ok<*STRNU>
 
-RAII.warn = janklab.exportmlx.internal.util.withwarnoff('MATLAB:DELETE:FileNotFound');
+RAII.warn = withwarnoff('MATLAB:DELETE:FileNotFound');
+
 % Sigh. We have to glob out the files ourselves because Matlab doesn't have a
 % delete operation that will work on both files and directories.
 for iGlob = 1:numel(files)
-  [~,details] = janklab.exportmlx.internal.util.dir2(files(iGlob));
-  paths = details.path;
-  for file = paths'
-    if isfile(file)
-      delete(file);
-    elseif isfolder(file)
-      janklab.exportmlx.internal.util.rmdir2(file, 's');
+    glob = files(iGlob);
+    if glob.contains("*")
+        [~,details] = dir2(files(iGlob));
+        paths = details.path;
+        for file = paths'
+            rmrf_one_file(file);
+        end
     else
-      warning('Dir result "%s" is neither a file nor folder. Huh???', file);
+        file = glob;
+        rmrf_one_file(file);
     end
-  end
+end
+
+end
+
+function rmrf_one_file(file)
+
+import janklab.exportmlx.internal.util.*
+
+if isfile(file)
+    delete(file);
+elseif isfolder(file)
+    rmdir2(file, 's');
+else
+    % Ignore nonexistent files.
 end
 
 end

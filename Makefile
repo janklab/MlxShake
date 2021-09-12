@@ -3,8 +3,7 @@
 #
 # This is mostly provided just as a convenience for developers who like using 'make'.
 # All the actual build logic is in the dev-kit/*.m files, which can be run
-# directly, without using 'make'. The exception is 'make java', which must be
-# run without Matlab running, because Matlab locks the JAR files it has loaded.
+# directly, without using 'make'.
 #
 # Targets provided:
 #
@@ -45,6 +44,10 @@ m-doc:
 .PHONY: toolbox
 toolbox: m-doc
 	./dev-kit/run_matlab "exportmlx_make toolbox"
+
+.PHONY: zips
+dist:
+	./dev-kit/run_matlab "exportmlx_make zips"
 
 .PHONY: dist
 dist:
