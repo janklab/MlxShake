@@ -1,4 +1,4 @@
-# ExportMlx User Guide
+# ExportMlx Tutorial
 
 ## Introduction
 
@@ -6,7 +6,7 @@
 
 The main function is `exportlivescript`. There are also `mlx2latex` and `lslatex2markdown` functions for the individual steps of the process which give you finer-grained control over export options.
 
-This User Guide itself is generated from a Live Script using ExportMlx!
+This Tutorial itself is generated from a Live Script using ExportMlx!
 
 ## Installation and Setup
 
@@ -107,7 +107,7 @@ Matlab figure plots look like this:
 plot(x, y);
 ```
 
-![figure_0.png](UserGuide_images/figure_0.png)
+![figure_0.png](Tutorial_images/figure_0.png)
 
 ### Table Display
 
@@ -162,7 +162,7 @@ my_dict = {'foo': 42, 'bar': [1, 2, 3]}
 
 Here's a display of an inline image (an image pasted into the Live Script, as opposed to figure display output).
 
-![image_0.png](UserGuide_images/image_0.png)
+![image_0.png](Tutorial_images/image_0.png)
 
 ["Panda cat"](https://www.flickr.com/photos/84606435@N00/358199239) by [fox_kiyo](https://www.flickr.com/photos/84606435@N00) is licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/?ref=ccsearch&atype=rich).
 
