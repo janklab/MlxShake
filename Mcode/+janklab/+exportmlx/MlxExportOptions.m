@@ -1,4 +1,4 @@
-classdef ExportOptions
+classdef MlxExportOptions
     % Options to control behavior of Live Script export
     %
     % All the options to control the behavior of exportlivescript and
@@ -80,12 +80,12 @@ classdef ExportOptions
     
     methods
         
-        function this = ExportOptions(arg)
+        function this = MlxExportOptions(arg)
             % Construct a new object
             %
-            % obj = janklab.exportmlx.ExportOptions
-            % obj = janklab.exportmlx.ExportOptions(struct(...))
-            % obj = janklab.exportmlx.ExportOptions({'property',value, ...})
+            % obj = janklab.exportmlx.MlxExportOptions
+            % obj = janklab.exportmlx.MlxExportOptions(struct(...))
+            % obj = janklab.exportmlx.MlxExportOptions({'property',value, ...})
             %
             % You may pass in a struct or cell vector of name/value pairs, where
             % the names are any property on ExportOptions. Names that are not
@@ -105,7 +105,7 @@ classdef ExportOptions
                 for prop = fieldnames(arg)'
                     this.(prop) = arg.(prop);
                 end
-            elseif isa(arg, 'janklab.exportmlx.ExportOptions')
+            elseif isa(arg, 'janklab.exportmlx.MlxExportOptions')
                 this = arg;
             else
                 error('Invalid input type: %s', class(arg));

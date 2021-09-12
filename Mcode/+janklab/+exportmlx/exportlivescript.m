@@ -10,8 +10,8 @@ function mdFile = exportlivescript(inFile, opts)
 % export. You may omit the '.mlx' extension.
 %
 % Opts controls various aspects of exportlivescript's behavior. It is a
-% janklab.exportmlx.ExportOptions or a cell vector of name/value pairs (which gets
-% turned in to an ExportOptions). See ExportOptions' documentation for the 
+% janklab.exportmlx.MlxExportOptions or a cell vector of name/value pairs (which gets
+% turned in to an MlxExportOptions). See MlxExportOptions' documentation for the 
 % available options and their effects.
 %
 % Returns the path to the main exported Markdown .md file. There may be other
@@ -24,19 +24,19 @@ function mdFile = exportlivescript(inFile, opts)
 %     exportlivescript('foo.mlx');
 %     exportlivescript('foo.mlx', {'outFile','/path/to/bar.md'});
 %
-%     opts = janklab.exportmlx.ExportOptions;
+%     opts = janklab.exportmlx.MlxExportOptions;
 %     opts.outFile = '/path/to/bar.md';
 %     opts.keepIntermediateFiles = true;
 %     exportlivescript('foo.mlx', opts);
 %
 % See also:
-% EXPORTOPTIONS
+% MLXEXPORTOPTIONS
 % MLX2LATEX
 % LSLATEX2MARKDOWN
 
 arguments
     inFile (1,1) string
-    opts (1,1) janklab.exportmlx.ExportOptions = janklab.exportmlx.ExportOptions
+    opts (1,1) janklab.exportmlx.MlxExportOptions = janklab.exportmlx.MlxExportOptions
 end
 
 % Handle input and figure out paths and options
@@ -47,7 +47,7 @@ if blah == inFile
 else
     mlxFile = inFile;
 end
-[inDir,inFileStem,inFileExtn] = fileparts(mlxFile);
+[inDir,inFileStem,~] = fileparts(mlxFile);
 if inDir == ""
     inDir = pwd;
 end

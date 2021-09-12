@@ -42,7 +42,7 @@ function outMdFile = lslatex2markdown(inFile, opts)
 
 arguments
     inFile (1,1) string
-    opts (1,1) janklab.exportmlx.ExportOptions = janklab.exportmlx.ExportOptions
+    opts (1,1) janklab.exportmlx.MlxExportOptions = janklab.exportmlx.MlxExportOptions
 end
 
 persistent initializerHack
