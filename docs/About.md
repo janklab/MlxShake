@@ -13,8 +13,10 @@ Viewed as a fork of livescript2markdown, ExportMlx provides the following featur
 * Captures rendered math equations as static local files.
 * Better library packaging.
 * Nicer formatting of generated Markdown.
+* Captures and saves rendered math equations so you can produce a fully-local copy of the documentation.
+* Fixes some bugs.
 
-The main motivation here is to take the basic livescript2markdown code and "productize" it into a high quality library that can be easily reused by other Matlab code and in enterprise software contexts.
+The main motivation here is to take the basic livescript2markdown code and "productize" it into a high quality library that can be easily reused by other Matlab code and in enterprise software contexts, but still be easy to use for simple applications.
 
 ## Related Works and Acknowledgments
 
