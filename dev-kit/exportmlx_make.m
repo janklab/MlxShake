@@ -17,7 +17,7 @@ function exportmlx_make(target, varargin)
 %   toolbox   - build the Matlab Toolbox .mltbx installer file
 %   clean     - delete all the derived artifacts
 %
-%   docs      - build docs/ etc. (the GH Pages stuff) from doc-src and examples (merge)
+%   docs      - build docs/ etc. (the GH Pages stuff) from docs-src and examples (merge)
 %   doc       - build doc/, the final static (local) doco files (from docs/, replace)
 %   m-doc     - build build/M-doc/ MLTBX format docs (from doc/)
 %   docview   - live-preview the project doco (from docs/) (requires Jekyll)
@@ -106,7 +106,7 @@ rmrf(strsplit("dist/* build docs/site docs/_site test-output", " "));
 end
 
 function build_docs
-% Build the generated parts of docs/ from doc-src/ and other places
+% Build the generated parts of docs/ from docs-src/ and other places
 exportmlx_gendocs;
 end
 

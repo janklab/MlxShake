@@ -5,7 +5,7 @@ function exportmlx_gendocs
 % generated.
 %
 % This generates the docs/*.md files from the docs/*.mlx input files. Also
-% regenerates README.md and docs/index.md from doc-src. Any other dynamic
+% regenerates README.md and docs/index.md from docs-src. Any other dynamic
 % generation of the Markdown-stage files (stuff that gets checked in to the
 % repo, but is not part of the final static (local) stuff in doc/) should
 % be built by this function.
@@ -14,9 +14,9 @@ function exportmlx_gendocs
 
 rootDir = janklab.exportmlx.globals.distroot;
 docsDir = fullfile(rootDir, 'docs');
-docsSrcDir = fullfile(rootDir, 'doc-src');
+docsSrcDir = fullfile(rootDir, 'docs-src');
 
-% Export the main doco from doc-src/ to docs/
+% Export the main doco from docs-src/ to docs/
 
 d = dir(docsSrcDir + "/*.mlx");
 docMlxs = string({d.name});
@@ -43,7 +43,7 @@ end
 
 % Our web pages
 
-docSrc = fullfile(rootDir, 'doc-src');
+docSrc = fullfile(rootDir, 'docs-src');
 catfiles([fullfile(docSrc, 'index-head.md'), fullfile(docSrc, 'README-index-common.md')], ...
     'docs/index.md');
 catfiles([fullfile(docSrc, 'README-head.md'), fullfile(docSrc, 'README-index-common.md')], ...
