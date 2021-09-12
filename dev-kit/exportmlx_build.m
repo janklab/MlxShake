@@ -39,6 +39,6 @@ if isfield(config, 'build') && isfield(config.build, 'do_pcode')
   end
 end
 
-fprintf('ExportMlx built.\n')
+fprintf('Built ExportMlx.\n')
 
 end
