@@ -1,9 +1,12 @@
 function make_doc(varargin)
-% Build these doc sources into the final doc/ directory
+% Build these doc sources into the final doc/ directory.
 %
 % make_doc
 % make_doc --preview
 % make_doc --build-only
+%
+% This builds the Jekyll site and copies the resulting files over in to
+% ../doc, fully rebuilding it.
 %
 % This will only work on Linux or Mac, not Windows.
 %
@@ -53,7 +56,14 @@ else
         if isfolder('../doc')
             rmdir2('../doc', 's');
         end
-        copyfile2('_site/*.*', '../doc');
+        copyfile2('_site/*', '../doc');
+        % Remove files we specifically don't want
+        for bad = ["CNAME"] %#ok<NBRAK>
+            badFile = fullfile('../doc', bad);
+            if isfile(badFile)
+                delete();
+            end
+        end        
     end
 end
 
