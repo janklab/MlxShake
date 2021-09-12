@@ -6,6 +6,11 @@ Version 0.2.0 (in progress)
 
 Nothing yet!
 
+Version 0.1.1 (2021-09-11)
+------------------------------
+
+* Fix some missing files in local doc files
+
 Version 0.1.0 (2021-09-11)
 ------------------------------
 
