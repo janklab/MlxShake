@@ -15,6 +15,7 @@ Image and prose contributiones should be licensed under a Creative Commons licen
 * Be cross-platform. Code must work on all 3 OSes: Windows, macOS, and Linux.
 * No third-party library dependencies.
   * If we really must take one, the library must be "vendored" into this repo, and repackaged into the `janklab.exportmlx.internal.opp` package so it will not conflict with any other uses of that library.
+  * But it is fine to take dependencies on any of the undocumented Java libraries that Matlab ships with.
 * Compatibility level: Matlab R2019b.
   * You may use any R2019b features. You must not use features from any newer release for any core functionality. You may use newer features for non-core features, but they must be optional, and degrade gracefully or produce nice error messages on older Matlab versions.
 * Public code goes in the `janklab.exportmlx` package. Internal-use code (things that aren't part of ExportMlx's public API) go in `janklab.exportmlx.internal`.
