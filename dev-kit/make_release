@@ -6,7 +6,7 @@
 
 version="$1"
 
-if [[ ! -f 'ExportMlx.prj.in' ]]; then
+if [[ ! -f 'MlxShake.prj.in' ]]; then
   echo >&2 "Error: this script must be run from the root of the repo"
   exit 1
 fi
@@ -64,8 +64,8 @@ must git push
 must git push --tags
 
 echo "Release is pushed! Now go to GitHub and draft the actual Release:"
-echo "   https://github.com/janklab/ExportMlx/releases"
+echo "   https://github.com/janklab/MlxShake/releases"
 uname=$(uname)
 if [[ $uname = "Darwin" ]]; then
-  open "https://github.com/janklab/ExportMlx/releases"
+  open "https://github.com/janklab/MlxShake/releases"
 fi

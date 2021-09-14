@@ -3,9 +3,9 @@
 
 This tool lets you generate project documentation and web site content from live scripts in your project. This is a nice way of generating rich documentation with included graphics that are up to date with your latest code. Especially nice for tutorials and examples.
 
-See the [Tutorial](https://exportmlx.janklab.net/Tutorial.html) for examples of what it can do. The Tutorial is itself generated from a Matlab live script using ExportMlx!
+See the [Tutorial](https://mlxshake.janklab.net/Tutorial.html) for examples of what it can do. The Tutorial is itself generated from a Matlab live script using MlxShake!
 
-The full documentation is available on [the ExportMlx web site](https://exportmlx.janklab.net).
+The full documentation is available on [the MlxShake web site](https://mlxshake.janklab.net).
 
 ## PRERELEASE ALPHA SOFTWARE
 
@@ -15,13 +15,13 @@ DO NOT USE THIS SOFTWARE IN PRODUCTION SYSTEMS!
 
 ## Acknowledgments
 
-ExportMlx is based on, and started out as a fork of, MathWorker Michio Inoue's [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) tool. ExportMlx can largely be viewed as a productization of livescript2markdown.
+MlxShake is based on, and started out as a fork of, MathWorker Michio Inoue's [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) tool. MlxShake can largely be viewed as a productization of livescript2markdown.
 
 The Live Script to LaTeX export code is informed by Pavel Roslovets's [Live-Script-to-Markdown-Converter toolbox](https://github.com/roslovets/Live-Script-to-Markdown-Converter).
 
 ## License Warning
 
-ExportMlx is licensed under a nonstandard MathWorks-specific variant of the BSD 2-Clause License that includes this additional clause:
+MlxShake is licensed under a nonstandard MathWorks-specific variant of the BSD 2-Clause License that includes this additional clause:
 
 ```text
 * In all cases, the software is, and all modifications and derivatives of the
@@ -29,7 +29,7 @@ ExportMlx is licensed under a nonstandard MathWorks-specific variant of the BSD 
   MathWorks products and service offerings.
 ```
 
-This is because the [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) project is licensed that way, and ExportMlx contains derivatives of its code.
+This is because the [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) project is licensed that way, and MlxShake contains derivatives of its code.
 
 ## Requirements
 
@@ -37,13 +37,13 @@ Matlab version, I dunno, R2019b or later?
 
 ## Introduction
 
-ExportMlx provides tools for exporting Matlab Live Scripts to Markdown and other formats.
+MlxShake provides tools for exporting Matlab Live Scripts to Markdown and other formats.
 
 This code has been tested with multiple live scripts but please note that it's not perfect. It's expected that you need some manual editing (for now!).
 
 ## Installation
 
-Download the [latest release](https://github.com/janklab/ExportMlx/releases) or clone the [repo](https://github.com/janklab/ExportMlx) and put it somewhere on your disk.
+Download the [latest release](https://github.com/janklab/MlxShake/releases) or clone the [repo](https://github.com/janklab/MlxShake) and put it somewhere on your disk.
 
 Add its `Mcode/` directory to your Matlab path using `addpath()`.
 
@@ -58,14 +58,14 @@ Quick summary:
 Super quick example:
 
 ```matlab
-janklab.exportmlx.exportlivescript('MyLiveScript.mlx')
+janklab.mlxshake.exportlivescript('MyLiveScript.mlx')
 ```
 
-See the [Tutorial](https://exportmlx.janklab.net/Tutorial.html) for fuller instructions and feature description.
+See the [Tutorial](https://mlxshake.janklab.net/Tutorial.html) for fuller instructions and feature description.
 
 ## Project Goals
 
-The goals of ExportMlx, specifically as an enhanced fork of [livescript2markdown](https://github.com/minoue-xx/livescript2markdown), are:
+The goals of MlxShake, specifically as an enhanced fork of [livescript2markdown](https://github.com/minoue-xx/livescript2markdown), are:
 
 * Automate the full process from `.mlx` to `.md`.
 * Become suitable for use in automated document generation processes.
@@ -76,20 +76,20 @@ The goals of ExportMlx, specifically as an enhanced fork of [livescript2markdown
 
 ## Author
 
-ExportMlx was developed by [Andrew Janke](https://apjanke.net) based on [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) by [Michio Inoue](https://github.com/minoue-xx).
+MlxShake was developed by [Andrew Janke](https://apjanke.net) based on [livescript2markdown](https://github.com/minoue-xx/livescript2markdown) by [Michio Inoue](https://github.com/minoue-xx).
 
-The project home page is the [GitHub repo page](https://github.com/janklab/ExportMlx). Bug reports and feature requests are welcome. The online documentation is on the [ExportMlx web site](https://exportmlx.janklab.net), but that is very much a work in progress.
+The project home page is the [GitHub repo page](https://github.com/janklab/MlxShake). Bug reports and feature requests are welcome. The online documentation is on the [MlxShake web site](https://mlxshake.janklab.net), but that is very much a work in progress.
 
-ExportMlx is part of the [Janklab](https://janklab.net) suite of open source libraries for Matlab.
+MlxShake is part of the [Janklab](https://janklab.net) suite of open source libraries for Matlab.
 
-ExportMlx's repo structure is based on Janklab's [MatlabProjectTemplate](https://github.com/apjanke/MatlabProjectTemplate).
+MlxShake's repo structure is based on Janklab's [MatlabProjectTemplate](https://github.com/apjanke/MatlabProjectTemplate).
 
 Code was written while listening to [live Phish shows](https://www.livephish.com/).
 
 ## Contributing
 
-Contributions are appreciated! Right now I mostly need feature requests, bug reports, and especially example Live Script files that ExportMlx can be tested against.
+Contributions are appreciated! Right now I mostly need feature requests, bug reports, and especially example Live Script files that MlxShake can be tested against.
 
-All code contributions to ExportMlx must be dual-licensed under the BSD 3-Clause License and the special MathWorks-specific variant of the BSD 2-Clause License that ExportMlx is currently licensed under. This is so that ExportMlx can be easily relicensed to BSD 3-Clause in the future if its underlying `livescript2markdown` code is similarly relicensed. (Which would be nice, IMHO.)
+All code contributions to MlxShake must be dual-licensed under the BSD 3-Clause License and the special MathWorks-specific variant of the BSD 2-Clause License that MlxShake is currently licensed under. This is so that MlxShake can be easily relicensed to BSD 3-Clause in the future if its underlying `livescript2markdown` code is similarly relicensed. (Which would be nice, IMHO.)
 
-See the [CONTRIBUTING](https://github.com/janklab/ExportMlx/blob/master/.github/CONTRIBUTING.md) file for more info, including coding guidelines.
+See the [CONTRIBUTING](https://github.com/janklab/MlxShake/blob/master/.github/CONTRIBUTING.md) file for more info, including coding guidelines.

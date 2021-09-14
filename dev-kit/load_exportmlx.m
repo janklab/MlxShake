@@ -1,7 +1,7 @@
-function load_exportmlx(flags)
-% Load the ExportMlx library in to this Matlab session.
+function load_mlxshake(flags)
+% Load the MlxShake library in to this Matlab session.
 %
-% load_exportmlx [<flag> ...]
+% load_mlxshake [<flag> ...]
 %
 % This is what you can run from a fresh Matlab session to load in the
 % library. It's mostly used by automated test tools and other

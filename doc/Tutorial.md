@@ -228,4 +228,4 @@ There isn't a Live Script "quotation" feature, but ExportMlx converts centered p
 
 Hope this accelerates your Matlab life! Any comments and suggestions are welcome. Visit the project repo at [https://github.com/janklab/ExportMlx](https://github.com/janklab/ExportMlx).
 
-<!-- This Markdown was generated from Matlab Live Script with Janklab ExportMlx (https://exportmlx.janklab.net) -->
+<!-- This Markdown was generated from Matlab Live Script with Janklab MlxShake (https://mlxshake.janklab.net) -->

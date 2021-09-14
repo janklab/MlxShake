@@ -13,7 +13,7 @@ function make_doc(varargin)
 % Requires Ruby and Bundler to be installed, and available on your $PATH.
 %
 % Environment variables:
-%   EXPORTMLX_MAKEDOC_NO_BUNDLER - set to 1 to bypass 'bundle install'.
+%   MLXSHAKE_MAKEDOC_NO_BUNDLER - set to 1 to bypass 'bundle install'.
 %     This is a hack to get things working when your bundler is broken. If
 %     you do this, you must have all the necessary gems installed in your
 %     main system or user Ruby gems installation. Good luck.
@@ -28,13 +28,13 @@ end
 
 %#ok<*STRNU>
 
-import janklab.exportmlx.internal.util.*
+import janklab.mlxshake.internal.util.*
 
 RAII.cd = withcd(fileparts(mfilename('fullpath')));
 
 requireRubyAvailable;
 
-skipBundler = string(getenv('EXPORTMLX_MAKEDOC_NO_BUNDLER')) == '1';
+skipBundler = string(getenv('MLXSHAKE_MAKEDOC_NO_BUNDLER')) == '1';
 
     function jekyll(varargin)
         cmd = "jekyll " + strjoin(varargin, "");

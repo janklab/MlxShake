@@ -1,4 +1,4 @@
-# ExportMlx Release Checklist
+# MlxShake Release Checklist
 
 ## Doing a release with the automated script
 
@@ -18,7 +18,7 @@ The `dev-kit/make_release` script can take care of most of the release work for 
   * Wouldn't hurt to do `make clean && git status && make test`/manual-cleanup, just to be sure.
 * Update and double-check the version number and date in `VERSION`.
 * Update the installation instructions in `docs-src/README-index-common.md` to use the upcoming new release tarball URL.
-  * Format is: `https://github.com/janklab/ExportMlx/releases/download/v<version>/ExportMlx-<version>.tar.gz`.
+  * Format is: `https://github.com/janklab/MlxShake/releases/download/v<version>/MlxShake-<version>.tar.gz`.
 * Regenerate the doco.
   * `make doc`
 * Commit all the files changed by the above steps.

@@ -1,8 +1,12 @@
-ExportMlx Changelog
+MlxShake Changelog
 ================================
 
 Version 0.2.1 (in progress)
 ------------------------------
+
+Enhancements:
+
+* Rename project from ExportMlx to MlxShake, because ExportMlx is a boring name.
 
 Bug fixes:
 

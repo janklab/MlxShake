@@ -1,4 +1,4 @@
-# ExportMlx TODO
+# MlxShake TODO
 
 ## BUGS
 
@@ -9,7 +9,7 @@
 
 * Add some tests.
 * `exportlivescript` command (like, an external OS/shell command, not a Matlab command).
-* Set up the Azure DevOps pipeline. As of 2021-09-11, it's not seeing the ExportMlx repo, although I can see many other janklab repos.
+* Set up the Azure DevOps pipeline. As of 2021-09-11, it's not seeing the MlxShake repo, although I can see many other janklab repos.
 * Nicer alt text/link text for inline images?
 * Support for GitHub Flavored Markdown and other flavors of Markdown?
   * Actually, the flavor we support now _is_ GFM; that's needed for tables. Need to officially adopt that, and then maybe add other flavors.
@@ -19,7 +19,7 @@
   * Math markup for MkDocs.
 * Better handle table arrays with multicolumn variables (which need column-spanning headers).
   * This probably means rendering them as raw HTML tables instead of GFM tables. Will need some new options to control this behavior.
-* Configure markdownlint to be more lenient with the files in `docs/`. ([#8](https://github.com/janklab/ExportMlx/issues/8))
+* Configure markdownlint to be more lenient with the files in `docs/`. ([#8](https://github.com/janklab/MlxShake/issues/8))
 
 ## Wishlist
 
@@ -27,4 +27,4 @@
   * AsciiDoc support.
   * RestructuredText support.
   * This probably requires reworking the entire processing pipeline to convert the LaTeX to an abstract data structure, and then have converters for that data structure to each output format target, instead of just doing a bunch of regexpreps on the input latex.
-* Animated plot support. ([#1](https://github.com/janklab/ExportMlx/issues/1))
+* Animated plot support. ([#1](https://github.com/janklab/MlxShake/issues/1))
