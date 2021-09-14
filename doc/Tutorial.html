@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
 
 <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>ExportMlx Tutorial | MlxShake Documentation</title>
+<title>MlxShake Tutorial | MlxShake</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="ExportMlx Tutorial" />
+<meta property="og:title" content="MlxShake Tutorial" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Export Matlab Live Scripts to Markdown" />
 <meta property="og:description" content="Export Matlab Live Scripts to Markdown" />
 <link rel="canonical" href="/Tutorial.html" />
 <meta property="og:url" content="/Tutorial.html" />
-<meta property="og:site_name" content="MlxShake Documentation" />
+<meta property="og:site_name" content="MlxShake" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="ExportMlx Tutorial" />
+<meta property="twitter:title" content="MlxShake Tutorial" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","headline":"ExportMlx Tutorial","url":"/Tutorial.html","dateModified":"2021-09-12T15:19:27-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","headline":"MlxShake Tutorial","url":"/Tutorial.html","dateModified":"2021-09-14T17:34:35-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=e4c3aae74b68de4d8e8f9e77d86bcbeaef3a52c5">
+    <link rel="stylesheet" href="/assets/css/style.css?v=8e61fd384abdaeec4f3ca3028691d1945ef06db0">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -41,7 +41,7 @@
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-      <h1 class="project-name">ExportMlx Tutorial</h1>
+      <h1 class="project-name">MlxShake Tutorial</h1>
       <h2 class="project-tagline">Export Matlab Live Scripts to Markdown</h2>
       
         <a href="https://github.com/janklab/ExportMlx" class="btn">View on GitHub</a>
@@ -50,15 +50,15 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <h1 id="exportmlx-tutorial">ExportMlx Tutorial</h1>
+      <h1 id="mlxshake-tutorial">MlxShake Tutorial</h1>
 
 <h2 id="introduction">Introduction</h2>
 
-<p><a href="https://github.com/janklab/ExportMlx">ExportMlx</a> provides tools for converting Matlab Live Scripts to Markdown files. This is useful in generating rich documentation for Matlab programs.</p>
+<p>MlxShake provides tools for converting Matlab Live Scripts to Markdown files. This is useful in generating rich documentation for Matlab programs.</p>
 
 <p>The main function is <code class="language-plaintext highlighter-rouge">exportlivescript</code>. There are also <code class="language-plaintext highlighter-rouge">mlx2latex</code> and <code class="language-plaintext highlighter-rouge">lslatex2markdown</code> functions for the individual steps of the process which give you finer-grained control over export options.</p>
 
-<p>This Tutorial itself is generated from a Live Script using ExportMlx!</p>
+<p>This Tutorial itself is generated from a Live Script using MlxShake!</p>
 
 <h2 id="installation-and-setup">Installation and Setup</h2>
 
@@ -68,18 +68,18 @@
 
 <h2 id="usage-simple">Usage: Simple</h2>
 
-<p>All the code lives in the <code class="language-plaintext highlighter-rouge">janklab.exportmlx</code> package.</p>
+<p>All the code lives in the <code class="language-plaintext highlighter-rouge">janklab.mlxshake</code> package.</p>
 
 <p>Call <code class="language-plaintext highlighter-rouge">exportlivescript(mlxFile)</code> on your <code class="language-plaintext highlighter-rouge">.mlx</code> Live Script file to export it to Markdown.</p>
 
-<pre><code class="language-matlab:Code(Display)">janklab.exportmlx.exportlivescript('README.mlx');
+<pre><code class="language-matlab:Code(Display)">janklab.mlxshake.exportlivescript('README.mlx');
 </code></pre>
 
 <h2 id="usage-advanced">Usage: Advanced</h2>
 
 <h3 id="step-1-export-your-live-script-to-latex-using-mlx2latex">Step 1: Export your Live Script to LaTeX using <code class="language-plaintext highlighter-rouge">mlx2latex</code></h3>
 
-<pre><code class="language-matlab:Code(Display)">janklab.exportmlx.mlx2latex('README.mlx');
+<pre><code class="language-matlab:Code(Display)">janklab.mlxshake.mlx2latex('README.mlx');
 </code></pre>
 
 <p>This will generate <code class="language-plaintext highlighter-rouge">README.tex</code>. All the related images, such as included images and generated figures, are saved under the folder <code class="language-plaintext highlighter-rouge">README_images</code> next to the <code class="language-plaintext highlighter-rouge">.tex</code> file.</p>
@@ -88,7 +88,7 @@
 
 <h3 id="step-2-convert-the-latex-to-markdown-using-lslatex2markdown">Step 2: Convert the LaTeX to Markdown using <code class="language-plaintext highlighter-rouge">lslatex2markdown</code></h3>
 
-<pre><code class="language-matlab:Code(Display)">janklab.exportmlx.lslatex2markdown('README');
+<pre><code class="language-matlab:Code(Display)">janklab.mlxshake.lslatex2markdown('README');
 </code></pre>
 
 <p>This will generate <code class="language-plaintext highlighter-rouge">README.md</code>, a Markdown file suitable for GitHub.</p>
@@ -101,13 +101,13 @@
   <li><code class="language-plaintext highlighter-rouge">png2jpeg</code>: Convert PNG images to JPEG images to save space at the expense of image quality. May be <code class="language-plaintext highlighter-rouge">false</code> (default) or <code class="language-plaintext highlighter-rouge">true</code>.</li>
 </ul>
 
-<p>The arguments are passed as a <code class="language-plaintext highlighter-rouge">janklab.exportmlx.ExportOptions</code> object, so you need to stick them in a <code class="language-plaintext highlighter-rouge">{...}</code>.</p>
+<p>The arguments are passed as a <code class="language-plaintext highlighter-rouge">janklab.mlxshake.ExportOptions</code> object, so you need to stick them in a <code class="language-plaintext highlighter-rouge">{...}</code>.</p>
 
 <p>See the helptext and source code for <code class="language-plaintext highlighter-rouge">latex2markdown</code> for more details.</p>
 
 <p>Example: A Markdown file suitable for Qiita, named <code class="language-plaintext highlighter-rouge">QiitaDraft.md</code>, will be generated by the following command:</p>
 
-<pre><code class="language-matlab:Code(Display)">janklab.exportmlx.lslatex2markdown('README', {'markdownPublishTarget', 'qiita', 'outFile', 'QiitaDraft'});
+<pre><code class="language-matlab:Code(Display)">janklab.mlxshake.lslatex2markdown('README', {'markdownPublishTarget', 'qiita', 'outFile', 'QiitaDraft'});
 </code></pre>
 
 <p>Note: Qiita is a tech blog platform in Japanese. Qiita uses Markdown for its posts.</p>
@@ -116,7 +116,7 @@
 
 <p>One is the equations and the other is how to insert the image files.</p>
 
-<p>Qiita allows you to use LaTeX to represent equations (like GitLab?) whereas GitHub does not. For GitHub, ExportMlx uses CODECOGS (<a href="https://latex.codecogs.com">https://latex.codecogs.com</a>) to render the equations as images.</p>
+<p>Qiita allows you to use LaTeX to represent equations (like GitLab?) whereas GitHub does not. For GitHub, MlxShake uses CODECOGS (<a href="https://latex.codecogs.com">https://latex.codecogs.com</a>) to render the equations as images.</p>
 
 <p>Rendering equations with CODECOGS is done by sticking CODECOGS query URLs in image references in the Markdown. The image files are fetched from codecogs at document viewing time; they are not stored locally. This may not be suitable for all use cases.</p>
 
@@ -328,7 +328,7 @@ my_dict = {'foo': 42, 'bar': [1, 2, 3]}
 
 <h3 id="quotations">Quotations</h3>
 
-<p>There isn’t a Live Script “quotation” feature, but ExportMlx converts centered paragraphs to Markdown quotations.</p>
+<p>There isn’t a Live Script “quotation” feature, but MlxShake converts centered paragraphs to Markdown quotations.</p>
 
 <blockquote>
   <p>This centered paragraph in the Live Script is rendered as a quotation in Markdown.</p>
@@ -336,7 +336,7 @@ my_dict = {'foo': 42, 'bar': [1, 2, 3]}
 
 <h2 id="feedback-and-support">Feedback and Support</h2>
 
-<p>Hope this accelerates your Matlab life! Any comments and suggestions are welcome. Visit the project repo at <a href="https://github.com/janklab/ExportMlx">https://github.com/janklab/ExportMlx</a>.</p>
+<p>Hope this accelerates your Matlab life! Any comments and suggestions are welcome. Visit the project repo at <a href="https://github.com/janklab/ExportMlx">https://github.com/janklab/</a>MlxShake.</p>
 
 <!-- This Markdown was generated from Matlab Live Script with Janklab MlxShake (https://mlxshake.janklab.net) -->
 
