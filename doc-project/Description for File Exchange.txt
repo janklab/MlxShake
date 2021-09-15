@@ -1,0 +1,42 @@
+
+Janklab's MlxShake is a tool to export Matlab Live Scripts (`.mlx` files) to Markdown and other formats. It can export to Markdown, HTML, PDF, Microsoft Word, and more.
+
+This tool lets you generate project documentation and web site content from live scripts in your project. This is a nice way of generating rich documentation with included graphics that are up to date with your latest code.
+
+See the Tutorial at https://mlxshake.janklab.net/Tutorial.html for examples of what it can do. The Tutorial is itself generated from a Matlab live script using MlxShake!
+
+
+Super quick example:
+
+janklab.mlxshake.exportlivescript('MyLiveScript.mlx')
+
+The full documentation is available on the MlxShake web site at https://mlxshake.janklab.net.
+
+ACKNOWLEDGMENTS
+
+MlxShake is based on, and started out as a fork of, MathWorker Michio Inoue's livescript2markdown tool (https://github.com/minoue-xx/livescript2markdown). MlxShake can largely be viewed as a productization of livescript2markdown.
+
+The Live Script to LaTeX export code is informed by Pavel Roslovets's [Live-Script-to-Markdown-Converter toolbox](https://github.com/roslovets/Live-Script-to-Markdown-Converter).
+
+MlxShake adds the following enhancements:
+
+* Automate the full process from `.mlx` to `.md`.
+
+* Become suitable for use in automated document generation processes.
+
+  * Make the Markdown good enough that no manual touch-up is usually needed.
+
+* Produce nicely-formatted output files.
+
+* Support additional output formats.
+
+
+LICENSE WARNING
+
+MlxShake is licensed under a nonstandard MathWorks-specific variant of the BSD 2-Clause License that includes this additional clause:
+
+* In all cases, the software is, and all modifications and derivatives of the
+  software shall be, licensed to you solely for use in conjunction with
+  MathWorks products and service offerings.
+
+This is because the livescript2markdown project is licensed that way, and MlxShake contains derivatives of its code.
