@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 #
 # run_matlab <command>
+#
+# Runs a command in a Matlab session with MlxShake (and its dev-kit) on the Matlab path.
+
 set -e
 
 locate_matlab () {
