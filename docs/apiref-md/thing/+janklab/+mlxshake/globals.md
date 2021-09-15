@@ -1,5 +1,9 @@
 # globals - janklab.mlxshake
 
+```text
+janklab.mlxshake.globals
+```
+
 ## Helptext
 
 ```text

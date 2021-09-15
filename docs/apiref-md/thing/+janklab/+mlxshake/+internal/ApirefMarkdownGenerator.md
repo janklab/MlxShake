@@ -2,6 +2,13 @@
 
 HandleCompatible
 
+```text
+janklab.mlxshake.internal.ApirefMarkdownGenerator
+  janklab.mlxshake.internal.ApirefGenerator
+    janklab.mlxshake.internal.MlxshakeBaseHandle
+      handle
+```
+
 ## Helptext
 
 ```text

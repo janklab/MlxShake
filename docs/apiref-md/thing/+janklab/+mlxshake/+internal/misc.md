@@ -1,5 +1,9 @@
 # misc - janklab.mlxshake.internal
 
+```text
+janklab.mlxshake.internal.misc
+```
+
 ## Helptext
 
 ```text

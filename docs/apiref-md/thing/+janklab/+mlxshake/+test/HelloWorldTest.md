@@ -2,6 +2,41 @@
 
 HandleCompatible
 
+```text
+janklab.mlxshake.test.HelloWorldTest
+  matlab.unittest.TestCase
+    matlab.unittest.internal.RunnableTestContent
+      matlab.unittest.internal.TestContent
+        matlab.unittest.internal.Teardownable
+          matlab.mixin.Copyable
+            handle
+        matlab.unittest.internal.mixin.Subscribable
+          handle
+      matlab.unittest.internal.qualifications.ThrowingQualifiable
+        matlab.unittest.qualifications.Assertable
+          matlab.mixin.Copyable
+            handle
+          matlab.unittest.internal.DiagnosticDataMixin
+        matlab.unittest.qualifications.Assumable
+          matlab.mixin.Copyable
+            handle
+          matlab.unittest.internal.DiagnosticDataMixin
+        matlab.unittest.qualifications.FatalAssertable
+          matlab.mixin.Copyable
+            handle
+          matlab.unittest.internal.DiagnosticDataMixin
+        matlab.unittest.internal.Loggable
+          handle
+          matlab.unittest.internal.DiagnosticDataMixin
+      matlab.unittest.qualifications.Verifiable
+        matlab.mixin.Copyable
+          handle
+        matlab.unittest.internal.DiagnosticDataMixin
+      matlab.unittest.internal.Measurable
+        handle
+    matlab.mixin.internal.Scalar
+```
+
 ## Helptext
 
 ```text

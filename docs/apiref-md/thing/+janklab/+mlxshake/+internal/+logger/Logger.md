@@ -1,5 +1,9 @@
 # Logger - janklab.mlxshake.internal.logger
 
+```text
+janklab.mlxshake.internal.logger.Logger
+```
+
 ## Helptext
 
 ```text

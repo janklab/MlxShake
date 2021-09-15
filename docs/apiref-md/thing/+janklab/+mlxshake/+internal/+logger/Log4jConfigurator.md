@@ -1,5 +1,9 @@
 # Log4jConfigurator - janklab.mlxshake.internal.logger
 
+```text
+janklab.mlxshake.internal.logger.Log4jConfigurator
+```
+
 ## Helptext
 
 ```text

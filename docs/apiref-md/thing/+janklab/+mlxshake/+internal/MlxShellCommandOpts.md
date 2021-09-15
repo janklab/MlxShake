@@ -1,5 +1,9 @@
 # MlxShellCommandOpts - janklab.mlxshake.internal
 
+```text
+janklab.mlxshake.internal.MlxShellCommandOpts
+```
+
 ## Helptext
 
 ```text

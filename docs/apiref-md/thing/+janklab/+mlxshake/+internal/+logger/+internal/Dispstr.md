@@ -1,5 +1,9 @@
 # Dispstr - janklab.mlxshake.internal.logger.internal
 
+```text
+janklab.mlxshake.internal.logger.internal.Dispstr
+```
+
 ## Helptext
 
 ```text

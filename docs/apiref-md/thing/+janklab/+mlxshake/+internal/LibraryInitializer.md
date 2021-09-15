@@ -1,5 +1,9 @@
 # LibraryInitializer - janklab.mlxshake.internal
 
+```text
+janklab.mlxshake.internal.LibraryInitializer
+```
+
 ## Helptext
 
 ```text

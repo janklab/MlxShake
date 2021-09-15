@@ -6,7 +6,6 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
     % from the source code, not the resolved value.
     % FIXME: Static methods with the same name as global functions can pick
     % up the wrong helptext.
-    % TODO: Display inheritance tree like Javadoc does.
     % TODO: Break out constructor display.
     % TODO: More compact item lists?
     % TODO: Get helptext from arguments blocks.
@@ -261,6 +260,17 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
                 p("%s", strjoin(attribs, ', '));
                 p
             end
+            % Inheritance tree
+            function stepInhTree(klass, prefix)
+                p("%s%s", prefix, klass.Name)
+                for super = klass.SuperclassList(:)'
+                    stepInhTree(super, prefix + "  ");
+                end
+            end
+            p("```text")
+            stepInhTree(klass, "")
+            p("```")
+            p
             
             if ~isempty(klass.Description)
                 p("## Description")

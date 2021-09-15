@@ -1,5 +1,9 @@
 # MlxExportOptions - janklab.mlxshake
 
+```text
+janklab.mlxshake.MlxExportOptions
+```
+
 ## Helptext
 
 ```text

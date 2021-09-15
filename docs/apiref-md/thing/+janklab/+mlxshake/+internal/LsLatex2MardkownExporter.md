@@ -1,5 +1,10 @@
 # LsLatex2MardkownExporter - janklab.mlxshake.internal
 
+```text
+janklab.mlxshake.internal.LsLatex2MardkownExporter
+  janklab.mlxshake.internal.MlxshakeBase
+```
+
 ## Helptext
 
 ```text

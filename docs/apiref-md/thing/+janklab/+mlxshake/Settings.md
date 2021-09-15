@@ -2,6 +2,12 @@
 
 HandleCompatible
 
+```text
+janklab.mlxshake.Settings
+  janklab.mlxshake.internal.MlxshakeBaseHandle
+    handle
+```
+
 ## Helptext
 
 ```text

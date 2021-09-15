@@ -1,5 +1,9 @@
 # MlxshakeBase - janklab.mlxshake.internal
 
+```text
+janklab.mlxshake.internal.MlxshakeBase
+```
+
 ## Helptext
 
 ```text

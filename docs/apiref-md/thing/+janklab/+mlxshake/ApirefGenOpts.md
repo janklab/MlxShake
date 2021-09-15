@@ -1,5 +1,9 @@
 # ApirefGenOpts - janklab.mlxshake
 
+```text
+janklab.mlxshake.ApirefGenOpts
+```
+
 ## Helptext
 
 ```text
