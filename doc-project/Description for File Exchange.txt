@@ -6,9 +6,13 @@ This tool lets you generate project documentation and web site content from live
 See the Tutorial at https://mlxshake.janklab.net/Tutorial.html for examples of what it can do. The Tutorial is itself generated from a Matlab live script using MlxShake!
 
 
-Super quick example:
+Super quick examples:
 
 janklab.mlxshake.exportlivescript('MyLiveScript.mlx')
+
+From the shell or other programs:
+
+./bin/mlxshake MyLiveScript.mlx --format html
 
 The full documentation is available on the MlxShake web site at https://mlxshake.janklab.net.
 
@@ -21,15 +25,10 @@ The Live Script to LaTeX export code is informed by Pavel Roslovets's Live-Scrip
 MlxShake adds the following enhancements:
 
 * Automate the full process from `.mlx` to `.md`.
-
-* Become suitable for use in automated document generation processes.
-
-  * Make the Markdown good enough that no manual touch-up is usually needed.
-
+* Be suitable for use in automated document generation processes.
+* Make the Markdown good enough that no manual touch-up is usually needed.
 * Produce nicely-formatted output files.
-
 * Support additional output formats.
-
 
 LICENSE WARNING
 

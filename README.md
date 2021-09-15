@@ -57,11 +57,16 @@ Quick summary:
 * `exportlivescript` – Export a Live Script `.mlx` file to Markdown. (This is what you probably want.)
 * `mlx2latex` – Do just the `.mlx` to `.tex` export step.
 * `lslatex2markdown` – Do just the `.tex` to `.md` conversion step.
+* `bin/mlxshake` – Run MlxShake from the Unix shell or other programs.
 
 Super quick example:
 
 ```matlab
 janklab.mlxshake.exportlivescript('MyLiveScript.mlx')
+```
+
+```bash
+./bin/mlxshake MyLiveScript.mlx --format html
 ```
 
 See the [Tutorial](https://mlxshake.janklab.net/Tutorial.html) for fuller instructions and feature description.
@@ -71,8 +76,8 @@ See the [Tutorial](https://mlxshake.janklab.net/Tutorial.html) for fuller instru
 The goals of MlxShake, specifically as an enhanced fork of [livescript2markdown](https://github.com/minoue-xx/livescript2markdown), are:
 
 * Automate the full process from `.mlx` to `.md`.
-* Become suitable for use in automated document generation processes.
-  * Make the Markdown good enough that no manual touch-up is usually needed.
+* Be suitable for use in automated document generation processes.
+* Make the Markdown good enough that no manual touch-up is usually needed.
 * Make the code as modern as possible (as of R2019b).
 * Produce nicely-formatted output files.
 * Support additional output formats.
