@@ -1,13 +1,10 @@
 # LibraryInitializer - janklab.mlxshake.internal
 
-## Description
-
-
 ## Helptext
 
 ```text
 janklab.mlxshake.internal.LibraryInitializer is a class.
-  this = LibraryInitializer
+  this = janklab.mlxshake.internal.LibraryInitializer
 
   Documentation for janklab.mlxshake.internal.LibraryInitializer
      doc janklab.mlxshake.internal.LibraryInitializer
@@ -23,34 +20,27 @@ janklab.mlxshake.internal.LibraryInitializer is a class.
 | Method | Description |
 | -------- | ----------- |
 | [LibraryInitializer](#janklab.mlxshake.internal.LibraryInitializer.LibraryInitializer) |  |
-| [empty](#janklab.mlxshake.internal.LibraryInitializer.empty) | Returns an empty object array of the given size |
 
 ## Methods
 
 <a name="janklab.mlxshake.internal.LibraryInitializer.LibraryInitializer"></a>
 ### LibraryInitializer
 
+Signature:
+```
+this = LibraryInitializer()
+```
 
-
-
-
+Helptext:
 
 ```text
 janklab.mlxshake.internal.LibraryInitializer/LibraryInitializer is a constructor.
   this = LibraryInitializer
 
-```
-
-<a name="janklab.mlxshake.internal.LibraryInitializer.empty"></a>
-### empty
+  Documentation for janklab.mlxshake.internal.LibraryInitializer/LibraryInitializer
+     doc janklab.mlxshake.internal.LibraryInitializer
 
 
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
 ```
 
 

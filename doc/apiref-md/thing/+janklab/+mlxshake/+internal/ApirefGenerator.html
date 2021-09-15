@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="ApirefGenerator - janklab.mlxshake.internal" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/ApirefGenerator.html","headline":"ApirefGenerator - janklab.mlxshake.internal","dateModified":"2021-09-15T09:29:41-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/ApirefGenerator.html","headline":"ApirefGenerator - janklab.mlxshake.internal","dateModified":"2021-09-15T10:09:42-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=e5b5b2d3a18f85f9fdd9d688d3fccaed8737cded">
+    <link rel="stylesheet" href="/assets/css/style.css?v=54a8a522bae69f334ab5493991c931ee264ef063">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -53,8 +53,6 @@
       <h1 id="apirefgenerator---janklabmlxshakeinternal">ApirefGenerator - janklab.mlxshake.internal</h1>
 
 <p>Abstract, HandleCompatible</p>
-
-<h2 id="description">Description</h2>
 
 <h2 id="helptext">Helptext</h2>
 
@@ -132,17 +130,8 @@
       <td><a href="#janklab.mlxshake.internal.ApirefGenerator.ApirefGenerator">ApirefGenerator</a></td>
       <td> </td>
     </tr>
-    <tr>
-      <td><a href="#janklab.mlxshake.internal.ApirefGenerator.empty">empty</a></td>
-      <td>Returns an empty object array of the given size</td>
-    </tr>
   </tbody>
 </table>
-
-<h3 id="events">Events</h3>
-
-<p>| Events | Description |
-| ——– | ———– |</p>
 
 <h3 id="superclasses">Superclasses</h3>
 
@@ -166,11 +155,15 @@
 <p><a name="janklab.mlxshake.internal.ApirefGenerator.outDir"></a></p>
 <h3 id="outdir">outDir</h3>
 
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefGenerator.inDirs"></a></p>
 <h3 id="indirs">inDirs</h3>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
@@ -178,17 +171,23 @@
 <p><a name="janklab.mlxshake.internal.ApirefGenerator.opts"></a></p>
 <h3 id="opts">opts</h3>
 
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefGenerator.mfiles"></a></p>
 <h3 id="mfiles">mfiles</h3>
 
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefGenerator.packages"></a></p>
 <h3 id="packages">packages</h3>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
@@ -198,49 +197,76 @@
 <p><a name="janklab.mlxshake.internal.ApirefGenerator.generateForMyFormat"></a></p>
 <h3 id="generateformyformat">generateForMyFormat</h3>
 
+<p>Attributes: Abstract</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>generateForMyFormat(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.ApirefGenerator/generateForMyFormat is a function.
+  obj = janklab.mlxshake.internal.ApirefGenerator
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefGenerator.forFormat"></a></p>
 <h3 id="forformat">forFormat</h3>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.ApirefGenerator.forFormat is a function.
-  out = forFormat(format)
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = ApirefGenerator.forFormat(varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Construct an ApirefGenerator for a given format.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefGenerator.discover"></a></p>
 <h3 id="discover">discover</h3>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ File, Package, Name, QName, IsInternal; ... }
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>discover(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Discover source code files on the input paths.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefGenerator.generate"></a></p>
 <h3 id="generate">generate</h3>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.ApirefGenerator/generate is a function.
-  generate(this)
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>generate(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generate the doco output.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefGenerator.ApirefGenerator"></a></p>
 <h3 id="apirefgenerator">ApirefGenerator</h3>
 
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>obj = ApirefGenerator()
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generates API Reference doco from source code.
 
+  Documentation for janklab.mlxshake.internal.ApirefGenerator/ApirefGenerator
+     doc janklab.mlxshake.internal.ApirefGenerator
+
+
 </code></pre></div></div>
-
-<p><a name="janklab.mlxshake.internal.ApirefGenerator.empty"></a></p>
-<h3 id="empty">empty</h3>
-
-<p>Returns an empty object array of the given size</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Returns an empty object array of the given size
-</code></pre></div></div>
-
-<h2 id="events-1">Events</h2>
 
 
 

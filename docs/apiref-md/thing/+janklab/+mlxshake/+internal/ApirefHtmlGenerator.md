@@ -2,9 +2,6 @@
 
 HandleCompatible
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -19,23 +16,12 @@ HandleCompatible
 
 ## Class Contents
 
-### Properties
-
-| Property | Description |
-| -------- | ----------- |
-
 ### Methods
 
 | Method | Description |
 | -------- | ----------- |
 | [generateForMyFormat](#janklab.mlxshake.internal.ApirefHtmlGenerator.generateForMyFormat) |  |
 | [ApirefHtmlGenerator](#janklab.mlxshake.internal.ApirefHtmlGenerator.ApirefHtmlGenerator) |  |
-| [empty](#janklab.mlxshake.internal.ApirefHtmlGenerator.empty) | Returns an empty object array of the given size |
-
-### Events
-
-| Events | Description |
-| -------- | ----------- |
 
 ### Superclasses
 
@@ -43,18 +29,17 @@ HandleCompatible
 | -------- | ----------- |
 | `janklab.mlxshake.internal.ApirefGenerator` |  |
 
-## Properties
-
-
 ## Methods
 
 <a name="janklab.mlxshake.internal.ApirefHtmlGenerator.generateForMyFormat"></a>
 ### generateForMyFormat
 
+Signature:
+```
+generateForMyFormat(this)
+```
 
-
-
-
+Helptext:
 
 ```text
 janklab.mlxshake.internal.ApirefHtmlGenerator/generateForMyFormat is a function.
@@ -65,29 +50,20 @@ janklab.mlxshake.internal.ApirefHtmlGenerator/generateForMyFormat is a function.
 <a name="janklab.mlxshake.internal.ApirefHtmlGenerator.ApirefHtmlGenerator"></a>
 ### ApirefHtmlGenerator
 
+Signature:
+```
+obj = ApirefHtmlGenerator()
+```
 
-
-
-
+Helptext:
 
 ```text
 #ok<*MANU>
 
+  Documentation for janklab.mlxshake.internal.ApirefHtmlGenerator/ApirefHtmlGenerator
+     doc janklab.mlxshake.internal.ApirefHtmlGenerator
+
+
 ```
-
-<a name="janklab.mlxshake.internal.ApirefHtmlGenerator.empty"></a>
-### empty
-
-
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
-```
-
-
-## Events
 
 

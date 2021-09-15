@@ -5,12 +5,13 @@ classdef ApirefGenOpts
         format (1,1) string {mustBeMember(format, ["markdown", "html"])} = "markdown"
         projectName (1,1) string = "Untitled Project"
         doInternal (1,1) logical = false
+        showHidden (1,1) logical = false
     end
     
     methods
 
         function this = ApirefGenOpts(arg)
-            % Construct a new object
+            % Construct a new object.
             %
             % obj = janklab.mlxshake.ApirefGenOpts
             % obj = janklab.mlxshake.ApirefGenOpts(struct(...))

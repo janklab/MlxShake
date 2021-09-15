@@ -2,9 +2,6 @@
 
 HandleCompatible
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -25,23 +22,11 @@ MLXSHAKEBASE
 
 ## Class Contents
 
-### Properties
-
-| Property | Description |
-| -------- | ----------- |
-| [initializer](#janklab.mlxshake.internal.MlxshakeBaseHandle.initializer) |  |
-
 ### Methods
 
 | Method | Description |
 | -------- | ----------- |
 | [MlxshakeBaseHandle](#janklab.mlxshake.internal.MlxshakeBaseHandle.MlxshakeBaseHandle) |  |
-| [empty](#janklab.mlxshake.internal.MlxshakeBaseHandle.empty) | Returns an empty object array of the given size |
-
-### Events
-
-| Events | Description |
-| -------- | ----------- |
 
 ### Superclasses
 
@@ -49,30 +34,17 @@ MLXSHAKEBASE
 | -------- | ----------- |
 | `handle` | Base class for handle classes |
 
-## Properties
-
-<a name="janklab.mlxshake.internal.MlxshakeBaseHandle.initializer"></a>
-### initializer
-
-
-
-
-
-
-```text
-No helptext available.
-```
-
-
 ## Methods
 
 <a name="janklab.mlxshake.internal.MlxshakeBaseHandle.MlxshakeBaseHandle"></a>
 ### MlxshakeBaseHandle
 
+Signature:
+```
+obj = MlxshakeBaseHandle()
+```
 
-
-
-
+Helptext:
 
 ```text
 This class is a trick to support automatic library initialization
@@ -83,21 +55,10 @@ initialized inherit from this or ExportmlxBase.
 See also:
 MLXSHAKEBASE
 
+  Documentation for janklab.mlxshake.internal.MlxshakeBaseHandle/MlxshakeBaseHandle
+     doc janklab.mlxshake.internal.MlxshakeBaseHandle
+
+
 ```
-
-<a name="janklab.mlxshake.internal.MlxshakeBaseHandle.empty"></a>
-### empty
-
-
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
-```
-
-
-## Events
 
 

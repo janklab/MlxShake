@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Dispstr - janklab.mlxshake.internal.logger.internal" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/+logger/+internal/Dispstr.html","headline":"Dispstr - janklab.mlxshake.internal.logger.internal","dateModified":"2021-09-15T09:29:41-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/+logger/+internal/Dispstr.html","headline":"Dispstr - janklab.mlxshake.internal.logger.internal","dateModified":"2021-09-15T10:09:42-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=e5b5b2d3a18f85f9fdd9d688d3fccaed8737cded">
+    <link rel="stylesheet" href="/assets/css/style.css?v=54a8a522bae69f334ab5493991c931ee264ef063">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -51,8 +51,6 @@
 
     <main id="content" class="main-content" role="main">
       <h1 id="dispstr---janklabmlxshakeinternalloggerinternal">Dispstr - janklab.mlxshake.internal.logger.internal</h1>
-
-<h2 id="description">Description</h2>
 
 <h2 id="helptext">Helptext</h2>
 
@@ -155,10 +153,6 @@ don't want to take a dependency on dispstr.
       <td><a href="#janklab.mlxshake.internal.logger.internal.Dispstr.Dispstr">Dispstr</a></td>
       <td> </td>
     </tr>
-    <tr>
-      <td><a href="#janklab.mlxshake.internal.logger.internal.Dispstr.empty">empty</a></td>
-      <td>Returns an empty object array of the given size</td>
-    </tr>
   </tbody>
 </table>
 
@@ -166,6 +160,14 @@ don't want to take a dependency on dispstr.
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.sprintfv"></a></p>
 <h3 id="sprintfv">sprintfv</h3>
+
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.sprintfv(format, varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SPRINTFV "Vectorized" sprintf
 
@@ -184,6 +186,14 @@ Returns cellstr.
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.size2str"></a></p>
 <h3 id="size2str">size2str</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.size2str(sz)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SIZE2STR Format an array size for display
 
 out = size2str(sz)
@@ -199,12 +209,28 @@ size2str(magic(3))
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintTabular_generic"></a></p>
 <h3 id="prettyprinttabular_generic">prettyprintTabular_generic</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.prettyprintTabular_generic(varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A generic tabular pretty-print that can be used for tabulars or relations
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintTabular"></a></p>
 <h3 id="prettyprinttabular">prettyprintTabular</h3>
+
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.prettyprintTabular(t)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRETTYPRINT_TABULAR Tabular implementation of prettyprint
 
@@ -213,6 +239,14 @@ size2str(magic(3))
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintStruct"></a></p>
 <h3 id="prettyprintstruct">prettyprintStruct</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.prettyprintStruct(s)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRETTYPRINT_STRUCT struct implementation of prettyprint
 
 </code></pre></div></div>
@@ -220,12 +254,28 @@ size2str(magic(3))
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintCell"></a></p>
 <h3 id="prettyprintcell">prettyprintCell</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.prettyprintCell(c)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRETTYPRINT_CELL Cell implementation of prettyprint
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintMatrix"></a></p>
 <h3 id="prettyprintmatrix">prettyprintMatrix</h3>
+
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.prettyprintMatrix(strs)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pretty-print a matrix of arbitrary display strings
 
@@ -239,6 +289,14 @@ form.
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintArray"></a></p>
 <h3 id="prettyprintarray">prettyprintArray</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.prettyprintArray(strs)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRETTYPRINT_ARRAY Pretty-print an array from dispstrs
 
 out = prettyprintArray(strs)
@@ -250,12 +308,28 @@ strs (string) is an array of display strings of any size.
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.num2cellstr"></a></p>
 <h3 id="num2cellstr">num2cellstr</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.num2cellstr(x)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NUM2CELLSTR Like num2str, but return cellstr of individual number strings
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.mycombvec"></a></p>
 <h3 id="mycombvec">mycombvec</h3>
+
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.mycombvec(vecs)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MYCOMBVEC All combinations of values from vectors
 
@@ -266,13 +340,29 @@ This is similar to Matlab's combvec, but has a different signature.
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier"></a></p>
 <h3 id="iserroridentifier">isErrorIdentifier</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.isErrorIdentifier(str)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier is a function.
-  out = isErrorIdentifier(str)
+  out = janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier(str)
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispc"></a></p>
 <h3 id="dispc">dispc</h3>
+
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.dispc(x)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISPC Display, with capture
 
@@ -281,21 +371,45 @@ This is similar to Matlab's combvec, but has a different signature.
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct"></a></p>
 <h3 id="dispstruct">dispStruct</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dispstr.dispStruct(x)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct is a function.
-  dispStruct(x)
+  janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct(x)
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispCell"></a></p>
 <h3 id="dispcell">dispCell</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dispstr.dispCell(c)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.dispCell is a function.
-  dispCell(c)
+  janklab.mlxshake.internal.logger.internal.Dispstr.dispCell(c)
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.display"></a></p>
 <h3 id="display">display</h3>
+
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dispstr.display(x)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISPLAY Display array.
   DISPLAY(X) is called for the object X when the semicolon is not used
@@ -311,35 +425,57 @@ This is similar to Matlab's combvec, but has a different signature.
   To customize the display of objects, overload the DISP function.
   Note that DISP does not display empty arrays.
   
-  See also DISP, matlab.mixin.CustomDisplay, EVALC,
+  See also disp, formattedDisplayText, matlab.mixin.CustomDisplay.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.disp"></a></p>
 <h3 id="disp">disp</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dispstr.disp(x)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISP Display array.
   DISP(X) displays array X without printing the array name or 
   additional description information such as the size and class name.
-  In all other ways it's the same as leaving the semicolon off an
+  In all other ways it is the same as leaving the semicolon off an
   expression except that nothing is shown for empty arrays.
 
   If X is a string or character array, the text is displayed.
 
-  See also FPRINTF, SPRINTF, INT2STR, NUM2STR, RATS, FORMAT, DETAILS.
+  See also formattedDisplayText, sprintf, num2str, format, details.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf"></a></p>
 <h3 id="convertargsforprintf">convertArgsForPrintf</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Dispstr.convertArgsForPrintf(args)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf is a function.
-  out = convertArgsForPrintf(args)
+  out = janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf(args)
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.Dispstr"></a></p>
 <h3 id="dispstr">Dispstr</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>obj = Dispstr()
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>All the dispstr implementation code, wrapped up in a class
 
@@ -349,14 +485,10 @@ ass) to transform the code to relocate its package, which will hopefully
 allow us to generate "compatters" for internal use by other libraries that
 don't want to take a dependency on dispstr.
 
-</code></pre></div></div>
+  Documentation for janklab.mlxshake.internal.logger.internal.Dispstr/Dispstr
+     doc janklab.mlxshake.internal.logger.internal.Dispstr
 
-<p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.empty"></a></p>
-<h3 id="empty">empty</h3>
 
-<p>Returns an empty object array of the given size</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Returns an empty object array of the given size
 </code></pre></div></div>
 
 

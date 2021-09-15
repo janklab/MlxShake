@@ -1,8 +1,5 @@
 # Log4jConfigurator - janklab.mlxshake.internal.logger
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -56,17 +53,20 @@ mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration
 | [setRootAppenderPattern](#janklab.mlxshake.internal.logger.Log4jConfigurator.setRootAppenderPattern) |  |
 | [configureBasicConsoleLogging](#janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging) |  |
 | [Log4jConfigurator](#janklab.mlxshake.internal.logger.Log4jConfigurator.Log4jConfigurator) |  |
-| [empty](#janklab.mlxshake.internal.logger.Log4jConfigurator.empty) | Returns an empty object array of the given size |
 
 ## Methods
 
 <a name="janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration"></a>
 ### prettyPrintLogConfiguration
 
+Attributes: Static
 
+Signature:
+```
+Log4jConfigurator.prettyPrintLogConfiguration(verbose)
+```
 
-
-
+Helptext:
 
 ```text
 Displays the current log configuration to the console
@@ -78,10 +78,14 @@ mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration()
 <a name="janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels"></a>
 ### setLevels
 
+Attributes: Static
 
+Signature:
+```
+Log4jConfigurator.setLevels(levels)
+```
 
-
-
+Helptext:
 
 ```text
 Set the logging levels for multiple loggers
@@ -108,10 +112,14 @@ mlxshake.logger.Log4jConfigurator.setLevels({
 <a name="janklab.mlxshake.internal.logger.Log4jConfigurator.getLog4jLevel"></a>
 ### getLog4jLevel
 
+Attributes: Static
 
+Signature:
+```
+out = Log4jConfigurator.getLog4jLevel(levelName)
+```
 
-
-
+Helptext:
 
 ```text
 Gets the log4j Level enum for a named level
@@ -121,10 +129,14 @@ Gets the log4j Level enum for a named level
 <a name="janklab.mlxshake.internal.logger.Log4jConfigurator.setRootAppenderPattern"></a>
 ### setRootAppenderPattern
 
+Attributes: Static
 
+Signature:
+```
+Log4jConfigurator.setRootAppenderPattern(pattern)
+```
 
-
-
+Helptext:
 
 ```text
 Sets the pattern on the root appender
@@ -137,10 +149,14 @@ appender on the root logger.
 <a name="janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging"></a>
 ### configureBasicConsoleLogging
 
+Attributes: Static
 
+Signature:
+```
+Log4jConfigurator.configureBasicConsoleLogging(varargin)
+```
 
-
-
+Helptext:
 
 ```text
 Configures log4j to do basic logging to the console
@@ -157,10 +173,12 @@ configured), it silently does nothing.
 <a name="janklab.mlxshake.internal.logger.Log4jConfigurator.Log4jConfigurator"></a>
 ### Log4jConfigurator
 
+Signature:
+```
+obj = Log4jConfigurator()
+```
 
-
-
-
+Helptext:
 
 ```text
 A configurator for log4j
@@ -198,18 +216,6 @@ mlxshake.logger.Log4jConfigurator.setLevels({
 
 mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration
 
-```
-
-<a name="janklab.mlxshake.internal.logger.Log4jConfigurator.empty"></a>
-### empty
-
-
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
 ```
 
 

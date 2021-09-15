@@ -2,13 +2,11 @@
 
 HandleCompatible
 
-## Description
-
-
 ## Helptext
 
 ```text
 janklab.mlxshake.test.HelloWorldTest is a class.
+  obj = janklab.mlxshake.test.HelloWorldTest
 
   Documentation for janklab.mlxshake.test.HelloWorldTest
      doc janklab.mlxshake.test.HelloWorldTest
@@ -19,24 +17,13 @@ janklab.mlxshake.test.HelloWorldTest is a class.
 
 ## Class Contents
 
-### Properties
-
-| Property | Description |
-| -------- | ----------- |
-
 ### Methods
 
 | Method | Description |
 | -------- | ----------- |
 | [testHelloWorld](#janklab.mlxshake.test.HelloWorldTest.testHelloWorld) |  |
 | [HelloWorldTest](#janklab.mlxshake.test.HelloWorldTest.HelloWorldTest) |  |
-| [empty](#janklab.mlxshake.test.HelloWorldTest.empty) | Returns an empty object array of the given size |
 | [forInteractiveUse](#janklab.mlxshake.test.HelloWorldTest.forInteractiveUse) | Default provided forInteractiveUse method |
-
-### Events
-
-| Events | Description |
-| -------- | ----------- |
 
 ### Superclasses
 
@@ -44,18 +31,17 @@ janklab.mlxshake.test.HelloWorldTest is a class.
 | -------- | ----------- |
 | `matlab.unittest.TestCase` | Class which defines test cases in the MATLAB Unit Test Framework. |
 
-## Properties
-
-
 ## Methods
 
 <a name="janklab.mlxshake.test.HelloWorldTest.testHelloWorld"></a>
 ### testHelloWorld
 
+Signature:
+```
+testHelloWorld(t)
+```
 
-
-
-
+Helptext:
 
 ```text
 janklab.mlxshake.test.HelloWorldTest/testHelloWorld is a function.
@@ -66,41 +52,37 @@ janklab.mlxshake.test.HelloWorldTest/testHelloWorld is a function.
 <a name="janklab.mlxshake.test.HelloWorldTest.HelloWorldTest"></a>
 ### HelloWorldTest
 
+Signature:
+```
+obj = HelloWorldTest()
+```
 
-
-
-
+Helptext:
 
 ```text
 janklab.mlxshake.test.HelloWorldTest/HelloWorldTest is a constructor.
+  obj = janklab.mlxshake.test.HelloWorldTest
 
-```
-
-<a name="janklab.mlxshake.test.HelloWorldTest.empty"></a>
-### empty
-
-
-Returns an empty object array of the given size
+  Documentation for janklab.mlxshake.test.HelloWorldTest/HelloWorldTest
+     doc janklab.mlxshake.test.HelloWorldTest
 
 
-
-```text
-Returns an empty object array of the given size
 ```
 
 <a name="janklab.mlxshake.test.HelloWorldTest.forInteractiveUse"></a>
 ### forInteractiveUse
 
+Attributes: Static
 
-Default provided forInteractiveUse method
+Signature:
+```
+testCase = HelloWorldTest.forInteractiveUse(rhs1)
+```
 
-
+Helptext:
 
 ```text
 Default provided forInteractiveUse method
 ```
-
-
-## Events
 
 

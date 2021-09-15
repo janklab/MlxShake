@@ -1,8 +1,5 @@
 # globals - janklab.mlxshake
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -42,17 +39,17 @@ on that:
 | [initialize](#janklab.mlxshake.globals.initialize) |  |
 | [version](#janklab.mlxshake.globals.version) |  |
 | [globals](#janklab.mlxshake.globals.globals) |  |
-| [empty](#janklab.mlxshake.globals.empty) | Returns an empty object array of the given size |
 
 ## Properties
 
 <a name="janklab.mlxshake.globals.distroot"></a>
 ### distroot
 
+Attributes: Constant, NonCopyable, HasDefault
 
+Default Value: `"/Users/janke/local/repos/MlxShake"`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -61,10 +58,11 @@ No helptext available.
 <a name="janklab.mlxshake.globals.settings"></a>
 ### settings
 
+Attributes: Constant, NonCopyable, HasDefault
 
+Default Value: <unrepresentable>
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -76,10 +74,14 @@ No helptext available.
 <a name="janklab.mlxshake.globals.initialize"></a>
 ### initialize
 
+Attributes: Static
 
+Signature:
+```
+globals.initialize()
+```
 
-
-
+Helptext:
 
 ```text
 Initialize this library/package
@@ -89,10 +91,14 @@ Initialize this library/package
 <a name="janklab.mlxshake.globals.version"></a>
 ### version
 
+Attributes: Static
 
+Signature:
+```
+out = globals.version()
+```
 
-
-
+Helptext:
 
 ```text
 The version of the MlxShake library
@@ -104,10 +110,12 @@ Returns a string.
 <a name="janklab.mlxshake.globals.globals"></a>
 ### globals
 
+Signature:
+```
+obj = globals()
+```
 
-
-
-
+Helptext:
 
 ```text
 Global library properties and settings for MlxShake.
@@ -123,18 +131,10 @@ on that:
    s = janklab.mlxshake.globals.settings;
    s.someSetting = 42;
 
-```
-
-<a name="janklab.mlxshake.globals.empty"></a>
-### empty
+  Documentation for janklab.mlxshake.globals/globals
+     doc janklab.mlxshake.globals
 
 
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
 ```
 
 

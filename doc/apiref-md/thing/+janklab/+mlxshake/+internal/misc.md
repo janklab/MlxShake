@@ -1,8 +1,5 @@
 # misc - janklab.mlxshake.internal
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -27,45 +24,56 @@ The ones in this class are ones you typically wouldn't want to import.
 | [getpackageappdata](#janklab.mlxshake.internal.misc.getpackageappdata) |  |
 | [mkdir](#janklab.mlxshake.internal.misc.mkdir) |  |
 | [misc](#janklab.mlxshake.internal.misc.misc) |  |
-| [empty](#janklab.mlxshake.internal.misc.empty) | Returns an empty object array of the given size |
 
 ## Methods
 
 <a name="janklab.mlxshake.internal.misc.setpackageappdata"></a>
 ### setpackageappdata
 
+Attributes: Static
 
+Signature:
+```
+misc.setpackageappdata(key, value)
+```
 
-
-
+Helptext:
 
 ```text
 janklab.mlxshake.internal.misc.setpackageappdata is a function.
-  setpackageappdata(key, value)
+  janklab.mlxshake.internal.misc.setpackageappdata(key, value)
 
 ```
 
 <a name="janklab.mlxshake.internal.misc.getpackageappdata"></a>
 ### getpackageappdata
 
+Attributes: Static
 
+Signature:
+```
+out = misc.getpackageappdata(key)
+```
 
-
-
+Helptext:
 
 ```text
 janklab.mlxshake.internal.misc.getpackageappdata is a function.
-  out = getpackageappdata(key)
+  out = janklab.mlxshake.internal.misc.getpackageappdata(key)
 
 ```
 
 <a name="janklab.mlxshake.internal.misc.mkdir"></a>
 ### mkdir
 
+Attributes: Static
 
+Signature:
+```
+misc.mkdir(dir)
+```
 
-
-
+Helptext:
 
 ```text
 MKDIR Make new directory.
@@ -108,28 +116,22 @@ MKDIR Make new directory.
 <a name="janklab.mlxshake.internal.misc.misc"></a>
 ### misc
 
+Signature:
+```
+obj = misc()
+```
 
-
-
-
+Helptext:
 
 ```text
 Miscellaneous utilities
 
 The ones in this class are ones you typically wouldn't want to import.
 
-```
-
-<a name="janklab.mlxshake.internal.misc.empty"></a>
-### empty
+  Documentation for janklab.mlxshake.internal.misc/misc
+     doc janklab.mlxshake.internal.misc
 
 
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
 ```
 
 

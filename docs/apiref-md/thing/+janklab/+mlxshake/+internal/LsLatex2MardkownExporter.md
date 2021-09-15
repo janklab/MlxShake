@@ -1,8 +1,5 @@
 # LsLatex2MardkownExporter - janklab.mlxshake.internal
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -17,18 +14,12 @@ Exports LS-exported LaTeX to Markdown
 
 ## Class Contents
 
-### Properties
-
-| Property | Description |
-| -------- | ----------- |
-
 ### Methods
 
 | Method | Description |
 | -------- | ----------- |
 | [lslatex2markdown](#janklab.mlxshake.internal.LsLatex2MardkownExporter.lslatex2markdown) |  |
 | [LsLatex2MardkownExporter](#janklab.mlxshake.internal.LsLatex2MardkownExporter.LsLatex2MardkownExporter) |  |
-| [empty](#janklab.mlxshake.internal.LsLatex2MardkownExporter.empty) | Returns an empty object array of the given size |
 
 ### Superclasses
 
@@ -36,18 +27,17 @@ Exports LS-exported LaTeX to Markdown
 | -------- | ----------- |
 | `janklab.mlxshake.internal.MlxshakeBase` |  |
 
-## Properties
-
-
 ## Methods
 
 <a name="janklab.mlxshake.internal.LsLatex2MardkownExporter.lslatex2markdown"></a>
 ### lslatex2markdown
 
+Signature:
+```
+outMdFile = lslatex2markdown(varargin)
+```
 
-
-
-
+Helptext:
 
 ```text
 Convert Live Script LaTeX to Markdown.
@@ -81,26 +71,20 @@ MLXEXPORTOPTIONS
 <a name="janklab.mlxshake.internal.LsLatex2MardkownExporter.LsLatex2MardkownExporter"></a>
 ### LsLatex2MardkownExporter
 
+Signature:
+```
+obj = LsLatex2MardkownExporter()
+```
 
-
-
-
+Helptext:
 
 ```text
 Exports LS-exported LaTeX to Markdown
 
-```
-
-<a name="janklab.mlxshake.internal.LsLatex2MardkownExporter.empty"></a>
-### empty
+  Documentation for janklab.mlxshake.internal.LsLatex2MardkownExporter/LsLatex2MardkownExporter
+     doc janklab.mlxshake.internal.LsLatex2MardkownExporter
 
 
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
 ```
 
 

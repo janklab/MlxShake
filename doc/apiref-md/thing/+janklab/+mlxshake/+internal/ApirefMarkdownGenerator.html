@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="ApirefMarkdownGenerator - janklab.mlxshake.internal" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/ApirefMarkdownGenerator.html","headline":"ApirefMarkdownGenerator - janklab.mlxshake.internal","dateModified":"2021-09-15T09:29:41-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/ApirefMarkdownGenerator.html","headline":"ApirefMarkdownGenerator - janklab.mlxshake.internal","dateModified":"2021-09-15T10:09:42-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=e5b5b2d3a18f85f9fdd9d688d3fccaed8737cded">
+    <link rel="stylesheet" href="/assets/css/style.css?v=54a8a522bae69f334ab5493991c931ee264ef063">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -54,12 +54,9 @@
 
 <p>HandleCompatible</p>
 
-<h2 id="description">Description</h2>
-
 <h2 id="helptext">Helptext</h2>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#ok&lt;*MANU&gt;
-#ok&lt;*AGROW&gt;
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generates Markdown format output for API Reference doco.
 
   Documentation for janklab.mlxshake.internal.ApirefMarkdownGenerator
      doc janklab.mlxshake.internal.ApirefMarkdownGenerator
@@ -145,17 +142,8 @@
       <td><a href="#janklab.mlxshake.internal.ApirefMarkdownGenerator.ApirefMarkdownGenerator">ApirefMarkdownGenerator</a></td>
       <td> </td>
     </tr>
-    <tr>
-      <td><a href="#janklab.mlxshake.internal.ApirefMarkdownGenerator.empty">empty</a></td>
-      <td>Returns an empty object array of the given size</td>
-    </tr>
   </tbody>
 </table>
-
-<h3 id="events">Events</h3>
-
-<p>| Events | Description |
-| ——– | ———– |</p>
 
 <h3 id="superclasses">Superclasses</h3>
 
@@ -179,11 +167,15 @@
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.stuffDir"></a></p>
 <h3 id="stuffdir">stuffDir</h3>
 
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.pkgsDir"></a></p>
 <h3 id="pkgsdir">pkgsDir</h3>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
@@ -191,11 +183,15 @@
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.thingsDir"></a></p>
 <h3 id="thingsdir">thingsDir</h3>
 
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.pkgInfo"></a></p>
 <h3 id="pkginfo">pkgInfo</h3>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
@@ -203,17 +199,31 @@
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.uPackages"></a></p>
 <h3 id="upackages">uPackages</h3>
 
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.pkgRelMdFiles"></a></p>
 <h3 id="pkgrelmdfiles">pkgRelMdFiles</h3>
 
+<p>Attributes: HasDefault</p>
+
+<p>Default Value: <code class="language-plaintext highlighter-rouge">strings(0,0)</code></p>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.thingRelMdFiles"></a></p>
 <h3 id="thingrelmdfiles">thingRelMdFiles</h3>
+
+<p>Attributes: HasDefault</p>
+
+<p>Default Value: <code class="language-plaintext highlighter-rouge">strings(0,0)</code></p>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
@@ -223,39 +233,68 @@
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generateClassDoc"></a></p>
 <h3 id="generateclassdoc">generateClassDoc</h3>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.ApirefMarkdownGenerator/generateClassDoc is a function.
-  generateClassDoc(this, rec)
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>generateClassDoc(this, rec)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generate doco file for a class.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generateFunctionDoc"></a></p>
 <h3 id="generatefunctiondoc">generateFunctionDoc</h3>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.ApirefMarkdownGenerator/generateFunctionDoc is a function.
-  generateFunctionDoc(this, pkg, name, qname, mFilePath)
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>generateFunctionDoc(this, pkg, name, qname, mFilePath)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generate doco file for a function.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generatePackageDoc"></a></p>
 <h3 id="generatepackagedoc">generatePackageDoc</h3>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.ApirefMarkdownGenerator/generatePackageDoc is a function.
-  generatePackageDoc(this, rec)
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>generatePackageDoc(this, rec)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generate doco files for a package.
+
+This does the package-level stuff only; not the functions and
+classes contained within it.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generateIndex"></a></p>
 <h3 id="generateindex">generateIndex</h3>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.ApirefMarkdownGenerator/generateIndex is a function.
-  generateIndex(this)
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>generateIndex(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generate the main index files for the full code base.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generateForMyFormat"></a></p>
 <h3 id="generateformyformat">generateForMyFormat</h3>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Format-specific generation
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>generateForMyFormat(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Format-specific generation implementation.
 
 Generates:
   * index.md
@@ -267,20 +306,19 @@ Generates:
 <p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.ApirefMarkdownGenerator"></a></p>
 <h3 id="apirefmarkdowngenerator">ApirefMarkdownGenerator</h3>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#ok&lt;*MANU&gt;
-#ok&lt;*AGROW&gt;
-
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>obj = ApirefMarkdownGenerator()
 </code></pre></div></div>
 
-<p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.empty"></a></p>
-<h3 id="empty">empty</h3>
+<p>Helptext:</p>
 
-<p>Returns an empty object array of the given size</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generates Markdown format output for API Reference doco.
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Returns an empty object array of the given size
+  Documentation for janklab.mlxshake.internal.ApirefMarkdownGenerator/ApirefMarkdownGenerator
+     doc janklab.mlxshake.internal.ApirefMarkdownGenerator
+
+
 </code></pre></div></div>
-
-<h2 id="events-1">Events</h2>
 
 
 

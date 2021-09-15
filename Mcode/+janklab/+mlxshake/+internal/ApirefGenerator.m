@@ -24,6 +24,7 @@ classdef (Abstract) ApirefGenerator < janklab.mlxshake.internal.MlxshakeBaseHand
     methods (Static)
         
         function out = forFormat(format)
+            % Construct an ApirefGenerator for a given format.
             arguments
                 format (1,1) string
             end
@@ -43,6 +44,7 @@ classdef (Abstract) ApirefGenerator < janklab.mlxshake.internal.MlxshakeBaseHand
     methods
         
         function generate(this)
+            % Generate the doco output.
             this.discover;
             rmrf(this.outDir);
             mkdir(this.outDir);
@@ -50,6 +52,8 @@ classdef (Abstract) ApirefGenerator < janklab.mlxshake.internal.MlxshakeBaseHand
         end
         
         function discover(this)
+            % Discover source code files on the input paths.
+            
             % { File, Package, Name, QName, IsInternal; ... }
             buf = cell(0, 5);
             

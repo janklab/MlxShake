@@ -1,8 +1,5 @@
 # MlxExportOptions - janklab.mlxshake
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -48,17 +45,17 @@ EXPORTLIVESCRIPT
 | Method | Description |
 | -------- | ----------- |
 | [MlxExportOptions](#janklab.mlxshake.MlxExportOptions.MlxExportOptions) |  |
-| [empty](#janklab.mlxshake.MlxExportOptions.empty) | Returns an empty object array of the given size |
 
 ## Properties
 
 <a name="janklab.mlxshake.MlxExportOptions.validFormats"></a>
 ### validFormats
 
+Attributes: Constant, NonCopyable, HasDefault
 
+Default Value: `["auto" "markdown" "html" "pdf" "latex" "msword"]`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -67,10 +64,11 @@ No helptext available.
 <a name="janklab.mlxshake.MlxExportOptions.format"></a>
 ### format
 
+Attributes: HasDefault
 
+Default Value: `"auto"`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -79,10 +77,11 @@ No helptext available.
 <a name="janklab.mlxshake.MlxExportOptions.outFile"></a>
 ### outFile
 
+Attributes: HasDefault
 
+Default Value: `string(missing)`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -91,10 +90,11 @@ No helptext available.
 <a name="janklab.mlxshake.MlxExportOptions.markdownPublishTarget"></a>
 ### markdownPublishTarget
 
+Attributes: HasDefault
 
+Default Value: `"gh-pages"`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -103,10 +103,11 @@ No helptext available.
 <a name="janklab.mlxshake.MlxExportOptions.png2jpeg"></a>
 ### png2jpeg
 
+Attributes: HasDefault
 
+Default Value: `false`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -115,10 +116,11 @@ No helptext available.
 <a name="janklab.mlxshake.MlxExportOptions.tableMaxCellContentLength"></a>
 ### tableMaxCellContentLength
 
+Attributes: HasDefault
 
+Default Value: `20`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -127,10 +129,11 @@ No helptext available.
 <a name="janklab.mlxshake.MlxExportOptions.addMention"></a>
 ### addMention
 
+Attributes: HasDefault
 
+Default Value: `true`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -139,10 +142,11 @@ No helptext available.
 <a name="janklab.mlxshake.MlxExportOptions.tempDir"></a>
 ### tempDir
 
+Attributes: HasDefault
 
+Default Value: `true`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -151,10 +155,11 @@ No helptext available.
 <a name="janklab.mlxshake.MlxExportOptions.keepIntermediateFiles"></a>
 ### keepIntermediateFiles
 
+Attributes: HasDefault
 
+Default Value: `false`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -163,10 +168,11 @@ No helptext available.
 <a name="janklab.mlxshake.MlxExportOptions.grabEquationImages"></a>
 ### grabEquationImages
 
+Attributes: HasDefault
 
+Default Value: `true`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -178,10 +184,12 @@ No helptext available.
 <a name="janklab.mlxshake.MlxExportOptions.MlxExportOptions"></a>
 ### MlxExportOptions
 
+Signature:
+```
+this = MlxExportOptions(arg)
+```
 
-
-
-
+Helptext:
 
 ```text
 Construct a new object.
@@ -194,18 +202,10 @@ You may pass in a struct or cell vector of name/value pairs, where
 the names are any property on MlxExportOptions. Names that are not
 properties of MlxExportOptions cause an error.
 
-```
-
-<a name="janklab.mlxshake.MlxExportOptions.empty"></a>
-### empty
+  Documentation for janklab.mlxshake.MlxExportOptions/MlxExportOptions
+     doc janklab.mlxshake.MlxExportOptions
 
 
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
 ```
 
 

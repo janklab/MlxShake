@@ -1,8 +1,5 @@
 # globals - janklab.mlxshake.internal.logger
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -29,17 +26,17 @@ Global library properties and settings for SLF4M
 | -------- | ----------- |
 | [version](#janklab.mlxshake.internal.logger.globals.version) |  |
 | [globals](#janklab.mlxshake.internal.logger.globals.globals) |  |
-| [empty](#janklab.mlxshake.internal.logger.globals.empty) | Returns an empty object array of the given size |
 
 ## Properties
 
 <a name="janklab.mlxshake.internal.logger.globals.distroot"></a>
 ### distroot
 
+Attributes: Constant, NonCopyable, HasDefault
 
+Default Value: `"/Users/janke/local/repos/MlxShake/Mcode/+janklab/+mlxshake"`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -51,10 +48,14 @@ No helptext available.
 <a name="janklab.mlxshake.internal.logger.globals.version"></a>
 ### version
 
+Attributes: Static
 
+Signature:
+```
+out = globals.version()
+```
 
-
-
+Helptext:
 
 ```text
 The version of the SLF4M library
@@ -66,26 +67,20 @@ Returns a string.
 <a name="janklab.mlxshake.internal.logger.globals.globals"></a>
 ### globals
 
+Signature:
+```
+obj = globals()
+```
 
-
-
-
+Helptext:
 
 ```text
 Global library properties and settings for SLF4M
 
-```
-
-<a name="janklab.mlxshake.internal.logger.globals.empty"></a>
-### empty
+  Documentation for janklab.mlxshake.internal.logger.globals/globals
+     doc janklab.mlxshake.internal.logger.globals
 
 
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
 ```
 
 

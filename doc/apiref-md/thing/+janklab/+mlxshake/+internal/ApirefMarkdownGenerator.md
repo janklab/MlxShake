@@ -2,14 +2,10 @@
 
 HandleCompatible
 
-## Description
-
-
 ## Helptext
 
 ```text
-#ok<*MANU>
-#ok<*AGROW>
+Generates Markdown format output for API Reference doco.
 
   Documentation for janklab.mlxshake.internal.ApirefMarkdownGenerator
      doc janklab.mlxshake.internal.ApirefMarkdownGenerator
@@ -42,12 +38,6 @@ HandleCompatible
 | [generateIndex](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateIndex) |  |
 | [generateForMyFormat](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateForMyFormat) |  |
 | [ApirefMarkdownGenerator](#janklab.mlxshake.internal.ApirefMarkdownGenerator.ApirefMarkdownGenerator) |  |
-| [empty](#janklab.mlxshake.internal.ApirefMarkdownGenerator.empty) | Returns an empty object array of the given size |
-
-### Events
-
-| Events | Description |
-| -------- | ----------- |
 
 ### Superclasses
 
@@ -60,10 +50,7 @@ HandleCompatible
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.stuffDir"></a>
 ### stuffDir
 
-
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -72,10 +59,7 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.pkgsDir"></a>
 ### pkgsDir
 
-
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -84,10 +68,7 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.thingsDir"></a>
 ### thingsDir
 
-
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -96,10 +77,7 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.pkgInfo"></a>
 ### pkgInfo
 
-
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -108,10 +86,7 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.uPackages"></a>
 ### uPackages
 
-
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -120,10 +95,11 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.pkgRelMdFiles"></a>
 ### pkgRelMdFiles
 
+Attributes: HasDefault
 
+Default Value: `strings(0,0)`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -132,10 +108,11 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.thingRelMdFiles"></a>
 ### thingRelMdFiles
 
+Attributes: HasDefault
 
+Default Value: `strings(0,0)`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -147,69 +124,78 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generateClassDoc"></a>
 ### generateClassDoc
 
+Signature:
+```
+generateClassDoc(this, rec)
+```
 
-
-
-
+Helptext:
 
 ```text
-janklab.mlxshake.internal.ApirefMarkdownGenerator/generateClassDoc is a function.
-  generateClassDoc(this, rec)
+Generate doco file for a class.
 
 ```
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generateFunctionDoc"></a>
 ### generateFunctionDoc
 
+Signature:
+```
+generateFunctionDoc(this, pkg, name, qname, mFilePath)
+```
 
-
-
-
+Helptext:
 
 ```text
-janklab.mlxshake.internal.ApirefMarkdownGenerator/generateFunctionDoc is a function.
-  generateFunctionDoc(this, pkg, name, qname, mFilePath)
+Generate doco file for a function.
 
 ```
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generatePackageDoc"></a>
 ### generatePackageDoc
 
+Signature:
+```
+generatePackageDoc(this, rec)
+```
 
-
-
-
+Helptext:
 
 ```text
-janklab.mlxshake.internal.ApirefMarkdownGenerator/generatePackageDoc is a function.
-  generatePackageDoc(this, rec)
+Generate doco files for a package.
+
+This does the package-level stuff only; not the functions and
+classes contained within it.
 
 ```
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generateIndex"></a>
 ### generateIndex
 
+Signature:
+```
+generateIndex(this)
+```
 
-
-
-
+Helptext:
 
 ```text
-janklab.mlxshake.internal.ApirefMarkdownGenerator/generateIndex is a function.
-  generateIndex(this)
+Generate the main index files for the full code base.
 
 ```
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generateForMyFormat"></a>
 ### generateForMyFormat
 
+Signature:
+```
+generateForMyFormat(this)
+```
 
-
-
-
+Helptext:
 
 ```text
-Format-specific generation
+Format-specific generation implementation.
 
 Generates:
   * index.md
@@ -221,30 +207,20 @@ Generates:
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.ApirefMarkdownGenerator"></a>
 ### ApirefMarkdownGenerator
 
-
-
-
-
-
-```text
-#ok<*MANU>
-#ok<*AGROW>
-
+Signature:
+```
+obj = ApirefMarkdownGenerator()
 ```
 
-<a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.empty"></a>
-### empty
-
-
-Returns an empty object array of the given size
-
-
+Helptext:
 
 ```text
-Returns an empty object array of the given size
+Generates Markdown format output for API Reference doco.
+
+  Documentation for janklab.mlxshake.internal.ApirefMarkdownGenerator/ApirefMarkdownGenerator
+     doc janklab.mlxshake.internal.ApirefMarkdownGenerator
+
+
 ```
-
-
-## Events
 
 

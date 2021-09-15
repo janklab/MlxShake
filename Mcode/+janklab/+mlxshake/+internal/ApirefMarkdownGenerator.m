@@ -1,7 +1,19 @@
 classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
+    % Generates Markdown format output for API Reference doco.
+    
+    % TODO: Links to inherited items.
+    % TODO: Would be nice if default value were displayed as the expression
+    % from the source code, not the resolved value.
+    % FIXME: Static methods with the same name as global functions can pick
+    % up the wrong helptext.
+    % TODO: Display inheritance tree like Javadoc does.
+    % TODO: Break out constructor display.
+    % TODO: More compact item lists?
+    % TODO: Get helptext from arguments blocks.
     
     %#ok<*MANU>
     %#ok<*AGROW>
+    %#ok<*NBRAK>
     
     properties
         stuffDir
@@ -17,7 +29,7 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
     methods
         
         function generateForMyFormat(this)
-            % Format-specific generation
+            % Format-specific generation implementation.
             %
             % Generates:
             %   * index.md
@@ -73,23 +85,18 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
         end
         
         function generateIndex(this)
+            % Generate the main index files for the full code base.
             indexMdFile = fullfile(this.outDir, 'index.md');
             
             fh = fopen2(indexMdFile, 'w', 'native', 'UTF-8');
             RAII.fh = onCleanup(@() fclose2(fh));
-            function p(fmt, varargin)
-                if nargin == 0
-                    fprintf(fh, "\n");
-                else
-                    fprintf(fh, fmt + "\n", varargin{:});
-                end
-            end
-
+            p(true, fh);
+            
             pkgs = this.packages(~this.packages.isInternal,:);
             internalPkgs = this.packages(this.packages.isInternal,:);
             
             p("# %s Index", this.opts.projectName)
-            p            
+            p
             p("## Packages")
             p
             for iPkg = 1:size(pkgs, 1)
@@ -117,21 +124,19 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
         end
         
         function generatePackageDoc(this, rec)
+            % Generate doco files for a package.
+            %
+            % This does the package-level stuff only; not the functions and
+            % classes contained within it.
             [pkg,pkgKey,pkgDisp] = deal(rec.package, rec.key, rec.dispName);
             
             pkgRelMdFile = "package/" + pkgKey + ".md";
             pkgMdFile = fullfile(this.pkgsDir, pkgKey + ".md");
-
+            
             fh = fopen2(pkgMdFile, 'w', 'native', 'UTF-8');
             RAII.fh = onCleanup(@() fclose2(fh));
-            function p(fmt, varargin)
-                if nargin == 0
-                    fprintf(fh, "\n");
-                else
-                    fprintf(fh, fmt + "\n", varargin{:});
-                end
-            end
-
+            p(true, fh);
+            
             this.pkgRelMdFiles = [this.pkgRelMdFiles; ...
                 {pkg, pkgDisp, pkgKey, pkgRelMdFile}];
             
@@ -172,9 +177,9 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
         end
         
         function generateFunctionDoc(this, pkg, name, qname, mFilePath)
-            % 
+            % Generate doco file for a function.
             
-            % fcnh = str2func(qname);
+            hFcn = str2func(qname);
             pkgComponents = strsplit(pkg, ".");
             relDir = strjoin(strcat("+", pkgComponents), filesep);
             parentDir = fullfile(this.thingsDir, relDir);
@@ -189,14 +194,8 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             mkdirs(parentDir);
             fh = fopen2(mdFile, 'w', 'native', 'UTF-8');
             RAII.fh = onCleanup(@() fclose2(fh));
-            function p(fmt, varargin)
-                if nargin == 0
-                    fprintf(fh, "\n");
-                else
-                    fprintf(fh, fmt + "\n", varargin{:});
-                end
-            end
-
+            p(true, fh);
+            
             % HACK: escaping of internal fenced code blocks
             hForCodeBlock = strrep(h, "```", "`` `");
             
@@ -211,12 +210,13 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
         end
         
         function generateClassDoc(this, rec)
-            [pkg, name, qname] = deal(rec.package, rec.name, rec.qname);
+            % Generate doco file for a class.
+            [pkg, classBaseName, qname] = deal(rec.package, rec.name, rec.qname);
             
             pkgComponents = strsplit(pkg, ".");
             relDir = strjoin(strcat("+", pkgComponents), filesep);
             parentDir = fullfile(this.thingsDir, relDir);
-            mdFile = fullfile(parentDir, name + ".md");
+            mdFile = fullfile(parentDir, classBaseName + ".md");
             
             [~,hForCodeBlock] = rawHelptextFor(qname);
             
@@ -226,31 +226,53 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             p(true, fh);
             
             klass = meta.class.fromName(rec.qname);
+            tklass = tableizeClassDefinition(klass);
+            
+            methItems = tklass.methods(~tklass.methods.isInherited,:);
+            if ~this.opts.showHidden
+                methItems(methItems.isHidden,:) = [];
+            end
+            propItems = tklass.properties(~tklass.properties.isInherited,:);
+            if ~this.opts.showHidden
+                propItems(propItems.isHidden,:) = [];
+            end
+            eventItems = tklass.events(~tklass.events.isInherited,:);
+            if ~this.opts.showHidden
+                eventItems(eventItems.isHidden,:) = [];
+            end
+            enumItems = tklass.events(~tklass.events.isInherited,:);
+            if ~this.opts.showHidden
+                enumItems(enumItems.isHidden,:) = [];
+            end
             
             attribs = string([]);
-            allAttribs = ["Hidden", "Sealed", "Abstract", "Enumeration", ...
+            allClassAttribs = ["Hidden", "Sealed", "Abstract", "Enumeration", ...
                 "ConstructOnLoad", "HandleCompatible", "RestrictsSubclassing"];
+            allAttribs = allClassAttribs;
             for at = allAttribs
                 if klass.(at)
                     attribs(end+1) = at;
                 end
             end
             
-            p("# %s - %s", name, pkg)
+            p("# %s - %s", classBaseName, pkg)
             p("")
             if ~isempty(attribs)
                 p("%s", strjoin(attribs, ', '));
                 p
             end
             
-            p("## Description")
-            p(klass.Description)
-            p
+            if ~isempty(klass.Description)
+                p("## Description")
+                p(klass.Description)
+                p
+            end
             if ~isempty(klass.DetailedDescription)
                 p("## Detailed Description")
                 p(klass.DetailedDescription)
                 p
             end
+            
             p("## Helptext")
             p
             p("```text")
@@ -270,22 +292,20 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
                 p
                 p("| %s | Description |", itemType)
                 p("| -------- | ----------- |")
-                for iItem = 1:numel(itemList)
-                    item = itemList(iItem);
-                    if isThisInherited(klass, item)
-                        continue
-                    end
+                for iItem = 1:height(itemList)
+                    rec = table2struct(itemList(iItem,:));
+                    item = rec.item;
                     itemQname = klass.Name + "." + item.Name;
                     p("| [%s](#%s) | %s |", item.Name, itemQname, item.Description);
                 end
                 p
             end
             
-            pContentsList("Properties", "Property", klass.PropertyList);
-            pContentsList("Methods", "Method", klass.MethodList);
-            pContentsList("Events", "Events", klass.EventList);
-            pContentsList("Enumerations", "Enumeration", klass.EnumerationMemberList);
-                        
+            pContentsList("Properties", "Property", propItems);
+            pContentsList("Methods", "Method", methItems);
+            pContentsList("Events", "Events", eventItems);
+            pContentsList("Enumerations", "Enumeration", enumItems);
+            
             if ~isempty(klass.SuperclassList)
                 p("### Superclasses")
                 p
@@ -299,62 +319,141 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             
             % Details for all the things
             
-            function [itemQname] = pCommonItemStuff(item)
-                    itemQname = klass.Name + "." + item.Name;
-                    p('<a name="%s"></a>', itemQname)
-                    p("### %s", item.Name)
-                    p
-                    if ~isa(item, 'meta.property')
-                        [~,hForCodeBlock] = rawHelptextFor(itemQname);
-                    else
-                        hForCodeBlock = "No helptext available.";
+            function [itemQname] = pItemStuff(rec)
+                item = rec.item;
+                itemQname = klass.Name + "." + item.Name;
+                
+                if isThisInherited(klass, item)
+                    return
+                end
+                
+                itemType = regexprep(class(item), '.*\.', '');
+                switch itemType
+                    case "class"
+                        allAttribs = allClassAttribs;
+                    case "method"
+                        allAttribs = ["Static" "Abstract" "Sealed" ...
+                            "ExplicitConversion" "Hidden"];
+                    case "property"
+                        allAttribs = ["Dependent" "Constant" "Abstract" ...
+                            "Transient" "Hidden" "GetObservable" "SetObservable" ...
+                            "AbortSet" "NonCopyable" "HasDefault"];
+                    case "event"
+                        allAttribs = ["Hidden"];
+                    otherwise
+                        allAttribs = string([]);
+                end
+                attrStrs = string([]);
+                for attrName = allAttribs
+                    if item.(attrName)
+                        attrStrs(end+1) = attrName;
                     end
+                end
+                
+                if itemType == "property"
+                    hForCodeBlock = "No helptext available.";
+                else
+                    [~,hForCodeBlock] = rawHelptextFor(itemQname);
+                end
+                
+                p('<a name="%s"></a>', itemQname)
+                p("### %s", item.Name)
+                p
+                if ~isempty(attrStrs)
+                    p("Attributes: %s", strjoin(attrStrs, ", "))
                     p
-                    p(item.Description)
-                    p
-                    p(item.DetailedDescription)
-                    p
-                    p("```text")
-                    p(hForCodeBlock)
+                end
+                if itemType == "property"
+                    if item.HasDefault
+                        try
+                            defaultValText = "`" + mat2str(item.DefaultValue) + "`";
+                        catch
+                            try
+                                defaultValText = string(item.DefaultValue);
+                            catch
+                                defaultValText = "<unrepresentable>";
+                            end
+                        end
+                        p("Default Value: %s", defaultValText);
+                        p
+                    end
+                end
+                if itemType == "method"
+                    nouts = numel(item.OutputNames);
+                    if nouts == 0
+                        lhsStr = "";
+                    elseif nouts == 1
+                        lhsStr = sprintf("%s = ", item.OutputNames{1});
+                    else
+                        lhsStr = sprintf("[%s] = ", strjoin(item.OutputNames, ', '));
+                    end
+                    if item.Static
+                        signatureStr = sprintf("%s%s.%s(%s)", lhsStr, classBaseName, item.Name, ...
+                            strjoin(item.InputNames, ', '));
+                    else
+                        signatureStr = sprintf("%s%s(%s)", lhsStr, item.Name, ...
+                            strjoin(item.InputNames, ', '));
+                    end
+                    p("Signature:")
+                    p("```")
+                    p(signatureStr)
                     p("```")
                     p
+                end
+                % These don't work because they're unimplemented as of
+                % R2021a
+                % p(item.Description)
+                % p
+                % p(item.DetailedDescription)
+                % p
+                p("Helptext:")
+                p
+                p("```text")
+                p(hForCodeBlock)
+                p("```")
+                p
             end
             
-            if ~isempty(klass.PropertyList)
+            itemTbl = propItems;
+            if ~isempty(itemTbl)
                 p("## Properties")
                 p
-                for prop = klass.PropertyList(:)'
-                    if isThisInherited(klass, prop)
-                        continue
-                    end
-                    propQname = pCommonItemStuff(prop);
+                for iItemInTbl = 1:height(itemTbl)
+                    pItemStuff(table2struct(itemTbl(iItemInTbl,:)));
                 end
                 p
             end
             
-            if ~isempty(klass.MethodList)
+            itemTbl = methItems;
+            if ~isempty(itemTbl)
                 p("## Methods")
                 p
-                for meth = klass.MethodList(:)'
-                    if isThisInherited(klass, meth)
-                        continue
-                    end
-                    methQname = pCommonItemStuff(meth);
+                for iItemInTbl = 1:height(itemTbl)
+                    pItemStuff(table2struct(itemTbl(iItemInTbl,:)));
                 end
                 p
             end
             
-            if ~isempty(klass.EventList)
+            itemTbl = eventItems;
+            if ~isempty(itemTbl)
                 p("## Events")
                 p
-                for event = klass.EventList(:)'
-                    if isThisInherited(klass, event)
-                        continue
-                    end
-                    eventQname = pCommonItemStuff(event);
+                for iItemInTbl = 1:height(itemTbl)
+                    pItemStuff(table2struct(itemTbl(iItemInTbl,:)));
                 end
                 p
             end
+            
+            itemTbl = enumItems;
+            if ~isempty(itemTbl)
+                p("## Enumerations")
+                p
+                for iItemInTbl = 1:height(itemTbl)
+                    pItemStuff(table2struct(itemTbl(iItemInTbl,:)));
+                end
+                p
+            end
+            
             
         end
         
@@ -363,14 +462,14 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
 end
 
 function [out, forCodeBlock] = rawHelptextFor(name)
-raw = help(name);
+raw = help(name); % Undocumented form of help
 out = regexprep(raw, '(?<=^|\n)  ?', '');
 % HACK: escaping of internal fenced code blocks
-forCodeBlock = strrep(out, "```", "`` `"); % Undocumented form of help
+forCodeBlock = strrep(out, "```", "`` `");
 end
 
-function out = isThisInherited(klass, thing)
-out = thing.DefiningClass ~= klass;
+function out = isThisInherited(klass, item)
+out = item.DefiningClass ~= klass;
 end
 
 function p(fmt, varargin)
@@ -385,4 +484,65 @@ else
     fprintf(fh, fmt + "\n", varargin{:});
 end
 end
+
+function out = tableizeClassDefinition(klass)
+out = struct;
+out.class = klass;
+
+itemList = klass.PropertyList;
+nItems = numel(itemList);
+sz = [nItems 1];
+isHidden = false(sz);
+isInherited = false(sz);
+for i = 1:numel(itemList)
+    item = itemList(i);
+    isHidden(i) = item.Hidden;
+    isInherited(i) = isThisInherited(klass, item);
+end
+item = itemList;
+out.properties = table(item, isHidden, isInherited);
+
+itemList = klass.MethodList;
+nItems = numel(itemList);
+sz = [nItems 1];
+isHidden = false(sz);
+isInherited = false(sz);
+isStatic = false(sz);
+for i = 1:numel(itemList)
+    item = itemList(i);
+    isHidden(i) = item.Hidden;
+    isInherited(i) = isThisInherited(klass, item);
+    isStatic(i) = item.Static;
+end
+item = itemList;
+out.methods = table(item, isHidden, isInherited);
+
+itemList = klass.EventList;
+nItems = numel(itemList);
+sz = [nItems 1];
+isHidden = false(sz);
+isInherited = false(sz);
+for i = 1:numel(itemList)
+    item = itemList(i);
+    isHidden(i) = item.Hidden;
+    isInherited(i) = isThisInherited(klass, item);
+end
+item = itemList;
+out.events = table(item, isHidden, isInherited);
+
+itemList = klass.EnumerationMemberList;
+nItems = numel(itemList);
+sz = [nItems 1];
+isHidden = false(sz);
+isInherited = false(sz);
+for i = 1:numel(itemList)
+    item = itemList(i);
+    isHidden(i) = item.Hidden;
+    isInherited(i) = isThisInherited(klass, item);
+end
+item = itemList;
+out.enumerations = table(item, isHidden, isInherited);
+
+end
+
 

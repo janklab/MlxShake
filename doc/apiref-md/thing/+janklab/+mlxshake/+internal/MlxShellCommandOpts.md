@@ -1,8 +1,5 @@
 # MlxShellCommandOpts - janklab.mlxshake.internal
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -33,17 +30,17 @@ Options to the mlxshake shell command
 | Method | Description |
 | -------- | ----------- |
 | [MlxShellCommandOpts](#janklab.mlxshake.internal.MlxShellCommandOpts.MlxShellCommandOpts) |  |
-| [empty](#janklab.mlxshake.internal.MlxShellCommandOpts.empty) | Returns an empty object array of the given size |
 
 ## Properties
 
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.inFile"></a>
 ### inFile
 
+Attributes: HasDefault
 
+Default Value: `string(missing)`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -52,10 +49,11 @@ No helptext available.
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.outFile"></a>
 ### outFile
 
+Attributes: HasDefault
 
+Default Value: `string(missing)`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -64,10 +62,11 @@ No helptext available.
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.format"></a>
 ### format
 
+Attributes: HasDefault
 
+Default Value: `"auto"`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -76,10 +75,11 @@ No helptext available.
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.help"></a>
 ### help
 
+Attributes: HasDefault
 
+Default Value: `false`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -88,10 +88,11 @@ No helptext available.
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.nomention"></a>
 ### nomention
 
+Attributes: HasDefault
 
+Default Value: `false`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -100,10 +101,11 @@ No helptext available.
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.equations"></a>
 ### equations
 
+Attributes: HasDefault
 
+Default Value: `string(missing)`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -115,26 +117,20 @@ No helptext available.
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.MlxShellCommandOpts"></a>
 ### MlxShellCommandOpts
 
+Signature:
+```
+obj = MlxShellCommandOpts()
+```
 
-
-
-
+Helptext:
 
 ```text
 Options to the mlxshake shell command
 
-```
-
-<a name="janklab.mlxshake.internal.MlxShellCommandOpts.empty"></a>
-### empty
+  Documentation for janklab.mlxshake.internal.MlxShellCommandOpts/MlxShellCommandOpts
+     doc janklab.mlxshake.internal.MlxShellCommandOpts
 
 
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
 ```
 
 

@@ -1,8 +1,5 @@
 # Logger - janklab.mlxshake.internal.logger
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -79,17 +76,13 @@ log.info('Hello, world! Running on Matlab
 | [dispstr](#janklab.mlxshake.internal.logger.Logger.dispstr) |  |
 | [disp](#janklab.mlxshake.internal.logger.Logger.disp) |  |
 | [Logger](#janklab.mlxshake.internal.logger.Logger.Logger) |  |
-| [empty](#janklab.mlxshake.internal.logger.Logger.empty) | Returns an empty object array of the given size |
 
 ## Properties
 
 <a name="janklab.mlxshake.internal.logger.Logger.jLogger"></a>
 ### jLogger
 
-
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -98,10 +91,9 @@ No helptext available.
 <a name="janklab.mlxshake.internal.logger.Logger.name"></a>
 ### name
 
+Attributes: Dependent, NonCopyable
 
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -110,10 +102,9 @@ No helptext available.
 <a name="janklab.mlxshake.internal.logger.Logger.enabledLevels"></a>
 ### enabledLevels
 
+Attributes: Dependent, NonCopyable
 
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -125,10 +116,14 @@ No helptext available.
 <a name="janklab.mlxshake.internal.logger.Logger.getLogger"></a>
 ### getLogger
 
+Attributes: Static
 
+Signature:
+```
+out = Logger.getLogger(identifier)
+```
 
-
-
+Helptext:
 
 ```text
 Gets the named Logger
@@ -138,10 +133,12 @@ Gets the named Logger
 <a name="janklab.mlxshake.internal.logger.Logger.listEnabledLevels"></a>
 ### listEnabledLevels
 
+Signature:
+```
+out = listEnabledLevels(this)
+```
 
-
-
-
+Helptext:
 
 ```text
 List the levels that are enabled for this logger.
@@ -151,10 +148,12 @@ List the levels that are enabled for this logger.
 <a name="janklab.mlxshake.internal.logger.Logger.isTraceEnabled"></a>
 ### isTraceEnabled
 
+Signature:
+```
+out = isTraceEnabled(this)
+```
 
-
-
-
+Helptext:
 
 ```text
 True if TRACE level logging is enabled for this logger.
@@ -164,10 +163,12 @@ True if TRACE level logging is enabled for this logger.
 <a name="janklab.mlxshake.internal.logger.Logger.isDebugEnabled"></a>
 ### isDebugEnabled
 
+Signature:
+```
+out = isDebugEnabled(this)
+```
 
-
-
-
+Helptext:
 
 ```text
 True if DEBUG level logging is enabled for this logger.
@@ -177,10 +178,12 @@ True if DEBUG level logging is enabled for this logger.
 <a name="janklab.mlxshake.internal.logger.Logger.isInfoEnabled"></a>
 ### isInfoEnabled
 
+Signature:
+```
+out = isInfoEnabled(this)
+```
 
-
-
-
+Helptext:
 
 ```text
 True if INFO level logging is enabled for this logger.
@@ -190,10 +193,12 @@ True if INFO level logging is enabled for this logger.
 <a name="janklab.mlxshake.internal.logger.Logger.isWarnEnabled"></a>
 ### isWarnEnabled
 
+Signature:
+```
+out = isWarnEnabled(this)
+```
 
-
-
-
+Helptext:
 
 ```text
 True if WARN level logging is enabled for this logger.
@@ -203,10 +208,12 @@ True if WARN level logging is enabled for this logger.
 <a name="janklab.mlxshake.internal.logger.Logger.isErrorEnabled"></a>
 ### isErrorEnabled
 
+Signature:
+```
+out = isErrorEnabled(this)
+```
 
-
-
-
+Helptext:
 
 ```text
 True if ERROR level logging is enabled for this logger.
@@ -216,10 +223,12 @@ True if ERROR level logging is enabled for this logger.
 <a name="janklab.mlxshake.internal.logger.Logger.tracej"></a>
 ### tracej
 
+Signature:
+```
+tracej(this, msg, varargin)
+```
 
-
-
-
+Helptext:
 
 ```text
 Log a message at the TRACE level, using SLFJ formatting.
@@ -229,10 +238,12 @@ Log a message at the TRACE level, using SLFJ formatting.
 <a name="janklab.mlxshake.internal.logger.Logger.debugj"></a>
 ### debugj
 
+Signature:
+```
+debugj(this, msg, varargin)
+```
 
-
-
-
+Helptext:
 
 ```text
 Log a message at the DEBUG level, using SLFJ formatting.
@@ -242,10 +253,12 @@ Log a message at the DEBUG level, using SLFJ formatting.
 <a name="janklab.mlxshake.internal.logger.Logger.infoj"></a>
 ### infoj
 
+Signature:
+```
+infoj(this, msg, varargin)
+```
 
-
-
-
+Helptext:
 
 ```text
 Log a message at the INFO level, using SLFJ formatting.
@@ -255,10 +268,12 @@ Log a message at the INFO level, using SLFJ formatting.
 <a name="janklab.mlxshake.internal.logger.Logger.warnj"></a>
 ### warnj
 
+Signature:
+```
+warnj(this, msg, varargin)
+```
 
-
-
-
+Helptext:
 
 ```text
 Log a message at the WARN level, using SLFJ formatting.
@@ -268,10 +283,12 @@ Log a message at the WARN level, using SLFJ formatting.
 <a name="janklab.mlxshake.internal.logger.Logger.errorj"></a>
 ### errorj
 
+Signature:
+```
+errorj(this, msg, varargin)
+```
 
-
-
-
+Helptext:
 
 ```text
 Log a message at the ERROR level, using SLFJ formatting.
@@ -281,10 +298,12 @@ Log a message at the ERROR level, using SLFJ formatting.
 <a name="janklab.mlxshake.internal.logger.Logger.trace"></a>
 ### trace
 
+Signature:
+```
+trace(this, msg, varargin)
+```
 
-
-
-
+Helptext:
 
 ```text
 Log a message at the TRACE level.
@@ -294,10 +313,12 @@ Log a message at the TRACE level.
 <a name="janklab.mlxshake.internal.logger.Logger.debug"></a>
 ### debug
 
+Signature:
+```
+debug(this, msg, varargin)
+```
 
-
-
-
+Helptext:
 
 ```text
 Log a message at the DEBUG level.
@@ -307,10 +328,12 @@ Log a message at the DEBUG level.
 <a name="janklab.mlxshake.internal.logger.Logger.info"></a>
 ### info
 
+Signature:
+```
+info(this, msg, varargin)
+```
 
-
-
-
+Helptext:
 
 ```text
 Log a message at the INFO level.
@@ -320,10 +343,12 @@ Log a message at the INFO level.
 <a name="janklab.mlxshake.internal.logger.Logger.warn"></a>
 ### warn
 
+Signature:
+```
+warn(this, msg, varargin)
+```
 
-
-
-
+Helptext:
 
 ```text
 Log a message at the WARN level.
@@ -333,10 +358,12 @@ Log a message at the WARN level.
 <a name="janklab.mlxshake.internal.logger.Logger.error"></a>
 ### error
 
+Signature:
+```
+error(this, msg, varargin)
+```
 
-
-
-
+Helptext:
 
 ```text
 Log a message at the ERROR level.
@@ -346,10 +373,12 @@ Log a message at the ERROR level.
 <a name="janklab.mlxshake.internal.logger.Logger.dispstrs"></a>
 ### dispstrs
 
+Signature:
+```
+out = dispstrs(this)
+```
 
-
-
-
+Helptext:
 
 ```text
 DISPSTRS Custom object display strings.
@@ -359,10 +388,12 @@ DISPSTRS Custom object display strings.
 <a name="janklab.mlxshake.internal.logger.Logger.dispstr"></a>
 ### dispstr
 
+Signature:
+```
+out = dispstr(this)
+```
 
-
-
-
+Helptext:
 
 ```text
 DISPSTR Custom object display string.
@@ -372,10 +403,12 @@ DISPSTR Custom object display string.
 <a name="janklab.mlxshake.internal.logger.Logger.disp"></a>
 ### disp
 
+Signature:
+```
+disp(this)
+```
 
-
-
-
+Helptext:
 
 ```text
 DISP Custom object display.
@@ -385,28 +418,22 @@ DISP Custom object display.
 <a name="janklab.mlxshake.internal.logger.Logger.Logger"></a>
 ### Logger
 
+Signature:
+```
+this = Logger(jLogger)
+```
 
-
-
-
+Helptext:
 
 ```text
 LOGGER Build a new logger object around an SLF4J Logger object.
 
 Generally, you shouldn't call this. Use logger.Logger.getLogger() instead.
 
-```
-
-<a name="janklab.mlxshake.internal.logger.Logger.empty"></a>
-### empty
+  Documentation for janklab.mlxshake.internal.logger.Logger/Logger
+     doc janklab.mlxshake.internal.logger.Logger
 
 
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
 ```
 
 

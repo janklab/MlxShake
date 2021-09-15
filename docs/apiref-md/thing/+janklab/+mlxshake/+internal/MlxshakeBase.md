@@ -1,8 +1,5 @@
 # MlxshakeBase - janklab.mlxshake.internal
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -23,43 +20,23 @@ MLXSHAKEBASEHANDLE
 
 ## Class Contents
 
-### Properties
-
-| Property | Description |
-| -------- | ----------- |
-| [initializer](#janklab.mlxshake.internal.MlxshakeBase.initializer) |  |
-
 ### Methods
 
 | Method | Description |
 | -------- | ----------- |
 | [MlxshakeBase](#janklab.mlxshake.internal.MlxshakeBase.MlxshakeBase) |  |
-| [empty](#janklab.mlxshake.internal.MlxshakeBase.empty) | Returns an empty object array of the given size |
-
-## Properties
-
-<a name="janklab.mlxshake.internal.MlxshakeBase.initializer"></a>
-### initializer
-
-
-
-
-
-
-```text
-No helptext available.
-```
-
 
 ## Methods
 
 <a name="janklab.mlxshake.internal.MlxshakeBase.MlxshakeBase"></a>
 ### MlxshakeBase
 
+Signature:
+```
+obj = MlxshakeBase()
+```
 
-
-
-
+Helptext:
 
 ```text
 This class is a trick to support automatic library initialization
@@ -70,18 +47,10 @@ initialized inherit from this or ExportmlxBaseHandle.
 See also:
 MLXSHAKEBASEHANDLE
 
-```
-
-<a name="janklab.mlxshake.internal.MlxshakeBase.empty"></a>
-### empty
+  Documentation for janklab.mlxshake.internal.MlxshakeBase/MlxshakeBase
+     doc janklab.mlxshake.internal.MlxshakeBase
 
 
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
 ```
 
 

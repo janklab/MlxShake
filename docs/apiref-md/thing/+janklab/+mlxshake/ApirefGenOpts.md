@@ -1,8 +1,5 @@
 # ApirefGenOpts - janklab.mlxshake
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -24,23 +21,24 @@ Options for genapiref.
 | [format](#janklab.mlxshake.ApirefGenOpts.format) |  |
 | [projectName](#janklab.mlxshake.ApirefGenOpts.projectName) |  |
 | [doInternal](#janklab.mlxshake.ApirefGenOpts.doInternal) |  |
+| [showHidden](#janklab.mlxshake.ApirefGenOpts.showHidden) |  |
 
 ### Methods
 
 | Method | Description |
 | -------- | ----------- |
 | [ApirefGenOpts](#janklab.mlxshake.ApirefGenOpts.ApirefGenOpts) |  |
-| [empty](#janklab.mlxshake.ApirefGenOpts.empty) | Returns an empty object array of the given size |
 
 ## Properties
 
 <a name="janklab.mlxshake.ApirefGenOpts.format"></a>
 ### format
 
+Attributes: HasDefault
 
+Default Value: `"markdown"`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -49,10 +47,11 @@ No helptext available.
 <a name="janklab.mlxshake.ApirefGenOpts.projectName"></a>
 ### projectName
 
+Attributes: HasDefault
 
+Default Value: `"Untitled Project"`
 
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -61,10 +60,24 @@ No helptext available.
 <a name="janklab.mlxshake.ApirefGenOpts.doInternal"></a>
 ### doInternal
 
+Attributes: HasDefault
 
+Default Value: `false`
 
+Helptext:
 
+```text
+No helptext available.
+```
 
+<a name="janklab.mlxshake.ApirefGenOpts.showHidden"></a>
+### showHidden
+
+Attributes: HasDefault
+
+Default Value: `false`
+
+Helptext:
 
 ```text
 No helptext available.
@@ -76,13 +89,15 @@ No helptext available.
 <a name="janklab.mlxshake.ApirefGenOpts.ApirefGenOpts"></a>
 ### ApirefGenOpts
 
+Signature:
+```
+this = ApirefGenOpts(arg)
+```
 
-
-
-
+Helptext:
 
 ```text
-Construct a new object
+Construct a new object.
 
 obj = janklab.mlxshake.ApirefGenOpts
 obj = janklab.mlxshake.ApirefGenOpts(struct(...))
@@ -92,18 +107,10 @@ You may pass in a struct or cell vector of name/value pairs, where
 the names are any property on ApirefGenOpts. Names that are not
 properties of ApirefGenOpts cause an error.
 
-```
-
-<a name="janklab.mlxshake.ApirefGenOpts.empty"></a>
-### empty
+  Documentation for janklab.mlxshake.ApirefGenOpts/ApirefGenOpts
+     doc janklab.mlxshake.ApirefGenOpts
 
 
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
 ```
 
 

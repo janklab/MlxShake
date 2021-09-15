@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Logger - janklab.mlxshake.internal.logger" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/+logger/Logger.html","headline":"Logger - janklab.mlxshake.internal.logger","dateModified":"2021-09-15T09:29:41-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/+logger/Logger.html","headline":"Logger - janklab.mlxshake.internal.logger","dateModified":"2021-09-15T10:09:42-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=e5b5b2d3a18f85f9fdd9d688d3fccaed8737cded">
+    <link rel="stylesheet" href="/assets/css/style.css?v=54a8a522bae69f334ab5493991c931ee264ef063">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -51,8 +51,6 @@
 
     <main id="content" class="main-content" role="main">
       <h1 id="logger---janklabmlxshakeinternallogger">Logger - janklab.mlxshake.internal.logger</h1>
-
-<h2 id="description">Description</h2>
 
 <h2 id="helptext">Helptext</h2>
 
@@ -215,10 +213,6 @@ log.info('Hello, world! Running on Matlab
       <td><a href="#janklab.mlxshake.internal.logger.Logger.Logger">Logger</a></td>
       <td> </td>
     </tr>
-    <tr>
-      <td><a href="#janklab.mlxshake.internal.logger.Logger.empty">empty</a></td>
-      <td>Returns an empty object array of the given size</td>
-    </tr>
   </tbody>
 </table>
 
@@ -227,17 +221,27 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.jLogger"></a></p>
 <h3 id="jlogger">jLogger</h3>
 
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.name"></a></p>
 <h3 id="name">name</h3>
 
+<p>Attributes: Dependent, NonCopyable</p>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.enabledLevels"></a></p>
 <h3 id="enabledlevels">enabledLevels</h3>
+
+<p>Attributes: Dependent, NonCopyable</p>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
 </code></pre></div></div>
@@ -247,12 +251,26 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.getLogger"></a></p>
 <h3 id="getlogger">getLogger</h3>
 
+<p>Attributes: Static</p>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = Logger.getLogger(identifier)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Gets the named Logger
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.listEnabledLevels"></a></p>
 <h3 id="listenabledlevels">listEnabledLevels</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = listEnabledLevels(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>List the levels that are enabled for this logger.
 
@@ -261,12 +279,24 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.isTraceEnabled"></a></p>
 <h3 id="istraceenabled">isTraceEnabled</h3>
 
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = isTraceEnabled(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True if TRACE level logging is enabled for this logger.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.isDebugEnabled"></a></p>
 <h3 id="isdebugenabled">isDebugEnabled</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = isDebugEnabled(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True if DEBUG level logging is enabled for this logger.
 
@@ -275,12 +305,24 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.isInfoEnabled"></a></p>
 <h3 id="isinfoenabled">isInfoEnabled</h3>
 
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = isInfoEnabled(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True if INFO level logging is enabled for this logger.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.isWarnEnabled"></a></p>
 <h3 id="iswarnenabled">isWarnEnabled</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = isWarnEnabled(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True if WARN level logging is enabled for this logger.
 
@@ -289,12 +331,24 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.isErrorEnabled"></a></p>
 <h3 id="iserrorenabled">isErrorEnabled</h3>
 
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = isErrorEnabled(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True if ERROR level logging is enabled for this logger.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.tracej"></a></p>
 <h3 id="tracej">tracej</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tracej(this, msg, varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the TRACE level, using SLFJ formatting.
 
@@ -303,12 +357,24 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.debugj"></a></p>
 <h3 id="debugj">debugj</h3>
 
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>debugj(this, msg, varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the DEBUG level, using SLFJ formatting.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.infoj"></a></p>
 <h3 id="infoj">infoj</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoj(this, msg, varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the INFO level, using SLFJ formatting.
 
@@ -317,12 +383,24 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.warnj"></a></p>
 <h3 id="warnj">warnj</h3>
 
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>warnj(this, msg, varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the WARN level, using SLFJ formatting.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.errorj"></a></p>
 <h3 id="errorj">errorj</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>errorj(this, msg, varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the ERROR level, using SLFJ formatting.
 
@@ -331,12 +409,24 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.trace"></a></p>
 <h3 id="trace">trace</h3>
 
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>trace(this, msg, varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the TRACE level.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.debug"></a></p>
 <h3 id="debug">debug</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>debug(this, msg, varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the DEBUG level.
 
@@ -345,12 +435,24 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.info"></a></p>
 <h3 id="info">info</h3>
 
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>info(this, msg, varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the INFO level.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.warn"></a></p>
 <h3 id="warn">warn</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>warn(this, msg, varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the WARN level.
 
@@ -359,12 +461,24 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.error"></a></p>
 <h3 id="error">error</h3>
 
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error(this, msg, varargin)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the ERROR level.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.dispstrs"></a></p>
 <h3 id="dispstrs">dispstrs</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = dispstrs(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISPSTRS Custom object display strings.
 
@@ -373,12 +487,24 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.dispstr"></a></p>
 <h3 id="dispstr">dispstr</h3>
 
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = dispstr(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISPSTR Custom object display string.
 
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.disp"></a></p>
 <h3 id="disp">disp</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>disp(this)
+</code></pre></div></div>
+
+<p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISP Custom object display.
 
@@ -387,18 +513,20 @@ log.info('Hello, world! Running on Matlab
 <p><a name="janklab.mlxshake.internal.logger.Logger.Logger"></a></p>
 <h3 id="logger">Logger</h3>
 
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this = Logger(jLogger)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LOGGER Build a new logger object around an SLF4J Logger object.
 
 Generally, you shouldn't call this. Use logger.Logger.getLogger() instead.
 
-</code></pre></div></div>
+  Documentation for janklab.mlxshake.internal.logger.Logger/Logger
+     doc janklab.mlxshake.internal.logger.Logger
 
-<p><a name="janklab.mlxshake.internal.logger.Logger.empty"></a></p>
-<h3 id="empty">empty</h3>
 
-<p>Returns an empty object array of the given size</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Returns an empty object array of the given size
 </code></pre></div></div>
 
 

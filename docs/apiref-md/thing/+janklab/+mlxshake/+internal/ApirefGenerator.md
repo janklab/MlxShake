@@ -2,9 +2,6 @@
 
 Abstract, HandleCompatible
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -38,12 +35,6 @@ Generates API Reference doco from source code.
 | [discover](#janklab.mlxshake.internal.ApirefGenerator.discover) |  |
 | [generate](#janklab.mlxshake.internal.ApirefGenerator.generate) |  |
 | [ApirefGenerator](#janklab.mlxshake.internal.ApirefGenerator.ApirefGenerator) |  |
-| [empty](#janklab.mlxshake.internal.ApirefGenerator.empty) | Returns an empty object array of the given size |
-
-### Events
-
-| Events | Description |
-| -------- | ----------- |
 
 ### Superclasses
 
@@ -56,10 +47,7 @@ Generates API Reference doco from source code.
 <a name="janklab.mlxshake.internal.ApirefGenerator.outDir"></a>
 ### outDir
 
-
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -68,10 +56,7 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefGenerator.inDirs"></a>
 ### inDirs
 
-
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -80,10 +65,7 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefGenerator.opts"></a>
 ### opts
 
-
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -92,10 +74,7 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefGenerator.mfiles"></a>
 ### mfiles
 
-
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -104,10 +83,7 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefGenerator.packages"></a>
 ### packages
 
-
-
-
-
+Helptext:
 
 ```text
 No helptext available.
@@ -119,83 +95,85 @@ No helptext available.
 <a name="janklab.mlxshake.internal.ApirefGenerator.generateForMyFormat"></a>
 ### generateForMyFormat
 
+Attributes: Abstract
 
+Signature:
+```
+generateForMyFormat(this)
+```
 
-
-
+Helptext:
 
 ```text
 janklab.mlxshake.internal.ApirefGenerator/generateForMyFormat is a function.
+  obj = janklab.mlxshake.internal.ApirefGenerator
 
 ```
 
 <a name="janklab.mlxshake.internal.ApirefGenerator.forFormat"></a>
 ### forFormat
 
+Attributes: Static
 
+Signature:
+```
+out = ApirefGenerator.forFormat(varargin)
+```
 
-
-
+Helptext:
 
 ```text
-janklab.mlxshake.internal.ApirefGenerator.forFormat is a function.
-  out = forFormat(format)
+Construct an ApirefGenerator for a given format.
 
 ```
 
 <a name="janklab.mlxshake.internal.ApirefGenerator.discover"></a>
 ### discover
 
+Signature:
+```
+discover(this)
+```
 
-
-
-
+Helptext:
 
 ```text
-{ File, Package, Name, QName, IsInternal; ... }
+Discover source code files on the input paths.
 
 ```
 
 <a name="janklab.mlxshake.internal.ApirefGenerator.generate"></a>
 ### generate
 
+Signature:
+```
+generate(this)
+```
 
-
-
-
+Helptext:
 
 ```text
-janklab.mlxshake.internal.ApirefGenerator/generate is a function.
-  generate(this)
+Generate the doco output.
 
 ```
 
 <a name="janklab.mlxshake.internal.ApirefGenerator.ApirefGenerator"></a>
 ### ApirefGenerator
 
+Signature:
+```
+obj = ApirefGenerator()
+```
 
-
-
-
+Helptext:
 
 ```text
 Generates API Reference doco from source code.
 
+  Documentation for janklab.mlxshake.internal.ApirefGenerator/ApirefGenerator
+     doc janklab.mlxshake.internal.ApirefGenerator
+
+
 ```
-
-<a name="janklab.mlxshake.internal.ApirefGenerator.empty"></a>
-### empty
-
-
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
-```
-
-
-## Events
 
 

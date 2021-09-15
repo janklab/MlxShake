@@ -2,9 +2,6 @@
 
 HandleCompatible
 
-## Description
-
-
 ## Helptext
 
 ```text
@@ -25,23 +22,12 @@ There are currently no settings defined for this package.
 
 ## Class Contents
 
-### Properties
-
-| Property | Description |
-| -------- | ----------- |
-
 ### Methods
 
 | Method | Description |
 | -------- | ----------- |
 | [discover](#janklab.mlxshake.Settings.discover) |  |
 | [Settings](#janklab.mlxshake.Settings.Settings) |  |
-| [empty](#janklab.mlxshake.Settings.empty) | Returns an empty object array of the given size |
-
-### Events
-
-| Events | Description |
-| -------- | ----------- |
 
 ### Superclasses
 
@@ -49,18 +35,19 @@ There are currently no settings defined for this package.
 | -------- | ----------- |
 | `janklab.mlxshake.internal.MlxshakeBaseHandle` |  |
 
-## Properties
-
-
 ## Methods
 
 <a name="janklab.mlxshake.Settings.discover"></a>
 ### discover
 
+Attributes: Static
 
+Signature:
+```
+out = Settings.discover()
+```
 
-
-
+Helptext:
 
 ```text
 Discovery of initial values for package settings.
@@ -75,10 +62,12 @@ This needs to avoid referencing mlxshake.globals, to avoid a circular dependency
 <a name="janklab.mlxshake.Settings.Settings"></a>
 ### Settings
 
+Signature:
+```
+obj = Settings()
+```
 
-
-
-
+Helptext:
 
 ```text
 Global settings for the mlxshake package
@@ -89,21 +78,10 @@ field.
 
 There are currently no settings defined for this package.
 
+  Documentation for janklab.mlxshake.Settings/Settings
+     doc janklab.mlxshake.Settings
+
+
 ```
-
-<a name="janklab.mlxshake.Settings.empty"></a>
-### empty
-
-
-Returns an empty object array of the given size
-
-
-
-```text
-Returns an empty object array of the given size
-```
-
-
-## Events
 
 
