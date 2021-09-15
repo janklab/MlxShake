@@ -7,9 +7,9 @@ See the [Tutorial](https://mlxshake.janklab.net/Tutorial.html) for examples of w
 
 The full documentation is available on [the MlxShake web site](https://mlxshake.janklab.net).
 
-## PRERELEASE ALPHA SOFTWARE
+## PRERELEASE BETA SOFTWARE
 
-This is pre-release, alpha quality (not even beta yet!) software! It is an experimental work in progress. Everything about it, especially its public API, is subject to change at any time. And it is probably buggy.
+This is pre-release, beta quality software! It is an experimental work in progress. Everything about it, especially its public API, is subject to change at any time. And it is probably buggy.
 
 DO NOT USE THIS SOFTWARE IN PRODUCTION SYSTEMS!
 
@@ -37,9 +37,7 @@ Matlab version, I dunno, R2019b or later?
 
 ## Introduction
 
-MlxShake provides tools for exporting Matlab Live Scripts to Markdown and other formats.
-
-This code has been tested with multiple live scripts but please note that it's not perfect. It's expected that you need some manual editing (for now!).
+MlxShake provides tools for exporting Matlab Live Scripts to Markdown and other formats, including HTML, PDF, Microsoft Word, and more.
 
 ## Installation
 
