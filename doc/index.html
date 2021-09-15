@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="MlxShake" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/","headline":"MlxShake","dateModified":"2021-09-14T22:26:49-04:00","@type":"WebSite","name":"MlxShake","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/","headline":"MlxShake","dateModified":"2021-09-15T00:26:23-04:00","@type":"WebSite","name":"MlxShake","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=e1e2a0d6944edda10bb122b401971713c031b91a">
+    <link rel="stylesheet" href="/assets/css/style.css?v=976b7ec395d8fb6849d988189bacc6c6878e33a0">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -112,11 +112,15 @@
   <li><code class="language-plaintext highlighter-rouge">exportlivescript</code> – Export a Live Script <code class="language-plaintext highlighter-rouge">.mlx</code> file to Markdown. (This is what you probably want.)</li>
   <li><code class="language-plaintext highlighter-rouge">mlx2latex</code> – Do just the <code class="language-plaintext highlighter-rouge">.mlx</code> to <code class="language-plaintext highlighter-rouge">.tex</code> export step.</li>
   <li><code class="language-plaintext highlighter-rouge">lslatex2markdown</code> – Do just the <code class="language-plaintext highlighter-rouge">.tex</code> to <code class="language-plaintext highlighter-rouge">.md</code> conversion step.</li>
+  <li><code class="language-plaintext highlighter-rouge">bin/mlxshake</code> – Run MlxShake from the Unix shell or other programs.</li>
 </ul>
 
 <p>Super quick example:</p>
 
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">janklab</span><span class="o">.</span><span class="n">mlxshake</span><span class="o">.</span><span class="n">exportlivescript</span><span class="p">(</span><span class="s1">'MyLiveScript.mlx'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/mlxshake MyLiveScript.mlx <span class="nt">--format</span> html
 </code></pre></div></div>
 
 <p>See the <a href="https://mlxshake.janklab.net/Tutorial.html">Tutorial</a> for fuller instructions and feature description.</p>
@@ -127,11 +131,8 @@
 
 <ul>
   <li>Automate the full process from <code class="language-plaintext highlighter-rouge">.mlx</code> to <code class="language-plaintext highlighter-rouge">.md</code>.</li>
-  <li>Become suitable for use in automated document generation processes.
-    <ul>
-      <li>Make the Markdown good enough that no manual touch-up is usually needed.</li>
-    </ul>
-  </li>
+  <li>Be suitable for use in automated document generation processes.</li>
+  <li>Make the Markdown good enough that no manual touch-up is usually needed.</li>
   <li>Make the code as modern as possible (as of R2019b).</li>
   <li>Produce nicely-formatted output files.</li>
   <li>Support additional output formats.</li>
