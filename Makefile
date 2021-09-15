@@ -20,38 +20,38 @@
 
 .PHONY: test
 test:
-	./bin/run_matlab "mlxshake_make test"
+	./bin/_mlxshake_run_matlab "mlxshake_make test"
 
 .PHONY: build
 build:
-	./bin/run_matlab "mlxshake_make build"
+	./bin/_mlxshake_run_matlab "mlxshake_make build"
 
 # Build the programmatically-generated parts of the _source_ files for the doco
 .PHONY: docs
 docs:
-	./bin/run_matlab "mlxshake_make docs"
+	./bin/_mlxshake_run_matlab "mlxshake_make docs"
 
 # Build the actual output documents
 .PHONY: doc
 doc:
-	./bin/run_matlab "mlxshake_make doc"
+	./bin/_mlxshake_run_matlab "mlxshake_make doc"
 
 .PHONY: m-doc
 m-doc:
-	./bin/run_matlab "mlxshake_make m-doc"
+	./bin/_mlxshake_run_matlab "mlxshake_make m-doc"
 
 .PHONY: toolbox
 toolbox: m-doc
-	./bin/run_matlab "mlxshake_make toolbox"
+	./bin/_mlxshake_run_matlab "mlxshake_make toolbox"
 
 .PHONY: zips
 zips:
-	./bin/run_matlab "mlxshake_make zips"
+	./bin/_mlxshake_run_matlab "mlxshake_make zips"
 
 .PHONY: dist
 dist:
-	./bin/run_matlab "mlxshake_make dist"
+	./bin/_mlxshake_run_matlab "mlxshake_make dist"
 
 .PHONY: clean
 clean:
-	./bin/run_matlab "mlxshake_make clean"
+	./bin/_mlxshake_run_matlab "mlxshake_make clean"

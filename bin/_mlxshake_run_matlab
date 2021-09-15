@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# run_matlab <command>
+# _mlxshake_run_matlab <command>
 #
 # Runs a command in a Matlab session with MlxShake (and its dev-kit) on the Matlab path.
 #
@@ -20,22 +20,22 @@ locate_matlab () {
         search_order="${PREFERRED_MATLAB_VERSIONS:-R2024b R2024a R2023b R2023a R2022b R2022a R2021b R2021a R2020b R2020a R2019b R2019a R2018b R2018a}"
         for rel in $search_order; do
           app_path="/Applications/MATLAB_${rel}.app"
-          # echo run_matlab: Checking for $rel at $app_path
+          # echo _mlxshake_run_matlab: Checking for $rel at $app_path
           if [[ -e "$app_path" ]]; then
-            # echo run_matlab: Found $rel at $app_path
+            # echo _mlxshake_run_matlab: Found $rel at $app_path
             matlab="$app_path/bin/matlab"
             break
           fi
         done
     else
-      echo >&2 "run_matlab: Error: No matlab on path, and I don't know how to detect it on Linux."
-      echo >&2 "run_matlab: Error: Please ensure Matlab is installed, and get it on your \$PATH."
+      echo >&2 "_mlxshake_run_matlab: Error: No matlab on path, and I don't know how to detect it on Linux."
+      echo >&2 "_mlxshake_run_matlab: Error: Please ensure Matlab is installed, and get it on your \$PATH."
       exit 1
     fi
   fi
 
   if [[ -z "$matlab" ]]; then
-    echo >&2 "run_matlab: Error: matlab is not on the path and it could not be detected."
+    echo >&2 "_mlxshake_run_matlab: Error: matlab is not on the path and it could not be detected."
     exit 1
   fi
 }

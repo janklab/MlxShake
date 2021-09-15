@@ -25,7 +25,7 @@ done
 
 # Run it in Matlab
 
-"$bin_dir/run_matlab" "janklab.mlxshake.internal.mlxshake_shell_command('$args_file')"
+"$bin_dir/_mlxshake_run_matlab" "janklab.mlxshake.internal.mlxshake_shell_command('$args_file')"
 matlab_exit_status=$?
 rm "$args_file"
 exit $?
