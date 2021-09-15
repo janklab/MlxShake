@@ -1,12 +1,13 @@
 MlxShake Changelog
 ================================
 
-Version 0.2.1 (in progress)
+Version 0.2.1 (2021-09-14)
 ------------------------------
 
 Enhancements:
 
 * Rename project from ExportMlx to MlxShake, because ExportMlx is a boring name.
+* Post to File Exchange
 
 Bug fixes:
 
