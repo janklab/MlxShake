@@ -9,3 +9,4 @@ Janklab's [MlxShake](https://github.com/janklab/MlxShake) is a tool to export Ma
 * [Tutorial](Tutorial.html)
 * [About](About.html)
 * [FAQ](FAQ.html)
+* [API Reference (Markdown format)](apiref-md/index.html)

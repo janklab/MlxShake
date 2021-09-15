@@ -37,7 +37,7 @@ end
 if target == "test"
   mlxshake_launchtests
 elseif target == "docs"
-  build_docs
+  build_docs(varargin)
 elseif target == "doc"
   build_doc
 elseif target == "doc-preview"
@@ -105,9 +105,9 @@ function make_clean
 rmrf(strsplit("dist/* build docs/site docs/_site test-output", " "));
 end
 
-function build_docs
+function build_docs(parts)
 % Build the generated parts of docs/ from docs-src/ and other places
-mlxshake_gendocs;
+mlxshake_gendocs(parts);
 end
 
 function build_doc

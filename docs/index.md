@@ -9,7 +9,7 @@ Janklab's [MlxShake](https://github.com/janklab/MlxShake) is a tool to export Ma
 * [Tutorial](Tutorial.html)
 * [About](About.html)
 * [FAQ](FAQ.html)
-
+* [API Reference (Markdown format)](apiref-md/index.html)
 ## Summary
 
 This tool lets you generate project documentation and web site content from live scripts in your project. This is a nice way of generating rich documentation with included graphics that are up to date with your latest code. Especially nice for tutorials and examples.
