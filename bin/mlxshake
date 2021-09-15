@@ -9,7 +9,17 @@
 
 # Find the MlxShake installation
 
-bin_dir="$(dirname $0)"
+if [[ $0 == "mlxshake" ]]; then
+    # We must be on the path. Hope this works.
+    me="$(which mlxshake 2>/dev/null)"
+    if [[ $? -ne 0 ]]; then
+        echo >&2 "mlxshake: Error: internal error: unable to locate myself on the path. Run me with a full path."
+    fi
+else
+    me="$0"
+fi
+
+bin_dir="$(dirname "$me")"
 distroot="$(dirname "$bin_dir")"
 
 # Assemble arguments
