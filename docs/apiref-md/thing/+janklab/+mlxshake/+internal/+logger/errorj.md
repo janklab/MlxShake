@@ -12,5 +12,6 @@ Examples:
 
 logger.errorj('Some message. value1={} value2={}', 'foo', 42);
 
+
 ```
 

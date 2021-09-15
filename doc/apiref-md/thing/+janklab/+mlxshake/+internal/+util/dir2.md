@@ -20,5 +20,6 @@ Returns:
        bytes - size of file in bytes (double)
        isdir - whether file is a directory (logical)
 
+
 ```
 

@@ -3,5 +3,6 @@
 ```text
 A version of rmdir that raises errors on failure
 
+
 ```
 

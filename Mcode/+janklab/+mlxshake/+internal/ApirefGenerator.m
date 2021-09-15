@@ -12,6 +12,7 @@ classdef (Abstract) ApirefGenerator < janklab.mlxshake.internal.MlxshakeBaseHand
     % State for generator run
     properties
         mfiles table
+        packages table
     end
     
     methods (Abstract)
@@ -49,10 +50,13 @@ classdef (Abstract) ApirefGenerator < janklab.mlxshake.internal.MlxshakeBaseHand
         end
         
         function discover(this)
-            % { File, Package, Name, QName; ... }
-            buf = cell(0, 4);
+            % { File, Package, Name, QName, IsInternal; ... }
+            buf = cell(0, 5);
             
-            function step(dirPath, pkg)
+            function step(dirPath, pkg, isInternal)
+                if isInternal && ~this.opts.doInternal
+                    return
+                end
                 d = dir(dirPath);
                 for i = 1:numel(d)
                     entry = d(i);
@@ -64,15 +68,13 @@ classdef (Abstract) ApirefGenerator < janklab.mlxshake.internal.MlxshakeBaseHand
                             if ~isvarname(dirPkgName)
                                 continue
                             end
-                            if lower(fileName) == "+internal" && ~this.opts.doInternal
-                                continue
-                            end
                             if pkg == ""
                                 nextPkg = dirPkgName;                                
                             else
                                 nextPkg = pkg + "." + dirPkgName;
                             end
-                            step(fullfile(dirPath, fileName), nextPkg);
+                            nextPkgIsInternal = lower(fileName) == "+internal";
+                            step(fullfile(dirPath, fileName), nextPkg, nextPkgIsInternal);
                         end
                     else
                         if endsWith(lower(fileName), '.m')
@@ -82,7 +84,7 @@ classdef (Abstract) ApirefGenerator < janklab.mlxshake.internal.MlxshakeBaseHand
                             else
                                 qname = pkg + "." + thingName;
                             end
-                            buf = [buf; {filePath, pkg, thingName, qname}];
+                            buf = [buf; {filePath, pkg, thingName, qname, isInternal}];
                         else
                             % Ignore
                         end
@@ -95,11 +97,59 @@ classdef (Abstract) ApirefGenerator < janklab.mlxshake.internal.MlxshakeBaseHand
                 if ~isfolder(inDir)
                     error('File not found: %s', inDir);
                 end
-                step(inDir, "");
+                step(inDir, "", false);
             end
             
-            this.mfiles = cell2table(buf, 'VariableNames', {'file', 'package', ...
-                'name', 'qname'});
+            things = cell2table(buf, 'VariableNames', {'file', 'package', ...
+                'name', 'qname', 'isInternal'});
+            
+            % Resolve things
+            thingTypes = repmat(string(missing), size(things.file));
+            for iThing = 1:height(things)
+                rec = table2struct(things(iThing,:));
+                [resolved, ~] = which(rec.qname);
+                klass = meta.class.fromName(rec.qname);
+                
+                if ~isempty(klass)
+                    type = "class";
+                elseif lower(rec.name) == "contents"
+                    % Special Contents.m handling
+                    type = "contents";
+                elseif ~isempty(resolved)
+                    % It's a function or script, but not Contents
+                    type = "function";
+                else
+                    error("Unable to resolve thing: '%s' from file '%s'", ...
+                        rec.qname, rec.file);
+                end
+                thingTypes(iThing) = type;
+            end
+            things.type = categorical(thingTypes);
+            
+            this.mfiles = things;
+            
+            % Packages
+            
+            package = unique(this.mfiles.package);
+            isInternal = false(size(package));
+            missings = repmat(string(missing), size(package));
+            dispName = missings;
+            key = missings;
+            for iPkg = 1:numel(package)
+                pkg = package(iPkg);
+                comps = strsplit(pkg, ".");
+                isInternal(iPkg) = ismember("internal", lower(comps));
+                if pkg == ""
+                    pkgDisp = "<base>";
+                    pkgKey = "_base_";
+                else
+                    pkgDisp = pkg;
+                    pkgKey = strrep(pkg, '.', '_');
+                end
+                dispName(iPkg) = pkgDisp;
+                key(iPkg) = pkgKey;
+            end
+            this.packages = table(package, isInternal, dispName, key);
         end
         
     end

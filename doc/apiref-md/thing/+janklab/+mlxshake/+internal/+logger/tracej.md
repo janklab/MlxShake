@@ -12,5 +12,6 @@ Examples:
 
 logger.tracej('Some message. value1={} value2={}', 'foo', 42);
 
+
 ```
 

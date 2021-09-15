@@ -1,6 +1,9 @@
 # janklab.mlxshake.internal.util
 
-## Things in package
+> NOTE: Internal package! This is an internal implementation detail
+> of the MlxShake library.
+
+## Functions
 
 * [copyfile2](../thing/+janklab/+mlxshake/+internal/+util/copyfile2.html)
 * [dir2](../thing/+janklab/+mlxshake/+internal/+util/dir2.html)

@@ -3,5 +3,6 @@
 ```text
 A version of mkdir that raises error on failure
 
+
 ```
 

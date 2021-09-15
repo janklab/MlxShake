@@ -44,5 +44,6 @@ raised.
 
 Returns a datetime array.
 
+
 ```
 

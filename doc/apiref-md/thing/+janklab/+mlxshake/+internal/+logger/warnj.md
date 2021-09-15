@@ -12,5 +12,6 @@ Examples:
 
 logger.warnj('Some message. value1={} value2={}', 'foo', 42);
 
+
 ```
 

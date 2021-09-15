@@ -8,5 +8,6 @@ loading and the like. It should *not* discover initial values for library settin
 that's done in mlxshake.Settings.discover. It has to be that way so the package
 settings state can handle a `clear classes` gracefully.
 
+
 ```
 

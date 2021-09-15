@@ -1,7 +1,10 @@
 # janklab.mlxshake.test
 
-## Things in package
+## Functions
+
+* [runtests](../thing/+janklab/+mlxshake/+test/runtests.html)
+
+## Classes
 
 * [HelloWorldTest](../thing/+janklab/+mlxshake/+test/HelloWorldTest.html)
-* [runtests](../thing/+janklab/+mlxshake/+test/runtests.html)
 

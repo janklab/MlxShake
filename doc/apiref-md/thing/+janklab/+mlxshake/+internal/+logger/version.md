@@ -14,5 +14,6 @@ libraries to the console.
 If return value is captured, returns the version of the SLF4M library as
 a char vector.
 
+
 ```
 
