@@ -3,6 +3,11 @@
 # run_matlab <command>
 #
 # Runs a command in a Matlab session with MlxShake (and its dev-kit) on the Matlab path.
+#
+# ENVIRONMENT VARIABLES
+#
+#   PREFERRED_MATLAB_VERSIONS - a space-separated list of Matlab releases to search for if matlab
+#       is not on the path, in order of descending preference.
 
 set -e
 
