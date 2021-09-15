@@ -12,6 +12,10 @@ classdef MlxExportOptions
     % See also:
     % EXPORTLIVESCRIPT
     
+    properties (Constant)
+        validFormats = ["auto", "markdown", "html","pdf", "latex", "msword"];
+    end
+    
     properties
         % Output file format.
         %

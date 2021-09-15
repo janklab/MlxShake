@@ -4,7 +4,7 @@ MlxShake Changelog
 Version 0.2.1+ (in progress)
 ------------------------------
 
-Nothing yet!
+* Add `mlxshake` shell command for calling this from the command line (instead of within Matlab)
 
 Version 0.2.1 (2021-09-14)
 ------------------------------

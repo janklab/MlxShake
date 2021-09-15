@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#
+# mlxshake - Run MlxShake from the command line
+#
+# Synopsis:
+#
+#     mlxshake <infile> <outfile> [--format <format>]
+#
+
+# Find the MlxShake installation
+
+bin_dir="$(dirname $0)"
+distroot="$(dirname "$bin_dir")"
+devkit_dir="$distroot/dev-kit"
+
+# Assemble arguments
+
+args_file="$TMPDIR/mlxshake_args_${PPID}_${RANDOM}_${RANDOM}_${RANDOM}_${RANDOM}.txt"
+echo -n >"$args_file"
+for arg in "$@"; do
+    echo "$arg" >>"$args_file"
+done
+
+# I don't want to bother with the multi-level quoting involved in passing these on the
+# command line, so pass them via a file.
+
+# Run it in Matlab
+
+"$devkit_dir/run_matlab" "janklab.mlxshake.internal.mlxshake_shell_command('$args_file')"
+matlab_exit_status=$?
+rm "$args_file"
+exit $?
