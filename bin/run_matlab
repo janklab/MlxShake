@@ -34,6 +34,7 @@ locate_matlab () {
 
 locate_matlab
 
-devkit_dir=$(dirname $0)
-reporoot=$(dirname "$devkit_dir")
+bin_dir=$(dirname $0)
+reporoot=$(dirname "$bin_dir")
+devkit_dir="$reporoot/dev-kit"
 matlab -batch "addpath '$reporoot/Mcode'; addpath '${devkit_dir}'; $1"

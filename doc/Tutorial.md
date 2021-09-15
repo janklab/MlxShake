@@ -62,6 +62,14 @@ janklab.mlxshake.lslatex2markdown('README', {'markdownPublishTarget', 'qiita', '
 
 Note: Qiita is a tech blog platform in Japanese. Qiita uses Markdown for its posts.
 
+## Usage: Running from the Command Line
+
+You can also run MlxShake from the Mac or Linux command line (shell) using the bin/mlxshake program. This makes it easy to integrate MlxShake into automated document generation workflows.
+
+```matlab:Code(Display)
+$ ./bin/mlxshake MyLiveScript.mlx --format html
+```
+
 ## Differences Between GitHub and Qiita Markdown Formats
 
 One is the equations and the other is how to insert the image files.
