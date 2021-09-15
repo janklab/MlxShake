@@ -56,9 +56,13 @@ Quick summary:
 
 Super quick example:
 
+From Matlab:
+
 ```matlab
 janklab.mlxshake.exportlivescript('MyLiveScript.mlx')
 ```
+
+From the Mac or Linux command line:
 
 ```bash
 ./bin/mlxshake MyLiveScript.mlx --format html
