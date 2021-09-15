@@ -11,7 +11,6 @@
 
 bin_dir="$(dirname $0)"
 distroot="$(dirname "$bin_dir")"
-devkit_dir="$distroot/dev-kit"
 
 # Assemble arguments
 
@@ -26,7 +25,7 @@ done
 
 # Run it in Matlab
 
-"$devkit_dir/run_matlab" "janklab.mlxshake.internal.mlxshake_shell_command('$args_file')"
+"$bin_dir/run_matlab" "janklab.mlxshake.internal.mlxshake_shell_command('$args_file')"
 matlab_exit_status=$?
 rm "$args_file"
 exit $?
