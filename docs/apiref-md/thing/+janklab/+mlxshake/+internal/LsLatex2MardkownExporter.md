@@ -23,8 +23,8 @@ Exports LS-exported LaTeX to Markdown
 
 | Method | Description |
 | -------- | ----------- |
-| [lslatex2markdown](#janklab.mlxshake.internal.LsLatex2MardkownExporter.lslatex2markdown) |  |
-| [LsLatex2MardkownExporter](#janklab.mlxshake.internal.LsLatex2MardkownExporter.LsLatex2MardkownExporter) |  |
+| [lslatex2markdown](#janklab.mlxshake.internal.LsLatex2MardkownExporter.lslatex2markdown) | Convert Live Script LaTeX to Markdown. |
+| [LsLatex2MardkownExporter](#janklab.mlxshake.internal.LsLatex2MardkownExporter.LsLatex2MardkownExporter) | Constructor. |
 
 ### Superclasses
 

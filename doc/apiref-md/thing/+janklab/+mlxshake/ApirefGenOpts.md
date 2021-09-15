@@ -1,9 +1,18 @@
 # ApirefGenOpts - janklab.mlxshake
 
+```text
+janklab.mlxshake.ApirefGenOpts
+```
+
 ## Helptext
 
 ```text
-Options for genapiref.
+Options to control the behavior of the genapiref function.
+
+This controls various aspects of GENAPIREF's behavior.
+
+See also:
+GENAPIREF
 
   Documentation for janklab.mlxshake.ApirefGenOpts
      doc janklab.mlxshake.ApirefGenOpts
@@ -27,7 +36,7 @@ Options for genapiref.
 
 | Method | Description |
 | -------- | ----------- |
-| [ApirefGenOpts](#janklab.mlxshake.ApirefGenOpts.ApirefGenOpts) |  |
+| [ApirefGenOpts](#janklab.mlxshake.ApirefGenOpts.ApirefGenOpts) | Constructor. |
 
 ## Properties
 

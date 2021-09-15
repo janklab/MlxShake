@@ -27,8 +27,8 @@ janklab.mlxshake.internal.ApirefHtmlGenerator
 
 | Method | Description |
 | -------- | ----------- |
-| [generateForMyFormat](#janklab.mlxshake.internal.ApirefHtmlGenerator.generateForMyFormat) |  |
-| [ApirefHtmlGenerator](#janklab.mlxshake.internal.ApirefHtmlGenerator.ApirefHtmlGenerator) |  |
+| [generateForMyFormat](#janklab.mlxshake.internal.ApirefHtmlGenerator.generateForMyFormat) | janklab.mlxshake.internal.ApirefHtmlGenerator/generateForMyFormat is a function. |
+| [ApirefHtmlGenerator](#janklab.mlxshake.internal.ApirefHtmlGenerator.ApirefHtmlGenerator) | Constructor. |
 
 ### Superclasses
 

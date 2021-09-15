@@ -2,6 +2,13 @@
 
 HandleCompatible
 
+```text
+janklab.mlxshake.internal.ApirefHtmlGenerator
+  janklab.mlxshake.internal.ApirefGenerator
+    janklab.mlxshake.internal.MlxshakeBaseHandle
+      handle
+```
+
 ## Helptext
 
 ```text
@@ -20,8 +27,8 @@ HandleCompatible
 
 | Method | Description |
 | -------- | ----------- |
-| [generateForMyFormat](#janklab.mlxshake.internal.ApirefHtmlGenerator.generateForMyFormat) |  |
-| [ApirefHtmlGenerator](#janklab.mlxshake.internal.ApirefHtmlGenerator.ApirefHtmlGenerator) |  |
+| [generateForMyFormat](#janklab.mlxshake.internal.ApirefHtmlGenerator.generateForMyFormat) | janklab.mlxshake.internal.ApirefHtmlGenerator/generateForMyFormat is a function. |
+| [ApirefHtmlGenerator](#janklab.mlxshake.internal.ApirefHtmlGenerator.ApirefHtmlGenerator) | Constructor. |
 
 ### Superclasses
 

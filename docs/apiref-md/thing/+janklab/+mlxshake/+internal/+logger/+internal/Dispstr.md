@@ -45,7 +45,7 @@ don't want to take a dependency on dispstr.
 | [display](#janklab.mlxshake.internal.logger.internal.Dispstr.display) |  |
 | [disp](#janklab.mlxshake.internal.logger.internal.Dispstr.disp) |  |
 | [convertArgsForPrintf](#janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf) |  |
-| [Dispstr](#janklab.mlxshake.internal.logger.internal.Dispstr.Dispstr) |  |
+| [Dispstr](#janklab.mlxshake.internal.logger.internal.Dispstr.Dispstr) | Constructor. |
 
 ## Methods
 

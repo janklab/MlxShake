@@ -1,5 +1,10 @@
 classdef ApirefGenOpts
-    % Options for genapiref.
+    % Options to control the behavior of the genapiref function.
+    %
+    % This controls various aspects of GENAPIREF's behavior.
+    %
+    % See also:
+    % GENAPIREF
     
     properties
         format (1,1) string {mustBeMember(format, ["markdown", "html"])} = "markdown"

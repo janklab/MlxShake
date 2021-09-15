@@ -1,5 +1,9 @@
 # MlxshakeBase - janklab.mlxshake.internal
 
+```text
+janklab.mlxshake.internal.MlxshakeBase
+```
+
 ## Helptext
 
 ```text
@@ -24,7 +28,7 @@ MLXSHAKEBASEHANDLE
 
 | Method | Description |
 | -------- | ----------- |
-| [MlxshakeBase](#janklab.mlxshake.internal.MlxshakeBase.MlxshakeBase) |  |
+| [MlxshakeBase](#janklab.mlxshake.internal.MlxshakeBase.MlxshakeBase) | Constructor. |
 
 ## Methods
 

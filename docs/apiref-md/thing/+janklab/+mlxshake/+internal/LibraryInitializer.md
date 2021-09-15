@@ -23,7 +23,7 @@ janklab.mlxshake.internal.LibraryInitializer is a class.
 
 | Method | Description |
 | -------- | ----------- |
-| [LibraryInitializer](#janklab.mlxshake.internal.LibraryInitializer.LibraryInitializer) |  |
+| [LibraryInitializer](#janklab.mlxshake.internal.LibraryInitializer.LibraryInitializer) | Constructor. |
 
 ## Methods
 

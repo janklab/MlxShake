@@ -27,7 +27,7 @@ The ones in this class are ones you typically wouldn't want to import.
 | [setpackageappdata](#janklab.mlxshake.internal.misc.setpackageappdata) |  |
 | [getpackageappdata](#janklab.mlxshake.internal.misc.getpackageappdata) |  |
 | [mkdir](#janklab.mlxshake.internal.misc.mkdir) |  |
-| [misc](#janklab.mlxshake.internal.misc.misc) |  |
+| [misc](#janklab.mlxshake.internal.misc.misc) | Constructor. |
 
 ## Methods
 

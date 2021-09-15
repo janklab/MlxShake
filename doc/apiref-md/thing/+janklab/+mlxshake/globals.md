@@ -1,5 +1,9 @@
 # globals - janklab.mlxshake
 
+```text
+janklab.mlxshake.globals
+```
+
 ## Helptext
 
 ```text
@@ -38,7 +42,7 @@ on that:
 | -------- | ----------- |
 | [initialize](#janklab.mlxshake.globals.initialize) |  |
 | [version](#janklab.mlxshake.globals.version) |  |
-| [globals](#janklab.mlxshake.globals.globals) |  |
+| [globals](#janklab.mlxshake.globals.globals) | Constructor. |
 
 ## Properties
 

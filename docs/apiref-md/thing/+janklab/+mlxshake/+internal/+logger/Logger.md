@@ -60,26 +60,26 @@ log.info('Hello, world! Running on Matlab
 | Method | Description |
 | -------- | ----------- |
 | [getLogger](#janklab.mlxshake.internal.logger.Logger.getLogger) |  |
-| [listEnabledLevels](#janklab.mlxshake.internal.logger.Logger.listEnabledLevels) |  |
-| [isTraceEnabled](#janklab.mlxshake.internal.logger.Logger.isTraceEnabled) |  |
-| [isDebugEnabled](#janklab.mlxshake.internal.logger.Logger.isDebugEnabled) |  |
-| [isInfoEnabled](#janklab.mlxshake.internal.logger.Logger.isInfoEnabled) |  |
-| [isWarnEnabled](#janklab.mlxshake.internal.logger.Logger.isWarnEnabled) |  |
-| [isErrorEnabled](#janklab.mlxshake.internal.logger.Logger.isErrorEnabled) |  |
-| [tracej](#janklab.mlxshake.internal.logger.Logger.tracej) |  |
-| [debugj](#janklab.mlxshake.internal.logger.Logger.debugj) |  |
-| [infoj](#janklab.mlxshake.internal.logger.Logger.infoj) |  |
-| [warnj](#janklab.mlxshake.internal.logger.Logger.warnj) |  |
-| [errorj](#janklab.mlxshake.internal.logger.Logger.errorj) |  |
-| [trace](#janklab.mlxshake.internal.logger.Logger.trace) |  |
-| [debug](#janklab.mlxshake.internal.logger.Logger.debug) |  |
-| [info](#janklab.mlxshake.internal.logger.Logger.info) |  |
-| [warn](#janklab.mlxshake.internal.logger.Logger.warn) |  |
-| [error](#janklab.mlxshake.internal.logger.Logger.error) |  |
-| [dispstrs](#janklab.mlxshake.internal.logger.Logger.dispstrs) |  |
-| [dispstr](#janklab.mlxshake.internal.logger.Logger.dispstr) |  |
-| [disp](#janklab.mlxshake.internal.logger.Logger.disp) |  |
-| [Logger](#janklab.mlxshake.internal.logger.Logger.Logger) |  |
+| [listEnabledLevels](#janklab.mlxshake.internal.logger.Logger.listEnabledLevels) | List the levels that are enabled for this logger. |
+| [isTraceEnabled](#janklab.mlxshake.internal.logger.Logger.isTraceEnabled) | True if TRACE level logging is enabled for this logger. |
+| [isDebugEnabled](#janklab.mlxshake.internal.logger.Logger.isDebugEnabled) | True if DEBUG level logging is enabled for this logger. |
+| [isInfoEnabled](#janklab.mlxshake.internal.logger.Logger.isInfoEnabled) | True if INFO level logging is enabled for this logger. |
+| [isWarnEnabled](#janklab.mlxshake.internal.logger.Logger.isWarnEnabled) | True if WARN level logging is enabled for this logger. |
+| [isErrorEnabled](#janklab.mlxshake.internal.logger.Logger.isErrorEnabled) | True if ERROR level logging is enabled for this logger. |
+| [tracej](#janklab.mlxshake.internal.logger.Logger.tracej) | Log a message at the TRACE level, using SLFJ formatting. |
+| [debugj](#janklab.mlxshake.internal.logger.Logger.debugj) | Log a message at the DEBUG level, using SLFJ formatting. |
+| [infoj](#janklab.mlxshake.internal.logger.Logger.infoj) | Log a message at the INFO level, using SLFJ formatting. |
+| [warnj](#janklab.mlxshake.internal.logger.Logger.warnj) | Log a message at the WARN level, using SLFJ formatting. |
+| [errorj](#janklab.mlxshake.internal.logger.Logger.errorj) | Log a message at the ERROR level, using SLFJ formatting. |
+| [trace](#janklab.mlxshake.internal.logger.Logger.trace) | Log a message at the TRACE level. |
+| [debug](#janklab.mlxshake.internal.logger.Logger.debug) | Log a message at the DEBUG level. |
+| [info](#janklab.mlxshake.internal.logger.Logger.info) | Log a message at the INFO level. |
+| [warn](#janklab.mlxshake.internal.logger.Logger.warn) | Log a message at the WARN level. |
+| [error](#janklab.mlxshake.internal.logger.Logger.error) | Log a message at the ERROR level. |
+| [dispstrs](#janklab.mlxshake.internal.logger.Logger.dispstrs) | DISPSTRS Custom object display strings. |
+| [dispstr](#janklab.mlxshake.internal.logger.Logger.dispstr) | DISPSTR Custom object display string. |
+| [disp](#janklab.mlxshake.internal.logger.Logger.disp) | DISP Custom object display. |
+| [Logger](#janklab.mlxshake.internal.logger.Logger.Logger) | Constructor. |
 
 ## Properties
 

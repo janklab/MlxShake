@@ -1,6 +1,7 @@
 classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
     % Generates Markdown format output for API Reference doco.
     
+    % TODO: Alphabetize items.
     % TODO: Links to inherited items.
     % TODO: Would be nice if default value were displayed as the expression
     % from the source code, not the resolved value.
@@ -333,7 +334,18 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
                     rec = table2struct(itemList(iItem,:));
                     item = rec.item;
                     itemQname = klass.Name + "." + item.Name;
-                    p("| [%s](#%s) | %s |", item.Name, itemQname, item.Description);
+                    if rec.type == "method" && ~item.Static
+                        if isequal(item.Name, classBaseName)
+                            descrStr = "Constructor.";
+                        else
+                            [~,~,h1] = rawHelptextFor(itemQname);
+                            descrStr = h1;
+                        end
+                    else
+                        descrStr = item.Description;
+                    end
+                    p("| [%s](#%s) | %s |", item.Name, itemQname, ...
+                        strrep(descrStr, '|', ''));
                 end
                 p
             end
@@ -498,11 +510,17 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
     
 end
 
-function [out, forCodeBlock] = rawHelptextFor(name)
-raw = help(name); % Undocumented form of help
-out = regexprep(raw, '(?<=^|\n)  ?', '');
+function [rawHelp, forCodeBlock, h1] = rawHelptextFor(name)
+raw = string(help(name)); % Undocumented form of help
+rawHelp = regexprep(raw, '(?<=^|\n)  ?', '');
+if isempty(rawHelp)
+    h1 = "";
+else
+    rawHelpLines = regexp(rawHelp, '\r?\n', 'split');
+    h1 = rawHelpLines(1);
+end
 % HACK: escaping of internal fenced code blocks
-forCodeBlock = strrep(out, "```", "`` `");
+forCodeBlock = strrep(rawHelp, "```", "`` `");
 end
 
 function out = isThisInherited(klass, item)
@@ -527,24 +545,28 @@ out = struct;
 out.class = klass;
 
 itemList = klass.PropertyList;
+itemType = categorical("property");
 nItems = numel(itemList);
 sz = [nItems 1];
 isHidden = false(sz);
 isInherited = false(sz);
+type = repmat(itemType, sz);
 for i = 1:numel(itemList)
     item = itemList(i);
     isHidden(i) = item.Hidden;
     isInherited(i) = isThisInherited(klass, item);
 end
 item = itemList;
-out.properties = table(item, isHidden, isInherited);
+out.properties = table(item, type, isHidden, isInherited);
 
 itemList = klass.MethodList;
+itemType = categorical("method");
 nItems = numel(itemList);
 sz = [nItems 1];
 isHidden = false(sz);
 isInherited = false(sz);
 isStatic = false(sz);
+type = repmat(itemType, sz);
 for i = 1:numel(itemList)
     item = itemList(i);
     isHidden(i) = item.Hidden;
@@ -552,33 +574,40 @@ for i = 1:numel(itemList)
     isStatic(i) = item.Static;
 end
 item = itemList;
-out.methods = table(item, isHidden, isInherited);
+itemTable = table(item, type, isHidden, isInherited);
+out.methods = itemTable;
 
 itemList = klass.EventList;
+itemType = categorical("event");
 nItems = numel(itemList);
 sz = [nItems 1];
 isHidden = false(sz);
 isInherited = false(sz);
+type = repmat(itemType, sz);
 for i = 1:numel(itemList)
     item = itemList(i);
     isHidden(i) = item.Hidden;
     isInherited(i) = isThisInherited(klass, item);
 end
 item = itemList;
-out.events = table(item, isHidden, isInherited);
+itemTable = table(item, type, isHidden, isInherited);
+out.events = itemTable;
 
 itemList = klass.EnumerationMemberList;
+itemType = categorical("enumeration");
 nItems = numel(itemList);
 sz = [nItems 1];
 isHidden = false(sz);
 isInherited = false(sz);
+type = repmat(itemType, sz);
 for i = 1:numel(itemList)
     item = itemList(i);
     isHidden(i) = item.Hidden;
     isInherited(i) = isThisInherited(klass, item);
 end
 item = itemList;
-out.enumerations = table(item, isHidden, isInherited);
+itemTable = table(item, type, isHidden, isInherited);
+out.enumerations = itemTable;
 
 end
 

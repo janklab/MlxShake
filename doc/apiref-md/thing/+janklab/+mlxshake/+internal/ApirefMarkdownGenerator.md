@@ -2,6 +2,13 @@
 
 HandleCompatible
 
+```text
+janklab.mlxshake.internal.ApirefMarkdownGenerator
+  janklab.mlxshake.internal.ApirefGenerator
+    janklab.mlxshake.internal.MlxshakeBaseHandle
+      handle
+```
+
 ## Helptext
 
 ```text
@@ -32,12 +39,13 @@ Generates Markdown format output for API Reference doco.
 
 | Method | Description |
 | -------- | ----------- |
-| [generateClassDoc](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateClassDoc) |  |
-| [generateFunctionDoc](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateFunctionDoc) |  |
-| [generatePackageDoc](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generatePackageDoc) |  |
-| [generateIndex](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateIndex) |  |
-| [generateForMyFormat](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateForMyFormat) |  |
-| [ApirefMarkdownGenerator](#janklab.mlxshake.internal.ApirefMarkdownGenerator.ApirefMarkdownGenerator) |  |
+| [generateClassDoc](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateClassDoc) | Generate doco file for a class. |
+| [generateFunctionDoc](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateFunctionDoc) | Generate doco file for a function. |
+| [generatePackageDoc](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generatePackageDoc) | Generate doco files for a package. |
+| [generateIndex](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateIndex) | Generate the main index files for the full code base. |
+| [thingHtmlFileRelPath](#janklab.mlxshake.internal.ApirefMarkdownGenerator.thingHtmlFileRelPath) | janklab.mlxshake.internal.ApirefMarkdownGenerator/thingHtmlFileRelPath is a function. |
+| [generateForMyFormat](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateForMyFormat) | Format-specific generation implementation. |
+| [ApirefMarkdownGenerator](#janklab.mlxshake.internal.ApirefMarkdownGenerator.ApirefMarkdownGenerator) | Constructor. |
 
 ### Superclasses
 
@@ -181,6 +189,22 @@ Helptext:
 
 ```text
 Generate the main index files for the full code base.
+
+```
+
+<a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.thingHtmlFileRelPath"></a>
+### thingHtmlFileRelPath
+
+Signature:
+```
+out = thingHtmlFileRelPath(this, thing)
+```
+
+Helptext:
+
+```text
+janklab.mlxshake.internal.ApirefMarkdownGenerator/thingHtmlFileRelPath is a function.
+  out = thingHtmlFileRelPath(this, thing)
 
 ```
 

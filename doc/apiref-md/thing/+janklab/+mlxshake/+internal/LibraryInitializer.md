@@ -1,5 +1,9 @@
 # LibraryInitializer - janklab.mlxshake.internal
 
+```text
+janklab.mlxshake.internal.LibraryInitializer
+```
+
 ## Helptext
 
 ```text
@@ -19,7 +23,7 @@ janklab.mlxshake.internal.LibraryInitializer is a class.
 
 | Method | Description |
 | -------- | ----------- |
-| [LibraryInitializer](#janklab.mlxshake.internal.LibraryInitializer.LibraryInitializer) |  |
+| [LibraryInitializer](#janklab.mlxshake.internal.LibraryInitializer.LibraryInitializer) | Constructor. |
 
 ## Methods
 

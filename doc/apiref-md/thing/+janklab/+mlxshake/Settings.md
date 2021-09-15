@@ -2,6 +2,12 @@
 
 HandleCompatible
 
+```text
+janklab.mlxshake.Settings
+  janklab.mlxshake.internal.MlxshakeBaseHandle
+    handle
+```
+
 ## Helptext
 
 ```text
@@ -27,7 +33,7 @@ There are currently no settings defined for this package.
 | Method | Description |
 | -------- | ----------- |
 | [discover](#janklab.mlxshake.Settings.discover) |  |
-| [Settings](#janklab.mlxshake.Settings.Settings) |  |
+| [Settings](#janklab.mlxshake.Settings.Settings) | Constructor. |
 
 ### Superclasses
 

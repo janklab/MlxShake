@@ -1,5 +1,9 @@
 # MlxExportOptions - janklab.mlxshake
 
+```text
+janklab.mlxshake.MlxExportOptions
+```
+
 ## Helptext
 
 ```text
@@ -44,7 +48,7 @@ EXPORTLIVESCRIPT
 
 | Method | Description |
 | -------- | ----------- |
-| [MlxExportOptions](#janklab.mlxshake.MlxExportOptions.MlxExportOptions) |  |
+| [MlxExportOptions](#janklab.mlxshake.MlxExportOptions.MlxExportOptions) | Constructor. |
 
 ## Properties
 

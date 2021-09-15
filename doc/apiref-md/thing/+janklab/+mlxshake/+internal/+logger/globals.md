@@ -1,5 +1,9 @@
 # globals - janklab.mlxshake.internal.logger
 
+```text
+janklab.mlxshake.internal.logger.globals
+```
+
 ## Helptext
 
 ```text
@@ -25,7 +29,7 @@ Global library properties and settings for SLF4M
 | Method | Description |
 | -------- | ----------- |
 | [version](#janklab.mlxshake.internal.logger.globals.version) |  |
-| [globals](#janklab.mlxshake.internal.logger.globals.globals) |  |
+| [globals](#janklab.mlxshake.internal.logger.globals.globals) | Constructor. |
 
 ## Properties
 

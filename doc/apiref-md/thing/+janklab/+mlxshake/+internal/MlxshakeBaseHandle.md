@@ -2,6 +2,11 @@
 
 HandleCompatible
 
+```text
+janklab.mlxshake.internal.MlxshakeBaseHandle
+  handle
+```
+
 ## Helptext
 
 ```text
@@ -26,7 +31,7 @@ MLXSHAKEBASE
 
 | Method | Description |
 | -------- | ----------- |
-| [MlxshakeBaseHandle](#janklab.mlxshake.internal.MlxshakeBaseHandle.MlxshakeBaseHandle) |  |
+| [MlxshakeBaseHandle](#janklab.mlxshake.internal.MlxshakeBaseHandle.MlxshakeBaseHandle) | Constructor. |
 
 ### Superclasses
 

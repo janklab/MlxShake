@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="ApirefMarkdownGenerator - janklab.mlxshake.internal" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/ApirefMarkdownGenerator.html","headline":"ApirefMarkdownGenerator - janklab.mlxshake.internal","dateModified":"2021-09-15T10:09:42-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/ApirefMarkdownGenerator.html","headline":"ApirefMarkdownGenerator - janklab.mlxshake.internal","dateModified":"2021-09-15T11:30:42-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=54a8a522bae69f334ab5493991c931ee264ef063">
+    <link rel="stylesheet" href="/assets/css/style.css?v=c357dec21194d291b9e8b2e23efdbf5b20bed021">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -53,6 +53,12 @@
       <h1 id="apirefmarkdowngenerator---janklabmlxshakeinternal">ApirefMarkdownGenerator - janklab.mlxshake.internal</h1>
 
 <p>HandleCompatible</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.ApirefMarkdownGenerator
+  janklab.mlxshake.internal.ApirefGenerator
+    janklab.mlxshake.internal.MlxshakeBaseHandle
+      handle
+</code></pre></div></div>
 
 <h2 id="helptext">Helptext</h2>
 
@@ -120,27 +126,31 @@
   <tbody>
     <tr>
       <td><a href="#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateClassDoc">generateClassDoc</a></td>
-      <td> </td>
+      <td>Generate doco file for a class.</td>
     </tr>
     <tr>
       <td><a href="#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateFunctionDoc">generateFunctionDoc</a></td>
-      <td> </td>
+      <td>Generate doco file for a function.</td>
     </tr>
     <tr>
       <td><a href="#janklab.mlxshake.internal.ApirefMarkdownGenerator.generatePackageDoc">generatePackageDoc</a></td>
-      <td> </td>
+      <td>Generate doco files for a package.</td>
     </tr>
     <tr>
       <td><a href="#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateIndex">generateIndex</a></td>
-      <td> </td>
+      <td>Generate the main index files for the full code base.</td>
+    </tr>
+    <tr>
+      <td><a href="#janklab.mlxshake.internal.ApirefMarkdownGenerator.thingHtmlFileRelPath">thingHtmlFileRelPath</a></td>
+      <td>janklab.mlxshake.internal.ApirefMarkdownGenerator/thingHtmlFileRelPath is a function.</td>
     </tr>
     <tr>
       <td><a href="#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateForMyFormat">generateForMyFormat</a></td>
-      <td> </td>
+      <td>Format-specific generation implementation.</td>
     </tr>
     <tr>
       <td><a href="#janklab.mlxshake.internal.ApirefMarkdownGenerator.ApirefMarkdownGenerator">ApirefMarkdownGenerator</a></td>
-      <td> </td>
+      <td>Constructor.</td>
     </tr>
   </tbody>
 </table>
@@ -282,6 +292,20 @@ classes contained within it.
 <p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generate the main index files for the full code base.
+
+</code></pre></div></div>
+
+<p><a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.thingHtmlFileRelPath"></a></p>
+<h3 id="thinghtmlfilerelpath">thingHtmlFileRelPath</h3>
+
+<p>Signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = thingHtmlFileRelPath(this, thing)
+</code></pre></div></div>
+
+<p>Helptext:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.ApirefMarkdownGenerator/thingHtmlFileRelPath is a function.
+  out = thingHtmlFileRelPath(this, thing)
 
 </code></pre></div></div>
 

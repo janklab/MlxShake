@@ -56,8 +56,8 @@ janklab.mlxshake.test.HelloWorldTest is a class.
 
 | Method | Description |
 | -------- | ----------- |
-| [testHelloWorld](#janklab.mlxshake.test.HelloWorldTest.testHelloWorld) |  |
-| [HelloWorldTest](#janklab.mlxshake.test.HelloWorldTest.HelloWorldTest) |  |
+| [testHelloWorld](#janklab.mlxshake.test.HelloWorldTest.testHelloWorld) | janklab.mlxshake.test.HelloWorldTest/testHelloWorld is a function. |
+| [HelloWorldTest](#janklab.mlxshake.test.HelloWorldTest.HelloWorldTest) | Constructor. |
 | [forInteractiveUse](#janklab.mlxshake.test.HelloWorldTest.forInteractiveUse) | Default provided forInteractiveUse method |
 
 ### Superclasses

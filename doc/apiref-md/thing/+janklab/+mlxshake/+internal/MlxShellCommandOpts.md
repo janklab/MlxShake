@@ -1,5 +1,9 @@
 # MlxShellCommandOpts - janklab.mlxshake.internal
 
+```text
+janklab.mlxshake.internal.MlxShellCommandOpts
+```
+
 ## Helptext
 
 ```text
@@ -29,7 +33,7 @@ Options to the mlxshake shell command
 
 | Method | Description |
 | -------- | ----------- |
-| [MlxShellCommandOpts](#janklab.mlxshake.internal.MlxShellCommandOpts.MlxShellCommandOpts) |  |
+| [MlxShellCommandOpts](#janklab.mlxshake.internal.MlxShellCommandOpts.MlxShellCommandOpts) | Constructor. |
 
 ## Properties
 

@@ -31,7 +31,7 @@ MLXSHAKEBASE
 
 | Method | Description |
 | -------- | ----------- |
-| [MlxshakeBaseHandle](#janklab.mlxshake.internal.MlxshakeBaseHandle.MlxshakeBaseHandle) |  |
+| [MlxshakeBaseHandle](#janklab.mlxshake.internal.MlxshakeBaseHandle.MlxshakeBaseHandle) | Constructor. |
 
 ### Superclasses
 

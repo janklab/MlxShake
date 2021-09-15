@@ -1,5 +1,9 @@
 # Log4jConfigurator - janklab.mlxshake.internal.logger
 
+```text
+janklab.mlxshake.internal.logger.Log4jConfigurator
+```
+
 ## Helptext
 
 ```text
@@ -52,7 +56,7 @@ mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration
 | [getLog4jLevel](#janklab.mlxshake.internal.logger.Log4jConfigurator.getLog4jLevel) |  |
 | [setRootAppenderPattern](#janklab.mlxshake.internal.logger.Log4jConfigurator.setRootAppenderPattern) |  |
 | [configureBasicConsoleLogging](#janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging) |  |
-| [Log4jConfigurator](#janklab.mlxshake.internal.logger.Log4jConfigurator.Log4jConfigurator) |  |
+| [Log4jConfigurator](#janklab.mlxshake.internal.logger.Log4jConfigurator.Log4jConfigurator) | Constructor. |
 
 ## Methods
 

@@ -36,11 +36,11 @@ Generates API Reference doco from source code.
 
 | Method | Description |
 | -------- | ----------- |
-| [generateForMyFormat](#janklab.mlxshake.internal.ApirefGenerator.generateForMyFormat) |  |
+| [generateForMyFormat](#janklab.mlxshake.internal.ApirefGenerator.generateForMyFormat) | janklab.mlxshake.internal.ApirefGenerator/generateForMyFormat is a function. |
 | [forFormat](#janklab.mlxshake.internal.ApirefGenerator.forFormat) |  |
-| [discover](#janklab.mlxshake.internal.ApirefGenerator.discover) |  |
-| [generate](#janklab.mlxshake.internal.ApirefGenerator.generate) |  |
-| [ApirefGenerator](#janklab.mlxshake.internal.ApirefGenerator.ApirefGenerator) |  |
+| [discover](#janklab.mlxshake.internal.ApirefGenerator.discover) | Discover source code files on the input paths. |
+| [generate](#janklab.mlxshake.internal.ApirefGenerator.generate) | Generate the doco output. |
+| [ApirefGenerator](#janklab.mlxshake.internal.ApirefGenerator.ApirefGenerator) | Constructor. |
 
 ### Superclasses
 
