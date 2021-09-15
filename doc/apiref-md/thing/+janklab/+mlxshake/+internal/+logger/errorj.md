@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.logger.errorj
+# errorj - janklab.mlxshake.internal.logger
 
 ```text
 Log an ERROR level message from caller, using SLF4J style formatting.

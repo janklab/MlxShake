@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.logger.debugj
+# debugj - janklab.mlxshake.internal.logger
 
 ```text
 Log a DEBUG level message from caller, using SLF4J style formatting.

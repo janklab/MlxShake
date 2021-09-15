@@ -1,4 +1,4 @@
-# janklab.mlxshake.mlx2latex
+# mlx2latex - janklab.mlxshake
 
 ```text
 Export a Live Script (.mlx) file to LaTeX (.tex).

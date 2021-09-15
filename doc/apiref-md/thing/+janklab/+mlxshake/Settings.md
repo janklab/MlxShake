@@ -1,4 +1,11 @@
-# janklab.mlxshake.Settings
+# Settings - janklab.mlxshake
+
+HandleCompatible
+
+## Description
+
+
+## Helptext
 
 ```text
 Global settings for the mlxshake package
@@ -27,30 +34,51 @@ There are currently no settings defined for this package.
 
 | Method | Description |
 | -------- | ----------- |
-| `discover` | ??? |
-| `Settings` | ??? |
-| `empty` | ??? |
+| [discover](#janklab.mlxshake.Settings.discover) |  |
+| [Settings](#janklab.mlxshake.Settings.Settings) |  |
+| [empty](#janklab.mlxshake.Settings.empty) | Returns an empty object array of the given size |
 
 ### Events
 
-| Event | Description |
+| Events | Description |
 | -------- | ----------- |
 
 ### Superclasses
 
 | Superclass | Description |
 | -------- | ----------- |
-| `janklab.mlxshake.internal.MlxshakeBaseHandle` | ??? |
+| `janklab.mlxshake.internal.MlxshakeBaseHandle` |  |
+
+## Properties
+
 
 ## Methods
 
-### `discover`
+<a name="janklab.mlxshake.Settings.discover"></a>
+### discover
+
+
+
+
+
 
 ```text
+Discovery of initial values for package settings.
+
+This could look at config files, environment variables, Matlab appdata, and
+so on.
+
+This needs to avoid referencing mlxshake.globals, to avoid a circular dependency.
 
 ```
 
-### `Settings`
+<a name="janklab.mlxshake.Settings.Settings"></a>
+### Settings
+
+
+
+
+
 
 ```text
 Global settings for the mlxshake package
@@ -61,16 +89,21 @@ field.
 
 There are currently no settings defined for this package.
 
-  Documentation for janklab.mlxshake.Settings
-     doc janklab.mlxshake.Settings
-
-
 ```
 
-### `empty`
+<a name="janklab.mlxshake.Settings.empty"></a>
+### empty
+
+
+Returns an empty object array of the given size
+
+
 
 ```text
-
+Returns an empty object array of the given size
 ```
+
+
+## Events
 
 

@@ -1,5 +1,5 @@
 classdef MlxExportOptions
-    % Options to control behavior of Live Script export
+    % Options to control behavior of Live Script export.
     %
     % All the options to control the behavior of exportlivescript and
     % its helper functions are bundled up in this class.
@@ -13,7 +13,7 @@ classdef MlxExportOptions
     % EXPORTLIVESCRIPT
     
     properties (Constant)
-        validFormats = ["auto", "markdown", "html","pdf", "latex", "msword"];
+        validFormats = ["auto", "markdown", "html", "pdf", "latex", "msword"];
     end
     
     properties
@@ -130,7 +130,7 @@ classdef MlxExportOptions
     methods
         
         function this = MlxExportOptions(arg)
-            % Construct a new object
+            % Construct a new object.
             %
             % obj = janklab.mlxshake.MlxExportOptions
             % obj = janklab.mlxshake.MlxExportOptions(struct(...))

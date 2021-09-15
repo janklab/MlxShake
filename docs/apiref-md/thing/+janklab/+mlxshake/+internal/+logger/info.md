@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.logger.info
+# info - janklab.mlxshake.internal.logger
 
 ```text
 Log an INFO level message from caller, with printf style formatting.

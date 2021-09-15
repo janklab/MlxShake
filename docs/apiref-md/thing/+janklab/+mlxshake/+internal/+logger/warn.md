@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.logger.warn
+# warn - janklab.mlxshake.internal.logger
 
 ```text
 Log a WARN level message from caller, with printf style formatting.

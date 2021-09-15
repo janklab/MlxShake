@@ -1,4 +1,4 @@
-# janklab.mlxshake.test.runtests
+# runtests - janklab.mlxshake.test
 
 ```text
 runtests Run all the tests in mlxshake

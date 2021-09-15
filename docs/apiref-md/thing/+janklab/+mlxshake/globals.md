@@ -1,4 +1,9 @@
-# janklab.mlxshake.globals
+# globals - janklab.mlxshake
+
+## Description
+
+
+## Helptext
 
 ```text
 Global library properties and settings for MlxShake.
@@ -27,33 +32,82 @@ on that:
 
 | Property | Description |
 | -------- | ----------- |
-| `distroot` | ??? |
-| `settings` | ??? |
+| [distroot](#janklab.mlxshake.globals.distroot) |  |
+| [settings](#janklab.mlxshake.globals.settings) |  |
 
 ### Methods
 
 | Method | Description |
 | -------- | ----------- |
-| `initialize` | ??? |
-| `version` | ??? |
-| `globals` | ??? |
-| `empty` | ??? |
+| [initialize](#janklab.mlxshake.globals.initialize) |  |
+| [version](#janklab.mlxshake.globals.version) |  |
+| [globals](#janklab.mlxshake.globals.globals) |  |
+| [empty](#janklab.mlxshake.globals.empty) | Returns an empty object array of the given size |
+
+## Properties
+
+<a name="janklab.mlxshake.globals.distroot"></a>
+### distroot
+
+
+
+
+
+
+```text
+No helptext available.
+```
+
+<a name="janklab.mlxshake.globals.settings"></a>
+### settings
+
+
+
+
+
+
+```text
+No helptext available.
+```
+
 
 ## Methods
 
-### `initialize`
+<a name="janklab.mlxshake.globals.initialize"></a>
+### initialize
+
+
+
+
+
 
 ```text
+Initialize this library/package
 
 ```
 
-### `version`
+<a name="janklab.mlxshake.globals.version"></a>
+### version
+
+
+
+
+
 
 ```text
+The version of the MlxShake library
+
+Returns a string.
 
 ```
 
-### `globals`
+<a name="janklab.mlxshake.globals.globals"></a>
+### globals
+
+
+
+
+
 
 ```text
 Global library properties and settings for MlxShake.
@@ -69,16 +123,18 @@ on that:
    s = janklab.mlxshake.globals.settings;
    s.someSetting = 42;
 
-  Documentation for janklab.mlxshake.globals
-     doc janklab.mlxshake.globals
-
-
 ```
 
-### `empty`
+<a name="janklab.mlxshake.globals.empty"></a>
+### empty
+
+
+Returns an empty object array of the given size
+
+
 
 ```text
-
+Returns an empty object array of the given size
 ```
 
 

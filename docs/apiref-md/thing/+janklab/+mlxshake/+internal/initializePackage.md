@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.initializePackage
+# initializePackage - janklab.mlxshake.internal
 
 ```text
 Basic package initialization

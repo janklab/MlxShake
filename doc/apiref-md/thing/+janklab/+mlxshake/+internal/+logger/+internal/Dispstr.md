@@ -1,4 +1,9 @@
-# janklab.mlxshake.internal.logger.internal.Dispstr
+# Dispstr - janklab.mlxshake.internal.logger.internal
+
+## Description
+
+
+## Helptext
 
 ```text
 All the dispstr implementation code, wrapped up in a class
@@ -22,131 +27,311 @@ don't want to take a dependency on dispstr.
 
 | Method | Description |
 | -------- | ----------- |
-| `sprintfv` | ??? |
-| `size2str` | ??? |
-| `prettyprintTabular_generic` | ??? |
-| `prettyprintTabular` | ??? |
-| `prettyprintStruct` | ??? |
-| `prettyprintCell` | ??? |
-| `prettyprintMatrix` | ??? |
-| `prettyprintArray` | ??? |
-| `num2cellstr` | ??? |
-| `mycombvec` | ??? |
-| `isErrorIdentifier` | ??? |
-| `dispc` | ??? |
-| `dispStruct` | ??? |
-| `dispCell` | ??? |
-| `display` | ??? |
-| `disp` | ??? |
-| `convertArgsForPrintf` | ??? |
-| `Dispstr` | ??? |
-| `empty` | ??? |
+| [sprintfv](#janklab.mlxshake.internal.logger.internal.Dispstr.sprintfv) |  |
+| [size2str](#janklab.mlxshake.internal.logger.internal.Dispstr.size2str) |  |
+| [prettyprintTabular_generic](#janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintTabular_generic) |  |
+| [prettyprintTabular](#janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintTabular) |  |
+| [prettyprintStruct](#janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintStruct) |  |
+| [prettyprintCell](#janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintCell) |  |
+| [prettyprintMatrix](#janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintMatrix) |  |
+| [prettyprintArray](#janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintArray) |  |
+| [num2cellstr](#janklab.mlxshake.internal.logger.internal.Dispstr.num2cellstr) |  |
+| [mycombvec](#janklab.mlxshake.internal.logger.internal.Dispstr.mycombvec) |  |
+| [isErrorIdentifier](#janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier) |  |
+| [dispc](#janklab.mlxshake.internal.logger.internal.Dispstr.dispc) |  |
+| [dispStruct](#janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct) |  |
+| [dispCell](#janklab.mlxshake.internal.logger.internal.Dispstr.dispCell) |  |
+| [display](#janklab.mlxshake.internal.logger.internal.Dispstr.display) |  |
+| [disp](#janklab.mlxshake.internal.logger.internal.Dispstr.disp) |  |
+| [convertArgsForPrintf](#janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf) |  |
+| [Dispstr](#janklab.mlxshake.internal.logger.internal.Dispstr.Dispstr) |  |
+| [empty](#janklab.mlxshake.internal.logger.internal.Dispstr.empty) | Returns an empty object array of the given size |
 
 ## Methods
 
-### `sprintfv`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.sprintfv"></a>
+### sprintfv
+
+
+
+
+
 
 ```text
+SPRINTFV "Vectorized" sprintf
+
+out = sprintfv(format, varargin)
+
+SPRINTFV is an array-oriented form of sprintf that applies a format to array
+inputs and produces a cellstr.
+
+This is not a high-performance method. It's a convenience wrapper around a
+loop around sprintf().
+
+Returns cellstr.
 
 ```
 
-### `size2str`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.size2str"></a>
+### size2str
+
+
+
+
+
 
 ```text
+SIZE2STR Format an array size for display
+
+out = size2str(sz)
+
+Sz is an array of dimension sizes, in the format returned by SIZE.
+
+Examples:
+
+size2str(magic(3))
 
 ```
 
-### `prettyprintTabular_generic`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintTabular_generic"></a>
+### prettyprintTabular_generic
+
+
+
+
+
 
 ```text
+A generic tabular pretty-print that can be used for tabulars or relations
 
 ```
 
-### `prettyprintTabular`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintTabular"></a>
+### prettyprintTabular
+
+
+
+
+
 
 ```text
+PRETTYPRINT_TABULAR Tabular implementation of prettyprint
 
 ```
 
-### `prettyprintStruct`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintStruct"></a>
+### prettyprintStruct
+
+
+
+
+
 
 ```text
+PRETTYPRINT_STRUCT struct implementation of prettyprint
 
 ```
 
-### `prettyprintCell`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintCell"></a>
+### prettyprintCell
+
+
+
+
+
 
 ```text
+PRETTYPRINT_CELL Cell implementation of prettyprint
 
 ```
 
-### `prettyprintMatrix`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintMatrix"></a>
+### prettyprintMatrix
+
+
+
+
+
 
 ```text
+Pretty-print a matrix of arbitrary display strings
+
+out = prettyprintMatrix(strs)
+
+strs is a matrix of strings which are already converted to their display
+form.
 
 ```
 
-### `prettyprintArray`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintArray"></a>
+### prettyprintArray
+
+
+
+
+
 
 ```text
+PRETTYPRINT_ARRAY Pretty-print an array from dispstrs
+
+out = prettyprintArray(strs)
+
+strs (string) is an array of display strings of any size.
 
 ```
 
-### `num2cellstr`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.num2cellstr"></a>
+### num2cellstr
+
+
+
+
+
 
 ```text
+NUM2CELLSTR Like num2str, but return cellstr of individual number strings
 
 ```
 
-### `mycombvec`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.mycombvec"></a>
+### mycombvec
+
+
+
+
+
 
 ```text
+MYCOMBVEC All combinations of values from vectors
+
+This is similar to Matlab's combvec, but has a different signature.
 
 ```
 
-### `isErrorIdentifier`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier"></a>
+### isErrorIdentifier
+
+
+
+
+
 
 ```text
+janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier is a function.
+  out = isErrorIdentifier(str)
 
 ```
 
-### `dispc`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispc"></a>
+### dispc
+
+
+
+
+
 
 ```text
+DISPC Display, with capture
 
 ```
 
-### `dispStruct`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct"></a>
+### dispStruct
+
+
+
+
+
 
 ```text
+janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct is a function.
+  dispStruct(x)
 
 ```
 
-### `dispCell`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispCell"></a>
+### dispCell
+
+
+
+
+
 
 ```text
+janklab.mlxshake.internal.logger.internal.Dispstr.dispCell is a function.
+  dispCell(c)
 
 ```
 
-### `display`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.display"></a>
+### display
+
+
+
+
+
 
 ```text
+DISPLAY Display array.
+  DISPLAY(X) is called for the object X when the semicolon is not used
+  to terminate a statement. 
+
+  For example,
+    X = datetime(2014,1:5,1)
+  calls DISPLAY(X) while
+    X = datetime(2014,1:5,1);
+  does not.
+
+  A typical implementation of DISPLAY calls DISP to do most of the work.
+  To customize the display of objects, overload the DISP function.
+  Note that DISP does not display empty arrays.
+  
+  See also DISP, matlab.mixin.CustomDisplay, EVALC,
 
 ```
 
-### `disp`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.disp"></a>
+### disp
+
+
+
+
+
 
 ```text
+DISP Display array.
+  DISP(X) displays array X without printing the array name or 
+  additional description information such as the size and class name.
+  In all other ways it's the same as leaving the semicolon off an
+  expression except that nothing is shown for empty arrays.
+
+  If X is a string or character array, the text is displayed.
+
+  See also FPRINTF, SPRINTF, INT2STR, NUM2STR, RATS, FORMAT, DETAILS.
 
 ```
 
-### `convertArgsForPrintf`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf"></a>
+### convertArgsForPrintf
+
+
+
+
+
 
 ```text
+janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf is a function.
+  out = convertArgsForPrintf(args)
 
 ```
 
-### `Dispstr`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.Dispstr"></a>
+### Dispstr
+
+
+
+
+
 
 ```text
 All the dispstr implementation code, wrapped up in a class
@@ -157,16 +342,18 @@ ass) to transform the code to relocate its package, which will hopefully
 allow us to generate "compatters" for internal use by other libraries that
 don't want to take a dependency on dispstr.
 
-  Documentation for janklab.mlxshake.internal.logger.internal.Dispstr
-     doc janklab.mlxshake.internal.logger.internal.Dispstr
-
-
 ```
 
-### `empty`
+<a name="janklab.mlxshake.internal.logger.internal.Dispstr.empty"></a>
+### empty
+
+
+Returns an empty object array of the given size
+
+
 
 ```text
-
+Returns an empty object array of the given size
 ```
 
 

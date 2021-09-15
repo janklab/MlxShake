@@ -1,10 +1,10 @@
 MlxShake Changelog
 ================================
 
-Version 0.3.0 (in progress)
+Version 0.4.0 (in progress)
 ------------------------------
 
-Nothing yet!
+* API Reference documentation generation from source code.
 
 Version 0.3.0 (2021-09-14)
 ------------------------------

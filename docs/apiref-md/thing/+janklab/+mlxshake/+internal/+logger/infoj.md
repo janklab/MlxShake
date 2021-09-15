@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.logger.infoj
+# infoj - janklab.mlxshake.internal.logger
 
 ```text
 Log an INFO level message from caller, using SLF4J style formatting.

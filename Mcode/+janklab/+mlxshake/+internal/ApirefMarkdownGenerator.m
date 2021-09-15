@@ -1,6 +1,7 @@
 classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
     
     %#ok<*MANU>
+    %#ok<*AGROW>
     
     properties
         stuffDir
@@ -199,7 +200,7 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             % HACK: escaping of internal fenced code blocks
             hForCodeBlock = strrep(h, "```", "`` `");
             
-            p("# %s", qname)
+            p("# %s - %s", name, pkg)
             p("")
             p("```text")
             p(hForCodeBlock)
@@ -217,7 +218,7 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             parentDir = fullfile(this.thingsDir, relDir);
             mdFile = fullfile(parentDir, name + ".md");
             
-            [h,hForCodeBlock] = rawHelptextFor(qname);
+            [~,hForCodeBlock] = rawHelptextFor(qname);
             
             mkdirs(parentDir);
             fh = fopen2(mdFile, 'w', 'native', 'UTF-8');
@@ -225,9 +226,33 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             p(true, fh);
             
             klass = meta.class.fromName(rec.qname);
-
-            p("# %s", qname)
+            
+            attribs = string([]);
+            allAttribs = ["Hidden", "Sealed", "Abstract", "Enumeration", ...
+                "ConstructOnLoad", "HandleCompatible", "RestrictsSubclassing"];
+            for at = allAttribs
+                if klass.(at)
+                    attribs(end+1) = at;
+                end
+            end
+            
+            p("# %s - %s", name, pkg)
             p("")
+            if ~isempty(attribs)
+                p("%s", strjoin(attribs, ', '));
+                p
+            end
+            
+            p("## Description")
+            p(klass.Description)
+            p
+            if ~isempty(klass.DetailedDescription)
+                p("## Detailed Description")
+                p(klass.DetailedDescription)
+                p
+            end
+            p("## Helptext")
+            p
             p("```text")
             p(hForCodeBlock)
             p
@@ -237,75 +262,75 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             p("## Class Contents")
             p
             
-            if ~isempty(klass.PropertyList)
-                p("### Properties")
+            function pContentsList(itemTypePlural, itemType, itemList)
+                if isempty(itemList)
+                    return
+                end
+                p("### %s", itemTypePlural)
                 p
-                p("| Property | Description |")
+                p("| %s | Description |", itemType)
                 p("| -------- | ----------- |")
-                for i = 1:numel(klass.PropertyList)
-                    prop = klass.PropertyList(i);
-                    if isThisInherited(klass, prop)
+                for iItem = 1:numel(itemList)
+                    item = itemList(iItem);
+                    if isThisInherited(klass, item)
                         continue
                     end
-                    p("| `%s` | %s |", prop.Name, '???');
+                    itemQname = klass.Name + "." + item.Name;
+                    p("| [%s](#%s) | %s |", item.Name, itemQname, item.Description);
                 end
                 p
             end
             
-            if ~isempty(klass.MethodList)
-                p("### Methods")
-                p
-                p("| Method | Description |")
-                p("| -------- | ----------- |")
-                for meth = klass.MethodList(:)'
-                    if isThisInherited(klass, meth)
-                        continue
-                    end
-                    p("| `%s` | %s |", meth.Name, '???');
-                end
-                p
-            end
-            
-            if ~isempty(klass.EventList)
-                p("### Events")
-                p
-                p("| Event | Description |")
-                p("| -------- | ----------- |")
-                for event = klass.EventList(:)'
-                    if isThisInherited(klass, event)
-                        continue
-                    end
-                    p("| `%s` | %s |", event.Name, '???');
-                end
-                p
-            end
-            
-            if ~isempty(klass.EnumerationMemberList)
-                p("### Enumerations")
-                p
-                p("| Enumeration| Description |")
-                p("| -------- | ----------- |")
-                for enum = klass.EnumerationMemberList
-                    if isThisInherited(klass, enum)
-                        continue
-                    end
-                    p("| `%s` | %s |", enum.Name, '???');
-                end
-                p
-            end
-            
+            pContentsList("Properties", "Property", klass.PropertyList);
+            pContentsList("Methods", "Method", klass.MethodList);
+            pContentsList("Events", "Events", klass.EventList);
+            pContentsList("Enumerations", "Enumeration", klass.EnumerationMemberList);
+                        
             if ~isempty(klass.SuperclassList)
                 p("### Superclasses")
                 p
                 p("| Superclass | Description |")
                 p("| -------- | ----------- |")
                 for sk = klass.SuperclassList
-                    p("| `%s` | %s |", sk.Name, '???');
+                    p("| `%s` | %s |", sk.Name, sk.Description);
                 end
                 p
             end
             
-            % TODO: Details for all the things
+            % Details for all the things
+            
+            function [itemQname] = pCommonItemStuff(item)
+                    itemQname = klass.Name + "." + item.Name;
+                    p('<a name="%s"></a>', itemQname)
+                    p("### %s", item.Name)
+                    p
+                    if ~isa(item, 'meta.property')
+                        [~,hForCodeBlock] = rawHelptextFor(itemQname);
+                    else
+                        hForCodeBlock = "No helptext available.";
+                    end
+                    p
+                    p(item.Description)
+                    p
+                    p(item.DetailedDescription)
+                    p
+                    p("```text")
+                    p(hForCodeBlock)
+                    p("```")
+                    p
+            end
+            
+            if ~isempty(klass.PropertyList)
+                p("## Properties")
+                p
+                for prop = klass.PropertyList(:)'
+                    if isThisInherited(klass, prop)
+                        continue
+                    end
+                    propQname = pCommonItemStuff(prop);
+                end
+                p
+            end
             
             if ~isempty(klass.MethodList)
                 p("## Methods")
@@ -314,14 +339,19 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
                     if isThisInherited(klass, meth)
                         continue
                     end
-                    methQname = pkg + "." + meth.Name;
-                    p("### `%s`", meth.Name)
-                    p
-                    [h,hForCodeBlock] = rawHelptextFor(methQname);
-                    p("```text")
-                    p(hForCodeBlock)
-                    p("```")
-                    p
+                    methQname = pCommonItemStuff(meth);
+                end
+                p
+            end
+            
+            if ~isempty(klass.EventList)
+                p("## Events")
+                p
+                for event = klass.EventList(:)'
+                    if isThisInherited(klass, event)
+                        continue
+                    end
+                    eventQname = pCommonItemStuff(event);
                 end
                 p
             end

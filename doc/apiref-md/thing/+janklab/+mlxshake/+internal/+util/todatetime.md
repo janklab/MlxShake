@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.util.todatetime
+# todatetime - janklab.mlxshake.internal.util
 
 ```text
 Convert values to datetime array

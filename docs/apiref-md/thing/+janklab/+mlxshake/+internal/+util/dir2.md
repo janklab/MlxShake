@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.util.dir2
+# dir2 - janklab.mlxshake.internal.util
 
 ```text
 Like DIR, but better

@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.logger.version
+# version - janklab.mlxshake.internal.logger
 
 ```text
 VERSION Get version info for SLF4M

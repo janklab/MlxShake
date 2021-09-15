@@ -1,4 +1,9 @@
-# janklab.mlxshake.internal.logger.Log4jConfigurator
+# Log4jConfigurator - janklab.mlxshake.internal.logger
+
+## Description
+
+
+## Helptext
 
 ```text
 A configurator for log4j
@@ -45,47 +50,117 @@ mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration
 
 | Method | Description |
 | -------- | ----------- |
-| `prettyPrintLogConfiguration` | ??? |
-| `setLevels` | ??? |
-| `getLog4jLevel` | ??? |
-| `setRootAppenderPattern` | ??? |
-| `configureBasicConsoleLogging` | ??? |
-| `Log4jConfigurator` | ??? |
-| `empty` | ??? |
+| [prettyPrintLogConfiguration](#janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration) |  |
+| [setLevels](#janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels) |  |
+| [getLog4jLevel](#janklab.mlxshake.internal.logger.Log4jConfigurator.getLog4jLevel) |  |
+| [setRootAppenderPattern](#janklab.mlxshake.internal.logger.Log4jConfigurator.setRootAppenderPattern) |  |
+| [configureBasicConsoleLogging](#janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging) |  |
+| [Log4jConfigurator](#janklab.mlxshake.internal.logger.Log4jConfigurator.Log4jConfigurator) |  |
+| [empty](#janklab.mlxshake.internal.logger.Log4jConfigurator.empty) | Returns an empty object array of the given size |
 
 ## Methods
 
-### `prettyPrintLogConfiguration`
+<a name="janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration"></a>
+### prettyPrintLogConfiguration
+
+
+
+
+
 
 ```text
+Displays the current log configuration to the console
+
+mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration()
 
 ```
 
-### `setLevels`
+<a name="janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels"></a>
+### setLevels
+
+
+
+
+
 
 ```text
+Set the logging levels for multiple loggers
+
+mlxshake.logger.Log4jConfigurator.setLevels(levels)
+
+This is a convenience method for setting the logging levels for multiple
+loggers.
+
+The levels input is an n-by-2 cellstr with logger names in column 1 and
+level names in column 2.
+
+Examples:
+
+mlxshake.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
+
+mlxshake.logger.Log4jConfigurator.setLevels({
+    'root'    'INFO'
+    'net.apjanke.logger.swing'  'DEBUG'
+    });
 
 ```
 
-### `getLog4jLevel`
+<a name="janklab.mlxshake.internal.logger.Log4jConfigurator.getLog4jLevel"></a>
+### getLog4jLevel
+
+
+
+
+
 
 ```text
+Gets the log4j Level enum for a named level
 
 ```
 
-### `setRootAppenderPattern`
+<a name="janklab.mlxshake.internal.logger.Log4jConfigurator.setRootAppenderPattern"></a>
+### setRootAppenderPattern
+
+
+
+
+
 
 ```text
+Sets the pattern on the root appender
+
+This is just a convenience method. Assumes there is a single
+appender on the root logger.
 
 ```
 
-### `configureBasicConsoleLogging`
+<a name="janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging"></a>
+### configureBasicConsoleLogging
+
+
+
+
+
 
 ```text
+Configures log4j to do basic logging to the console
+
+This sets up a basic log4j configuration, with log output going to the
+console, and the root logger set to the INFO level.
+
+This method can safely be called multiple times. If there's already an
+appender on the root logger (indicating logging has already been
+configured), it silently does nothing.
 
 ```
 
-### `Log4jConfigurator`
+<a name="janklab.mlxshake.internal.logger.Log4jConfigurator.Log4jConfigurator"></a>
+### Log4jConfigurator
+
+
+
+
+
 
 ```text
 A configurator for log4j
@@ -125,10 +200,16 @@ mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration
 
 ```
 
-### `empty`
+<a name="janklab.mlxshake.internal.logger.Log4jConfigurator.empty"></a>
+### empty
+
+
+Returns an empty object array of the given size
+
+
 
 ```text
-
+Returns an empty object array of the given size
 ```
 
 

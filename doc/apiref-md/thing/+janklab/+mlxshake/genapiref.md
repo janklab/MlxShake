@@ -1,4 +1,4 @@
-# janklab.mlxshake.genapiref
+# genapiref - janklab.mlxshake
 
 ```text
 Generate API Reference documentation from source code.

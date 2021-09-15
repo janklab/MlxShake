@@ -1,4 +1,4 @@
-# janklab.mlxshake.exportlivescript
+# exportlivescript - janklab.mlxshake
 
 ```text
 Export a Matlab Live Script (.mlx) file to Markdown or other formats.

@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.mlxshake_shell_command
+# mlxshake_shell_command - janklab.mlxshake.internal
 
 ```text
 Implements the mlxshake shell command program

@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.util.rmrf
+# rmrf - janklab.mlxshake.internal.util
 
 ```text
 Recursively delete files and directories

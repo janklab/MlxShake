@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.util.size2str
+# size2str - janklab.mlxshake.internal.util
 
 ```text
 SIZE2STR Format an array size for display

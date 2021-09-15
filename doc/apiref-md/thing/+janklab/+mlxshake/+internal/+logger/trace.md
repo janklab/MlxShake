@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.logger.trace
+# trace - janklab.mlxshake.internal.logger
 
 ```text
 Log a TRACE level message from caller, with printf style formatting.

@@ -1,4 +1,11 @@
-# janklab.mlxshake.internal.ApirefHtmlGenerator
+# ApirefHtmlGenerator - janklab.mlxshake.internal
+
+HandleCompatible
+
+## Description
+
+
+## Helptext
 
 ```text
 #ok<*MANU>
@@ -21,44 +28,66 @@
 
 | Method | Description |
 | -------- | ----------- |
-| `generateForMyFormat` | ??? |
-| `ApirefHtmlGenerator` | ??? |
-| `empty` | ??? |
+| [generateForMyFormat](#janklab.mlxshake.internal.ApirefHtmlGenerator.generateForMyFormat) |  |
+| [ApirefHtmlGenerator](#janklab.mlxshake.internal.ApirefHtmlGenerator.ApirefHtmlGenerator) |  |
+| [empty](#janklab.mlxshake.internal.ApirefHtmlGenerator.empty) | Returns an empty object array of the given size |
 
 ### Events
 
-| Event | Description |
+| Events | Description |
 | -------- | ----------- |
 
 ### Superclasses
 
 | Superclass | Description |
 | -------- | ----------- |
-| `janklab.mlxshake.internal.ApirefGenerator` | ??? |
+| `janklab.mlxshake.internal.ApirefGenerator` |  |
+
+## Properties
+
 
 ## Methods
 
-### `generateForMyFormat`
+<a name="janklab.mlxshake.internal.ApirefHtmlGenerator.generateForMyFormat"></a>
+### generateForMyFormat
+
+
+
+
+
 
 ```text
+janklab.mlxshake.internal.ApirefHtmlGenerator/generateForMyFormat is a function.
+  generateForMyFormat(this)
 
 ```
 
-### `ApirefHtmlGenerator`
+<a name="janklab.mlxshake.internal.ApirefHtmlGenerator.ApirefHtmlGenerator"></a>
+### ApirefHtmlGenerator
+
+
+
+
+
 
 ```text
 #ok<*MANU>
 
-  Documentation for janklab.mlxshake.internal.ApirefHtmlGenerator
-     doc janklab.mlxshake.internal.ApirefHtmlGenerator
-
-
 ```
 
-### `empty`
+<a name="janklab.mlxshake.internal.ApirefHtmlGenerator.empty"></a>
+### empty
+
+
+Returns an empty object array of the given size
+
+
 
 ```text
-
+Returns an empty object array of the given size
 ```
+
+
+## Events
 
 

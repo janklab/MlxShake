@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.util.withcd
+# withcd - janklab.mlxshake.internal.util
 
 ```text
 Temporarily change to a new directory

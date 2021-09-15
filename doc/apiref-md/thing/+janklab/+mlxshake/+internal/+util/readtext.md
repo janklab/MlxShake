@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.util.readtext
+# readtext - janklab.mlxshake.internal.util
 
 ```text
 Read the contents of a text file as a string

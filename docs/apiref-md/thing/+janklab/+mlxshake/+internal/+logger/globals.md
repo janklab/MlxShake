@@ -1,4 +1,9 @@
-# janklab.mlxshake.internal.logger.globals
+# globals - janklab.mlxshake.internal.logger
+
+## Description
+
+
+## Helptext
 
 ```text
 Global library properties and settings for SLF4M
@@ -16,51 +21,71 @@ Global library properties and settings for SLF4M
 
 | Property | Description |
 | -------- | ----------- |
-| `distroot` | ??? |
+| [distroot](#janklab.mlxshake.internal.logger.globals.distroot) |  |
 
 ### Methods
 
 | Method | Description |
 | -------- | ----------- |
-| `version` | ??? |
-| `globals` | ??? |
-| `empty` | ??? |
+| [version](#janklab.mlxshake.internal.logger.globals.version) |  |
+| [globals](#janklab.mlxshake.internal.logger.globals.globals) |  |
+| [empty](#janklab.mlxshake.internal.logger.globals.empty) | Returns an empty object array of the given size |
+
+## Properties
+
+<a name="janklab.mlxshake.internal.logger.globals.distroot"></a>
+### distroot
+
+
+
+
+
+
+```text
+No helptext available.
+```
+
 
 ## Methods
 
-### `version`
+<a name="janklab.mlxshake.internal.logger.globals.version"></a>
+### version
+
+
+
+
+
 
 ```text
-VERSION Get version info for SLF4M
+The version of the SLF4M library
 
-logger.version
-v = logger.version
-
-Gets version info for the SLF4M library.
-
-If return value is not captured, displays version info for SLF4M and related
-libraries to the console.
-
-If return value is captured, returns the version of the SLF4M library as
-a char vector.
+Returns a string.
 
 ```
 
-### `globals`
+<a name="janklab.mlxshake.internal.logger.globals.globals"></a>
+### globals
+
+
+
+
+
 
 ```text
 Global library properties and settings for SLF4M
 
-  Documentation for janklab.mlxshake.internal.logger.globals
-     doc janklab.mlxshake.internal.logger.globals
-
-
 ```
 
-### `empty`
+<a name="janklab.mlxshake.internal.logger.globals.empty"></a>
+### empty
+
+
+Returns an empty object array of the given size
+
+
 
 ```text
-
+Returns an empty object array of the given size
 ```
 
 

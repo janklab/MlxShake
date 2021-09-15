@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.util.mustBeA
+# mustBeA - janklab.mlxshake.internal.util
 
 ```text
 MUSTBEA Validate that an input is of a particular data type

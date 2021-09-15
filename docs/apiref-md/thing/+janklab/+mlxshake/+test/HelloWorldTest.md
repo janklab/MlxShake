@@ -1,4 +1,11 @@
-# janklab.mlxshake.test.HelloWorldTest
+# HelloWorldTest - janklab.mlxshake.test
+
+HandleCompatible
+
+## Description
+
+
+## Helptext
 
 ```text
 janklab.mlxshake.test.HelloWorldTest is a class.
@@ -21,51 +28,79 @@ janklab.mlxshake.test.HelloWorldTest is a class.
 
 | Method | Description |
 | -------- | ----------- |
-| `testHelloWorld` | ??? |
-| `HelloWorldTest` | ??? |
-| `empty` | ??? |
-| `forInteractiveUse` | ??? |
+| [testHelloWorld](#janklab.mlxshake.test.HelloWorldTest.testHelloWorld) |  |
+| [HelloWorldTest](#janklab.mlxshake.test.HelloWorldTest.HelloWorldTest) |  |
+| [empty](#janklab.mlxshake.test.HelloWorldTest.empty) | Returns an empty object array of the given size |
+| [forInteractiveUse](#janklab.mlxshake.test.HelloWorldTest.forInteractiveUse) | Default provided forInteractiveUse method |
 
 ### Events
 
-| Event | Description |
+| Events | Description |
 | -------- | ----------- |
 
 ### Superclasses
 
 | Superclass | Description |
 | -------- | ----------- |
-| `matlab.unittest.TestCase` | ??? |
+| `matlab.unittest.TestCase` | Class which defines test cases in the MATLAB Unit Test Framework. |
+
+## Properties
+
 
 ## Methods
 
-### `testHelloWorld`
+<a name="janklab.mlxshake.test.HelloWorldTest.testHelloWorld"></a>
+### testHelloWorld
+
+
+
+
+
 
 ```text
+janklab.mlxshake.test.HelloWorldTest/testHelloWorld is a function.
+  testHelloWorld(t)
 
 ```
 
-### `HelloWorldTest`
+<a name="janklab.mlxshake.test.HelloWorldTest.HelloWorldTest"></a>
+### HelloWorldTest
+
+
+
+
+
 
 ```text
-janklab.mlxshake.test.HelloWorldTest is a class.
-
-  Documentation for janklab.mlxshake.test.HelloWorldTest
-     doc janklab.mlxshake.test.HelloWorldTest
-
+janklab.mlxshake.test.HelloWorldTest/HelloWorldTest is a constructor.
 
 ```
 
-### `empty`
+<a name="janklab.mlxshake.test.HelloWorldTest.empty"></a>
+### empty
+
+
+Returns an empty object array of the given size
+
+
 
 ```text
-
+Returns an empty object array of the given size
 ```
 
-### `forInteractiveUse`
+<a name="janklab.mlxshake.test.HelloWorldTest.forInteractiveUse"></a>
+### forInteractiveUse
+
+
+Default provided forInteractiveUse method
+
+
 
 ```text
-
+Default provided forInteractiveUse method
 ```
+
+
+## Events
 
 

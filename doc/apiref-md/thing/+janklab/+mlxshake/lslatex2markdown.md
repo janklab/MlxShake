@@ -1,4 +1,4 @@
-# janklab.mlxshake.lslatex2markdown
+# lslatex2markdown - janklab.mlxshake
 
 ```text
 Convert Live Script LaTeX to Markdown.

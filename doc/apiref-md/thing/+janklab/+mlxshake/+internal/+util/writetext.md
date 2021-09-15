@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.util.writetext
+# writetext - janklab.mlxshake.internal.util
 
 ```text
 Write text to a file

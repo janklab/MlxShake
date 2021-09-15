@@ -1,4 +1,4 @@
-# janklab.mlxshake.internal.mlx2x
+# mlx2x - janklab.mlxshake.internal
 
 ```text
 Export MLX to various formats using Matlab's undocumented internals
