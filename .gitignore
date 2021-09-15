@@ -14,7 +14,7 @@
 # Do NOT check the Matlab Toolbox .prj file in to the repo! This file can *not* be
 # shared between multiple users, because Matlab bakes full, absolute file paths
 # in to it.
-ExportMlx.prj
+MlxShake.prj
 M-doc/
 
 # Editor and IDE droppings
