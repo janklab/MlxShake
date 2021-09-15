@@ -8,7 +8,6 @@
 ## Enhancements
 
 * Add some tests.
-* `exportlivescript` command (like, an external OS/shell command, not a Matlab command).
 * Set up the Azure DevOps pipeline. As of 2021-09-11, it's not seeing the MlxShake repo, although I can see many other janklab repos.
 * Nicer alt text/link text for inline images?
 * Support for GitHub Flavored Markdown and other flavors of Markdown?
