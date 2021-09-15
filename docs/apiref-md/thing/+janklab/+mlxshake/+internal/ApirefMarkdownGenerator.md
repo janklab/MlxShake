@@ -43,6 +43,7 @@ Generates Markdown format output for API Reference doco.
 | [generateFunctionDoc](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateFunctionDoc) |  |
 | [generatePackageDoc](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generatePackageDoc) |  |
 | [generateIndex](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateIndex) |  |
+| [thingHtmlFileRelPath](#janklab.mlxshake.internal.ApirefMarkdownGenerator.thingHtmlFileRelPath) |  |
 | [generateForMyFormat](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateForMyFormat) |  |
 | [ApirefMarkdownGenerator](#janklab.mlxshake.internal.ApirefMarkdownGenerator.ApirefMarkdownGenerator) |  |
 
@@ -188,6 +189,22 @@ Helptext:
 
 ```text
 Generate the main index files for the full code base.
+
+```
+
+<a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.thingHtmlFileRelPath"></a>
+### thingHtmlFileRelPath
+
+Signature:
+```
+out = thingHtmlFileRelPath(this, thing)
+```
+
+Helptext:
+
+```text
+janklab.mlxshake.internal.ApirefMarkdownGenerator/thingHtmlFileRelPath is a function.
+  out = thingHtmlFileRelPath(this, thing)
 
 ```
 

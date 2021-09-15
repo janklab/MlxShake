@@ -13,6 +13,7 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
     %#ok<*MANU>
     %#ok<*AGROW>
     %#ok<*NBRAK>
+    %#ok<*INUSL>
     
     properties
         stuffDir
@@ -83,6 +84,12 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             this.generateIndex;
         end
         
+        function out = thingHtmlFileRelPath(this, thing)
+            pkgParts = strsplit(thing.package, '.');
+            out = "thing/" + strjoin(strcat("+", pkgParts), "/") ...
+                + "/" + thing.name + ".html";
+        end
+        
         function generateIndex(this)
             % Generate the main index files for the full code base.
             indexMdFile = fullfile(this.outDir, 'index.md');
@@ -104,21 +111,41 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
                 p("* [`%s`](%s)", pkg.package, pkgRelHtmlFile);
             end
             p
-            if ~isempty(internalPkgs)
-                p
-                p("## Internal Packages")
-                p
-                for iPkg = 1:size(internalPkgs, 1)
-                    pkg = table2struct(internalPkgs(iPkg,:));
-                    pkgRelHtmlFile = "package/" + pkg.key + ".html";
-                    p("* [`%s`](%s)", pkg.package, pkgRelHtmlFile);
+            if this.opts.doInternal
+                if ~isempty(internalPkgs)
+                    p
+                    p("## Internal Packages")
+                    p
+                    for iPkg2 = 1:size(internalPkgs, 1)
+                        pkg2 = table2struct(internalPkgs(iPkg2,:));
+                        pkgRelHtmlFile = "package/" + pkg2.key + ".html";
+                        p("* [`%s`](%s)", pkg2.package, pkgRelHtmlFile);
+                    end
+                    p
                 end
-                p
             end
             
+            function pThingList(pkgsList)
+                for iPkg3 = 1:size(pkgsList, 1)
+                    pkg3 = table2struct(pkgsList(iPkg3,:));
+                    thingsInPkg = this.mfiles(this.mfiles.package == pkg3.package,:);
+                    p("### %s", pkg3.package)
+                    p
+                    for iThing = 1:height(thingsInPkg)
+                        thing = table2struct(thingsInPkg(iThing,:));
+                        p("* [`%s`](%s)", thing.name, this.thingHtmlFileRelPath(thing))
+                    end
+                    p
+                end
+            end
             p("## Things")
             p
-            p("TODO: Implement this.")
+            pThingList(pkgs)
+            if this.opts.doInternal
+                p("## Internal Things")
+                p
+                pThingList(internalPkgs)
+            end
             
         end
         
