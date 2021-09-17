@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=c357dec21194d291b9e8b2e23efdbf5b20bed021">
+    <link rel="stylesheet" href="/assets/css/style.css?v=0e72b505a5ca34103425c48609ec1423577948a4">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -50,9 +50,94 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <h2 id="how-is-mlxshake-pronounced">How is “MlxShake” pronounced?</h2>
+      <ul>
+  <li><a href="#pronunciation">How is “MlxShake” pronounced?</a></li>
+  <li><a href="#why-apiref">Why do API Reference doco generation?</a></li>
+</ul>
+
+<p><a name="pronunciation"></a></p>
+
+<h2 id="how-is-mlxshake-pronounced">How is “MlxShake” pronounced?</h2>
 
 <p>It’s “milkshake”.</p>
+
+<p><a name="why-apiref"></a></p>
+
+<h2 id="why-do-api-reference-doco-generation">Why do API Reference doco generation?</h2>
+
+<p>Why should MlxShake do API Reference (“APIref”) documentation generation, when Matlab already has <code class="language-plaintext highlighter-rouge">help()</code> and <code class="language-plaintext highlighter-rouge">doc()</code> that work with your helptext?</p>
+
+<p>A few reasons:</p>
+
+<ul>
+  <li>Publishing to the web and intranets.</li>
+  <li>Permanent references.</li>
+  <li>Integrate into other documentation contexts.</li>
+  <li>Integration with exported Live Scripts.</li>
+  <li>View doco without installing the package.</li>
+  <li>I like class docs with the whole class on one page.</li>
+  <li>Some navigation improvements.</li>
+  <li>Advanced shizz.</li>
+</ul>
+
+<h3 id="publishing-to-the-web-and-intranets">Publishing to the web and intranets</h3>
+
+<p>Matlab’s <code class="language-plaintext highlighter-rouge">help()</code> and <code class="language-plaintext highlighter-rouge">doc()</code> functions only let you view the help for what’s currently loaded in your Matlab session. Building your API reference documentation as static files lets you publish it on the web, organizational intranets, and other places. This lets you do some useful things:</p>
+
+<ul>
+  <li>Prospective users or contributors (including MathWorks Tech Support!) can read the documentation before installing the package, to evaluate it, learn about it, or whatever.</li>
+  <li>Search engines like Google can find and index it. Now if you a user has a question about the package, they can google it and maybe get an answer.
+    <ul>
+      <li>Plus, googlejuice: Now your documentation maybe counts toward search engine rankings, online relevance scores, and other stuff like that.</li>
+      <li>Prospective users who don’t even know about your package, but have a relevant use case, might find it by searching.</li>
+    </ul>
+  </li>
+  <li>Organizational intranets can link to the documentation, including version-specific documentation.</li>
+</ul>
+
+<p>When working on MlxShake itself, I published its APIref doco to the web, and was able to just pass around a link to that on internet forums, which helped people understand what the library does, and maybe got some people interested in it.</p>
+
+<h3 id="permanent-references">Permanent references</h3>
+
+<p>There’s some benefit to having a static copy of version-specific documentation for a package, so you can compare its behavior and documentation between versions by looking at the doco for multiple versions side-by-side in a single session (like, in two different browser window). Easy with static generated APIref. Pretty darn hard with the Matlab Help Browser.</p>
+
+<h3 id="integrate-into-other-documentation-contexts">Integrate into other documentation contexts</h3>
+
+<p>If you publish your API Reference documentation to Markdown, HTML, or other formats, you can dump that output into the context of a larger set of documents, like a Jekyll or MkDocs site. Your APIref doco can pick up the styling, navigation tools, and other stuff from that context. That looks nice, and can be functionally useful.</p>
+
+<h3 id="integration-with-exported-live-scripts">Integration with exported Live Scripts</h3>
+
+<p>Remember the whole original purpose of MlxShake, which was to export Matlab Live Scripts to Markdown etc.? If you’re generating your own APIref doco, then you can incorporate those exported Live Scripts in to it. Matlab’s doco tools (currently) have no support for this.</p>
+
+<h3 id="view-without-installing-the-package">View without installing the package</h3>
+
+<p>Whether you publish it to the web or not, this lets people read the documentation without having to install the package or Toolbox into their local Matlab installation. I can see various reasons why that’s good.</p>
+
+<h3 id="i-like-class-docs-with-the-whole-class-on-one-page">I like class docs with the whole class on one page</h3>
+
+<p>Matlab’s <code class="language-plaintext highlighter-rouge">help()</code> and <code class="language-plaintext highlighter-rouge">doc()</code> present the documentation for class’s methods and properties in stuff in a single page per method/property/other-thing. That leads to a lot of back-and-forth navigation in the Help Browser, or typeing in a lot of different <code class="language-plaintext highlighter-rouge">help</code> commands.</p>
+
+<p>I prefer to have my documentation for classes all on one page, like <a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a> does (and I think most Python docs do), with a single big listing of all the properties, methods, events, and other things for the class on one page. Makes it easier to read through the entire thing as a document to get a full understanding of the class; easier to search by hitting Ctrl-F and seeing if something shows up in <em>any</em> of the things for that class; easier to skim the whole thing to get a high-level understanding of the class.</p>
+
+<p>This is a specific case of the broader idea of controlling and customizing the format of the documentation for your package, or the presentation of documentation for other packages. A configurable APIref documentation tool lets you build your doco how you want it, not just the way that the Matlab Help Browser displays it.</p>
+
+<p>Are you building an internal-use copy of the documentation for your own developers that should include stuff in <code class="language-plaintext highlighter-rouge">+internal</code> packages? You can do that! Do you want <code class="language-plaintext highlighter-rouge">Hidden</code> methods and properties to be included in the doco? You can do that!</p>
+
+<p>I also like to have a main index page that lists all the packages and things in a library, and per-package index pages that list all the things in a package, both automatically generated. Matlab doesn’t seem to support the former at all, and I’m not happy with how it does the latter.</p>
+
+<h3 id="advanced-shizz">Advanced shizz</h3>
+
+<p>Matlab’s native <code class="language-plaintext highlighter-rouge">help()</code> and <code class="language-plaintext highlighter-rouge">doc()</code> helptext tools only support a very simple format for helptext. That’s kinda underpowered if you’re writing documentation for complext code.</p>
+
+<p>I’m playing around with fully supporting Markdown, HTML, and other formats in helptext. (Simple Markdown basically works out of the box, so that’s easy.)</p>
+
+<p>I’d also like to do more documentation generation directly from Matlab code itself, instead of just formatting helptext. Things like:</p>
+
+<ul>
+  <li>Including stuff about <code class="language-plaintext highlighter-rouge">arguments</code> block definitions</li>
+  <li>Supporting a “Since:” version indicator</li>
+  <li>Generating dependency graphs, or textual documentation about dependencies</li>
+</ul>
 
 
       <footer class="site-footer">
