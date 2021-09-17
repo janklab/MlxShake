@@ -7,15 +7,8 @@ janklab.mlxshake.internal.LsLatex2MardkownExporter
 
 ## Helptext
 
-```text
-Exports LS-exported LaTeX to Markdown
+Exports LS-exported LaTeX to Markdown.
 
-  Documentation for janklab.mlxshake.internal.LsLatex2MardkownExporter
-     doc janklab.mlxshake.internal.LsLatex2MardkownExporter
-
-
-
-```
 
 ## Class Contents
 
@@ -44,10 +37,9 @@ outMdFile = lslatex2markdown(varargin)
 
 Helptext:
 
-```text
 Convert Live Script LaTeX to Markdown.
 
-outMdFile = obj.lslatex2markdown(inFile, opts)
+    outMdFile = obj.lslatex2markdown(inFile, opts)
 
 Converts a LaTeX-format exported Live Script file to Markdown. Will also
 produce accompanying image files in a subdirectory next to the output .md
@@ -71,7 +63,7 @@ Returns the path to the generated .md file.
 See also:
 MLXEXPORTOPTIONS
 
-```
+
 
 <a name="janklab.mlxshake.internal.LsLatex2MardkownExporter.LsLatex2MardkownExporter"></a>
 ### LsLatex2MardkownExporter
@@ -83,9 +75,8 @@ obj = LsLatex2MardkownExporter()
 
 Helptext:
 
-```text
-Exports LS-exported LaTeX to Markdown
+Exports LS-exported LaTeX to Markdown.
 
-```
+
 
 

@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="mlx2latex - janklab.mlxshake" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/mlx2latex.html","headline":"mlx2latex - janklab.mlxshake","dateModified":"2021-09-15T10:09:42-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/mlx2latex.html","headline":"mlx2latex - janklab.mlxshake","dateModified":"2021-09-17T03:36:26-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=7d83b6bc1740696a1885a39a8206ec226537aca7">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ee8edf0832fc3783752c778c5ca6aa92980c5d06">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -52,28 +52,25 @@
     <main id="content" class="main-content" role="main">
       <h1 id="mlx2latex---janklabmlxshake">mlx2latex - janklab.mlxshake</h1>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Export a Live Script (.mlx) file to LaTeX (.tex).
+<p>Export a Live Script (.mlx) file to LaTeX (.tex).</p>
 
-janklab.mlxshake.mlx2latex(mlxFile, outFile)
+<p>janklab.mlxshake.mlx2latex(mlxFile, outFile)</p>
 
-Exports a Matlab Live Script to LaTeX. This produces a .tex file and an
-accompanying matlab.sty file and &lt;foo&gt;_images directory next to it. Will
-clobber any existing files.
+<p>Exports a Matlab Live Script to LaTeX. This produces a .tex file and an
+accompanying matlab.sty file and <foo>_images directory next to it. Will
+clobber any existing files.</foo></p>
 
-InMlxFile (string) is the path to the input .mlx Live Script file to export.
+<p>InMlxFile (string) is the path to the input .mlx Live Script file to export.
 Files on the Matlab path will not be located; you must provide the full path
-to the input file.
+to the input file.</p>
 
-OutFile (string) is the path to the output .tex file to export. The
-'.tex' extension may be omitted and defaults to '.tex'. You can also use a
+<p>OutFile (string) is the path to the output .tex file to export. The
+‘.tex’ extension may be omitted and defaults to ‘.tex’. You can also use a
 different file extension, and that will be respected, but that might mess things
-up. By default, the output file is the input file with the '.mlx' extension
-replaced by '.tex'.
+up. By default, the output file is the input file with the ‘.mlx’ extension
+replaced by ‘.tex’.</p>
 
-The undocumented return value is for MlxShake's internal use.
-
-
-</code></pre></div></div>
+<p>The undocumented return value is for MlxShake’s internal use.</p>
 
 
 

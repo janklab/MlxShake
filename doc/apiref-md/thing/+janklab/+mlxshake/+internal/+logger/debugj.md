@@ -1,6 +1,5 @@
 # debugj - janklab.mlxshake.internal.logger
 
-```text
 Log a DEBUG level message from caller, using SLF4J style formatting.
 
 logger.debug(msg, varargin)
@@ -13,5 +12,4 @@ Examples:
 logger.debugj('Some message. value1={} value2={}', 'foo', 42);
 
 
-```
 

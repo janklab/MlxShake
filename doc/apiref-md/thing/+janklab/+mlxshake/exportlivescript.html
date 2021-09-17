@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="exportlivescript - janklab.mlxshake" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/exportlivescript.html","headline":"exportlivescript - janklab.mlxshake","dateModified":"2021-09-15T10:09:42-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/exportlivescript.html","headline":"exportlivescript - janklab.mlxshake","dateModified":"2021-09-17T03:36:26-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=7d83b6bc1740696a1885a39a8206ec226537aca7">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ee8edf0832fc3783752c778c5ca6aa92980c5d06">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -52,43 +52,64 @@
     <main id="content" class="main-content" role="main">
       <h1 id="exportlivescript---janklabmlxshake">exportlivescript - janklab.mlxshake</h1>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Export a Matlab Live Script (.mlx) file to Markdown or other formats.
+<p>Export a Matlab Live Script (.mlx) file to Markdown or other formats.</p>
 
-mdFile = janklab.mlxshake.exportlivescript(mlxFile, opts)
-
-Exports a Matlab Live Script .mlx file to Markdown or other presentation file
-formats. Defaults to Markdown format.
-
-Depending on the output format, this may produce multiple output files.
-
-InFile (string) is the path to the input Live Script .mlx file you want to
-export. You may omit the '.mlx' extension.
-
-Opts controls various aspects of exportlivescript's behavior. It is a
-janklab.mlxshake.MlxExportOptions or a cell vector of name/value pairs (which gets
-turned in to an MlxExportOptions). See MlxExportOptions' documentation for the
-available options and their effects.
-
-Useful options:
-
-  format   - The output file format. May be "auto", "markdown", "html", "pdf",
-             "latex", "msword", or maybe more.
-  outFile  - Path to the output file to produce. Defaults to a file of the
-             appropriate extension for the output format in the input
-             directory next to the original input file.
-
-Returns the path to the main exported file. There may be other auxiliary files
-produced; they will be in the folder next to the main output file. What
-exactly they are and what they are named varies based on the output format.
-
-Examples:
-
-    import janklab.mlxshake.exportlivescript
-
-    exportlivescript('foo.mlx');
-
-    
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mdFile = janklab.mlxshake.exportlivescript(mlxFile, opts)
 </code></pre></div></div>
+
+<p>Exports a Matlab Live Script <code class="language-plaintext highlighter-rouge">.mlx</code> file to Markdown or other presentation file
+formats. Defaults to Markdown format.</p>
+
+<p>Depending on the output format, this may produce multiple output files.</p>
+
+<p>InFile (string) is the path to the input Live Script <code class="language-plaintext highlighter-rouge">.mlx</code> file you want to
+export. You may omit the <code class="language-plaintext highlighter-rouge">'.mlx'</code> extension.</p>
+
+<p>Opts controls various aspects of exportlivescript’s behavior. It is a
+<code class="language-plaintext highlighter-rouge">janklab.mlxshake.MlxExportOptions</code> or a cell vector of name/value pairs (which gets
+turned in to an <code class="language-plaintext highlighter-rouge">MlxExportOptions</code>). See <code class="language-plaintext highlighter-rouge">MlxExportOptions</code>’ documentation for the
+available options and their effects.</p>
+
+<p>Useful options:</p>
+
+<ul>
+  <li>format   - The output file format. May be “auto”, “markdown”, “html”, “pdf”,
+           “latex”, “msword”, or maybe more.</li>
+  <li>outFile  - Path to the output file to produce. Defaults to a file of the
+           appropriate extension for the output format in the input
+           directory next to the original input file.</li>
+</ul>
+
+<p>Returns the path to the main exported file. There may be other auxiliary files
+produced; they will be in the folder next to the main output file. What
+exactly they are and what they are named varies based on the output format.</p>
+
+<p>Examples:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import janklab.mlxshake.exportlivescript
+
+exportlivescript('foo.mlx');
+
+% Write to an alternate location
+exportlivescript('foo.mlx', {'outFile','/path/to/bar.md'});
+
+% Export a different format, like PDF
+exportlivescript('foo.mlx', {'format', 'pdf'});
+
+% Output format is automatically selected based on file extension
+exportlivescript('foo.mlx', {'outFile', 'blah.docx'});
+
+% You can also work with the export options as an object
+opts = janklab.mlxshake.MlxExportOptions;
+opts.outFile = '/path/to/bar.md';
+opts.keepIntermediateFiles = true;
+exportlivescript('foo.mlx', opts);
+</code></pre></div></div>
+
+<p>See also:
+MLXEXPORTOPTIONS
+MLX2LATEX
+LSLATEX2MARKDOWN</p>
 
 
 

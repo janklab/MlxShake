@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Dispstr - janklab.mlxshake.internal.logger.internal" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/+logger/+internal/Dispstr.html","headline":"Dispstr - janklab.mlxshake.internal.logger.internal","dateModified":"2021-09-17T01:56:39-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/+logger/+internal/Dispstr.html","headline":"Dispstr - janklab.mlxshake.internal.logger.internal","dateModified":"2021-09-17T03:36:26-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=7d83b6bc1740696a1885a39a8206ec226537aca7">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ee8edf0832fc3783752c778c5ca6aa92980c5d06">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -57,20 +57,13 @@
 
 <h2 id="helptext">Helptext</h2>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>All the dispstr implementation code, wrapped up in a class
+<p>All the dispstr implementation code, wrapped up in a class</p>
 
-We make it a class so that all the definitions can live in a single
+<p>We make it a class so that all the definitions can live in a single
 file, which makes it easy (well, maybe not easy, just not a huge pain in the
 ass) to transform the code to relocate its package, which will hopefully
-allow us to generate "compatters" for internal use by other libraries that
-don't want to take a dependency on dispstr.
-
-  Documentation for janklab.mlxshake.internal.logger.internal.Dispstr
-     doc janklab.mlxshake.internal.logger.internal.Dispstr
-
-
-
-</code></pre></div></div>
+allow us to generate “compatters” for internal use by other libraries that
+don’t want to take a dependency on dispstr.</p>
 
 <h2 id="class-contents">Class Contents</h2>
 
@@ -172,19 +165,17 @@ don't want to take a dependency on dispstr.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SPRINTFV "Vectorized" sprintf
+<p>SPRINTFV “Vectorized” sprintf</p>
 
-out = sprintfv(format, varargin)
+<p>out = sprintfv(format, varargin)</p>
 
-SPRINTFV is an array-oriented form of sprintf that applies a format to array
-inputs and produces a cellstr.
+<p>SPRINTFV is an array-oriented form of sprintf that applies a format to array
+inputs and produces a cellstr.</p>
 
-This is not a high-performance method. It's a convenience wrapper around a
-loop around sprintf().
+<p>This is not a high-performance method. It’s a convenience wrapper around a
+loop around sprintf().</p>
 
-Returns cellstr.
-
-</code></pre></div></div>
+<p>Returns cellstr.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.size2str"></a></p>
 <h3 id="size2str">size2str</h3>
@@ -197,17 +188,15 @@ Returns cellstr.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SIZE2STR Format an array size for display
+<p>SIZE2STR Format an array size for display</p>
 
-out = size2str(sz)
+<p>out = size2str(sz)</p>
 
-Sz is an array of dimension sizes, in the format returned by SIZE.
+<p>Sz is an array of dimension sizes, in the format returned by SIZE.</p>
 
-Examples:
+<p>Examples:</p>
 
-size2str(magic(3))
-
-</code></pre></div></div>
+<p>size2str(magic(3))</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintTabular_generic"></a></p>
 <h3 id="prettyprinttabular_generic">prettyprintTabular_generic</h3>
@@ -220,9 +209,7 @@ size2str(magic(3))
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A generic tabular pretty-print that can be used for tabulars or relations
-
-</code></pre></div></div>
+<p>A generic tabular pretty-print that can be used for tabulars or relations</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintTabular"></a></p>
 <h3 id="prettyprinttabular">prettyprintTabular</h3>
@@ -235,9 +222,7 @@ size2str(magic(3))
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRETTYPRINT_TABULAR Tabular implementation of prettyprint
-
-</code></pre></div></div>
+<p>PRETTYPRINT_TABULAR Tabular implementation of prettyprint</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintStruct"></a></p>
 <h3 id="prettyprintstruct">prettyprintStruct</h3>
@@ -250,9 +235,7 @@ size2str(magic(3))
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRETTYPRINT_STRUCT struct implementation of prettyprint
-
-</code></pre></div></div>
+<p>PRETTYPRINT_STRUCT struct implementation of prettyprint</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintCell"></a></p>
 <h3 id="prettyprintcell">prettyprintCell</h3>
@@ -265,9 +248,7 @@ size2str(magic(3))
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRETTYPRINT_CELL Cell implementation of prettyprint
-
-</code></pre></div></div>
+<p>PRETTYPRINT_CELL Cell implementation of prettyprint</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintMatrix"></a></p>
 <h3 id="prettyprintmatrix">prettyprintMatrix</h3>
@@ -280,14 +261,12 @@ size2str(magic(3))
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pretty-print a matrix of arbitrary display strings
+<p>Pretty-print a matrix of arbitrary display strings</p>
 
-out = prettyprintMatrix(strs)
+<p>out = prettyprintMatrix(strs)</p>
 
-strs is a matrix of strings which are already converted to their display
-form.
-
-</code></pre></div></div>
+<p>strs is a matrix of strings which are already converted to their display
+form.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintArray"></a></p>
 <h3 id="prettyprintarray">prettyprintArray</h3>
@@ -300,13 +279,11 @@ form.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRETTYPRINT_ARRAY Pretty-print an array from dispstrs
+<p>PRETTYPRINT_ARRAY Pretty-print an array from dispstrs</p>
 
-out = prettyprintArray(strs)
+<p>out = prettyprintArray(strs)</p>
 
-strs (string) is an array of display strings of any size.
-
-</code></pre></div></div>
+<p>strs (string) is an array of display strings of any size.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.num2cellstr"></a></p>
 <h3 id="num2cellstr">num2cellstr</h3>
@@ -319,9 +296,7 @@ strs (string) is an array of display strings of any size.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NUM2CELLSTR Like num2str, but return cellstr of individual number strings
-
-</code></pre></div></div>
+<p>NUM2CELLSTR Like num2str, but return cellstr of individual number strings</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.mycombvec"></a></p>
 <h3 id="mycombvec">mycombvec</h3>
@@ -334,11 +309,9 @@ strs (string) is an array of display strings of any size.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MYCOMBVEC All combinations of values from vectors
+<p>MYCOMBVEC All combinations of values from vectors</p>
 
-This is similar to Matlab's combvec, but has a different signature.
-
-</code></pre></div></div>
+<p>This is similar to Matlab’s combvec, but has a different signature.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier"></a></p>
 <h3 id="iserroridentifier">isErrorIdentifier</h3>
@@ -351,10 +324,8 @@ This is similar to Matlab's combvec, but has a different signature.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier is a function.
-  out = isErrorIdentifier(str)
-
-</code></pre></div></div>
+<p>janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier is a function.
+  out = isErrorIdentifier(str)</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispc"></a></p>
 <h3 id="dispc">dispc</h3>
@@ -367,9 +338,7 @@ This is similar to Matlab's combvec, but has a different signature.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISPC Display, with capture
-
-</code></pre></div></div>
+<p>DISPC Display, with capture</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct"></a></p>
 <h3 id="dispstruct">dispStruct</h3>
@@ -382,10 +351,8 @@ This is similar to Matlab's combvec, but has a different signature.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct is a function.
-  dispStruct(x)
-
-</code></pre></div></div>
+<p>janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct is a function.
+  dispStruct(x)</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispCell"></a></p>
 <h3 id="dispcell">dispCell</h3>
@@ -398,10 +365,8 @@ This is similar to Matlab's combvec, but has a different signature.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.dispCell is a function.
-  dispCell(c)
-
-</code></pre></div></div>
+<p>janklab.mlxshake.internal.logger.internal.Dispstr.dispCell is a function.
+  dispCell(c)</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.display"></a></p>
 <h3 id="display">display</h3>
@@ -414,23 +379,21 @@ This is similar to Matlab's combvec, but has a different signature.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISPLAY Display array.
+<p>DISPLAY Display array.
   DISPLAY(X) is called for the object X when the semicolon is not used
-  to terminate a statement. 
+  to terminate a statement.</p>
 
-  For example,
+<p>For example,
     X = datetime(2014,1:5,1)
   calls DISPLAY(X) while
     X = datetime(2014,1:5,1);
-  does not.
+  does not.</p>
 
-  A typical implementation of DISPLAY calls DISP to do most of the work.
+<p>A typical implementation of DISPLAY calls DISP to do most of the work.
   To customize the display of objects, overload the DISP function.
-  Note that DISP does not display empty arrays.
-  
-  See also DISP, matlab.mixin.CustomDisplay, EVALC,
+  Note that DISP does not display empty arrays.</p>
 
-</code></pre></div></div>
+<p>See also DISP, matlab.mixin.CustomDisplay, EVALC,</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.disp"></a></p>
 <h3 id="disp">disp</h3>
@@ -443,17 +406,15 @@ This is similar to Matlab's combvec, but has a different signature.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISP Display array.
+<p>DISP Display array.
   DISP(X) displays array X without printing the array name or 
   additional description information such as the size and class name.
-  In all other ways it's the same as leaving the semicolon off an
-  expression except that nothing is shown for empty arrays.
+  In all other ways it’s the same as leaving the semicolon off an
+  expression except that nothing is shown for empty arrays.</p>
 
-  If X is a string or character array, the text is displayed.
+<p>If X is a string or character array, the text is displayed.</p>
 
-  See also FPRINTF, SPRINTF, INT2STR, NUM2STR, RATS, FORMAT, DETAILS.
-
-</code></pre></div></div>
+<p>See also FPRINTF, SPRINTF, INT2STR, NUM2STR, RATS, FORMAT, DETAILS.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf"></a></p>
 <h3 id="convertargsforprintf">convertArgsForPrintf</h3>
@@ -466,10 +427,8 @@ This is similar to Matlab's combvec, but has a different signature.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf is a function.
-  out = convertArgsForPrintf(args)
-
-</code></pre></div></div>
+<p>janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf is a function.
+  out = convertArgsForPrintf(args)</p>
 
 <p><a name="janklab.mlxshake.internal.logger.internal.Dispstr.Dispstr"></a></p>
 <h3 id="dispstr">Dispstr</h3>
@@ -480,15 +439,13 @@ This is similar to Matlab's combvec, but has a different signature.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>All the dispstr implementation code, wrapped up in a class
+<p>All the dispstr implementation code, wrapped up in a class</p>
 
-We make it a class so that all the definitions can live in a single
+<p>We make it a class so that all the definitions can live in a single
 file, which makes it easy (well, maybe not easy, just not a huge pain in the
 ass) to transform the code to relocate its package, which will hopefully
-allow us to generate "compatters" for internal use by other libraries that
-don't want to take a dependency on dispstr.
-
-</code></pre></div></div>
+allow us to generate “compatters” for internal use by other libraries that
+don’t want to take a dependency on dispstr.</p>
 
 
 

@@ -11,15 +11,8 @@ janklab.mlxshake.internal.ApirefMarkdownGenerator
 
 ## Helptext
 
-```text
 Generates Markdown format output for API Reference doco.
 
-  Documentation for janklab.mlxshake.internal.ApirefMarkdownGenerator
-     doc janklab.mlxshake.internal.ApirefMarkdownGenerator
-
-
-
-```
 
 ## Class Contents
 
@@ -44,6 +37,7 @@ Generates Markdown format output for API Reference doco.
 | [generatePackageDoc](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generatePackageDoc) | Generate doco files for a package. |
 | [generateIndex](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateIndex) | Generate the main index files for the full code base. |
 | [thingHtmlFileRelPath](#janklab.mlxshake.internal.ApirefMarkdownGenerator.thingHtmlFileRelPath) | janklab.mlxshake.internal.ApirefMarkdownGenerator/thingHtmlFileRelPath is a function. |
+| [formatHelptext](#janklab.mlxshake.internal.ApirefMarkdownGenerator.formatHelptext) |  |
 | [generateForMyFormat](#janklab.mlxshake.internal.ApirefMarkdownGenerator.generateForMyFormat) | Format-specific generation implementation. |
 | [ApirefMarkdownGenerator](#janklab.mlxshake.internal.ApirefMarkdownGenerator.ApirefMarkdownGenerator) | Constructor. |
 
@@ -60,45 +54,45 @@ Generates Markdown format output for API Reference doco.
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.pkgsDir"></a>
 ### pkgsDir
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.thingsDir"></a>
 ### thingsDir
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.pkgInfo"></a>
 ### pkgInfo
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.uPackages"></a>
 ### uPackages
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.pkgRelMdFiles"></a>
 ### pkgRelMdFiles
@@ -109,9 +103,9 @@ Default Value: `strings(0,0)`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.thingRelMdFiles"></a>
 ### thingRelMdFiles
@@ -122,9 +116,9 @@ Default Value: `strings(0,0)`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 
 ## Methods
@@ -139,10 +133,9 @@ generateClassDoc(this, rec)
 
 Helptext:
 
-```text
 Generate doco file for a class.
 
-```
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generateFunctionDoc"></a>
 ### generateFunctionDoc
@@ -154,10 +147,9 @@ generateFunctionDoc(this, pkg, name, qname, mFilePath)
 
 Helptext:
 
-```text
 Generate doco file for a function.
 
-```
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generatePackageDoc"></a>
 ### generatePackageDoc
@@ -169,13 +161,12 @@ generatePackageDoc(this, rec)
 
 Helptext:
 
-```text
 Generate doco files for a package.
 
 This does the package-level stuff only; not the functions and
 classes contained within it.
 
-```
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generateIndex"></a>
 ### generateIndex
@@ -187,10 +178,9 @@ generateIndex(this)
 
 Helptext:
 
-```text
 Generate the main index files for the full code base.
 
-```
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.thingHtmlFileRelPath"></a>
 ### thingHtmlFileRelPath
@@ -202,11 +192,26 @@ out = thingHtmlFileRelPath(this, thing)
 
 Helptext:
 
-```text
 janklab.mlxshake.internal.ApirefMarkdownGenerator/thingHtmlFileRelPath is a function.
   out = thingHtmlFileRelPath(this, thing)
 
+
+
+<a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.formatHelptext"></a>
+### formatHelptext
+
+Signature:
 ```
+out = formatHelptext(varargin)
+```
+
+Helptext:
+
+
+helptextStr is the *raw* helptext. Will still have leading spaces
+and whatnot.
+
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.generateForMyFormat"></a>
 ### generateForMyFormat
@@ -218,7 +223,6 @@ generateForMyFormat(this)
 
 Helptext:
 
-```text
 Format-specific generation implementation.
 
 Generates:
@@ -226,7 +230,7 @@ Generates:
   * stuff/<package>.md for each package
   * stuff/<thing>.md for each class or function
 
-```
+
 
 <a name="janklab.mlxshake.internal.ApirefMarkdownGenerator.ApirefMarkdownGenerator"></a>
 ### ApirefMarkdownGenerator
@@ -238,9 +242,8 @@ obj = ApirefMarkdownGenerator()
 
 Helptext:
 
-```text
 Generates Markdown format output for API Reference doco.
 
-```
+
 
 

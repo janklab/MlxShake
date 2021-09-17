@@ -6,15 +6,8 @@ janklab.mlxshake.internal.MlxShellCommandOpts
 
 ## Helptext
 
-```text
-Options to the mlxshake shell command
+Options to the mlxshake shell command.
 
-  Documentation for janklab.mlxshake.internal.MlxShellCommandOpts
-     doc janklab.mlxshake.internal.MlxShellCommandOpts
-
-
-
-```
 
 ## Class Contents
 
@@ -46,9 +39,9 @@ Default Value: `string(missing)`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.outFile"></a>
 ### outFile
@@ -59,9 +52,9 @@ Default Value: `string(missing)`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.format"></a>
 ### format
@@ -72,9 +65,9 @@ Default Value: `"auto"`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.help"></a>
 ### help
@@ -85,9 +78,9 @@ Default Value: `false`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.nomention"></a>
 ### nomention
@@ -98,9 +91,9 @@ Default Value: `false`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.MlxShellCommandOpts.equations"></a>
 ### equations
@@ -111,9 +104,9 @@ Default Value: `string(missing)`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 
 ## Methods
@@ -128,9 +121,8 @@ obj = MlxShellCommandOpts()
 
 Helptext:
 
-```text
-Options to the mlxshake shell command
+Options to the mlxshake shell command.
 
-```
+
 
 

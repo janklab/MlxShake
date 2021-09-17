@@ -6,7 +6,6 @@ janklab.mlxshake.MlxExportOptions
 
 ## Helptext
 
-```text
 Options to control behavior of Live Script export.
 
 All the options to control the behavior of exportlivescript and
@@ -20,12 +19,6 @@ be converted to an ExportOptions.
 See also:
 EXPORTLIVESCRIPT
 
-  Documentation for janklab.mlxshake.MlxExportOptions
-     doc janklab.mlxshake.MlxExportOptions
-
-
-
-```
 
 ## Class Contents
 
@@ -61,9 +54,9 @@ Default Value: `["auto" "markdown" "html" "pdf" "latex" "msword"]`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.MlxExportOptions.format"></a>
 ### format
@@ -74,9 +67,9 @@ Default Value: `"auto"`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.MlxExportOptions.outFile"></a>
 ### outFile
@@ -87,9 +80,9 @@ Default Value: `string(missing)`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.MlxExportOptions.markdownPublishTarget"></a>
 ### markdownPublishTarget
@@ -100,9 +93,9 @@ Default Value: `"gh-pages"`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.MlxExportOptions.png2jpeg"></a>
 ### png2jpeg
@@ -113,9 +106,9 @@ Default Value: `false`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.MlxExportOptions.tableMaxCellContentLength"></a>
 ### tableMaxCellContentLength
@@ -126,9 +119,9 @@ Default Value: `20`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.MlxExportOptions.addMention"></a>
 ### addMention
@@ -139,9 +132,9 @@ Default Value: `true`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.MlxExportOptions.tempDir"></a>
 ### tempDir
@@ -152,9 +145,9 @@ Default Value: `true`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.MlxExportOptions.keepIntermediateFiles"></a>
 ### keepIntermediateFiles
@@ -165,9 +158,9 @@ Default Value: `false`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.MlxExportOptions.grabEquationImages"></a>
 ### grabEquationImages
@@ -178,9 +171,9 @@ Default Value: `true`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 
 ## Methods
@@ -195,17 +188,16 @@ this = MlxExportOptions(arg)
 
 Helptext:
 
-```text
 Construct a new object.
 
-obj = janklab.mlxshake.MlxExportOptions
-obj = janklab.mlxshake.MlxExportOptions(struct(...))
-obj = janklab.mlxshake.MlxExportOptions({'property',value, ...})
+    obj = janklab.mlxshake.MlxExportOptions
+    obj = janklab.mlxshake.MlxExportOptions(struct(...))
+    obj = janklab.mlxshake.MlxExportOptions({'property',value, ...})
 
 You may pass in a struct or cell vector of name/value pairs, where
 the names are any property on MlxExportOptions. Names that are not
 properties of MlxExportOptions cause an error.
 
-```
+
 
 

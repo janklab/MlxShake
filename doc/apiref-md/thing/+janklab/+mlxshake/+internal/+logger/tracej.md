@@ -1,6 +1,5 @@
 # tracej - janklab.mlxshake.internal.logger
 
-```text
 Log a TRACE level message from caller, using SLF4J style formatting.
 
 logger.tracej(msg, varargin)
@@ -13,5 +12,4 @@ Examples:
 logger.tracej('Some message. value1={} value2={}', 'foo', 42);
 
 
-```
 

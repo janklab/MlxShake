@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Logger - janklab.mlxshake.internal.logger" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/+logger/Logger.html","headline":"Logger - janklab.mlxshake.internal.logger","dateModified":"2021-09-17T01:56:39-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/+logger/Logger.html","headline":"Logger - janklab.mlxshake.internal.logger","dateModified":"2021-09-17T03:36:26-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=7d83b6bc1740696a1885a39a8206ec226537aca7">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ee8edf0832fc3783752c778c5ca6aa92980c5d06">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -57,22 +57,22 @@
 
 <h2 id="helptext">Helptext</h2>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LOGGER Main entry point through which logging happens
+<p>LOGGER Main entry point through which logging happens</p>
 
-The Logger class provides method calls for performing logging, and the ability
+<p>The Logger class provides method calls for performing logging, and the ability
 to look up loggers by name. This is the main entry point through which all
-janklab.mlxshake.logger logging happens.
+janklab.mlxshake.logger logging happens.</p>
 
-Usually you don't need to interact with this class directly, but can just call
+<p>Usually you don’t need to interact with this class directly, but can just call
 one of the error(), warn(), info(), debug(), or trace() functions in the logger
-namespace. Those will log messages using the calling class's name as the name
-of the logger. Also, don't call the constructor for this class. Use the static
-getLogger() method instead.
+namespace. Those will log messages using the calling class’s name as the name
+of the logger. Also, don’t call the constructor for this class. Use the static
+getLogger() method instead.</p>
 
-Use this class directly if you want to customize the names of the loggers to
-which logging is directed.
+<p>Use this class directly if you want to customize the names of the loggers to
+which logging is directed.</p>
 
-Each of the logging methods - error(), warn(), info(), debug(), and
+<p>Each of the logging methods - error(), warn(), info(), debug(), and
 trace() - takes a sprintf()-style signature, with a format string as
 the first argument, and substitution values as the remaining
 arguments.
@@ -80,20 +80,25 @@ arguments.
 You can also insert an MException object at the beginning of the
 argument list to have its message and stack trace included in the log
 message.
-   janklab.mlxshake.internal.logger.warn(exception, format, varargin)
+   janklab.mlxshake.internal.logger.warn(exception, format, varargin)</p>
 
-See also:
+<p>See also:
 janklab.mlxshake.internal.logger.error
 janklab.mlxshake.internal.logger.warn
 janklab.mlxshake.internal.logger.info
 janklab.mlxshake.internal.logger.debug
-janklab.mlxshake.internal.logger.trace
+janklab.mlxshake.internal.logger.trace</p>
 
-Examples:
+<p>Examples:</p>
 
-log = mlxshake.logger.Logger.getLogger('foo.bar.FooBar');
-log.info('Hello, world! Running on Matlab 
-</code></pre></div></div>
+<p>log = mlxshake.logger.Logger.getLogger(‘foo.bar.FooBar’);
+log.info(‘Hello, world! Running on Matlab %s’, version);</p>
+
+<p>try
+    some_operation_that_could_go_wrong();
+catch err
+    log.warn(err, ‘Caught exception during processing’)
+end</p>
 
 <h2 id="class-contents">Class Contents</h2>
 
@@ -226,8 +231,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
-</code></pre></div></div>
+<p>No helptext available.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.name"></a></p>
 <h3 id="name">name</h3>
@@ -236,8 +240,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
-</code></pre></div></div>
+<p>No helptext available.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.enabledLevels"></a></p>
 <h3 id="enabledlevels">enabledLevels</h3>
@@ -246,8 +249,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
-</code></pre></div></div>
+<p>No helptext available.</p>
 
 <h2 id="methods-1">Methods</h2>
 
@@ -262,9 +264,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Gets the named Logger
-
-</code></pre></div></div>
+<p>Gets the named Logger</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.listEnabledLevels"></a></p>
 <h3 id="listenabledlevels">listEnabledLevels</h3>
@@ -275,9 +275,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>List the levels that are enabled for this logger.
-
-</code></pre></div></div>
+<p>List the levels that are enabled for this logger.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.isTraceEnabled"></a></p>
 <h3 id="istraceenabled">isTraceEnabled</h3>
@@ -288,9 +286,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True if TRACE level logging is enabled for this logger.
-
-</code></pre></div></div>
+<p>True if TRACE level logging is enabled for this logger.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.isDebugEnabled"></a></p>
 <h3 id="isdebugenabled">isDebugEnabled</h3>
@@ -301,9 +297,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True if DEBUG level logging is enabled for this logger.
-
-</code></pre></div></div>
+<p>True if DEBUG level logging is enabled for this logger.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.isInfoEnabled"></a></p>
 <h3 id="isinfoenabled">isInfoEnabled</h3>
@@ -314,9 +308,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True if INFO level logging is enabled for this logger.
-
-</code></pre></div></div>
+<p>True if INFO level logging is enabled for this logger.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.isWarnEnabled"></a></p>
 <h3 id="iswarnenabled">isWarnEnabled</h3>
@@ -327,9 +319,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True if WARN level logging is enabled for this logger.
-
-</code></pre></div></div>
+<p>True if WARN level logging is enabled for this logger.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.isErrorEnabled"></a></p>
 <h3 id="iserrorenabled">isErrorEnabled</h3>
@@ -340,9 +330,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True if ERROR level logging is enabled for this logger.
-
-</code></pre></div></div>
+<p>True if ERROR level logging is enabled for this logger.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.tracej"></a></p>
 <h3 id="tracej">tracej</h3>
@@ -353,9 +341,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the TRACE level, using SLFJ formatting.
-
-</code></pre></div></div>
+<p>Log a message at the TRACE level, using SLFJ formatting.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.debugj"></a></p>
 <h3 id="debugj">debugj</h3>
@@ -366,9 +352,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the DEBUG level, using SLFJ formatting.
-
-</code></pre></div></div>
+<p>Log a message at the DEBUG level, using SLFJ formatting.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.infoj"></a></p>
 <h3 id="infoj">infoj</h3>
@@ -379,9 +363,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the INFO level, using SLFJ formatting.
-
-</code></pre></div></div>
+<p>Log a message at the INFO level, using SLFJ formatting.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.warnj"></a></p>
 <h3 id="warnj">warnj</h3>
@@ -392,9 +374,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the WARN level, using SLFJ formatting.
-
-</code></pre></div></div>
+<p>Log a message at the WARN level, using SLFJ formatting.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.errorj"></a></p>
 <h3 id="errorj">errorj</h3>
@@ -405,9 +385,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the ERROR level, using SLFJ formatting.
-
-</code></pre></div></div>
+<p>Log a message at the ERROR level, using SLFJ formatting.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.trace"></a></p>
 <h3 id="trace">trace</h3>
@@ -418,9 +396,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the TRACE level.
-
-</code></pre></div></div>
+<p>Log a message at the TRACE level.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.debug"></a></p>
 <h3 id="debug">debug</h3>
@@ -431,9 +407,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the DEBUG level.
-
-</code></pre></div></div>
+<p>Log a message at the DEBUG level.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.info"></a></p>
 <h3 id="info">info</h3>
@@ -444,9 +418,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the INFO level.
-
-</code></pre></div></div>
+<p>Log a message at the INFO level.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.warn"></a></p>
 <h3 id="warn">warn</h3>
@@ -457,9 +429,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the WARN level.
-
-</code></pre></div></div>
+<p>Log a message at the WARN level.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.error"></a></p>
 <h3 id="error">error</h3>
@@ -470,9 +440,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Log a message at the ERROR level.
-
-</code></pre></div></div>
+<p>Log a message at the ERROR level.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.dispstrs"></a></p>
 <h3 id="dispstrs">dispstrs</h3>
@@ -483,9 +451,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISPSTRS Custom object display strings.
-
-</code></pre></div></div>
+<p>DISPSTRS Custom object display strings.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.dispstr"></a></p>
 <h3 id="dispstr">dispstr</h3>
@@ -496,9 +462,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISPSTR Custom object display string.
-
-</code></pre></div></div>
+<p>DISPSTR Custom object display string.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.disp"></a></p>
 <h3 id="disp">disp</h3>
@@ -509,9 +473,7 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISP Custom object display.
-
-</code></pre></div></div>
+<p>DISP Custom object display.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Logger.Logger"></a></p>
 <h3 id="logger">Logger</h3>
@@ -522,11 +484,9 @@ log.info('Hello, world! Running on Matlab
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LOGGER Build a new logger object around an SLF4J Logger object.
+<p>LOGGER Build a new logger object around an SLF4J Logger object.</p>
 
-Generally, you shouldn't call this. Use logger.Logger.getLogger() instead.
-
-</code></pre></div></div>
+<p>Generally, you shouldn’t call this. Use logger.Logger.getLogger() instead.</p>
 
 
 

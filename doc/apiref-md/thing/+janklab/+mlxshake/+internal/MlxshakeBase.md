@@ -6,8 +6,7 @@ janklab.mlxshake.internal.MlxshakeBase
 
 ## Helptext
 
-```text
-This class is a trick to support automatic library initialization
+This class is a trick to support automatic library initialization.
 
 To use it, have all your classes that depend on the library being
 initialized inherit from this or ExportmlxBaseHandle.
@@ -15,12 +14,6 @@ initialized inherit from this or ExportmlxBaseHandle.
 See also:
 MLXSHAKEBASEHANDLE
 
-  Documentation for janklab.mlxshake.internal.MlxshakeBase
-     doc janklab.mlxshake.internal.MlxshakeBase
-
-
-
-```
 
 ## Class Contents
 
@@ -42,8 +35,7 @@ obj = MlxshakeBase()
 
 Helptext:
 
-```text
-This class is a trick to support automatic library initialization
+This class is a trick to support automatic library initialization.
 
 To use it, have all your classes that depend on the library being
 initialized inherit from this or ExportmlxBaseHandle.
@@ -51,6 +43,6 @@ initialized inherit from this or ExportmlxBaseHandle.
 See also:
 MLXSHAKEBASEHANDLE
 
-```
+
 
 

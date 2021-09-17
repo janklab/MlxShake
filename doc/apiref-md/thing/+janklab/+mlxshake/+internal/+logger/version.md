@@ -1,6 +1,5 @@
 # version - janklab.mlxshake.internal.logger
 
-```text
 VERSION Get version info for SLF4M
 
 logger.version
@@ -15,5 +14,4 @@ If return value is captured, returns the version of the SLF4M library as
 a char vector.
 
 
-```
 

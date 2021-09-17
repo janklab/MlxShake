@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="globals - janklab.mlxshake" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/globals.html","headline":"globals - janklab.mlxshake","dateModified":"2021-09-17T02:48:00-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/globals.html","headline":"globals - janklab.mlxshake","dateModified":"2021-09-17T03:36:26-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=7d83b6bc1740696a1885a39a8206ec226537aca7">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ee8edf0832fc3783752c778c5ca6aa92980c5d06">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -57,24 +57,19 @@
 
 <h2 id="helptext">Helptext</h2>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Global library properties and settings for MlxShake.
+<p>Global library properties and settings for MlxShake.</p>
 
-Note that if you want to change the settings, you can't do this:
+<p>Note that if you want to change the settings, you can’t do this:</p>
 
-   janklab.mlxshake.globals.settings.someSetting = 42;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.globals.settings.someSetting = 42;
+</code></pre></div></div>
 
-That will break due to how Matlab Constant properties work. Instead, you need
+<p>That will break due to how Matlab Constant properties work. Instead, you need
 to first grab the Settings object and store it in a variable, and then work
-on that:
+on that:</p>
 
-   s = janklab.mlxshake.globals.settings;
-   s.someSetting = 42;
-
-  Documentation for janklab.mlxshake.globals
-     doc janklab.mlxshake.globals
-
-
-
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s = janklab.mlxshake.globals.settings;
+s.someSetting = 42;
 </code></pre></div></div>
 
 <h2 id="class-contents">Class Contents</h2>
@@ -140,8 +135,7 @@ on that:
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
-</code></pre></div></div>
+<p>No helptext available.</p>
 
 <p><a name="janklab.mlxshake.globals.settings"></a></p>
 <h3 id="settings">settings</h3>
@@ -152,8 +146,7 @@ on that:
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No helptext available.
-</code></pre></div></div>
+<p>No helptext available.</p>
 
 <h2 id="methods-1">Methods</h2>
 
@@ -168,30 +161,33 @@ on that:
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Get or set logging level for the mlxshake package.
+<p>Get or set logging level for the mlxshake package.</p>
 
-out = janklab.mlxshake.globals.loglevel()
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>out = janklab.mlxshake.globals.loglevel()
 oldLevel = janklab.mlxshake.globals.loglevel(newLevel)
-
-This is a convenience method that provides a simplified interface
-on top of MlxShake's internal logging tools. It does not support
-all functionality of level control. This is intentional, to keep
-the interface simple.
-
-NewLevel (string) is the logging level to set at the root
-janklab.mlxshake package. This should control all logging done by
-MlxShake. Valid values are:
-   "info"  - The regular, concise and quiet logging.
-   "debug" - More detailed logging, with progress messages.
-
-The return value is the currently-set logging level. Possible
-values are:
-   "info"
-   "debug"
-   "custom" - Means the logging configuration is in a weird state
-       that this function is not prepared to handle.
-
 </code></pre></div></div>
+
+<p>This is a convenience method that provides a simplified interface
+on top of MlxShake’s internal logging tools. It does not support
+all functionality of level control. This is intentional, to keep
+the interface simple.</p>
+
+<p>NewLevel (string) is the logging level to set at the root
+janklab.mlxshake package. This should control all logging done by
+MlxShake. Valid values are:</p>
+<ul>
+  <li>“info”  - The regular, concise and quiet logging.</li>
+  <li>“debug” - More detailed logging, with progress messages.</li>
+</ul>
+
+<p>The return value is the currently-set logging level. Possible
+values are:</p>
+<ul>
+  <li>“info”</li>
+  <li>“debug”</li>
+  <li>“custom” - Means the logging configuration is in a weird state
+     that this function is not prepared to handle.</li>
+</ul>
 
 <p><a name="janklab.mlxshake.globals.initialize"></a></p>
 <h3 id="initialize">initialize</h3>
@@ -204,9 +200,7 @@ values are:
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Initialize this library/package
-
-</code></pre></div></div>
+<p>Initialize this library/package.</p>
 
 <p><a name="janklab.mlxshake.globals.version"></a></p>
 <h3 id="version">version</h3>
@@ -219,11 +213,9 @@ values are:
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The version of the MlxShake library
+<p>The version of the MlxShake library.</p>
 
-Returns a string.
-
-</code></pre></div></div>
+<p>Returns a string.</p>
 
 <p><a name="janklab.mlxshake.globals.globals"></a></p>
 <h3 id="globals">globals</h3>
@@ -234,19 +226,19 @@ Returns a string.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Global library properties and settings for MlxShake.
+<p>Global library properties and settings for MlxShake.</p>
 
-Note that if you want to change the settings, you can't do this:
+<p>Note that if you want to change the settings, you can’t do this:</p>
 
-   janklab.mlxshake.globals.settings.someSetting = 42;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.globals.settings.someSetting = 42;
+</code></pre></div></div>
 
-That will break due to how Matlab Constant properties work. Instead, you need
+<p>That will break due to how Matlab Constant properties work. Instead, you need
 to first grab the Settings object and store it in a variable, and then work
-on that:
+on that:</p>
 
-   s = janklab.mlxshake.globals.settings;
-   s.someSetting = 42;
-
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s = janklab.mlxshake.globals.settings;
+s.someSetting = 42;
 </code></pre></div></div>
 
 

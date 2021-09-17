@@ -1,6 +1,5 @@
 # errorj - janklab.mlxshake.internal.logger
 
-```text
 Log an ERROR level message from caller, using SLF4J style formatting.
 
 logger.errorj(msg, varargin)
@@ -13,5 +12,4 @@ Examples:
 logger.errorj('Some message. value1={} value2={}', 'foo', 42);
 
 
-```
 

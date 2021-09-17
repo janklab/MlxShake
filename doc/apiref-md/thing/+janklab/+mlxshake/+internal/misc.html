@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="misc - janklab.mlxshake.internal" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/misc.html","headline":"misc - janklab.mlxshake.internal","dateModified":"2021-09-17T01:56:39-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/misc.html","headline":"misc - janklab.mlxshake.internal","dateModified":"2021-09-17T03:36:26-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=7d83b6bc1740696a1885a39a8206ec226537aca7">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ee8edf0832fc3783752c778c5ca6aa92980c5d06">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -57,16 +57,9 @@
 
 <h2 id="helptext">Helptext</h2>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Miscellaneous utilities
+<p>Miscellaneous utilities not for importing.</p>
 
-The ones in this class are ones you typically wouldn't want to import.
-
-  Documentation for janklab.mlxshake.internal.misc
-     doc janklab.mlxshake.internal.misc
-
-
-
-</code></pre></div></div>
+<p>The ones in this class are ones you typically wouldn’t want to import.</p>
 
 <h2 id="class-contents">Class Contents</h2>
 
@@ -112,10 +105,7 @@ The ones in this class are ones you typically wouldn't want to import.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.misc.setpackageappdata is a function.
-  setpackageappdata(key, value)
-
-</code></pre></div></div>
+<p>Set an appdata item for the MlxShake package.</p>
 
 <p><a name="janklab.mlxshake.internal.misc.getpackageappdata"></a></p>
 <h3 id="getpackageappdata">getpackageappdata</h3>
@@ -128,10 +118,7 @@ The ones in this class are ones you typically wouldn't want to import.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.misc.getpackageappdata is a function.
-  out = getpackageappdata(key)
-
-</code></pre></div></div>
+<p>Get an appdata item for the MlxShake package.</p>
 
 <p><a name="janklab.mlxshake.internal.misc.mkdir"></a></p>
 <h3 id="mkdir">mkdir</h3>
@@ -144,42 +131,7 @@ The ones in this class are ones you typically wouldn't want to import.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MKDIR Make new directory.
-  [SUCCESS,MESSAGE,MESSAGEID] = MKDIR(PARENTDIR,NEWDIR) makes a new
-  directory, NEWDIR, under the parent, PARENTDIR. While PARENTDIR may be
-  an absolute path, NEWDIR must be a relative path. When NEWDIR exists,
-  MKDIR returns SUCCESS = 1.  If the number of output arguments is 1 or
-  less, it also issues a warning that the directory already exists.
-
-  [SUCCESS,MESSAGE,MESSAGEID] = MKDIR(NEWDIR) creates the directory
-  NEWDIR in the current directory, if NEWDIR represents a relative path.
-  Otherwise, NEWDIR represents an absolute path and MKDIR attempts to
-  create the absolute directory NEWDIR in the root of the current volume.
-  An absolute path starts in any one of a Windows drive letter, a UNC
-  path '\' or a UNIX '/' character. 
-
-  INPUT PARAMETERS:
-      PARENTDIR: Character vector or string scalar 
-                 specifying the parent directory. See NOTE 1.
-      NEWDIR:    Character vector or string scalar specifying the new 
-                 directory. 
-
-  RETURN PARAMETERS:
-      SUCCESS:   Logical scalar, defining the outcome of MKDIR. 
-                 1 : MKDIR executed successfully. 0 : an error occurred.
-      MESSAGE:   Character vector, defining the error or warning message. 
-                 empty character array : MKDIR executed successfully. message :
-                 an error or warning message, as applicable.
-      MESSAGEID: Character vector, defining the error or warning identifier.
-                 empty character array: MKDIR executed successfully. message id:
-                 the MATLAB error or warning message identifier (see
-                 ERROR, MException, WARNING, LASTWARN).
-
-  NOTE 1: UNC paths are supported. 
-
-  See also CD, COPYFILE, DELETE, DIR, FILEATTRIB, MOVEFILE, RMDIR.
-
-</code></pre></div></div>
+<p>Create a directory, raising an error on failure.</p>
 
 <p><a name="janklab.mlxshake.internal.misc.misc"></a></p>
 <h3 id="misc">misc</h3>
@@ -190,11 +142,9 @@ The ones in this class are ones you typically wouldn't want to import.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Miscellaneous utilities
+<p>Miscellaneous utilities not for importing.</p>
 
-The ones in this class are ones you typically wouldn't want to import.
-
-</code></pre></div></div>
+<p>The ones in this class are ones you typically wouldn’t want to import.</p>
 
 
 

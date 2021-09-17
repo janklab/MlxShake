@@ -39,15 +39,8 @@ janklab.mlxshake.test.HelloWorldTest
 
 ## Helptext
 
-```text
 janklab.mlxshake.test.HelloWorldTest is a class.
 
-  Documentation for janklab.mlxshake.test.HelloWorldTest
-     doc janklab.mlxshake.test.HelloWorldTest
-
-
-
-```
 
 ## Class Contents
 
@@ -77,11 +70,10 @@ testHelloWorld(t)
 
 Helptext:
 
-```text
 janklab.mlxshake.test.HelloWorldTest/testHelloWorld is a function.
   testHelloWorld(t)
 
-```
+
 
 <a name="janklab.mlxshake.test.HelloWorldTest.HelloWorldTest"></a>
 ### HelloWorldTest
@@ -93,10 +85,9 @@ obj = HelloWorldTest()
 
 Helptext:
 
-```text
 janklab.mlxshake.test.HelloWorldTest/HelloWorldTest is a constructor.
 
-```
+
 
 <a name="janklab.mlxshake.test.HelloWorldTest.forInteractiveUse"></a>
 ### forInteractiveUse
@@ -110,8 +101,7 @@ testCase = HelloWorldTest.forInteractiveUse(rhs1)
 
 Helptext:
 
-```text
 Default provided forInteractiveUse method
-```
+
 
 

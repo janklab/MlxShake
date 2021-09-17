@@ -10,7 +10,6 @@ janklab.mlxshake.Settings
 
 ## Helptext
 
-```text
 Global settings for the mlxshake package
 
 Don't use this class directly. If you want to get or set the settings,
@@ -19,12 +18,6 @@ field.
 
 There are currently no settings defined for this package.
 
-  Documentation for janklab.mlxshake.Settings
-     doc janklab.mlxshake.Settings
-
-
-
-```
 
 ## Class Contents
 
@@ -55,7 +48,6 @@ out = Settings.discover()
 
 Helptext:
 
-```text
 Discovery of initial values for package settings.
 
 This could look at config files, environment variables, Matlab appdata, and
@@ -63,7 +55,7 @@ so on.
 
 This needs to avoid referencing mlxshake.globals, to avoid a circular dependency.
 
-```
+
 
 <a name="janklab.mlxshake.Settings.Settings"></a>
 ### Settings
@@ -75,7 +67,6 @@ obj = Settings()
 
 Helptext:
 
-```text
 Global settings for the mlxshake package
 
 Don't use this class directly. If you want to get or set the settings,
@@ -84,6 +75,6 @@ field.
 
 There are currently no settings defined for this package.
 
-```
+
 
 

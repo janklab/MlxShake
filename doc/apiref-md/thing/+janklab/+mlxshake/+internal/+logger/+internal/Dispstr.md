@@ -6,7 +6,6 @@ janklab.mlxshake.internal.logger.internal.Dispstr
 
 ## Helptext
 
-```text
 All the dispstr implementation code, wrapped up in a class
 
 We make it a class so that all the definitions can live in a single
@@ -15,12 +14,6 @@ ass) to transform the code to relocate its package, which will hopefully
 allow us to generate "compatters" for internal use by other libraries that
 don't want to take a dependency on dispstr.
 
-  Documentation for janklab.mlxshake.internal.logger.internal.Dispstr
-     doc janklab.mlxshake.internal.logger.internal.Dispstr
-
-
-
-```
 
 ## Class Contents
 
@@ -61,7 +54,6 @@ out = Dispstr.sprintfv(format, varargin)
 
 Helptext:
 
-```text
 SPRINTFV "Vectorized" sprintf
 
 out = sprintfv(format, varargin)
@@ -74,7 +66,7 @@ loop around sprintf().
 
 Returns cellstr.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.size2str"></a>
 ### size2str
@@ -88,7 +80,6 @@ out = Dispstr.size2str(sz)
 
 Helptext:
 
-```text
 SIZE2STR Format an array size for display
 
 out = size2str(sz)
@@ -99,7 +90,7 @@ Examples:
 
 size2str(magic(3))
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintTabular_generic"></a>
 ### prettyprintTabular_generic
@@ -113,10 +104,9 @@ out = Dispstr.prettyprintTabular_generic(varargin)
 
 Helptext:
 
-```text
 A generic tabular pretty-print that can be used for tabulars or relations
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintTabular"></a>
 ### prettyprintTabular
@@ -130,10 +120,9 @@ out = Dispstr.prettyprintTabular(t)
 
 Helptext:
 
-```text
 PRETTYPRINT_TABULAR Tabular implementation of prettyprint
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintStruct"></a>
 ### prettyprintStruct
@@ -147,10 +136,9 @@ out = Dispstr.prettyprintStruct(s)
 
 Helptext:
 
-```text
 PRETTYPRINT_STRUCT struct implementation of prettyprint
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintCell"></a>
 ### prettyprintCell
@@ -164,10 +152,9 @@ out = Dispstr.prettyprintCell(c)
 
 Helptext:
 
-```text
 PRETTYPRINT_CELL Cell implementation of prettyprint
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintMatrix"></a>
 ### prettyprintMatrix
@@ -181,7 +168,6 @@ out = Dispstr.prettyprintMatrix(strs)
 
 Helptext:
 
-```text
 Pretty-print a matrix of arbitrary display strings
 
 out = prettyprintMatrix(strs)
@@ -189,7 +175,7 @@ out = prettyprintMatrix(strs)
 strs is a matrix of strings which are already converted to their display
 form.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.prettyprintArray"></a>
 ### prettyprintArray
@@ -203,14 +189,13 @@ out = Dispstr.prettyprintArray(strs)
 
 Helptext:
 
-```text
 PRETTYPRINT_ARRAY Pretty-print an array from dispstrs
 
 out = prettyprintArray(strs)
 
 strs (string) is an array of display strings of any size.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.num2cellstr"></a>
 ### num2cellstr
@@ -224,10 +209,9 @@ out = Dispstr.num2cellstr(x)
 
 Helptext:
 
-```text
 NUM2CELLSTR Like num2str, but return cellstr of individual number strings
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.mycombvec"></a>
 ### mycombvec
@@ -241,12 +225,11 @@ out = Dispstr.mycombvec(vecs)
 
 Helptext:
 
-```text
 MYCOMBVEC All combinations of values from vectors
 
 This is similar to Matlab's combvec, but has a different signature.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier"></a>
 ### isErrorIdentifier
@@ -260,11 +243,10 @@ out = Dispstr.isErrorIdentifier(str)
 
 Helptext:
 
-```text
 janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier is a function.
   out = isErrorIdentifier(str)
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispc"></a>
 ### dispc
@@ -278,10 +260,9 @@ out = Dispstr.dispc(x)
 
 Helptext:
 
-```text
 DISPC Display, with capture
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct"></a>
 ### dispStruct
@@ -295,11 +276,10 @@ Dispstr.dispStruct(x)
 
 Helptext:
 
-```text
 janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct is a function.
   dispStruct(x)
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.dispCell"></a>
 ### dispCell
@@ -313,11 +293,10 @@ Dispstr.dispCell(c)
 
 Helptext:
 
-```text
 janklab.mlxshake.internal.logger.internal.Dispstr.dispCell is a function.
   dispCell(c)
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.display"></a>
 ### display
@@ -331,7 +310,6 @@ Dispstr.display(x)
 
 Helptext:
 
-```text
 DISPLAY Display array.
   DISPLAY(X) is called for the object X when the semicolon is not used
   to terminate a statement. 
@@ -348,7 +326,7 @@ DISPLAY Display array.
   
   See also DISP, matlab.mixin.CustomDisplay, EVALC,
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.disp"></a>
 ### disp
@@ -362,7 +340,6 @@ Dispstr.disp(x)
 
 Helptext:
 
-```text
 DISP Display array.
   DISP(X) displays array X without printing the array name or 
   additional description information such as the size and class name.
@@ -373,7 +350,7 @@ DISP Display array.
 
   See also FPRINTF, SPRINTF, INT2STR, NUM2STR, RATS, FORMAT, DETAILS.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf"></a>
 ### convertArgsForPrintf
@@ -387,11 +364,10 @@ out = Dispstr.convertArgsForPrintf(args)
 
 Helptext:
 
-```text
 janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf is a function.
   out = convertArgsForPrintf(args)
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.internal.Dispstr.Dispstr"></a>
 ### Dispstr
@@ -403,7 +379,6 @@ obj = Dispstr()
 
 Helptext:
 
-```text
 All the dispstr implementation code, wrapped up in a class
 
 We make it a class so that all the definitions can live in a single
@@ -412,6 +387,6 @@ ass) to transform the code to relocate its package, which will hopefully
 allow us to generate "compatters" for internal use by other libraries that
 don't want to take a dependency on dispstr.
 
-```
+
 
 

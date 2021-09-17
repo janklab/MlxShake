@@ -1,6 +1,5 @@
 # mlx2latex - janklab.mlxshake
 
-```text
 Export a Live Script (.mlx) file to LaTeX (.tex).
 
 janklab.mlxshake.mlx2latex(mlxFile, outFile)
@@ -22,5 +21,4 @@ replaced by '.tex'.
 The undocumented return value is for MlxShake's internal use.
 
 
-```
 

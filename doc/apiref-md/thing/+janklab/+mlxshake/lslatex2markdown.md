@@ -1,6 +1,5 @@
 # lslatex2markdown - janklab.mlxshake
 
-```text
 Convert Live Script LaTeX to Markdown.
 
 mdfile = janklab.mlxshake.lslatex2markdown(inFile, opts)
@@ -28,5 +27,4 @@ See also:
 MLXEXPORTOPTIONS
 
 
-```
 

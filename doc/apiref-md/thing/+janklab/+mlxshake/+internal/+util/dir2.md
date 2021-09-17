@@ -1,6 +1,5 @@
 # dir2 - janklab.mlxshake.internal.util
 
-```text
 Like DIR, but better
 
 [names, details] = dir2(path)
@@ -21,5 +20,4 @@ Returns:
        isdir - whether file is a directory (logical)
 
 
-```
 

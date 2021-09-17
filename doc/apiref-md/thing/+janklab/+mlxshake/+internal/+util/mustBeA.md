@@ -1,6 +1,5 @@
 # mustBeA - janklab.mlxshake.internal.util
 
-```text
 MUSTBEA Validate that an input is of a particular data type
 
 MUSTBEA(value, type)
@@ -23,5 +22,4 @@ must call iscellstr() and check all cell contents. Avoid calling it in
 performance-critical code.
 
 
-```
 

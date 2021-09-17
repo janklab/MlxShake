@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Log4jConfigurator - janklab.mlxshake.internal.logger" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/+logger/Log4jConfigurator.html","headline":"Log4jConfigurator - janklab.mlxshake.internal.logger","dateModified":"2021-09-17T02:48:00-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/apiref-md/thing/+janklab/+mlxshake/+internal/+logger/Log4jConfigurator.html","headline":"Log4jConfigurator - janklab.mlxshake.internal.logger","dateModified":"2021-09-17T03:40:27-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=7d83b6bc1740696a1885a39a8206ec226537aca7">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ee8edf0832fc3783752c778c5ca6aa92980c5d06">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -57,39 +57,42 @@
 
 <h2 id="helptext">Helptext</h2>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A configurator for log4j
+<p>A configurator for log4j.</p>
 
-This class configures the logging setup for Matlab/SLF4M logging. It
+<p>This class configures the logging setup for Matlab/SLF4M logging. It
 configures the log4j library that SLF4M logging sits on top of. (We use log4j
-because it ships with Matlab.)
+because it ships with Matlab.)</p>
 
-This class is provided as a convenience. You can also configure SLF4M logging
-by directly configuring log4j using its normal Java interface.
+<p>This class is provided as a convenience. You can also configure SLF4M logging
+by directly configuring log4j using its normal Java interface.</p>
 
-SLF4M does not automatically configure log4j. You must either call a
+<p>SLF4M does not automatically configure log4j. You must either call a
 configureXxx method on this class or configure log4j directly yourself to get
-logging to work. Otherwise, you may get warnings like this at the console:
+logging to work. Otherwise, you may get warnings like this at the console:</p>
 
-  log4j:WARN No appenders could be found for logger (unknown).
-  log4j:WARN Please initialize the log4j system properly.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>log4j:WARN No appenders could be found for logger (unknown).
+log4j:WARN Please initialize the log4j system properly.
+</code></pre></div></div>
 
-If that happens, it means you need to call
-janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging.
+<p>If that happens, it means you need to call
+<code class="language-plaintext highlighter-rouge">janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging</code>.</p>
 
-Examples:
+<p>Examples:</p>
 
-janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">janklab</span><span class="o">.</span><span class="n">mlxshake</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">Log4jConfigurator</span><span class="o">.</span><span class="n">configureBasicConsoleLogging</span>
 
-janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
+<span class="n">janklab</span><span class="o">.</span><span class="n">mlxshake</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">Log4jConfigurator</span><span class="o">.</span><span class="n">setLevels</span><span class="p">({</span><span class="s1">'root'</span><span class="p">,</span><span class="s1">'DEBUG'</span><span class="p">});</span>
 
-janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
-    'root'    'INFO'
-    'net.apjanke.logger.swing'  'DEBUG'
-    });
+<span class="n">janklab</span><span class="o">.</span><span class="n">mlxshake</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">Log4jConfigurator</span><span class="o">.</span><span class="n">setLevels</span><span class="p">({</span>
+    <span class="s1">'root'</span>    <span class="s1">'INFO'</span>
+    <span class="s1">'net.apjanke.logger.swing'</span>  <span class="s1">'DEBUG'</span>
+    <span class="p">});</span>
 
-janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration
+<span class="n">janklab</span><span class="o">.</span><span class="n">mlxshake</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">Log4jConfigurator</span><span class="o">.</span><span class="n">prettyPrintLogConfiguration</span>
 
-
+<span class="c1">% Display fully-qualified class/category names in the log output:</span>
+<span class="n">janklab</span><span class="o">.</span><span class="n">mlxshake</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">Log4jConfigurator</span><span class="o">.</span><span class="n">setRootAppenderPattern</span><span class="p">(</span><span class="k">...</span>
+   <span class="p">[</span><span class="s1">'%d{HH:mm:ss.SSS} %p %c - %m'</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s1">'\n'</span><span class="p">)]);</span>
 </code></pre></div></div>
 
 <h2 id="class-contents">Class Contents</h2>
@@ -144,10 +147,9 @@ janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Displays the current log configuration to the console
+<p>Displays the current log configuration to the console</p>
 
-mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration()
-
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration()
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels"></a></p>
@@ -161,25 +163,25 @@ mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration()
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Set the logging levels for multiple loggers
+<p>Set the logging levels for multiple loggers.</p>
 
-janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels(levels)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels(levels)
+</code></pre></div></div>
 
-This is a convenience method for setting the logging levels for multiple
-loggers.
+<p>This is a convenience method for setting the logging levels for multiple
+loggers.</p>
 
-The levels input is an n-by-2 cellstr with logger names in column 1 and
-level names in column 2.
+<p>The levels input is an n-by-2 cellstr with logger names in column 1 and
+level names in column 2.</p>
 
-Examples:
+<p>Examples:</p>
 
-janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">janklab</span><span class="o">.</span><span class="n">mlxshake</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">Log4jConfigurator</span><span class="o">.</span><span class="n">setLevels</span><span class="p">({</span><span class="s1">'root'</span><span class="p">,</span><span class="s1">'DEBUG'</span><span class="p">});</span>
 
-janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
-    'root'    'INFO'
-    'net.apjanke.logger.swing'  'DEBUG'
-    });
-
+<span class="n">janklab</span><span class="o">.</span><span class="n">mlxshake</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">Log4jConfigurator</span><span class="o">.</span><span class="n">setLevels</span><span class="p">({</span>
+    <span class="s1">'root'</span>    <span class="s1">'INFO'</span>
+    <span class="s1">'net.apjanke.logger.swing'</span>  <span class="s1">'DEBUG'</span>
+    <span class="p">});</span>
 </code></pre></div></div>
 
 <p><a name="janklab.mlxshake.internal.logger.Log4jConfigurator.getLog4jLevel"></a></p>
@@ -193,9 +195,7 @@ janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Gets the log4j Level enum for a named level
-
-</code></pre></div></div>
+<p>Gets the log4j Level enum for a named level.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Log4jConfigurator.setRootAppenderPattern"></a></p>
 <h3 id="setrootappenderpattern">setRootAppenderPattern</h3>
@@ -208,12 +208,10 @@ janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sets the pattern on the root appender
+<p>Sets the pattern on the root appender.</p>
 
-This is just a convenience method. Assumes there is a single
-appender on the root logger.
-
-</code></pre></div></div>
+<p>This is just a convenience method. Assumes there is a single
+appender on the root logger.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging"></a></p>
 <h3 id="configurebasicconsolelogging">configureBasicConsoleLogging</h3>
@@ -226,16 +224,14 @@ appender on the root logger.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Configures log4j to do basic logging to the console
+<p>Configures log4j to do basic logging to the console</p>
 
-This sets up a basic log4j configuration, with log output going to the
-console, and the root logger set to the INFO level.
+<p>This sets up a basic log4j configuration, with log output going to the
+console, and the root logger set to the INFO level.</p>
 
-This method can safely be called multiple times. If there's already an
+<p>This method can safely be called multiple times. If there’s already an
 appender on the root logger (indicating logging has already been
-configured), it silently does nothing.
-
-</code></pre></div></div>
+configured), it silently does nothing.</p>
 
 <p><a name="janklab.mlxshake.internal.logger.Log4jConfigurator.Log4jConfigurator"></a></p>
 <h3 id="log4jconfigurator">Log4jConfigurator</h3>
@@ -246,39 +242,39 @@ configured), it silently does nothing.
 
 <p>Helptext:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A configurator for log4j
+<p>A configurator for log4j.</p>
 
-This class configures the logging setup for Matlab/SLF4M logging. It
+<p>This class configures the logging setup for Matlab/SLF4M logging. It
 configures the log4j library that SLF4M logging sits on top of. (We use log4j
-because it ships with Matlab.)
+because it ships with Matlab.)</p>
 
-This class is provided as a convenience. You can also configure SLF4M logging
-by directly configuring log4j using its normal Java interface.
+<p>This class is provided as a convenience. You can also configure SLF4M logging
+by directly configuring log4j using its normal Java interface.</p>
 
-SLF4M does not automatically configure log4j. You must either call a
+<p>SLF4M does not automatically configure log4j. You must either call a
 configureXxx method on this class or configure log4j directly yourself to get
-logging to work. Otherwise, you may get warnings like this at the console:
+logging to work. Otherwise, you may get warnings like this at the console:</p>
 
-  log4j:WARN No appenders could be found for logger (unknown).
-  log4j:WARN Please initialize the log4j system properly.
-
-If that happens, it means you need to call
-janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging.
-
-Examples:
-
-janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging
-
-janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
-
-janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
-    'root'    'INFO'
-    'net.apjanke.logger.swing'  'DEBUG'
-    });
-
-janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration
-
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>log4j:WARN No appenders could be found for logger (unknown).
+log4j:WARN Please initialize the log4j system properly.
 </code></pre></div></div>
+
+<p>If that happens, it means you need to call
+<code class="language-plaintext highlighter-rouge">janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging</code>.</p>
+
+<p>Examples:</p>
+
+<p>```matlab
+janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging</p>
+
+<p>janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({‘root’,’DEBUG’});</p>
+
+<p>janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
+    ‘root’    ‘INFO’
+    ‘net.apjanke.logger.swing’  ‘DEBUG’
+    });</p>
+
+<p>janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration</p>
 
 
 

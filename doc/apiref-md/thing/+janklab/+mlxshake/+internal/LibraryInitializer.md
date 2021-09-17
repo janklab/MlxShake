@@ -6,16 +6,8 @@ janklab.mlxshake.internal.LibraryInitializer
 
 ## Helptext
 
-```text
-janklab.mlxshake.internal.LibraryInitializer is a class.
-  this = LibraryInitializer
+Automatic library initializer hack support.
 
-  Documentation for janklab.mlxshake.internal.LibraryInitializer
-     doc janklab.mlxshake.internal.LibraryInitializer
-
-
-
-```
 
 ## Class Contents
 
@@ -37,10 +29,10 @@ this = LibraryInitializer()
 
 Helptext:
 
-```text
-janklab.mlxshake.internal.LibraryInitializer/LibraryInitializer is a constructor.
-  this = LibraryInitializer
+Construct a new object.
 
-```
+This automatically calls the `initializePackage` function.
+
+
 
 

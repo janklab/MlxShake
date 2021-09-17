@@ -1,6 +1,5 @@
 # initializePackage - janklab.mlxshake.internal
 
-```text
 Basic package initialization
 
 This should *only* do basic library initialization involving paths and dependency
@@ -9,5 +8,4 @@ that's done in mlxshake.Settings.discover. It has to be that way so the package
 settings state can handle a `clear classes` gracefully.
 
 
-```
 
