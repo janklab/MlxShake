@@ -64,9 +64,10 @@ if ismember("api", parts)
     apiRefMdDir = fullfile(docsDir, 'apiref-md');
     sourceDirs = fullfile(rootDir, 'Mcode');
     janklab.mlxshake.genapiref(apiRefMdDir, sourceDirs, {
-        'projectName'   'MlxShake'
-        'format'        'markdown'
-        'doInternal'    true
+        'projectName'     'MlxShake'
+        'format'          'markdown'
+        'doInternal'      true
+        'helptextFormat'  'markdown'
         });
 end
 

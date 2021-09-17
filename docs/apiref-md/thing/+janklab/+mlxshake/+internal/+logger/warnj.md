@@ -1,6 +1,5 @@
 # warnj - janklab.mlxshake.internal.logger
 
-```text
 Log a WARN level message from caller, using SLF4J style formatting.
 
 logger.warnj(msg, varargin)
@@ -13,5 +12,4 @@ Examples:
 logger.warnj('Some message. value1={} value2={}', 'foo', 42);
 
 
-```
 

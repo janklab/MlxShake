@@ -1,5 +1,5 @@
 classdef LsLatex2MardkownExporter < janklab.mlxshake.internal.MlxshakeBase
-    % Exports LS-exported LaTeX to Markdown
+    % Exports LS-exported LaTeX to Markdown.
     
     %#ok<*INUSA>
     
@@ -11,7 +11,7 @@ classdef LsLatex2MardkownExporter < janklab.mlxshake.internal.MlxshakeBase
         function outMdFile = lslatex2markdown(this, inFile, opts)
             % Convert Live Script LaTeX to Markdown.
             %
-            % outMdFile = obj.lslatex2markdown(inFile, opts)
+            %     outMdFile = obj.lslatex2markdown(inFile, opts)
             %
             % Converts a LaTeX-format exported Live Script file to Markdown. Will also
             % produce accompanying image files in a subdirectory next to the output .md

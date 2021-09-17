@@ -1,5 +1,5 @@
 classdef Log4jConfigurator
-    % A configurator for log4j
+    % A configurator for log4j.
     %
     % This class configures the logging setup for Matlab/SLF4M logging. It
     % configures the log4j library that SLF4M logging sits on top of. (We use log4j
@@ -12,14 +12,15 @@ classdef Log4jConfigurator
     % configureXxx method on this class or configure log4j directly yourself to get
     % logging to work. Otherwise, you may get warnings like this at the console:
     %
-    %   log4j:WARN No appenders could be found for logger (unknown).
-    %   log4j:WARN Please initialize the log4j system properly.
+    %     log4j:WARN No appenders could be found for logger (unknown).
+    %     log4j:WARN Please initialize the log4j system properly.
     %
     % If that happens, it means you need to call
-    % janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging.
+    % `janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging`.
     %
     % Examples:
     %
+    % ```matlab
     % janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging
     %
     % janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
@@ -34,6 +35,7 @@ classdef Log4jConfigurator
     % % Display fully-qualified class/category names in the log output:
     % janklab.mlxshake.internal.logger.Log4jConfigurator.setRootAppenderPattern(...
     %    ['%d{HH:mm:ss.SSS} %p %c - %m' sprintf('\n')]);
+    % ```
     
     % This class does *not* use the implicit initializer trick, because the
     % implicit library initializer may depend on this class!
@@ -78,7 +80,7 @@ classdef Log4jConfigurator
         end
         
         function setRootAppenderPattern(pattern)
-            % Sets the pattern on the root appender
+            % Sets the pattern on the root appender.
             %
             % This is just a convenience method. Assumes there is a single
             % appender on the root logger.
@@ -89,7 +91,7 @@ classdef Log4jConfigurator
         end
         
         function out = getLog4jLevel(levelName)
-            % Gets the log4j Level enum for a named level
+            % Gets the log4j Level enum for a named level.
             validLevels = {'OFF' 'FATAL' 'ERROR' 'WARN' 'INFO' 'DEBUG' 'TRACE' 'ALL'};
             levelName = upper(levelName);
             if ~ismember(levelName, validLevels)
@@ -99,9 +101,9 @@ classdef Log4jConfigurator
         end
         
         function setLevels(levels)
-            % Set the logging levels for multiple loggers
+            % Set the logging levels for multiple loggers.
             %
-            % janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels(levels)
+            %     janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels(levels)
             %
             % This is a convenience method for setting the logging levels for multiple
             % loggers.
@@ -111,12 +113,14 @@ classdef Log4jConfigurator
             %
             % Examples:
             %
+            % ```matlab
             % janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
             %
             % janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
             %     'root'    'INFO'
             %     'net.apjanke.logger.swing'  'DEBUG'
             %     });
+            % ```
             for i = 1:size(levels, 1)
                 [logName,levelName] = levels{i,:};
                 logger = org.apache.log4j.LogManager.getLogger(logName);
@@ -128,7 +132,7 @@ classdef Log4jConfigurator
         function prettyPrintLogConfiguration(verbose)
             % Displays the current log configuration to the console
             %
-            % mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration()
+            %     mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration()
             
             if nargin < 1 || isempty(verbose);  verbose = false;  end
             

@@ -1,11 +1,12 @@
 classdef misc
-    % Miscellaneous utilities
+    % Miscellaneous utilities not for importing.
     %
     % The ones in this class are ones you typically wouldn't want to import.
     
     methods (Static=true)
         
         function mkdir(dir)
+            % Create a directory, raising an error on failure.
             [ok,msg] = mkdir(dir);
             if ~ok
                 error('Failed creating directory "%s": %s', dir, msg);
@@ -13,6 +14,7 @@ classdef misc
         end
         
         function out = getpackageappdata(key)
+            % Get an appdata item for the MlxShake package.
             ad = getappdata(0, 'mlxshake');
             if isempty(ad)
                 ad = struct;
@@ -25,6 +27,7 @@ classdef misc
         end
         
         function setpackageappdata(key, value)
+            % Set an appdata item for the MlxShake package.
             ad = getappdata(0, 'mlxshake');
             if isempty(ad)
                 ad = struct;

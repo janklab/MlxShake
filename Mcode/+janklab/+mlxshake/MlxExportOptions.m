@@ -25,15 +25,15 @@ classdef MlxExportOptions
         %
         % Valid values:
         %
-        %   "auto" - Automatically select the format based on the file extension
+        % * "auto" - Automatically select the format based on the file extension
         %       of the output file (using the outFile option). Defaults to 
         %       Markdown if no explicit output file is given, or the output 
         %       file has no extension.
-        %   "markdown"
-        %   "html"
-        %   "pdf"
-        %   "latex"
-        %   "msword"  - Microsoft Word
+        % * "markdown"
+        % * "html"
+        % * "pdf"
+        % * "latex"
+        % * "msword"  - Microsoft Word
         %  
         format (1,1) string {mustBeMember(format, ["auto", "markdown", "html",...
             "pdf", "latex", "msword"])} = "auto"
@@ -61,8 +61,8 @@ classdef MlxExportOptions
         % hosts), like GitHub Pages or Qiita.
         %
         % Valid values:
-        %   'gh-pages' - For GitHub Pages. (default)
-        %   'qiita' - For Qiita.
+        % * 'gh-pages' - For GitHub Pages. (default)
+        % * 'qiita' - For Qiita.
         %
         % If you don't know which one to use, stick with 'gh-pages'; it's pretty
         % vanilla.
@@ -91,11 +91,11 @@ classdef MlxExportOptions
         %
         % May be a logical or a string containing a path. Valid values:
         %
-        %    logical true (default) - A temporary directory is automatically selected
+        % * logical true (default) - A temporary directory is automatically selected
         %        and created.
-        %    string - Specifies the path to the working directory. The dir
+        % * string - Specifies the path to the working directory. The dir
         %        will not be deleted after export is finished.
-        %    logical false ? No temporary directory is used; intermediate files are
+        % * logical false - No temporary directory is used; intermediate files are
         %        placed in the final output directory.
         %
         % The intermediate files are the *.tex, *.sty, and and other temporary
@@ -132,9 +132,9 @@ classdef MlxExportOptions
         function this = MlxExportOptions(arg)
             % Construct a new object.
             %
-            % obj = janklab.mlxshake.MlxExportOptions
-            % obj = janklab.mlxshake.MlxExportOptions(struct(...))
-            % obj = janklab.mlxshake.MlxExportOptions({'property',value, ...})
+            %     obj = janklab.mlxshake.MlxExportOptions
+            %     obj = janklab.mlxshake.MlxExportOptions(struct(...))
+            %     obj = janklab.mlxshake.MlxExportOptions({'property',value, ...})
             %
             % You may pass in a struct or cell vector of name/value pairs, where
             % the names are any property on MlxExportOptions. Names that are not

@@ -85,6 +85,29 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             this.generateIndex;
         end
         
+        function out = formatHelptext(this, helptextStr)
+            %
+            % helptextStr is the *raw* helptext. Will still have leading spaces
+            % and whatnot.
+            arguments
+                this
+                helptextStr (1,1) string
+            end
+            
+            h = regexprep(helptextStr, '(?<=^|\n)  ?', '');
+
+            switch this.opts.helptextFormat
+                case "markdown"
+                    out = h + newline;
+                case "vanilla"
+                    out = strjoin([
+                        "```text"
+                        strrep(h, "```", "``\`")
+                        "```"
+                        ], newline);
+            end
+        end
+        
         function out = thingHtmlFileRelPath(this, thing)
             pkgParts = strsplit(thing.package, '.');
             out = "thing/" + strjoin(strcat("+", pkgParts), "/") ...
@@ -206,32 +229,22 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
         function generateFunctionDoc(this, pkg, name, qname, mFilePath)
             % Generate doco file for a function.
             
-            hFcn = str2func(qname);
             pkgComponents = strsplit(pkg, ".");
             relDir = strjoin(strcat("+", pkgComponents), filesep);
             parentDir = fullfile(this.thingsDir, relDir);
             mdFile = fullfile(parentDir, name + ".md");
             
-            basicHelptext = help(qname); % Undocumented form of help
-            h = regexprep(basicHelptext, '(?<=^|\n)  ?', '');
-            if ~endsWith(h, newline)
-                h = h + newline;
-            end
+            rawHelptext = rawHelptextFor(qname);
+            formattedHelptext = this.formatHelptext(rawHelptext);
             
             mkdirs(parentDir);
             fh = fopen2(mdFile, 'w', 'native', 'UTF-8');
             RAII.fh = onCleanup(@() fclose2(fh));
             p(true, fh);
             
-            % HACK: escaping of internal fenced code blocks
-            hForCodeBlock = strrep(h, "```", "`` `");
-            
             p("# %s - %s", name, pkg)
             p("")
-            p("```text")
-            p(hForCodeBlock)
-            p
-            p("```")
+            p('%s', formattedHelptext)
             p
             
         end
@@ -245,7 +258,7 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             parentDir = fullfile(this.thingsDir, relDir);
             mdFile = fullfile(parentDir, classBaseName + ".md");
             
-            [~,hForCodeBlock] = rawHelptextFor(qname);
+            [rawHelptextForClass, h1ForClass] = rawHelptextFor(qname);
             
             mkdirs(parentDir);
             fh = fopen2(mdFile, 'w', 'native', 'UTF-8');
@@ -295,6 +308,7 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
                     stepInhTree(super, prefix + "  ");
                 end
             end
+            
             p("```text")
             stepInhTree(klass, "")
             p("```")
@@ -313,10 +327,7 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             
             p("## Helptext")
             p
-            p("```text")
-            p(hForCodeBlock)
-            p
-            p("```")
+            p('%s', this.formatHelptext(rawHelptextForClass));
             p
             
             p("## Class Contents")
@@ -338,7 +349,7 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
                         if isequal(item.Name, classBaseName)
                             descrStr = "Constructor.";
                         else
-                            [~,~,h1] = rawHelptextFor(itemQname);
+                            [~,h1] = rawHelptextFor(itemQname);
                             descrStr = h1;
                         end
                     else
@@ -400,9 +411,10 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
                 end
                 
                 if itemType == "property"
-                    hForCodeBlock = "No helptext available.";
+                    itemFormattedHelptext = newline + "No helptext available." + newline;
                 else
-                    [~,hForCodeBlock] = rawHelptextFor(itemQname);
+                    [rawHelptextForItem] = rawHelptextFor(itemQname);
+                    itemFormattedHelptext = this.formatHelptext(rawHelptextForItem);
                 end
                 
                 p('<a name="%s"></a>', itemQname)
@@ -449,17 +461,14 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
                     p("```")
                     p
                 end
-                % These don't work because they're unimplemented as of
-                % R2021a
+                % These don't work because they're unimplemented as of R2021a
                 % p(item.Description)
                 % p
                 % p(item.DetailedDescription)
                 % p
                 p("Helptext:")
                 p
-                p("```text")
-                p(hForCodeBlock)
-                p("```")
+                p(itemFormattedHelptext);
                 p
             end
             
@@ -510,17 +519,18 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
     
 end
 
-function [rawHelp, forCodeBlock, h1] = rawHelptextFor(name)
-raw = string(help(name)); % Undocumented form of help
-rawHelp = regexprep(raw, '(?<=^|\n)  ?', '');
-if isempty(rawHelp)
+function [rawHelptext, h1] = rawHelptextFor(name)
+reallyRawHelptext = string(help(name)); % Undocumented form of help
+% Strip the Matlab-added "Documentation for..." bit at the end
+pat = sprintf('\\s+Documentation for %s[\\s\\r\\n]+doc +%s[\\s\\r\\n]*$', name, name);
+rawHelptext = regexprep(reallyRawHelptext, pat, '');
+if isempty(rawHelptext)
     h1 = "";
 else
-    rawHelpLines = regexp(rawHelp, '\r?\n', 'split');
+    rawHelpLines = regexp(rawHelptext, '\r?\n', 'split');
     h1 = rawHelpLines(1);
+    h1 = regexprep(h1, '^ +', '');
 end
-% HACK: escaping of internal fenced code blocks
-forCodeBlock = strrep(rawHelp, "```", "`` `");
 end
 
 function out = isThisInherited(klass, item)

@@ -6,7 +6,6 @@ janklab.mlxshake.internal.logger.Logger
 
 ## Helptext
 
-```text
 LOGGER Main entry point through which logging happens
 
 The Logger class provides method calls for performing logging, and the ability
@@ -42,8 +41,14 @@ janklab.mlxshake.internal.logger.trace
 Examples:
 
 log = mlxshake.logger.Logger.getLogger('foo.bar.FooBar');
-log.info('Hello, world! Running on Matlab 
-```
+log.info('Hello, world! Running on Matlab %s', version);
+
+try
+    some_operation_that_could_go_wrong();
+catch err
+    log.warn(err, 'Caught exception during processing')
+end
+
 
 ## Class Contents
 
@@ -88,9 +93,9 @@ log.info('Hello, world! Running on Matlab
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.name"></a>
 ### name
@@ -99,9 +104,9 @@ Attributes: Dependent, NonCopyable
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.enabledLevels"></a>
 ### enabledLevels
@@ -110,9 +115,9 @@ Attributes: Dependent, NonCopyable
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 
 ## Methods
@@ -129,10 +134,9 @@ out = Logger.getLogger(identifier)
 
 Helptext:
 
-```text
 Gets the named Logger
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.listEnabledLevels"></a>
 ### listEnabledLevels
@@ -144,10 +148,9 @@ out = listEnabledLevels(this)
 
 Helptext:
 
-```text
 List the levels that are enabled for this logger.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.isTraceEnabled"></a>
 ### isTraceEnabled
@@ -159,10 +162,9 @@ out = isTraceEnabled(this)
 
 Helptext:
 
-```text
 True if TRACE level logging is enabled for this logger.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.isDebugEnabled"></a>
 ### isDebugEnabled
@@ -174,10 +176,9 @@ out = isDebugEnabled(this)
 
 Helptext:
 
-```text
 True if DEBUG level logging is enabled for this logger.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.isInfoEnabled"></a>
 ### isInfoEnabled
@@ -189,10 +190,9 @@ out = isInfoEnabled(this)
 
 Helptext:
 
-```text
 True if INFO level logging is enabled for this logger.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.isWarnEnabled"></a>
 ### isWarnEnabled
@@ -204,10 +204,9 @@ out = isWarnEnabled(this)
 
 Helptext:
 
-```text
 True if WARN level logging is enabled for this logger.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.isErrorEnabled"></a>
 ### isErrorEnabled
@@ -219,10 +218,9 @@ out = isErrorEnabled(this)
 
 Helptext:
 
-```text
 True if ERROR level logging is enabled for this logger.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.tracej"></a>
 ### tracej
@@ -234,10 +232,9 @@ tracej(this, msg, varargin)
 
 Helptext:
 
-```text
 Log a message at the TRACE level, using SLFJ formatting.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.debugj"></a>
 ### debugj
@@ -249,10 +246,9 @@ debugj(this, msg, varargin)
 
 Helptext:
 
-```text
 Log a message at the DEBUG level, using SLFJ formatting.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.infoj"></a>
 ### infoj
@@ -264,10 +260,9 @@ infoj(this, msg, varargin)
 
 Helptext:
 
-```text
 Log a message at the INFO level, using SLFJ formatting.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.warnj"></a>
 ### warnj
@@ -279,10 +274,9 @@ warnj(this, msg, varargin)
 
 Helptext:
 
-```text
 Log a message at the WARN level, using SLFJ formatting.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.errorj"></a>
 ### errorj
@@ -294,10 +288,9 @@ errorj(this, msg, varargin)
 
 Helptext:
 
-```text
 Log a message at the ERROR level, using SLFJ formatting.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.trace"></a>
 ### trace
@@ -309,10 +302,9 @@ trace(this, msg, varargin)
 
 Helptext:
 
-```text
 Log a message at the TRACE level.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.debug"></a>
 ### debug
@@ -324,10 +316,9 @@ debug(this, msg, varargin)
 
 Helptext:
 
-```text
 Log a message at the DEBUG level.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.info"></a>
 ### info
@@ -339,10 +330,9 @@ info(this, msg, varargin)
 
 Helptext:
 
-```text
 Log a message at the INFO level.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.warn"></a>
 ### warn
@@ -354,10 +344,9 @@ warn(this, msg, varargin)
 
 Helptext:
 
-```text
 Log a message at the WARN level.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.error"></a>
 ### error
@@ -369,10 +358,9 @@ error(this, msg, varargin)
 
 Helptext:
 
-```text
 Log a message at the ERROR level.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.dispstrs"></a>
 ### dispstrs
@@ -384,10 +372,9 @@ out = dispstrs(this)
 
 Helptext:
 
-```text
 DISPSTRS Custom object display strings.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.dispstr"></a>
 ### dispstr
@@ -399,10 +386,9 @@ out = dispstr(this)
 
 Helptext:
 
-```text
 DISPSTR Custom object display string.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.disp"></a>
 ### disp
@@ -414,10 +400,9 @@ disp(this)
 
 Helptext:
 
-```text
 DISP Custom object display.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Logger.Logger"></a>
 ### Logger
@@ -429,11 +414,10 @@ this = Logger(jLogger)
 
 Helptext:
 
-```text
 LOGGER Build a new logger object around an SLF4J Logger object.
 
 Generally, you shouldn't call this. Use logger.Logger.getLogger() instead.
 
-```
+
 
 

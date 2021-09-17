@@ -17,6 +17,7 @@ classdef (Abstract) ApirefGenerator < janklab.mlxshake.internal.MlxshakeBaseHand
     
     methods (Abstract)
         
+        % Generate the output in the subclass's output format.
         generateForMyFormat(this)
         
     end

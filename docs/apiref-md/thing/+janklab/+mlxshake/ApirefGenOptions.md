@@ -6,7 +6,6 @@ janklab.mlxshake.ApirefGenOptions
 
 ## Helptext
 
-```text
 Options to control the behavior of the genapiref function.
 
 This controls various aspects of GENAPIREF's behavior.
@@ -14,12 +13,6 @@ This controls various aspects of GENAPIREF's behavior.
 See also:
 GENAPIREF
 
-  Documentation for janklab.mlxshake.ApirefGenOptions
-     doc janklab.mlxshake.ApirefGenOptions
-
-
-
-```
 
 ## Class Contents
 
@@ -31,6 +24,7 @@ GENAPIREF
 | [projectName](#janklab.mlxshake.ApirefGenOptions.projectName) |  |
 | [doInternal](#janklab.mlxshake.ApirefGenOptions.doInternal) |  |
 | [showHidden](#janklab.mlxshake.ApirefGenOptions.showHidden) |  |
+| [helptextFormat](#janklab.mlxshake.ApirefGenOptions.helptextFormat) |  |
 
 ### Methods
 
@@ -49,9 +43,9 @@ Default Value: `"markdown"`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.ApirefGenOptions.projectName"></a>
 ### projectName
@@ -62,9 +56,9 @@ Default Value: `"Untitled Project"`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.ApirefGenOptions.doInternal"></a>
 ### doInternal
@@ -75,9 +69,9 @@ Default Value: `false`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
 
 <a name="janklab.mlxshake.ApirefGenOptions.showHidden"></a>
 ### showHidden
@@ -88,9 +82,22 @@ Default Value: `false`
 
 Helptext:
 
-```text
+
 No helptext available.
-```
+
+
+<a name="janklab.mlxshake.ApirefGenOptions.helptextFormat"></a>
+### helptextFormat
+
+Attributes: HasDefault
+
+Default Value: `"vanilla"`
+
+Helptext:
+
+
+No helptext available.
+
 
 
 ## Methods
@@ -105,17 +112,16 @@ this = ApirefGenOptions(arg)
 
 Helptext:
 
-```text
 Construct a new object.
 
-obj = janklab.mlxshake.ApirefGenOptions
-obj = janklab.mlxshake.ApirefGenOptions(struct(...))
-obj = janklab.mlxshake.ApirefGenOptions({'property',value, ...})
+    obj = janklab.mlxshake.ApirefGenOptions
+    obj = janklab.mlxshake.ApirefGenOptions(struct(...))
+    obj = janklab.mlxshake.ApirefGenOptions({'property',value, ...})
 
 You may pass in a struct or cell vector of name/value pairs, where
 the names are any property on ApirefGenOptions. Names that are not
 properties of ApirefGenOptions cause an error.
 
-```
+
 
 

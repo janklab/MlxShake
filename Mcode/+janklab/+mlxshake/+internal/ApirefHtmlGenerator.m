@@ -1,4 +1,5 @@
 classdef ApirefHtmlGenerator < janklab.mlxshake.internal.ApirefGenerator
+    % Generates Markdown format output for API Reference doco (UNIMPLEMENTED).
     
     %#ok<*MANU>
     

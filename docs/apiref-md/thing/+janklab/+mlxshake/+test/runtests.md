@@ -1,6 +1,5 @@
 # runtests - janklab.mlxshake.test
 
-```text
 runtests Run all the tests in mlxshake
 
 rslt = mlxshake.test.runtests
@@ -22,5 +21,4 @@ Examples:
 mlxshake.test.runtests
 
 
-```
 

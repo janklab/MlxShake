@@ -1,6 +1,5 @@
 # todatetime - janklab.mlxshake.internal.util
 
-```text
 Convert values to datetime array
 
 out = todatetime(x)
@@ -45,5 +44,4 @@ raised.
 Returns a datetime array.
 
 
-```
 

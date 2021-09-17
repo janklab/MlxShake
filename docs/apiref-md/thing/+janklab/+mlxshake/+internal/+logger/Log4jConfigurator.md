@@ -6,7 +6,6 @@ janklab.mlxshake.internal.logger.Log4jConfigurator
 
 ## Helptext
 
-```text
 A configurator for log4j
 
 This class configures the logging setup for Matlab/SLF4M logging. It
@@ -20,14 +19,15 @@ SLF4M does not automatically configure log4j. You must either call a
 configureXxx method on this class or configure log4j directly yourself to get
 logging to work. Otherwise, you may get warnings like this at the console:
 
-  log4j:WARN No appenders could be found for logger (unknown).
-  log4j:WARN Please initialize the log4j system properly.
+    log4j:WARN No appenders could be found for logger (unknown).
+    log4j:WARN Please initialize the log4j system properly.
 
 If that happens, it means you need to call
-janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging.
+`janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging`.
 
 Examples:
 
+```matlab
 janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging
 
 janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
@@ -39,8 +39,11 @@ janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
 
 janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration
 
-
+% Display fully-qualified class/category names in the log output:
+janklab.mlxshake.internal.logger.Log4jConfigurator.setRootAppenderPattern(...
+   ['%d{HH:mm:ss.SSS} %p %c - %m' sprintf('\n')]);
 ```
+
 
 ## Class Contents
 
@@ -69,12 +72,11 @@ Log4jConfigurator.prettyPrintLogConfiguration(verbose)
 
 Helptext:
 
-```text
 Displays the current log configuration to the console
 
-mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration()
+    mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration()
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels"></a>
 ### setLevels
@@ -88,10 +90,9 @@ Log4jConfigurator.setLevels(levels)
 
 Helptext:
 
-```text
-Set the logging levels for multiple loggers
+Set the logging levels for multiple loggers.
 
-janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels(levels)
+    janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels(levels)
 
 This is a convenience method for setting the logging levels for multiple
 loggers.
@@ -101,14 +102,16 @@ level names in column 2.
 
 Examples:
 
+```matlab
 janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
 
 janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
     'root'    'INFO'
     'net.apjanke.logger.swing'  'DEBUG'
     });
-
 ```
+
+
 
 <a name="janklab.mlxshake.internal.logger.Log4jConfigurator.getLog4jLevel"></a>
 ### getLog4jLevel
@@ -122,10 +125,9 @@ out = Log4jConfigurator.getLog4jLevel(levelName)
 
 Helptext:
 
-```text
-Gets the log4j Level enum for a named level
+Gets the log4j Level enum for a named level.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Log4jConfigurator.setRootAppenderPattern"></a>
 ### setRootAppenderPattern
@@ -139,13 +141,12 @@ Log4jConfigurator.setRootAppenderPattern(pattern)
 
 Helptext:
 
-```text
-Sets the pattern on the root appender
+Sets the pattern on the root appender.
 
 This is just a convenience method. Assumes there is a single
 appender on the root logger.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging"></a>
 ### configureBasicConsoleLogging
@@ -159,7 +160,6 @@ Log4jConfigurator.configureBasicConsoleLogging(varargin)
 
 Helptext:
 
-```text
 Configures log4j to do basic logging to the console
 
 This sets up a basic log4j configuration, with log output going to the
@@ -169,7 +169,7 @@ This method can safely be called multiple times. If there's already an
 appender on the root logger (indicating logging has already been
 configured), it silently does nothing.
 
-```
+
 
 <a name="janklab.mlxshake.internal.logger.Log4jConfigurator.Log4jConfigurator"></a>
 ### Log4jConfigurator
@@ -181,7 +181,6 @@ obj = Log4jConfigurator()
 
 Helptext:
 
-```text
 A configurator for log4j
 
 This class configures the logging setup for Matlab/SLF4M logging. It
@@ -195,14 +194,15 @@ SLF4M does not automatically configure log4j. You must either call a
 configureXxx method on this class or configure log4j directly yourself to get
 logging to work. Otherwise, you may get warnings like this at the console:
 
-  log4j:WARN No appenders could be found for logger (unknown).
-  log4j:WARN Please initialize the log4j system properly.
+    log4j:WARN No appenders could be found for logger (unknown).
+    log4j:WARN Please initialize the log4j system properly.
 
 If that happens, it means you need to call
-janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging.
+`janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging`.
 
 Examples:
 
+```matlab
 janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging
 
 janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
@@ -214,6 +214,5 @@ janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
 
 janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration
 
-```
 
 

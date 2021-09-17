@@ -1,5 +1,5 @@
 classdef MlxShellCommandOpts
-    % Options to the mlxshake shell command
+    % Options to the mlxshake shell command.
     
     properties
         inFile (1,1) string = missing

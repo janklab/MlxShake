@@ -11,15 +11,8 @@ janklab.mlxshake.internal.ApirefHtmlGenerator
 
 ## Helptext
 
-```text
-#ok<*MANU>
+Generates Markdown format output for API Reference doco (UNIMPLEMENTED).
 
-  Documentation for janklab.mlxshake.internal.ApirefHtmlGenerator
-     doc janklab.mlxshake.internal.ApirefHtmlGenerator
-
-
-
-```
 
 ## Class Contents
 
@@ -27,7 +20,7 @@ janklab.mlxshake.internal.ApirefHtmlGenerator
 
 | Method | Description |
 | -------- | ----------- |
-| [generateForMyFormat](#janklab.mlxshake.internal.ApirefHtmlGenerator.generateForMyFormat) | janklab.mlxshake.internal.ApirefHtmlGenerator/generateForMyFormat is a function. |
+| [generateForMyFormat](#janklab.mlxshake.internal.ApirefHtmlGenerator.generateForMyFormat) | Generate the output in the subclass's output format. |
 | [ApirefHtmlGenerator](#janklab.mlxshake.internal.ApirefHtmlGenerator.ApirefHtmlGenerator) | Constructor. |
 
 ### Superclasses
@@ -48,11 +41,11 @@ generateForMyFormat(this)
 
 Helptext:
 
-```text
-janklab.mlxshake.internal.ApirefHtmlGenerator/generateForMyFormat is a function.
-  generateForMyFormat(this)
+Generate the output in the subclass's output format.
 
-```
+Help for janklab.mlxshake.internal.ApirefHtmlGenerator/generateForMyFormat is inherited from superclass JANKLAB.MLXSHAKE.INTERNAL.APIREFGENERATOR
+
+
 
 <a name="janklab.mlxshake.internal.ApirefHtmlGenerator.ApirefHtmlGenerator"></a>
 ### ApirefHtmlGenerator
@@ -64,9 +57,8 @@ obj = ApirefHtmlGenerator()
 
 Helptext:
 
-```text
-#ok<*MANU>
+Generates Markdown format output for API Reference doco (UNIMPLEMENTED).
 
-```
+
 
 

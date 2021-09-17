@@ -3,17 +3,17 @@ classdef globals
     %
     % Note that if you want to change the settings, you can't do this:
     %
-    %    janklab.mlxshake.globals.settings.someSetting = 42;
+    %     janklab.mlxshake.globals.settings.someSetting = 42;
     %
     % That will break due to how Matlab Constant properties work. Instead, you need
     % to first grab the Settings object and store it in a variable, and then work
     % on that:
     %
-    %    s = janklab.mlxshake.globals.settings;
-    %    s.someSetting = 42;
+    %     s = janklab.mlxshake.globals.settings;
+    %     s.someSetting = 42;
     
     properties (Constant)
-        % Path to the root directory of this MlxShake distribution
+        % Path to the root directory of this MlxShake distribution.
         distroot = string(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
         % Global settings for mlxshake.
         settings = janklab.mlxshake.Settings.discover
@@ -22,7 +22,7 @@ classdef globals
     methods (Static)
         
         function out = version
-            % The version of the MlxShake library
+            % The version of the MlxShake library.
             %
             % Returns a string.
             persistent val
@@ -34,15 +34,15 @@ classdef globals
         end
         
         function initialize
-            % Initialize this library/package
+            % Initialize this library/package.
             janklab.mlxshake.internal.initializePackage;
         end
         
         function out = loglevel(newLevel)
             % Get or set logging level for the mlxshake package.
             %
-            % out = janklab.mlxshake.globals.loglevel()
-            % oldLevel = janklab.mlxshake.globals.loglevel(newLevel)
+            %     out = janklab.mlxshake.globals.loglevel()
+            %     oldLevel = janklab.mlxshake.globals.loglevel(newLevel)
             %
             % This is a convenience method that provides a simplified interface
             % on top of MlxShake's internal logging tools. It does not support
@@ -52,14 +52,14 @@ classdef globals
             % NewLevel (string) is the logging level to set at the root
             % janklab.mlxshake package. This should control all logging done by
             % MlxShake. Valid values are:
-            %    "info"  - The regular, concise and quiet logging.
-            %    "debug" - More detailed logging, with progress messages.
+            % * "info"  - The regular, concise and quiet logging.
+            % * "debug" - More detailed logging, with progress messages.
             %
             % The return value is the currently-set logging level. Possible
             % values are:
-            %    "info"
-            %    "debug"
-            %    "custom" - Means the logging configuration is in a weird state
+            % * "info"
+            % * "debug"
+            % * "custom" - Means the logging configuration is in a weird state
             %        that this function is not prepared to handle.
             
             logger = janklab.mlxshake.internal.logger.Logger.getLogger('janklab.mlxshake');
