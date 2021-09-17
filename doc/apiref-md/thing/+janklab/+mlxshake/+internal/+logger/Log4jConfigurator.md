@@ -24,23 +24,20 @@ logging to work. Otherwise, you may get warnings like this at the console:
   log4j:WARN Please initialize the log4j system properly.
 
 If that happens, it means you need to call
-logger.Log4jConfigurator.configureBasicConsoleLogging.
-
-This also provides a log4j configuration GUI that you can launch with
-`logger.Log4jConfigurator.showGui`.
+janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging.
 
 Examples:
 
-mlxshake.logger.Log4jConfigurator.configureBasicConsoleLogging
+janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging
 
-mlxshake.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
+janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
 
-mlxshake.logger.Log4jConfigurator.setLevels({
+janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
     'root'    'INFO'
     'net.apjanke.logger.swing'  'DEBUG'
     });
 
-mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration
+janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration
 
 
 ```
@@ -94,7 +91,7 @@ Helptext:
 ```text
 Set the logging levels for multiple loggers
 
-mlxshake.logger.Log4jConfigurator.setLevels(levels)
+janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels(levels)
 
 This is a convenience method for setting the logging levels for multiple
 loggers.
@@ -104,9 +101,9 @@ level names in column 2.
 
 Examples:
 
-mlxshake.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
+janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
 
-mlxshake.logger.Log4jConfigurator.setLevels({
+janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
     'root'    'INFO'
     'net.apjanke.logger.swing'  'DEBUG'
     });
@@ -202,23 +199,20 @@ logging to work. Otherwise, you may get warnings like this at the console:
   log4j:WARN Please initialize the log4j system properly.
 
 If that happens, it means you need to call
-logger.Log4jConfigurator.configureBasicConsoleLogging.
-
-This also provides a log4j configuration GUI that you can launch with
-`logger.Log4jConfigurator.showGui`.
+janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging.
 
 Examples:
 
-mlxshake.logger.Log4jConfigurator.configureBasicConsoleLogging
+janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging
 
-mlxshake.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
+janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
 
-mlxshake.logger.Log4jConfigurator.setLevels({
+janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
     'root'    'INFO'
     'net.apjanke.logger.swing'  'DEBUG'
     });
 
-mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration
+janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration
 
 ```
 

@@ -38,8 +38,8 @@ The way the zone policy is applied is:
   * Inputs that do have zone information are converted to the zone specified
     by zonePolicy.
 
-If the input x is a datetime or zoned Java date and a zonePolicy is provided, 
-but the zonePolicy conflicts with the actual TimeZone set on x, an error is 
+If the input x is a datetime or zoned Java date and a zonePolicy is provided,
+but the zonePolicy conflicts with the actual TimeZone set on x, an error is
 raised.
 
 Returns a datetime array.
