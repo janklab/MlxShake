@@ -68,6 +68,12 @@ Are you building an internal-use copy of the documentation for your own develope
 
 I also like to have a main index page that lists all the packages and things in a library, and per-package index pages that list all the things in a package, both automatically generated. Matlab doesn't seem to support the former at all, and I'm not happy with how it does the latter.
 
+And I _hate_ how Matlab's Help Browser displays all of a class's inherited methods merged into a single list with the methods that the class itself defines, with no way to differentiate them. Any class that inherits from `handle` picks up a bunch of junk, like this:
+
+![Matlab Help Browser display of inherited handle junk](images/inherited-handle-junk-in-matlab-doc-display.png)
+
+I'd like to customize the doco format so that inherited methods and properties aren't displayed like this, but instead they're just referenced in a compact little list with links. Like Javadoc does.
+
 ### Advanced shizz
 
 Matlab's native `help()` and `doc()` helptext tools only support a very simple format for helptext. That's kinda underpowered if you're writing documentation for complext code.
