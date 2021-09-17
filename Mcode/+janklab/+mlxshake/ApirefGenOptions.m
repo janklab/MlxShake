@@ -38,7 +38,9 @@ classdef ApirefGenOptions
         % you need to:
         %
         % * Indent all code examples by at least four spaces or enclose them in
-        %   triple-backtick (`\`\`\``) code fences.
+        %   triple-backtick (`\`\`\``) code fences. Using indents will play
+        %   nicer with Matlab's `help` function, but triple-backticks will let
+        %   you get syntax highlighting and save space.
         % * Use `*` or `-` characters to introduce list items.
         
         helptextFormat (1,1) string {mustBeMember(helptextFormat, ...
