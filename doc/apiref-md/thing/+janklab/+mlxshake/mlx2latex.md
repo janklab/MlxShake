@@ -2,7 +2,7 @@
 
 Export a Live Script (.mlx) file to LaTeX (.tex).
 
-janklab.mlxshake.mlx2latex(mlxFile, outFile)
+    janklab.mlxshake.mlx2latex(mlxFile, outFile)
 
 Exports a Matlab Live Script to LaTeX. This produces a .tex file and an
 accompanying matlab.sty file and <foo>_images directory next to it. Will
