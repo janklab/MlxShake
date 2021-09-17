@@ -112,7 +112,6 @@ Helptext:
 
 ```text
 janklab.mlxshake.internal.ApirefGenerator/generateForMyFormat is a function.
-  obj = janklab.mlxshake.internal.ApirefGenerator
 
 ```
 
@@ -175,10 +174,6 @@ Helptext:
 
 ```text
 Generates API Reference doco from source code.
-
-  Documentation for janklab.mlxshake.internal.ApirefGenerator/ApirefGenerator
-     doc janklab.mlxshake.internal.ApirefGenerator
-
 
 ```
 

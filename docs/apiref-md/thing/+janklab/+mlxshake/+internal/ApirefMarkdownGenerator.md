@@ -241,10 +241,6 @@ Helptext:
 ```text
 Generates Markdown format output for API Reference doco.
 
-  Documentation for janklab.mlxshake.internal.ApirefMarkdownGenerator/ApirefMarkdownGenerator
-     doc janklab.mlxshake.internal.ApirefMarkdownGenerator
-
-
 ```
 
 

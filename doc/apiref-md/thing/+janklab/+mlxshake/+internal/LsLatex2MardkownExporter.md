@@ -86,10 +86,6 @@ Helptext:
 ```text
 Exports LS-exported LaTeX to Markdown
 
-  Documentation for janklab.mlxshake.internal.LsLatex2MardkownExporter/LsLatex2MardkownExporter
-     doc janklab.mlxshake.internal.LsLatex2MardkownExporter
-
-
 ```
 
 

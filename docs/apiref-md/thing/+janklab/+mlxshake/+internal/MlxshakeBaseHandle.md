@@ -60,10 +60,6 @@ initialized inherit from this or ExportmlxBase.
 See also:
 MLXSHAKEBASE
 
-  Documentation for janklab.mlxshake.internal.MlxshakeBaseHandle/MlxshakeBaseHandle
-     doc janklab.mlxshake.internal.MlxshakeBaseHandle
-
-
 ```
 
 

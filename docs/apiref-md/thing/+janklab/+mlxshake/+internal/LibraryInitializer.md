@@ -8,7 +8,7 @@ janklab.mlxshake.internal.LibraryInitializer
 
 ```text
 janklab.mlxshake.internal.LibraryInitializer is a class.
-  this = janklab.mlxshake.internal.LibraryInitializer
+  this = LibraryInitializer
 
   Documentation for janklab.mlxshake.internal.LibraryInitializer
      doc janklab.mlxshake.internal.LibraryInitializer
@@ -40,10 +40,6 @@ Helptext:
 ```text
 janklab.mlxshake.internal.LibraryInitializer/LibraryInitializer is a constructor.
   this = LibraryInitializer
-
-  Documentation for janklab.mlxshake.internal.LibraryInitializer/LibraryInitializer
-     doc janklab.mlxshake.internal.LibraryInitializer
-
 
 ```
 

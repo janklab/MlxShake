@@ -262,7 +262,7 @@ Helptext:
 
 ```text
 janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier is a function.
-  out = janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier(str)
+  out = isErrorIdentifier(str)
 
 ```
 
@@ -297,7 +297,7 @@ Helptext:
 
 ```text
 janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct is a function.
-  janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct(x)
+  dispStruct(x)
 
 ```
 
@@ -315,7 +315,7 @@ Helptext:
 
 ```text
 janklab.mlxshake.internal.logger.internal.Dispstr.dispCell is a function.
-  janklab.mlxshake.internal.logger.internal.Dispstr.dispCell(c)
+  dispCell(c)
 
 ```
 
@@ -346,7 +346,7 @@ DISPLAY Display array.
   To customize the display of objects, overload the DISP function.
   Note that DISP does not display empty arrays.
   
-  See also disp, formattedDisplayText, matlab.mixin.CustomDisplay.
+  See also DISP, matlab.mixin.CustomDisplay, EVALC,
 
 ```
 
@@ -366,12 +366,12 @@ Helptext:
 DISP Display array.
   DISP(X) displays array X without printing the array name or 
   additional description information such as the size and class name.
-  In all other ways it is the same as leaving the semicolon off an
+  In all other ways it's the same as leaving the semicolon off an
   expression except that nothing is shown for empty arrays.
 
   If X is a string or character array, the text is displayed.
 
-  See also formattedDisplayText, sprintf, num2str, format, details.
+  See also FPRINTF, SPRINTF, INT2STR, NUM2STR, RATS, FORMAT, DETAILS.
 
 ```
 
@@ -389,7 +389,7 @@ Helptext:
 
 ```text
 janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf is a function.
-  out = janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf(args)
+  out = convertArgsForPrintf(args)
 
 ```
 
@@ -411,10 +411,6 @@ file, which makes it easy (well, maybe not easy, just not a huge pain in the
 ass) to transform the code to relocate its package, which will hopefully
 allow us to generate "compatters" for internal use by other libraries that
 don't want to take a dependency on dispstr.
-
-  Documentation for janklab.mlxshake.internal.logger.internal.Dispstr/Dispstr
-     doc janklab.mlxshake.internal.logger.internal.Dispstr
-
 
 ```
 

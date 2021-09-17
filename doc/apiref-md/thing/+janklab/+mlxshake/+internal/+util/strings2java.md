@@ -2,7 +2,7 @@
 
 ```text
 janklab.mlxshake.internal.util.strings2java is a function.
-  out = janklab.mlxshake.internal.util.strings2java(str)
+  out = strings2java(str)
 
 
 ```

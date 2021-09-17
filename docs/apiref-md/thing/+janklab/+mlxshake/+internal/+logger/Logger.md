@@ -434,10 +434,6 @@ LOGGER Build a new logger object around an SLF4J Logger object.
 
 Generally, you shouldn't call this. Use logger.Logger.getLogger() instead.
 
-  Documentation for janklab.mlxshake.internal.logger.Logger/Logger
-     doc janklab.mlxshake.internal.logger.Logger
-
-
 ```
 
 

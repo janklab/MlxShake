@@ -67,10 +67,6 @@ Helptext:
 ```text
 #ok<*MANU>
 
-  Documentation for janklab.mlxshake.internal.ApirefHtmlGenerator/ApirefHtmlGenerator
-     doc janklab.mlxshake.internal.ApirefHtmlGenerator
-
-
 ```
 
 

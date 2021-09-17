@@ -41,7 +41,6 @@ janklab.mlxshake.test.HelloWorldTest
 
 ```text
 janklab.mlxshake.test.HelloWorldTest is a class.
-  obj = janklab.mlxshake.test.HelloWorldTest
 
   Documentation for janklab.mlxshake.test.HelloWorldTest
      doc janklab.mlxshake.test.HelloWorldTest
@@ -96,11 +95,6 @@ Helptext:
 
 ```text
 janklab.mlxshake.test.HelloWorldTest/HelloWorldTest is a constructor.
-  obj = janklab.mlxshake.test.HelloWorldTest
-
-  Documentation for janklab.mlxshake.test.HelloWorldTest/HelloWorldTest
-     doc janklab.mlxshake.test.HelloWorldTest
-
 
 ```
 

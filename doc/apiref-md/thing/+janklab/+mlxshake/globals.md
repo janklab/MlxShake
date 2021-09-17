@@ -135,10 +135,6 @@ on that:
    s = janklab.mlxshake.globals.settings;
    s.someSetting = 42;
 
-  Documentation for janklab.mlxshake.globals/globals
-     doc janklab.mlxshake.globals
-
-
 ```
 
 

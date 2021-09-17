@@ -84,10 +84,6 @@ field.
 
 There are currently no settings defined for this package.
 
-  Documentation for janklab.mlxshake.Settings/Settings
-     doc janklab.mlxshake.Settings
-
-
 ```
 
 

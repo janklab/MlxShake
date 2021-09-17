@@ -15,6 +15,7 @@
 * [mkdirs](../thing/+janklab/+mlxshake/+internal/+util/mkdirs.html)
 * [mustBeA](../thing/+janklab/+mlxshake/+internal/+util/mustBeA.html)
 * [mv](../thing/+janklab/+mlxshake/+internal/+util/mv.html)
+* [nvlist](../thing/+janklab/+mlxshake/+internal/+util/nvlist.html)
 * [readtext](../thing/+janklab/+mlxshake/+internal/+util/readtext.html)
 * [rmdir2](../thing/+janklab/+mlxshake/+internal/+util/rmdir2.html)
 * [rmrf](../thing/+janklab/+mlxshake/+internal/+util/rmrf.html)

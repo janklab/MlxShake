@@ -45,7 +45,7 @@ Helptext:
 
 ```text
 janklab.mlxshake.internal.misc.setpackageappdata is a function.
-  janklab.mlxshake.internal.misc.setpackageappdata(key, value)
+  setpackageappdata(key, value)
 
 ```
 
@@ -63,7 +63,7 @@ Helptext:
 
 ```text
 janklab.mlxshake.internal.misc.getpackageappdata is a function.
-  out = janklab.mlxshake.internal.misc.getpackageappdata(key)
+  out = getpackageappdata(key)
 
 ```
 
@@ -131,10 +131,6 @@ Helptext:
 Miscellaneous utilities
 
 The ones in this class are ones you typically wouldn't want to import.
-
-  Documentation for janklab.mlxshake.internal.misc/misc
-     doc janklab.mlxshake.internal.misc
-
 
 ```
 

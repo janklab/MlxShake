@@ -81,10 +81,6 @@ Helptext:
 ```text
 Global library properties and settings for SLF4M
 
-  Documentation for janklab.mlxshake.internal.logger.globals/globals
-     doc janklab.mlxshake.internal.logger.globals
-
-
 ```
 
 

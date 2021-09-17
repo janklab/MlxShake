@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=0e72b505a5ca34103425c48609ec1423577948a4">
+    <link rel="stylesheet" href="/assets/css/style.css?v=899af27a33fa3c22f452175b4c761e3857768c4f">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -352,7 +352,7 @@ This is similar to Matlab's combvec, but has a different signature.
 <p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier is a function.
-  out = janklab.mlxshake.internal.logger.internal.Dispstr.isErrorIdentifier(str)
+  out = isErrorIdentifier(str)
 
 </code></pre></div></div>
 
@@ -383,7 +383,7 @@ This is similar to Matlab's combvec, but has a different signature.
 <p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct is a function.
-  janklab.mlxshake.internal.logger.internal.Dispstr.dispStruct(x)
+  dispStruct(x)
 
 </code></pre></div></div>
 
@@ -399,7 +399,7 @@ This is similar to Matlab's combvec, but has a different signature.
 <p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.dispCell is a function.
-  janklab.mlxshake.internal.logger.internal.Dispstr.dispCell(c)
+  dispCell(c)
 
 </code></pre></div></div>
 
@@ -428,7 +428,7 @@ This is similar to Matlab's combvec, but has a different signature.
   To customize the display of objects, overload the DISP function.
   Note that DISP does not display empty arrays.
   
-  See also disp, formattedDisplayText, matlab.mixin.CustomDisplay.
+  See also DISP, matlab.mixin.CustomDisplay, EVALC,
 
 </code></pre></div></div>
 
@@ -446,12 +446,12 @@ This is similar to Matlab's combvec, but has a different signature.
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DISP Display array.
   DISP(X) displays array X without printing the array name or 
   additional description information such as the size and class name.
-  In all other ways it is the same as leaving the semicolon off an
+  In all other ways it's the same as leaving the semicolon off an
   expression except that nothing is shown for empty arrays.
 
   If X is a string or character array, the text is displayed.
 
-  See also formattedDisplayText, sprintf, num2str, format, details.
+  See also FPRINTF, SPRINTF, INT2STR, NUM2STR, RATS, FORMAT, DETAILS.
 
 </code></pre></div></div>
 
@@ -467,7 +467,7 @@ This is similar to Matlab's combvec, but has a different signature.
 <p>Helptext:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf is a function.
-  out = janklab.mlxshake.internal.logger.internal.Dispstr.convertArgsForPrintf(args)
+  out = convertArgsForPrintf(args)
 
 </code></pre></div></div>
 
@@ -487,10 +487,6 @@ file, which makes it easy (well, maybe not easy, just not a huge pain in the
 ass) to transform the code to relocate its package, which will hopefully
 allow us to generate "compatters" for internal use by other libraries that
 don't want to take a dependency on dispstr.
-
-  Documentation for janklab.mlxshake.internal.logger.internal.Dispstr/Dispstr
-     doc janklab.mlxshake.internal.logger.internal.Dispstr
-
 
 </code></pre></div></div>
 

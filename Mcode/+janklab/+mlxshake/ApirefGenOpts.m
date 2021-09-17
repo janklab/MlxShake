@@ -30,8 +30,9 @@ classdef ApirefGenOpts
             end
             
             if iscell(arg)
-                for i = 1:2:numel(arg)
-                    this.(arg{i}) = arg{i+1};
+                nvs = janklab.mlxshake.internal.util.nvlist(arg);
+                for i = 1:2:numel(nvs)
+                    this.(nvs{i}) = nvs{i+1};
                 end
             elseif isstruct(arg)
                 if ~isscalar(arg)

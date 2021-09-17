@@ -206,10 +206,6 @@ You may pass in a struct or cell vector of name/value pairs, where
 the names are any property on MlxExportOptions. Names that are not
 properties of MlxExportOptions cause an error.
 
-  Documentation for janklab.mlxshake.MlxExportOptions/MlxExportOptions
-     doc janklab.mlxshake.MlxExportOptions
-
-
 ```
 
 

@@ -131,10 +131,6 @@ Helptext:
 ```text
 Options to the mlxshake shell command
 
-  Documentation for janklab.mlxshake.internal.MlxShellCommandOpts/MlxShellCommandOpts
-     doc janklab.mlxshake.internal.MlxShellCommandOpts
-
-
 ```
 
 

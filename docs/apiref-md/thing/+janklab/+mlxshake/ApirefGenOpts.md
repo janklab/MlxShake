@@ -116,10 +116,6 @@ You may pass in a struct or cell vector of name/value pairs, where
 the names are any property on ApirefGenOpts. Names that are not
 properties of ApirefGenOpts cause an error.
 
-  Documentation for janklab.mlxshake.ApirefGenOpts/ApirefGenOpts
-     doc janklab.mlxshake.ApirefGenOpts
-
-
 ```
 
 
