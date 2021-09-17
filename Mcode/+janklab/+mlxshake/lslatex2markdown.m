@@ -1,7 +1,7 @@
 function outMdFile = lslatex2markdown(inFile, opts)
 % Convert Live Script LaTeX to Markdown.
 %
-% mdfile = janklab.mlxshake.lslatex2markdown(inFile, opts)
+%     mdfile = janklab.mlxshake.lslatex2markdown(inFile, opts)
 %
 % Converts a LaTeX-format exported Live Script file to Markdown. Will also
 % produce accompanying image files in a subdirectory next to the output .md
