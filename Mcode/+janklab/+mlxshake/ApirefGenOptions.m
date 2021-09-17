@@ -1,4 +1,4 @@
-classdef ApirefGenOpts
+classdef ApirefGenOptions
     % Options to control the behavior of the genapiref function.
     %
     % This controls various aspects of GENAPIREF's behavior.
@@ -15,16 +15,16 @@ classdef ApirefGenOpts
     
     methods
 
-        function this = ApirefGenOpts(arg)
+        function this = ApirefGenOptions(arg)
             % Construct a new object.
             %
-            % obj = janklab.mlxshake.ApirefGenOpts
-            % obj = janklab.mlxshake.ApirefGenOpts(struct(...))
-            % obj = janklab.mlxshake.ApirefGenOpts({'property',value, ...})
+            % obj = janklab.mlxshake.ApirefGenOptions
+            % obj = janklab.mlxshake.ApirefGenOptions(struct(...))
+            % obj = janklab.mlxshake.ApirefGenOptions({'property',value, ...})
             %
             % You may pass in a struct or cell vector of name/value pairs, where
-            % the names are any property on ApirefGenOpts. Names that are not
-            % properties of ApirefGenOpts cause an error.
+            % the names are any property on ApirefGenOptions. Names that are not
+            % properties of ApirefGenOptions cause an error.
             if nargin == 0
                 return
             end
@@ -41,7 +41,7 @@ classdef ApirefGenOpts
                 for prop = fieldnames(arg)'
                     this.(prop) = arg.(prop);
                 end
-            elseif isa(arg, 'janklab.mlxshake.ApirefGenOpts')
+            elseif isa(arg, 'janklab.mlxshake.ApirefGenOptions')
                 this = arg;
             else
                 error('Invalid input type: %s', class(arg));

@@ -17,7 +17,7 @@
 
 ### janklab.mlxshake
 
-* [`ApirefGenOpts`](thing/+janklab/+mlxshake/ApirefGenOpts.html)
+* [`ApirefGenOptions`](thing/+janklab/+mlxshake/ApirefGenOptions.html)
 * [`MlxExportOptions`](thing/+janklab/+mlxshake/MlxExportOptions.html)
 * [`Settings`](thing/+janklab/+mlxshake/Settings.html)
 * [`exportlivescript`](thing/+janklab/+mlxshake/exportlivescript.html)

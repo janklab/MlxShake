@@ -7,7 +7,7 @@ classdef (Abstract) ApirefGenerator < janklab.mlxshake.internal.MlxshakeBaseHand
     properties
         outDir (1,1) string
         inDirs (1,:) string
-        opts (1,1) janklab.mlxshake.ApirefGenOpts
+        opts (1,1) janklab.mlxshake.ApirefGenOptions
     end
     % State for generator run
     properties

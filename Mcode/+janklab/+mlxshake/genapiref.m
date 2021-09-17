@@ -9,7 +9,7 @@ function genapiref(outDir, inDirs, opts)
 arguments
     outDir (1,1) string
     inDirs (1,:) string
-    opts (1,1) janklab.mlxshake.ApirefGenOpts = janklab.mlxshake.ApirefGenOpts
+    opts (1,1) janklab.mlxshake.ApirefGenOptions = janklab.mlxshake.ApirefGenOptions
 end
 
 genner = janklab.mlxshake.internal.ApirefGenerator.forFormat(opts.format);

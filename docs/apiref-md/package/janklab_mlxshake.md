@@ -9,7 +9,7 @@
 
 ## Classes
 
-* [ApirefGenOpts](../thing/+janklab/+mlxshake/ApirefGenOpts.html)
+* [ApirefGenOptions](../thing/+janklab/+mlxshake/ApirefGenOptions.html)
 * [MlxExportOptions](../thing/+janklab/+mlxshake/MlxExportOptions.html)
 * [Settings](../thing/+janklab/+mlxshake/Settings.html)
 * [globals](../thing/+janklab/+mlxshake/globals.html)
