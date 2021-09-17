@@ -3,7 +3,7 @@ function rmrf(files)
 %
 % rmrf(files)
 arguments
-  files string
+    files string
 end
 
 import janklab.mlxshake.internal.util.*

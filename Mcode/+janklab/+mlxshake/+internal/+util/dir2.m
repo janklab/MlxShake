@@ -25,15 +25,15 @@ d(tfDots) = [];
 names = string({d.name});
 
 if nargout > 1
-  name = names';
-  folder = string({d.folder}');
-  path = fullfile(folder, name);
-  mtime = datetime([d.datenum]', 'ConvertFrom','datenum');
-  mtime.TimeZone = datetime.SystemTimeZone;
-  bytes = [d.bytes]';
-  isdir = [d.isdir]';
-  details = table(name, mtime, bytes, isdir, path, folder);
-  % TODO: add ishidden var to details?
+    name = names';
+    folder = string({d.folder}');
+    path = fullfile(folder, name);
+    mtime = datetime([d.datenum]', 'ConvertFrom','datenum');
+    mtime.TimeZone = datetime.SystemTimeZone;
+    bytes = [d.bytes]';
+    isdir = [d.isdir]';
+    details = table(name, mtime, bytes, isdir, path, folder);
+    % TODO: add ishidden var to details?
 end
 
 end

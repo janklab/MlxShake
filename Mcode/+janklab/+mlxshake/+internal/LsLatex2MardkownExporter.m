@@ -573,7 +573,7 @@ for i = 1:length(imageParts)
     filenames = regexp(imageParts(i), "\\includegraphics\[[^\]]+\]{([^{}]+)}", "tokens");
     [~, fileStem, ~] = fileparts(filenames{:});
     fileGlob = fullfile(filepath, imageDir, fileStem + ".*");
-    imageFilename = ls(fileGlob); 
+    imageFilename = ls(fileGlob);
     
     % Compress PNG images as JPEG
     if png2jpeg
@@ -592,7 +592,7 @@ for i = 1:length(imageParts)
                 "![" + imageFilename + "](" + imageDir + imageFilename + ")");
             md = strrep(md, LF, "") + LF;
             imageParts(i) = md;
-
+            
         case 'qiita'
             % Qiita に移行する際は、画像ファイルを該当箇所に drag & drop する必要
             % 幅指定する場合には
@@ -616,7 +616,7 @@ function [str, tfLiteral] = processLiteralOutput(str)
 % Process literal output
 
 %% MATLAB Code
-% Latex: 
+% Latex:
 % \begin{matlabcode}(code)\end{matlabcode}
 % \begin{verbatim}(code)\end{verbatim}
 % \begin{lstlisting}(code)\end{lstlisting}
@@ -627,7 +627,7 @@ function [str, tfLiteral] = processLiteralOutput(str)
 %```
 
 %% Literal Outputs
-% Latex: 
+% Latex:
 % \begin{matlaboutput}(output)\end{matlaboutput}
 %
 % Markdown

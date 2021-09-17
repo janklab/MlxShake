@@ -40,7 +40,7 @@ classdef Log4jConfigurator
     %
     % % Bring up the configuration GUI
     % mlxshake.logger.Log4jConfigurator.showGui
-
+    
     % This class does *not* use the implicit initializer trick, because the
     % implicit library initializer may depend on this class!
     

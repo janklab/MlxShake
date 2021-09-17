@@ -11,7 +11,7 @@ function out = parseOpts(opts, defaults)
 % Options and defaults may both be of type:
 %   * struct
 %   * cellrec
-% 
+%
 out = parseOptsArg(opts);
 if nargin > 1
     defaults = parseOptsArg(defaults);

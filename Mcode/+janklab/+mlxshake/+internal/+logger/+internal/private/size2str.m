@@ -7,7 +7,7 @@ function out = size2str(sz)
 
 strs = cell(size(sz));
 for i = 1:numel(sz)
-	strs{i} = sprintf('%d', sz(i));
+    strs{i} = sprintf('%d', sz(i));
 end
 
 out = strjoin(strs, '-by-');

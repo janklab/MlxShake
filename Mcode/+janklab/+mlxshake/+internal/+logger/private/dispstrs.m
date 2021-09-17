@@ -38,26 +38,26 @@ function out = dispstrs(x)
 % See also: DISPSTR
 
 if isempty(x)
-	out = reshape({}, size(x));
+    out = reshape({}, size(x));
 elseif isnumeric(x)
-	out = dispstrsNumeric(x);
+    out = dispstrsNumeric(x);
 elseif iscellstr(x)
-	out = x;
+    out = x;
 elseif isstring(x)
     out = cellstr(x);
 elseif iscell(x)
-	out = dispstrsGenericDisp(x);
+    out = dispstrsGenericDisp(x);
 elseif ischar(x)
-	% An unfortunate consequence of the typical use of char and dispstrs' contract
-	out = num2cell(x);
+    % An unfortunate consequence of the typical use of char and dispstrs' contract
+    out = num2cell(x);
 elseif isa(x, 'tabular')
     out = dispstrsTabular(x);
 elseif isa(x, 'datetime')
     out = dispstrsDatetime(x);
 elseif isa(x, 'struct')
-	out = repmat({'1-by-1 struct'}, size(x));
+    out = repmat({'1-by-1 struct'}, size(x));
 else
-	out = dispstrsGenericDisp(x);
+    out = dispstrsGenericDisp(x);
 end
 
 out = string(out);
@@ -94,14 +94,14 @@ end
 function out = dispstrsGenericDisp(x)
 out = cell(size(x));
 for i = 1:numel(x)
-	if iscell(x)
-		xi = x{i}; %#ok<NASGU>
-	else
-		xi = x(i); %#ok<NASGU>
-	end
-	str = evalc('disp(xi)');
-	str(end) = []; % chomp newline
-	out{i} = str;
+    if iscell(x)
+        xi = x{i}; %#ok<NASGU>
+    else
+        xi = x(i); %#ok<NASGU>
+    end
+    str = evalc('disp(xi)');
+    str(end) = []; % chomp newline
+    out{i} = str;
 end
 end
 

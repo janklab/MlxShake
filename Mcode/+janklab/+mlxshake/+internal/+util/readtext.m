@@ -5,12 +5,12 @@ function out = readtext(file, encoding)
 % doesn't provide a basic file-slurping mechanism.
 
 arguments
-  file (1,1) string
-  encoding (1,1) string = 'UTF-8' % TODO: auto-detect file encoding via sniffing
+    file (1,1) string
+    encoding (1,1) string = 'UTF-8' % TODO: auto-detect file encoding via sniffing
 end
 [fid,msg] = fopen(file, 'r', 'n', encoding);
 if fid < 1
-  error('Failed opening file %s: %s', file, msg);
+    error('Failed opening file %s: %s', file, msg);
 end
 RAII.fh = onCleanup(@() fclose(fid));
 c = fread(fid, Inf, '*char');

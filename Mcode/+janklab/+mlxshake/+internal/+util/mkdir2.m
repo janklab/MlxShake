@@ -3,12 +3,12 @@ function mkdir2(varargin)
 
 [ok,msg] = mkdir(varargin{:});
 if ~ok
-  if nargin == 1
-    target = varargin{1};
-  else
-    target = fullfile(varargin{:});
-  end
-  error('Failed creating directory "%s": %s', target, msg);
+    if nargin == 1
+        target = varargin{1};
+    else
+        target = fullfile(varargin{:});
+    end
+    error('Failed creating directory "%s": %s', target, msg);
 end
 
 end
