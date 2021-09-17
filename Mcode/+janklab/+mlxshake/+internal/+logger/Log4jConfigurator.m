@@ -16,30 +16,24 @@ classdef Log4jConfigurator
     %   log4j:WARN Please initialize the log4j system properly.
     %
     % If that happens, it means you need to call
-    % logger.Log4jConfigurator.configureBasicConsoleLogging.
-    %
-    % This also provides a log4j configuration GUI that you can launch with
-    % `logger.Log4jConfigurator.showGui`.
+    % janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging.
     %
     % Examples:
     %
-    % mlxshake.logger.Log4jConfigurator.configureBasicConsoleLogging
+    % janklab.mlxshake.internal.logger.Log4jConfigurator.configureBasicConsoleLogging
     %
-    % mlxshake.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
+    % janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
     %
-    % mlxshake.logger.Log4jConfigurator.setLevels({
+    % janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
     %     'root'    'INFO'
     %     'net.apjanke.logger.swing'  'DEBUG'
     %     });
     %
-    % mlxshake.logger.Log4jConfigurator.prettyPrintLogConfiguration
+    % janklab.mlxshake.internal.logger.Log4jConfigurator.prettyPrintLogConfiguration
     %
     % % Display fully-qualified class/category names in the log output:
-    % mlxshake.logger.Log4jConfigurator.setRootAppenderPattern(...
+    % janklab.mlxshake.internal.logger.Log4jConfigurator.setRootAppenderPattern(...
     %    ['%d{HH:mm:ss.SSS} %p %c - %m' sprintf('\n')]);
-    %
-    % % Bring up the configuration GUI
-    % mlxshake.logger.Log4jConfigurator.showGui
     
     % This class does *not* use the implicit initializer trick, because the
     % implicit library initializer may depend on this class!
@@ -107,7 +101,7 @@ classdef Log4jConfigurator
         function setLevels(levels)
             % Set the logging levels for multiple loggers
             %
-            % mlxshake.logger.Log4jConfigurator.setLevels(levels)
+            % janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels(levels)
             %
             % This is a convenience method for setting the logging levels for multiple
             % loggers.
@@ -117,16 +111,16 @@ classdef Log4jConfigurator
             %
             % Examples:
             %
-            % mlxshake.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
+            % janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({'root','DEBUG'});
             %
-            % mlxshake.logger.Log4jConfigurator.setLevels({
+            % janklab.mlxshake.internal.logger.Log4jConfigurator.setLevels({
             %     'root'    'INFO'
             %     'net.apjanke.logger.swing'  'DEBUG'
             %     });
             for i = 1:size(levels, 1)
                 [logName,levelName] = levels{i,:};
                 logger = org.apache.log4j.LogManager.getLogger(logName);
-                level = mlxshake.logger.Log4jConfigurator.getLog4jLevel(levelName);
+                level = janklab.mlxshake.internal.logger.Log4jConfigurator.getLog4jLevel(levelName);
                 logger.setLevel(level);
             end
         end

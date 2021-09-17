@@ -40,6 +40,7 @@ on that:
 
 | Method | Description |
 | -------- | ----------- |
+| [loglevel](#janklab.mlxshake.globals.loglevel) |  |
 | [initialize](#janklab.mlxshake.globals.initialize) |  |
 | [version](#janklab.mlxshake.globals.version) |  |
 | [globals](#janklab.mlxshake.globals.globals) | Constructor. |
@@ -74,6 +75,44 @@ No helptext available.
 
 
 ## Methods
+
+<a name="janklab.mlxshake.globals.loglevel"></a>
+### loglevel
+
+Attributes: Static
+
+Signature:
+```
+out = globals.loglevel(newLevel)
+```
+
+Helptext:
+
+```text
+Get or set logging level for the mlxshake package.
+
+out = janklab.mlxshake.globals.loglevel()
+oldLevel = janklab.mlxshake.globals.loglevel(newLevel)
+
+This is a convenience method that provides a simplified interface
+on top of MlxShake's internal logging tools. It does not support
+all functionality of level control. This is intentional, to keep
+the interface simple.
+
+NewLevel (string) is the logging level to set at the root
+janklab.mlxshake package. This should control all logging done by
+MlxShake. Valid values are:
+   "info"  - The regular, concise and quiet logging.
+   "debug" - More detailed logging, with progress messages.
+
+The return value is the currently-set logging level. Possible
+values are:
+   "info"
+   "debug"
+   "custom" - Means the logging configuration is in a weird state
+       that this function is not prepared to handle.
+
+```
 
 <a name="janklab.mlxshake.globals.initialize"></a>
 ### initialize

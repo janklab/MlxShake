@@ -87,7 +87,7 @@ classdef LsLatex2MardkownExporter < janklab.mlxshake.internal.MlxshakeBase
                     + "using mlx2latex.");
             end
             
-            loginfo('Exporting: %s -> %s', texFile, outMdFile);
+            logdebug('Exporting: %s -> %s', texFile, outMdFile);
             
             %% Preprocess latex
             
@@ -203,7 +203,7 @@ classdef LsLatex2MardkownExporter < janklab.mlxshake.internal.MlxshakeBase
             end
             writetext(mdstr, outMdFile);
             
-            loginfo("Exported:  %s -> %s", texFile, outMdFile);
+            logdebug("Exported:  %s -> %s", texFile, outMdFile);
             
         end
         

@@ -49,9 +49,9 @@ outStemPath = fullfile(outDir, outFileStem);
 outTexFile = fullfile(outDir, outFileBase);
 outImagesDir = fullfile(outDir, outFileStem+"_images");
 
-loginfo('Exporting: %s -> %s', inMlxFile, outTexFile);
+logdebug('Exporting: %s -> %s', inMlxFile, outTexFile);
 matlab.internal.liveeditor.openAndConvert(char(inMlxFile), char(outTexFile));
-loginfo('Exported:  %s -> %s', inMlxFile, outTexFile);
+logdebug('Exported:  %s -> %s', inMlxFile, outTexFile);
 
 out.dir = outDir;
 out.stemPath = outStemPath;
