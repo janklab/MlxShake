@@ -38,6 +38,7 @@
 * [`ApirefGenerator`](thing/+janklab/+mlxshake/+internal/ApirefGenerator.html)
 * [`ApirefHtmlGenerator`](thing/+janklab/+mlxshake/+internal/ApirefHtmlGenerator.html)
 * [`ApirefMarkdownGenerator`](thing/+janklab/+mlxshake/+internal/ApirefMarkdownGenerator.html)
+* [`Constants`](thing/+janklab/+mlxshake/+internal/Constants.html)
 * [`Contents`](thing/+janklab/+mlxshake/+internal/Contents.html)
 * [`LibraryInitializer`](thing/+janklab/+mlxshake/+internal/LibraryInitializer.html)
 * [`LsLatex2MardkownExporter`](thing/+janklab/+mlxshake/+internal/LsLatex2MardkownExporter.html)

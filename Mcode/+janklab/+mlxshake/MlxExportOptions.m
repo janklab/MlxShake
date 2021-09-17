@@ -13,7 +13,8 @@ classdef MlxExportOptions
     % EXPORTLIVESCRIPT
     
     properties (Constant)
-        validFormats = ["auto", "markdown", "html", "pdf", "latex", "msword"];
+        % The valid output format identifiers.
+        validFormats = janklab.mlxshake.internal.Constants.validMlxExportFormats
     end
     
     properties
