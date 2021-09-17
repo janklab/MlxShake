@@ -6,7 +6,7 @@ janklab.mlxshake.internal.logger.Log4jConfigurator
 
 ## Helptext
 
-A configurator for log4j
+A configurator for log4j.
 
 This class configures the logging setup for Matlab/SLF4M logging. It
 configures the log4j library that SLF4M logging sits on top of. (We use log4j
@@ -181,7 +181,7 @@ obj = Log4jConfigurator()
 
 Helptext:
 
-A configurator for log4j
+A configurator for log4j.
 
 This class configures the logging setup for Matlab/SLF4M logging. It
 configures the log4j library that SLF4M logging sits on top of. (We use log4j

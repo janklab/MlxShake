@@ -3,13 +3,10 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
     
     % TODO: Alphabetize items.
     % TODO: Links to inherited items.
-    % TODO: Would be nice if default value were displayed as the expression
-    % from the source code, not the resolved value.
     % FIXME: Static methods with the same name as global functions can pick
     % up the wrong helptext.
     % TODO: Break out constructor display.
     % TODO: More compact item lists?
-    % TODO: Get helptext from arguments blocks.
     
     %#ok<*MANU>
     %#ok<*AGROW>
@@ -296,7 +293,7 @@ classdef ApirefMarkdownGenerator < janklab.mlxshake.internal.ApirefGenerator
             end
             
             p("# %s - %s", classBaseName, pkg)
-            p("")
+            p
             if ~isempty(attribs)
                 p("%s", strjoin(attribs, ', '));
                 p
