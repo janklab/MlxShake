@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="MlxShake FAQ" />
 <script type="application/ld+json">
-{"description":"Export Matlab Live Scripts to Markdown","url":"/FAQ.html","headline":"MlxShake FAQ","dateModified":"2021-09-17T01:00:40-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"Export Matlab Live Scripts to Markdown","url":"/FAQ.html","headline":"MlxShake FAQ","dateModified":"2021-09-17T02:06:20-04:00","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=1c8c778d42adc7b72a7fa56b59d7adf962f9415e">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b0afad4b52c4915ecea035c75e4ed8a3d8b5d94d">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -124,6 +124,12 @@
 <p>Are you building an internal-use copy of the documentation for your own developers that should include stuff in <code class="language-plaintext highlighter-rouge">+internal</code> packages? You can do that! Do you want <code class="language-plaintext highlighter-rouge">Hidden</code> methods and properties to be included in the doco? You can do that!</p>
 
 <p>I also like to have a main index page that lists all the packages and things in a library, and per-package index pages that list all the things in a package, both automatically generated. Matlab doesn’t seem to support the former at all, and I’m not happy with how it does the latter.</p>
+
+<p>And I <em>hate</em> how Matlab’s Help Browser displays all of a class’s inherited methods merged into a single list with the methods that the class itself defines, with no way to differentiate them. Any class that inherits from <code class="language-plaintext highlighter-rouge">handle</code> picks up a bunch of junk, like this:</p>
+
+<p><img src="/images/inherited-handle-junk-in-matlab-doc-display.png" alt="Matlab Help Browser display of inherited handle junk" /></p>
+
+<p>I’d like to customize the doco format so that inherited methods and properties aren’t displayed like this, but instead they’re just referenced in a compact little list with links. Like Javadoc does.</p>
 
 <h3 id="advanced-shizz">Advanced shizz</h3>
 
