@@ -34,6 +34,17 @@ if iscell(x)
         error("Invalid input: Cell inputs must be n-by-2 or a 2n-long row vector; " ...
             + "got a %s cell", janklab.mlxshake.internal.util.size2str(size(x)));
     end
+elseif isstruct(x)
+    if ~isscalar(x)
+        error("Invalid input: struct inputs must be scalar");
+    end
+    flds = fieldnames(x);
+    out = cell(2, numel(flds));
+    for i = 1:numel(flds)
+        out{1,i} = flds{i};
+        out{2,i} = x.(flds{i});
+    end
+    out = out(:)';
 else
     error("Invalid input: Can't convert a %s to an nvlist (name/value cell vector)", ...
         class(x));
