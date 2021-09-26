@@ -98,6 +98,8 @@ MlxShake's repo structure is based on Janklab's [MatlabProjectTemplate](https://
 
 Code was written while listening to [live Phish shows](https://www.livephish.com/).
 
+Logo for MlxShake was designed by [@SNDST00M](https://github.com/SNDST00M).
+
 ## Contributing
 
 Contributions are appreciated! Right now I mostly need feature requests, bug reports, and especially example Live Script files that MlxShake can be tested against.
